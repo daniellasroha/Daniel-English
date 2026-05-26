@@ -1,0 +1,85 @@
+// Data kosakata lengkap — dipakai di halaman Vocabulary dan Quiz
+export const kosakata = [
+  // === BUAH & SAYUR ===
+  { id: 1,  english: "Apple",      indonesian: "Apel",          emoji: "🍎", kategori: "Buah & Sayur", contoh: "I eat an apple every morning." },
+  { id: 2,  english: "Banana",     indonesian: "Pisang",        emoji: "🍌", kategori: "Buah & Sayur", contoh: "Monkeys love bananas." },
+  { id: 3,  english: "Orange",     indonesian: "Jeruk",         emoji: "🍊", kategori: "Buah & Sayur", contoh: "This orange juice is very fresh." },
+  { id: 4,  english: "Mango",      indonesian: "Mangga",        emoji: "🥭", kategori: "Buah & Sayur", contoh: "Mango is my favorite fruit." },
+  { id: 5,  english: "Watermelon", indonesian: "Semangka",      emoji: "🍉", kategori: "Buah & Sayur", contoh: "We eat watermelon in summer." },
+  { id: 6,  english: "Carrot",     indonesian: "Wortel",        emoji: "🥕", kategori: "Buah & Sayur", contoh: "Carrots are good for your eyes." },
+  { id: 7,  english: "Tomato",     indonesian: "Tomat",         emoji: "🍅", kategori: "Buah & Sayur", contoh: "She puts tomato in the salad." },
+  { id: 8,  english: "Potato",     indonesian: "Kentang",       emoji: "🥔", kategori: "Buah & Sayur", contoh: "French fries are made from potatoes." },
+
+  // === HEWAN ===
+  { id: 9,  english: "Cat",        indonesian: "Kucing",        emoji: "🐱", kategori: "Hewan",        contoh: "The cat is sleeping on the sofa." },
+  { id: 10, english: "Dog",        indonesian: "Anjing",        emoji: "🐶", kategori: "Hewan",        contoh: "My dog loves to play outside." },
+  { id: 11, english: "Bird",       indonesian: "Burung",        emoji: "🐦", kategori: "Hewan",        contoh: "The bird sings every morning." },
+  { id: 12, english: "Fish",       indonesian: "Ikan",          emoji: "🐟", kategori: "Hewan",        contoh: "We saw many fish in the lake." },
+  { id: 13, english: "Rabbit",     indonesian: "Kelinci",       emoji: "🐰", kategori: "Hewan",        contoh: "The rabbit eats carrots." },
+  { id: 14, english: "Elephant",   indonesian: "Gajah",         emoji: "🐘", kategori: "Hewan",        contoh: "Elephants are the largest land animals." },
+  { id: 15, english: "Tiger",      indonesian: "Harimau",       emoji: "🐯", kategori: "Hewan",        contoh: "The tiger is a dangerous animal." },
+  { id: 16, english: "Butterfly",  indonesian: "Kupu-kupu",     emoji: "🦋", kategori: "Hewan",        contoh: "The butterfly is very beautiful." },
+
+  // === TEMPAT ===
+  { id: 17, english: "School",     indonesian: "Sekolah",       emoji: "🏫", kategori: "Tempat",       contoh: "I go to school every morning." },
+  { id: 18, english: "Hospital",   indonesian: "Rumah Sakit",   emoji: "🏥", kategori: "Tempat",       contoh: "My uncle works at the hospital." },
+  { id: 19, english: "Market",     indonesian: "Pasar",         emoji: "🏪", kategori: "Tempat",       contoh: "Mom buys vegetables at the market." },
+  { id: 20, english: "Library",    indonesian: "Perpustakaan",  emoji: "📚", kategori: "Tempat",       contoh: "She reads books at the library." },
+  { id: 21, english: "Restaurant", indonesian: "Restoran",      emoji: "🍽️", kategori: "Tempat",       contoh: "We had dinner at a nice restaurant." },
+  { id: 22, english: "Airport",    indonesian: "Bandara",       emoji: "✈️", kategori: "Tempat",       contoh: "The plane lands at the airport." },
+  { id: 23, english: "Beach",      indonesian: "Pantai",        emoji: "🏖️", kategori: "Tempat",       contoh: "We swim at the beach on weekends." },
+  { id: 24, english: "Mountain",   indonesian: "Gunung",        emoji: "⛰️", kategori: "Tempat",       contoh: "The mountain is covered with snow." },
+
+  // === KATA KERJA ===
+  { id: 25, english: "Run",        indonesian: "Berlari",       emoji: "🏃", kategori: "Kata Kerja",   contoh: "He runs every morning for exercise." },
+  { id: 26, english: "Jump",       indonesian: "Melompat",      emoji: "🦘", kategori: "Kata Kerja",   contoh: "The kids love to jump on the trampoline." },
+  { id: 27, english: "Swim",       indonesian: "Berenang",      emoji: "🏊", kategori: "Kata Kerja",   contoh: "She swims very fast." },
+  { id: 28, english: "Cook",       indonesian: "Memasak",       emoji: "👨‍🍳", kategori: "Kata Kerja",   contoh: "My mother cooks delicious food." },
+  { id: 29, english: "Read",       indonesian: "Membaca",       emoji: "📖", kategori: "Kata Kerja",   contoh: "I read a book every night." },
+  { id: 30, english: "Write",      indonesian: "Menulis",       emoji: "✍️", kategori: "Kata Kerja",   contoh: "She writes in her diary every day." },
+  { id: 31, english: "Sing",       indonesian: "Bernyanyi",     emoji: "🎤", kategori: "Kata Kerja",   contoh: "He sings beautifully on stage." },
+  { id: 32, english: "Dance",      indonesian: "Menari",        emoji: "💃", kategori: "Kata Kerja",   contoh: "She loves to dance to music." },
+
+  // === KATA SIFAT ===
+  { id: 33, english: "Beautiful",  indonesian: "Cantik / Indah",emoji: "🌸", kategori: "Kata Sifat",   contoh: "The garden is very beautiful." },
+  { id: 34, english: "Strong",     indonesian: "Kuat",          emoji: "💪", kategori: "Kata Sifat",   contoh: "He is very strong." },
+  { id: 35, english: "Smart",      indonesian: "Pintar / Cerdas",emoji: "🧠", kategori: "Kata Sifat",   contoh: "She is the smartest student in class." },
+  { id: 36, english: "Brave",      indonesian: "Berani",        emoji: "🦁", kategori: "Kata Sifat",   contoh: "The firefighter is very brave." },
+  { id: 37, english: "Honest",     indonesian: "Jujur",         emoji: "🤝", kategori: "Kata Sifat",   contoh: "Always be honest with your friends." },
+  { id: 38, english: "Lazy",       indonesian: "Malas",         emoji: "😴", kategori: "Kata Sifat",   contoh: "Don't be lazy — study hard!" },
+  { id: 39, english: "Careful",    indonesian: "Hati-hati / Teliti", emoji: "🎯", kategori: "Kata Sifat", contoh: "Be careful when crossing the street." },
+  { id: 40, english: "Generous",   indonesian: "Dermawan / Murah hati", emoji: "🎁", kategori: "Kata Sifat", contoh: "She is very generous with her time." },
+
+  // === PERASAAN & EMOSI ===
+  { id: 41, english: "Happy",      indonesian: "Bahagia / Senang", emoji: "😊", kategori: "Perasaan",  contoh: "I am very happy today!" },
+  { id: 42, english: "Sad",        indonesian: "Sedih",         emoji: "😢", kategori: "Perasaan",     contoh: "She felt sad after the bad news." },
+  { id: 43, english: "Angry",      indonesian: "Marah",         emoji: "😠", kategori: "Perasaan",     contoh: "He was angry when he lost his keys." },
+  { id: 44, english: "Scared",     indonesian: "Takut",         emoji: "😨", kategori: "Perasaan",     contoh: "The child was scared of the dark." },
+  { id: 45, english: "Excited",    indonesian: "Bersemangat / Antusias", emoji: "🤩", kategori: "Perasaan", contoh: "She was excited about her birthday." },
+  { id: 46, english: "Bored",      indonesian: "Bosan",         emoji: "😑", kategori: "Perasaan",     contoh: "He was bored during the long meeting." },
+  { id: 47, english: "Proud",      indonesian: "Bangga",        emoji: "🥹", kategori: "Perasaan",     contoh: "Her parents were proud of her results." },
+  { id: 48, english: "Nervous",    indonesian: "Gugup",         emoji: "😰", kategori: "Perasaan",     contoh: "I was nervous before the exam." },
+
+  // === RUMAH & BENDA ===
+  { id: 49, english: "Chair",      indonesian: "Kursi",         emoji: "🪑", kategori: "Rumah & Benda", contoh: "Please sit on the chair." },
+  { id: 50, english: "Table",      indonesian: "Meja",          emoji: "🪵", kategori: "Rumah & Benda", contoh: "Put the book on the table." },
+  { id: 51, english: "Window",     indonesian: "Jendela",       emoji: "🪟", kategori: "Rumah & Benda", contoh: "Please open the window." },
+  { id: 52, english: "Lamp",       indonesian: "Lampu",         emoji: "💡", kategori: "Rumah & Benda", contoh: "Turn off the lamp before sleeping." },
+  { id: 53, english: "Pillow",     indonesian: "Bantal",        emoji: "🛏️", kategori: "Rumah & Benda", contoh: "I sleep with two pillows." },
+  { id: 54, english: "Mirror",     indonesian: "Cermin",        emoji: "🪞", kategori: "Rumah & Benda", contoh: "She looks in the mirror every morning." },
+  { id: 55, english: "Refrigerator", indonesian: "Kulkas",      emoji: "🧊", kategori: "Rumah & Benda", contoh: "Put the milk in the refrigerator." },
+  { id: 56, english: "Umbrella",   indonesian: "Payung",        emoji: "☂️", kategori: "Rumah & Benda", contoh: "Bring your umbrella — it might rain." },
+
+  // === ALAM & CUACA ===
+  { id: 57, english: "Rain",       indonesian: "Hujan",         emoji: "🌧️", kategori: "Alam & Cuaca", contoh: "It rains heavily in December." },
+  { id: 58, english: "Sun",        indonesian: "Matahari",      emoji: "☀️", kategori: "Alam & Cuaca", contoh: "The sun rises in the east." },
+  { id: 59, english: "Wind",       indonesian: "Angin",         emoji: "💨", kategori: "Alam & Cuaca", contoh: "The wind is very strong today." },
+  { id: 60, english: "Cloud",      indonesian: "Awan",          emoji: "☁️", kategori: "Alam & Cuaca", contoh: "Dark clouds mean rain is coming." },
+  { id: 61, english: "River",      indonesian: "Sungai",        emoji: "🏞️", kategori: "Alam & Cuaca", contoh: "Fish live in the river." },
+  { id: 62, english: "Forest",     indonesian: "Hutan",         emoji: "🌲", kategori: "Alam & Cuaca", contoh: "Many animals live in the forest." },
+  { id: 63, english: "Earthquake", indonesian: "Gempa Bumi",    emoji: "🌍", kategori: "Alam & Cuaca", contoh: "The earthquake destroyed many buildings." },
+  { id: 64, english: "Rainbow",    indonesian: "Pelangi",       emoji: "🌈", kategori: "Alam & Cuaca", contoh: "A rainbow appears after the rain." },
+];
+
+// Daftar semua kategori unik
+export const kategoriList = [...new Set(kosakata.map((k) => k.kategori))];
