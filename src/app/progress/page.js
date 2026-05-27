@@ -1,8 +1,9 @@
 // Halaman Progress — tracking kemajuan belajar pengguna
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { useUsername } from "@/hooks/useUsername";
 
 // Data aktivitas belajar — simulasi progress pengguna
 const aktivitasBelajar = [
@@ -40,8 +41,20 @@ function formatTanggal(str) {
 }
 
 export default function ProgressPage() {
-  // State untuk tab aktif
   const [tabAktif, setTabAktif] = useState("ringkasan");
+  const [editNama, setEditNama] = useState(false);
+  const [inputNama, setInputNama] = useState("");
+
+  const { username, saveUsername } = useUsername();
+
+  function handleSaveNama(e) {
+    e.preventDefault();
+    if (inputNama.trim()) {
+      saveUsername(inputNama.trim());
+      setEditNama(false);
+      setInputNama("");
+    }
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100">
@@ -65,8 +78,46 @@ export default function ProgressPage() {
             <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center text-4xl">
               👤
             </div>
-            <div>
-              <h2 className="text-xl font-bold">Halo, Pelajar! 👋</h2>
+            <div className="flex-1">
+              {editNama ? (
+                <form onSubmit={handleSaveNama} className="flex gap-2 items-center">
+                  <input
+                    autoFocus
+                    type="text"
+                    placeholder="Nama baru kamu..."
+                    value={inputNama}
+                    onChange={(e) => setInputNama(e.target.value)}
+                    maxLength={30}
+                    className="flex-1 px-3 py-1.5 rounded-lg text-gray-800 text-sm font-semibold focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-white text-pink-600 text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-pink-50 transition"
+                  >
+                    Simpan
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setEditNama(false)}
+                    className="text-pink-200 text-xs hover:text-white transition"
+                  >
+                    Batal
+                  </button>
+                </form>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <h2 className="text-xl font-bold">
+                    Halo, {username || "Pelajar"}! 👋
+                  </h2>
+                  <button
+                    onClick={() => { setEditNama(true); setInputNama(username); }}
+                    title="Ganti nama"
+                    className="text-pink-200 hover:text-white text-sm transition"
+                  >
+                    ✏️
+                  </button>
+                </div>
+              )}
               <p className="text-pink-100 text-sm">Kamu sudah belajar 5 hari berturut-turut. Luar biasa!</p>
               <div className="flex items-center gap-1 mt-1">
                 <span className="text-yellow-300 text-lg">🔥</span>

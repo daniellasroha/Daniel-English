@@ -1,5 +1,9 @@
 // Halaman utama — menu navigasi ke semua fitur belajar
+"use client";
+
 import Link from "next/link";
+import { useUsername } from "@/hooks/useUsername";
+import UsernameModal from "@/components/UsernameModal";
 
 // Data kartu menu — setiap fitur belajar
 const menuItems = [
@@ -51,8 +55,16 @@ const menuItems = [
 ];
 
 export default function Home() {
+  const { username, saveUsername, loaded } = useUsername();
+
+  // Tampilkan modal jika nama belum diisi (setelah localStorage terbaca)
+  const showModal = loaded && !username;
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
+      {/* Modal input nama (muncul saat pertama kali) */}
+      {showModal && <UsernameModal onSave={saveUsername} />}
+
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -72,7 +84,7 @@ export default function Home() {
       {/* Hero section */}
       <section className="max-w-4xl mx-auto px-4 py-10 text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-3">
-          Halo, Selamat Datang! 👋
+          {username ? `Halo, ${username}! 👋` : "Halo, Selamat Datang! 👋"}
         </h2>
         <p className="text-lg text-gray-500 max-w-xl mx-auto">
           Pilih kategori di bawah untuk mulai belajar. Konsisten setiap hari
@@ -112,9 +124,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer motivasi */}
-      <footer className="text-center py-6 text-gray-400 text-sm">
-        💪 Belajar 15 menit sehari lebih baik dari 2 jam sebulan sekali!
+      {/* Footer */}
+      <footer className="text-center py-6 text-gray-400 text-sm space-y-1">
+        <p>💪 Belajar 15 menit sehari lebih baik dari 2 jam sebulan sekali!</p>
+        <p className="text-gray-300 text-xs">
+          Made with ❤️ by{" "}
+          <span className="font-semibold text-indigo-400">Daniel Lasroha</span>
+        </p>
       </footer>
     </main>
   );
