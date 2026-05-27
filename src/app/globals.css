@@ -2,19 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-.dark {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background 0.3s, color 0.3s;
+}
+
+/* =====================
+   DARK MODE OVERRIDES
+   ===================== */
+
+/* Background halaman */
+html.dark body {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Semua background putih → abu gelap */
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+/* Gradient halaman utama */
+html.dark .bg-gradient-to-br {
+  --tw-gradient-from: #0f172a;
+  --tw-gradient-to: #1e3a5f;
+}
+
+/* Card, header, modal */
+html.dark header {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* Text warna gelap → terang */
+html.dark .text-gray-800 { color: #e2e8f0 !important; }
+html.dark .text-gray-700 { color: #cbd5e1 !important; }
+html.dark .text-gray-600 { color: #94a3b8 !important; }
+html.dark .text-gray-500 { color: #64748b !important; }
+html.dark .text-gray-400 { color: #475569 !important; }
+html.dark .text-gray-300 { color: #334155 !important; }
+
+/* Border */
+html.dark .border-blue-100,
+html.dark .border-blue-200,
+html.dark .border-indigo-200,
+html.dark .border-green-200,
+html.dark .border-pink-100,
+html.dark .border-purple-100,
+html.dark .border-orange-100,
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-teal-200,
+html.dark .border-violet-200,
+html.dark .border-yellow-200 {
+  border-color: #334155 !important;
+}
+
+/* Background terang → gelap */
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-indigo-50,
+html.dark .bg-blue-50,
+html.dark .bg-green-50,
+html.dark .bg-purple-50,
+html.dark .bg-pink-50,
+html.dark .bg-orange-50,
+html.dark .bg-teal-50,
+html.dark .bg-violet-50,
+html.dark .bg-yellow-50 {
+  background-color: #0f172a !important;
+}
+
+/* Input fields */
+html.dark input[type="text"] {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+html.dark input::placeholder {
+  color: #475569 !important;
+}
+
+/* Shadow lembut di dark mode */
+html.dark .shadow-sm,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl {
+  --tw-shadow-color: rgba(0,0,0,0.5);
+}
+
+/* Tombol filter kategori */
+html.dark .bg-white.border {
+  background-color: #1e293b !important;
+}
+
+/* Teks pada badge/pill */
+html.dark .bg-indigo-100 { background-color: #1e3a5f !important; }
+html.dark .bg-pink-50    { background-color: #2d1b2e !important; }
+html.dark .bg-green-100  { background-color: #052e16 !important; }
+html.dark .bg-red-50     { background-color: #2d0c0c !important; }
+
+/* Quiz answer buttons */
+html.dark .border-gray-200.bg-white {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Progress bars background */
+html.dark .bg-gray-100.rounded-full {
+  background-color: #334155 !important;
+}
+
+/* Modal overlay */
+html.dark .bg-white.rounded-3xl {
+  background-color: #1e293b !important;
+}
+
+/* Scrollbar di dark mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
 }

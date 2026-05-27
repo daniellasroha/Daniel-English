@@ -5,11 +5,15 @@ import { useState, useEffect } from "react";
 export default function DarkModeToggle() {
   const [dark, setDark] = useState(false);
 
+  // Baca preferensi saat pertama load
   useEffect(() => {
     const saved = localStorage.getItem("daniel_english_dark");
-    if (saved === "true") {
+    const isDark = saved === "true";
+    setDark(isDark);
+    if (isDark) {
       document.documentElement.classList.add("dark");
-      setDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -28,8 +32,9 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggle}
-      title={dark ? "Mode Terang" : "Mode Gelap"}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition text-xl"
+      title={dark ? "Ganti ke Mode Terang" : "Ganti ke Mode Gelap"}
+      className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 bg-gray-50 hover:bg-gray-100 transition text-xl"
+      style={{ flexShrink: 0 }}
     >
       {dark ? "☀️" : "🌙"}
     </button>
