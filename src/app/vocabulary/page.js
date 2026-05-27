@@ -83,7 +83,7 @@ export default function VocabularyPage() {
               {kartuTerbuka[kata.id] ? (
                 <div className="mt-2">
                   <p className="text-indigo-600 font-semibold">{kata.indonesian}</p>
-                  <p className="text-gray-400 text-xs mt-1 italic">"{kata.contoh}"</p>
+                  <p className="text-gray-400 text-xs mt-1 italic">{kata.contoh}</p>
                 </div>
               ) : (
                 <p className="text-gray-300 text-xs mt-1">Klik untuk lihat arti →</p>
