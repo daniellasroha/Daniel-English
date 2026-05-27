@@ -5,23 +5,43 @@ import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 import { useLevel } from "@/hooks/useLevel";
 
-// ── PEMULA: 15 soal — kata-kata paling dasar ───────────────────────────────
+// ── PEMULA: 25 soal — kata-kata paling dasar + warna + keluarga ───────────
 const soalVocabularyPemula = [
+  // Buah & Sayur
   { pertanyaan: "Apa arti kata 'Apple'?", pilihan: ["Pisang", "Mangga", "Apel", "Jeruk"], jawaban: 2, tag: "Buah & Sayur" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Pisang'?", pilihan: ["Apple", "Orange", "Banana", "Mango"], jawaban: 2, tag: "Buah & Sayur" },
+  // Hewan
   { pertanyaan: "Apa bahasa Inggrisnya 'Kucing'?", pilihan: ["Dog", "Bird", "Fish", "Cat"], jawaban: 3, tag: "Hewan" },
+  { pertanyaan: "Apa arti kata 'Dog'?", pilihan: ["Kucing", "Burung", "Ikan", "Anjing"], jawaban: 3, tag: "Hewan" },
+  // Perasaan
   { pertanyaan: "Kata 'Happy' artinya...", pilihan: ["Sedih", "Marah", "Takut", "Bahagia"], jawaban: 3, tag: "Perasaan" },
-  { pertanyaan: "Apa arti kata 'School'?", pilihan: ["Rumah Sakit", "Pasar", "Sekolah", "Pantai"], jawaban: 2, tag: "Tempat" },
-  { pertanyaan: "Apa bahasa Inggrisnya 'Makan'?", pilihan: ["Sleep", "Drink", "Run", "Eat"], jawaban: 3, tag: "Kata Kerja" },
   { pertanyaan: "Kata 'Sad' artinya...", pilihan: ["Senang", "Marah", "Sedih", "Berani"], jawaban: 2, tag: "Perasaan" },
-  { pertanyaan: "Apa arti kata 'Sun'?", pilihan: ["Bulan", "Bintang", "Matahari", "Awan"], jawaban: 2, tag: "Alam & Cuaca" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Marah'?", pilihan: ["Happy", "Scared", "Angry", "Sad"], jawaban: 2, tag: "Perasaan" },
+  // Tempat
+  { pertanyaan: "Apa arti kata 'School'?", pilihan: ["Rumah Sakit", "Pasar", "Sekolah", "Pantai"], jawaban: 2, tag: "Tempat" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Rumah Sakit'?", pilihan: ["School", "Market", "Beach", "Hospital"], jawaban: 3, tag: "Tempat" },
+  // Kata Kerja
+  { pertanyaan: "Apa bahasa Inggrisnya 'Makan'?", pilihan: ["Sleep", "Drink", "Run", "Eat"], jawaban: 3, tag: "Kata Kerja" },
   { pertanyaan: "Apa bahasa Inggrisnya 'Berlari'?", pilihan: ["Jump", "Swim", "Run", "Read"], jawaban: 2, tag: "Kata Kerja" },
-  { pertanyaan: "Kata 'Strong' artinya...", pilihan: ["Pintar", "Jujur", "Berani", "Kuat"], jawaban: 3, tag: "Kata Sifat" },
-  { pertanyaan: "Apa arti kata 'Fish'?", pilihan: ["Burung", "Kelinci", "Ikan", "Kucing"], jawaban: 2, tag: "Hewan" },
+  { pertanyaan: "Kata 'Read' artinya...", pilihan: ["Menulis", "Menari", "Bernyanyi", "Membaca"], jawaban: 3, tag: "Kata Kerja" },
+  // Alam & Cuaca
+  { pertanyaan: "Apa arti kata 'Sun'?", pilihan: ["Bulan", "Bintang", "Matahari", "Awan"], jawaban: 2, tag: "Alam & Cuaca" },
   { pertanyaan: "Apa bahasa Inggrisnya 'Hujan'?", pilihan: ["Cloud", "Sun", "Wind", "Rain"], jawaban: 3, tag: "Alam & Cuaca" },
-  { pertanyaan: "Kata 'Angry' artinya...", pilihan: ["Senang", "Sedih", "Marah", "Takut"], jawaban: 2, tag: "Perasaan" },
-  { pertanyaan: "Apa arti kata 'Table'?", pilihan: ["Kursi", "Lampu", "Tempat Tidur", "Meja"], jawaban: 3, tag: "Rumah & Benda" },
-  { pertanyaan: "Apa bahasa Inggrisnya 'Tidur'?", pilihan: ["Eat", "Drink", "Sleep", "Run"], jawaban: 2, tag: "Kata Kerja" },
+  // Kata Sifat
+  { pertanyaan: "Kata 'Strong' artinya...", pilihan: ["Pintar", "Jujur", "Berani", "Kuat"], jawaban: 3, tag: "Kata Sifat" },
   { pertanyaan: "Kata 'Smart' artinya...", pilihan: ["Kuat", "Jujur", "Pintar", "Berani"], jawaban: 2, tag: "Kata Sifat" },
+  // Rumah & Benda
+  { pertanyaan: "Apa arti kata 'Table'?", pilihan: ["Kursi", "Lampu", "Tempat Tidur", "Meja"], jawaban: 3, tag: "Rumah & Benda" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Pensil'?", pilihan: ["Pen", "Pencil", "Book", "Lamp"], jawaban: 1, tag: "Rumah & Benda" },
+  // Warna (kategori baru!)
+  { pertanyaan: "Apa arti kata 'Red'?", pilihan: ["Biru", "Hijau", "Kuning", "Merah"], jawaban: 3, tag: "Warna" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Biru'?", pilihan: ["Green", "Red", "Blue", "Yellow"], jawaban: 2, tag: "Warna" },
+  { pertanyaan: "Langit itu berwarna... (Sky is...)?", pilihan: ["Red", "Green", "Black", "Blue"], jawaban: 3, tag: "Warna" },
+  { pertanyaan: "Pisang itu berwarna... (Banana is...)?", pilihan: ["Red", "Yellow", "Blue", "Green"], jawaban: 1, tag: "Warna" },
+  // Keluarga (kategori baru!)
+  { pertanyaan: "Apa arti kata 'Mother'?", pilihan: ["Ayah", "Kakak", "Adik", "Ibu"], jawaban: 3, tag: "Keluarga" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Ayah'?", pilihan: ["Mother", "Brother", "Father", "Sister"], jawaban: 2, tag: "Keluarga" },
+  { pertanyaan: "Kata 'Friend' artinya...", pilihan: ["Guru", "Musuh", "Teman", "Dokter"], jawaban: 2, tag: "Keluarga" },
 ];
 
 // ── MENENGAH: 20 soal — kata-kata lebih sulit ──────────────────────────────

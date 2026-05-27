@@ -147,5 +147,30 @@ export const kosakata = [
   { id: 112, english: "Flood",      indonesian: "Banjir",         emoji: "🌊", kategori: "Alam & Cuaca", level: "menengah", contoh: "The flood destroyed many homes." },
 ];
 
+  // === WARNA ===
+  // Semua Pemula: warna adalah materi paling dasar yang harus dikuasai
+  { id: 113, english: "Red",          indonesian: "Merah",          emoji: "🔴", kategori: "Warna",        level: "pemula",   contoh: "She is wearing a red dress." },
+  { id: 114, english: "Blue",         indonesian: "Biru",           emoji: "🔵", kategori: "Warna",        level: "pemula",   contoh: "The sky is blue." },
+  { id: 115, english: "Green",        indonesian: "Hijau",          emoji: "🟢", kategori: "Warna",        level: "pemula",   contoh: "The leaves are green." },
+  { id: 116, english: "Yellow",       indonesian: "Kuning",         emoji: "🟡", kategori: "Warna",        level: "pemula",   contoh: "Bananas are yellow." },
+  { id: 117, english: "White",        indonesian: "Putih",          emoji: "⬜", kategori: "Warna",        level: "pemula",   contoh: "Snow is white." },
+  { id: 118, english: "Black",        indonesian: "Hitam",          emoji: "⬛", kategori: "Warna",        level: "pemula",   contoh: "The night sky is black." },
+  { id: 119, english: "Pink",         indonesian: "Merah Muda",     emoji: "🩷", kategori: "Warna",        level: "pemula",   contoh: "She loves pink flowers." },
+  { id: 120, english: "Purple",       indonesian: "Ungu",           emoji: "🟣", kategori: "Warna",        level: "pemula",   contoh: "Grapes can be purple." },
+  { id: 121, english: "Orange",       indonesian: "Oranye",         emoji: "🟠", kategori: "Warna",        level: "pemula",   contoh: "Carrots are orange." },
+  { id: 122, english: "Brown",        indonesian: "Coklat",         emoji: "🟤", kategori: "Warna",        level: "pemula",   contoh: "The bear is brown." },
+
+  // === KELUARGA ===
+  // Semua Pemula: anggota keluarga adalah kosakata paling dasar
+  { id: 123, english: "Mother",       indonesian: "Ibu",            emoji: "👩", kategori: "Keluarga",     level: "pemula",   contoh: "My mother cooks every morning." },
+  { id: 124, english: "Father",       indonesian: "Ayah",           emoji: "👨", kategori: "Keluarga",     level: "pemula",   contoh: "My father works in an office." },
+  { id: 125, english: "Brother",      indonesian: "Kakak / Adik Laki-laki", emoji: "👦", kategori: "Keluarga", level: "pemula", contoh: "My brother loves to play football." },
+  { id: 126, english: "Sister",       indonesian: "Kakak / Adik Perempuan", emoji: "👧", kategori: "Keluarga", level: "pemula", contoh: "My sister is very smart." },
+  { id: 127, english: "Friend",       indonesian: "Teman",          emoji: "🤝", kategori: "Keluarga",     level: "pemula",   contoh: "She is my best friend." },
+  { id: 128, english: "Teacher",      indonesian: "Guru",           emoji: "👩‍🏫", kategori: "Keluarga",   level: "pemula",   contoh: "My teacher is very kind." },
+  { id: 129, english: "Baby",         indonesian: "Bayi",           emoji: "👶", kategori: "Keluarga",     level: "pemula",   contoh: "The baby is sleeping." },
+  { id: 130, english: "Family",       indonesian: "Keluarga",       emoji: "👨‍👩‍👧‍👦", kategori: "Keluarga", level: "pemula", contoh: "I love my family very much." },
+];
+
 // Daftar semua kategori unik
 export const kategoriList = [...new Set(kosakata.map((k) => k.kategori))];

@@ -18,6 +18,9 @@ const kategoriMeta = {
   "Perasaan":      { emoji: "❤️", warna: "from-red-400 to-red-600",          bg: "bg-red-50",     border: "border-red-200",     teks: "text-red-700" },
   "Rumah & Benda": { emoji: "🏠", warna: "from-teal-400 to-cyan-600",       bg: "bg-teal-50",    border: "border-teal-200",    teks: "text-teal-700" },
   "Alam & Cuaca":  { emoji: "🌿", warna: "from-emerald-400 to-green-600",   bg: "bg-emerald-50", border: "border-emerald-200", teks: "text-emerald-700" },
+  // Kategori baru khusus Pemula
+  "Warna":         { emoji: "🎨", warna: "from-yellow-400 to-orange-500",   bg: "bg-yellow-50",  border: "border-yellow-200",  teks: "text-yellow-700" },
+  "Keluarga":      { emoji: "👨‍👩‍👧‍👦", warna: "from-rose-400 to-pink-600", bg: "bg-rose-50",    border: "border-rose-200",    teks: "text-rose-700" },
 };
 
 export default function VocabularyPage() {
@@ -37,8 +40,9 @@ export default function VocabularyPage() {
 
   // Daftar kategori yang ada (urutan tetap)
   const urutanKategori = [
-    "Buah & Sayur", "Hewan", "Tempat", "Kata Kerja",
-    "Kata Sifat", "Perasaan", "Rumah & Benda", "Alam & Cuaca",
+    "Warna", "Keluarga", "Buah & Sayur", "Hewan",
+    "Tempat", "Kata Kerja", "Kata Sifat", "Perasaan",
+    "Rumah & Benda", "Alam & Cuaca",
   ];
 
   // Hitung jumlah kata per kategori (sesuai level)

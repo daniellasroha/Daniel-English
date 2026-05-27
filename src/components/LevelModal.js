@@ -38,9 +38,9 @@ export default function LevelModal({ onSave, bolehTutup = false, onTutup }) {
               <div className={`mt-3 pt-3 border-t ${cfg.border} flex flex-wrap gap-1`}>
                 {key === "pemula" && (
                   <>
-                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">📚 40 kata dasar</span>
-                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">✏️ 2 topik grammar</span>
-                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">🧠 2 jenis quiz</span>
+                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">📚 58 kata dasar</span>
+                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">✏️ 4 topik grammar</span>
+                    <span className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">🧠 3 jenis quiz</span>
                   </>
                 )}
                 {key === "menengah" && (

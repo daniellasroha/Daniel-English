@@ -15,7 +15,7 @@ export const LEVEL_CONFIG = {
     teks: "text-green-700",
     deskripsi: "Kosakata paling dasar, grammar inti, dan quiz pilihan ganda",
     vocabLevel: "pemula",          // hanya kata dengan level: "pemula" (40 kata)
-    grammarTopics: [1, 3],         // Simple Present Tense + To Be (paling fundamental)
+    grammarTopics: [1, 3, 9, 10],  // Simple Present + To Be + Salam & Perkenalan + Kata Ganti Orang
     quizRoutes: ["/quiz/vocabulary", "/quiz/grammar", "/quiz/translation"],
   },
   menengah: {

@@ -147,6 +147,45 @@ const materiGrammar = [
     ],
     tips: "Untuk kata sifat 1-2 suku kata: tambahkan -er/-est. Untuk 3+ suku kata: gunakan more/most. Jangan gabungkan keduanya: more taller ✗, taller ✓.",
   },
+
+  // ── TOPIK KHUSUS PEMULA ──────────────────────────────────────────────────
+  {
+    id: 9, judul: "Salam & Perkenalan", emoji: "👋",
+    warna: "from-yellow-400 to-orange-500", bgLight: "bg-yellow-50", border: "border-yellow-200",
+    penjelasan: "Ungkapan salam dan perkenalan diri adalah hal pertama yang dipelajari dalam bahasa Inggris.",
+    rumus: [
+      { subjek: "Salam harian", kata_kerja: "Good morning / afternoon / evening / night", contoh: "Good morning, how are you?" },
+      { subjek: "Perkenalan", kata_kerja: "My name is... / I am...", contoh: "My name is Daniel." },
+      { subjek: "Menanyakan kabar", kata_kerja: "How are you? → I am fine, thank you.", contoh: "How are you? — I am fine, thank you!" },
+      { subjek: "Perpisahan", kata_kerja: "Goodbye / See you / Bye", contoh: "Goodbye! See you tomorrow." },
+    ],
+    contohKalimat: [
+      { indonesia: "Selamat pagi! Apa kabar?", inggris: "Good morning! How are you?" },
+      { indonesia: "Nama saya Daniel.", inggris: "My name is Daniel." },
+      { indonesia: "Saya baik-baik saja, terima kasih.", inggris: "I am fine, thank you." },
+      { indonesia: "Senang bertemu denganmu.", inggris: "Nice to meet you." },
+      { indonesia: "Sampai jumpa besok!", inggris: "See you tomorrow!" },
+    ],
+    tips: "Gunakan 'Good morning' sampai jam 12 siang, 'Good afternoon' sampai jam 6 sore, dan 'Good evening' setelah jam 6 sore.",
+  },
+  {
+    id: 10, judul: "Kata Ganti Orang", emoji: "👤",
+    warna: "from-lime-400 to-green-500", bgLight: "bg-lime-50", border: "border-lime-200",
+    penjelasan: "Kata ganti orang (pronouns) digunakan untuk menggantikan nama orang. Ini adalah pondasi dari semua kalimat bahasa Inggris.",
+    rumus: [
+      { subjek: "Tunggal", kata_kerja: "I (saya) · You (kamu) · He (dia laki-laki) · She (dia perempuan) · It (benda/hewan)", contoh: "I am happy. She is a teacher." },
+      { subjek: "Jamak", kata_kerja: "We (kami/kita) · You (kalian) · They (mereka)", contoh: "We are students. They are friends." },
+      { subjek: "Kepemilikan", kata_kerja: "My · Your · His · Her · Its · Our · Their", contoh: "My name is... / Her book is red." },
+    ],
+    contohKalimat: [
+      { indonesia: "Saya seorang pelajar.", inggris: "I am a student." },
+      { indonesia: "Dia (perempuan) seorang guru.", inggris: "She is a teacher." },
+      { indonesia: "Mereka teman saya.", inggris: "They are my friends." },
+      { indonesia: "Kami belajar bahasa Inggris.", inggris: "We study English." },
+      { indonesia: "Namanya Daniel. (laki-laki)", inggris: "His name is Daniel." },
+    ],
+    tips: "Ingat: 'He' untuk laki-laki, 'She' untuk perempuan, 'It' untuk benda atau hewan. Jangan sampai tertukar!",
+  },
 ];
 
 export default function GrammarPage() {
