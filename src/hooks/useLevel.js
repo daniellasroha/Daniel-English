@@ -16,7 +16,7 @@ export const LEVEL_CONFIG = {
     deskripsi: "Kosakata paling dasar, grammar inti, dan quiz pilihan ganda",
     vocabLevel: "pemula",          // hanya kata dengan level: "pemula" (40 kata)
     grammarTopics: [1, 3],         // Simple Present Tense + To Be (paling fundamental)
-    quizRoutes: ["/quiz/vocabulary", "/quiz/grammar"],
+    quizRoutes: ["/quiz/vocabulary", "/quiz/grammar", "/quiz/translation"],
   },
   menengah: {
     label: "Menengah",
@@ -28,7 +28,7 @@ export const LEVEL_CONFIG = {
     deskripsi: "Semua kosakata, semua topik grammar, dan semua jenis quiz",
     vocabLevel: "semua",           // semua 112 kata
     grammarTopics: [1, 2, 3, 4, 5, 6, 7, 8], // semua 8 topik
-    quizRoutes: ["/quiz/vocabulary", "/quiz/grammar", "/quiz/mixed", "/quiz/spelling"],
+    quizRoutes: ["/quiz/vocabulary", "/quiz/grammar", "/quiz/translation", "/quiz/mixed", "/quiz/spelling"],
   },
 };
 

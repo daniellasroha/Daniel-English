@@ -9,21 +9,35 @@ const kategoriKuis = [
     href: "/quiz/vocabulary",
     emoji: "📚",
     judul: "Vocabulary Quiz",
-    deskripsi: "Uji hafalan kosakata bahasa Inggris kamu",
+    deskripsi: "Uji hafalan kosakata — soal disesuaikan dengan levelmu",
     warna: "from-blue-400 to-blue-600",
     bgLight: "bg-blue-50",
     border: "border-blue-200",
-    soal: "20 soal",
+    soalPemula: "15 soal",
+    soalMenengah: "20 soal",
   },
   {
     href: "/quiz/grammar",
     emoji: "✏️",
     judul: "Grammar Quiz",
-    deskripsi: "Uji pemahaman tata bahasa Inggris kamu",
+    deskripsi: "Uji tata bahasa — materi sesuai topik di levelmu",
     warna: "from-green-400 to-green-600",
     bgLight: "bg-green-50",
     border: "border-green-200",
-    soal: "16 soal",
+    soalPemula: "10 soal",
+    soalMenengah: "16 soal",
+  },
+  {
+    href: "/quiz/translation",
+    emoji: "🌐",
+    judul: "Translation Quiz",
+    deskripsi: "Terjemahkan kalimat Indonesia ke bahasa Inggris!",
+    warna: "from-sky-400 to-blue-600",
+    bgLight: "bg-sky-50",
+    border: "border-sky-200",
+    soalPemula: "12 soal",
+    soalMenengah: "15 soal",
+    badge: "🆕 Baru",
   },
   {
     href: "/quiz/mixed",
@@ -33,7 +47,7 @@ const kategoriKuis = [
     warna: "from-purple-400 to-purple-600",
     bgLight: "bg-purple-50",
     border: "border-purple-200",
-    soal: "20 soal",
+    soalMenengah: "20 soal",
     badge: "⚡ Tantangan",
   },
   {
@@ -44,8 +58,7 @@ const kategoriKuis = [
     warna: "from-teal-400 to-cyan-600",
     bgLight: "bg-teal-50",
     border: "border-teal-200",
-    soal: "15 soal acak",
-    badge: "🆕 Baru",
+    soalMenengah: "15 soal acak",
   },
 ];
 
@@ -57,6 +70,12 @@ export default function QuizPage() {
   const kuis = config
     ? kategoriKuis.filter((k) => config.quizRoutes.includes(k.href))
     : kategoriKuis;
+
+  // Tampilkan jumlah soal sesuai level
+  const getSoal = (kat) => {
+    if (config?.vocabLevel === "pemula") return kat.soalPemula || kat.soalMenengah;
+    return kat.soalMenengah || kat.soalPemula;
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
@@ -76,7 +95,11 @@ export default function QuizPage() {
       <div className="max-w-2xl mx-auto px-4 py-8">
         <div className="text-center mb-6">
           <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Pilih Kategori Kuis</h2>
-          <p className="text-gray-500 text-sm">Setiap kategori punya soal yang berbeda. Selamat mencoba! 💪</p>
+          <p className="text-gray-500 text-sm">
+            {config?.vocabLevel === "pemula"
+              ? "Soal sudah disesuaikan untuk level Pemula 🌱 Selamat mencoba!"
+              : "Soal disesuaikan untuk level Menengah 🚀 Selamat mencoba!"}
+          </p>
         </div>
 
         {/* Toggle Timer */}
@@ -99,7 +122,7 @@ export default function QuizPage() {
 
         <div className="flex flex-col gap-4">
           {kuis.map((kat) => {
-            // Spelling quiz tidak pakai timer (ketik teks, tidak cocok)
+            // Spelling quiz tidak pakai timer
             const hrefFinal = kat.href === "/quiz/spelling"
               ? kat.href
               : timer ? `${kat.href}?timer=1` : kat.href;
@@ -124,7 +147,7 @@ export default function QuizPage() {
                       <h3 className="text-lg font-bold text-gray-800">{kat.judul}</h3>
                       <p className="text-gray-500 text-sm">{kat.deskripsi}</p>
                       <span className="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full mt-1 inline-block">
-                        {kat.soal}
+                        {getSoal(kat)}
                       </span>
                     </div>
                     <span className="text-gray-400 text-2xl">›</span>

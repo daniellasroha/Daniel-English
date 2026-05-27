@@ -1,10 +1,31 @@
-// Quiz Vocabulary — 20 soal kosakata dari berbagai kategori
+// Quiz Vocabulary — soal dibedakan per level (Pemula vs Menengah)
 "use client";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
+import { useLevel } from "@/hooks/useLevel";
 
-const soalVocabulary = [
+// ── PEMULA: 15 soal — kata-kata paling dasar ───────────────────────────────
+const soalVocabularyPemula = [
+  { pertanyaan: "Apa arti kata 'Apple'?", pilihan: ["Pisang", "Mangga", "Apel", "Jeruk"], jawaban: 2, tag: "Buah & Sayur" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Kucing'?", pilihan: ["Dog", "Bird", "Fish", "Cat"], jawaban: 3, tag: "Hewan" },
+  { pertanyaan: "Kata 'Happy' artinya...", pilihan: ["Sedih", "Marah", "Takut", "Bahagia"], jawaban: 3, tag: "Perasaan" },
+  { pertanyaan: "Apa arti kata 'School'?", pilihan: ["Rumah Sakit", "Pasar", "Sekolah", "Pantai"], jawaban: 2, tag: "Tempat" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Makan'?", pilihan: ["Sleep", "Drink", "Run", "Eat"], jawaban: 3, tag: "Kata Kerja" },
+  { pertanyaan: "Kata 'Sad' artinya...", pilihan: ["Senang", "Marah", "Sedih", "Berani"], jawaban: 2, tag: "Perasaan" },
+  { pertanyaan: "Apa arti kata 'Sun'?", pilihan: ["Bulan", "Bintang", "Matahari", "Awan"], jawaban: 2, tag: "Alam & Cuaca" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Berlari'?", pilihan: ["Jump", "Swim", "Run", "Read"], jawaban: 2, tag: "Kata Kerja" },
+  { pertanyaan: "Kata 'Strong' artinya...", pilihan: ["Pintar", "Jujur", "Berani", "Kuat"], jawaban: 3, tag: "Kata Sifat" },
+  { pertanyaan: "Apa arti kata 'Fish'?", pilihan: ["Burung", "Kelinci", "Ikan", "Kucing"], jawaban: 2, tag: "Hewan" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Hujan'?", pilihan: ["Cloud", "Sun", "Wind", "Rain"], jawaban: 3, tag: "Alam & Cuaca" },
+  { pertanyaan: "Kata 'Angry' artinya...", pilihan: ["Senang", "Sedih", "Marah", "Takut"], jawaban: 2, tag: "Perasaan" },
+  { pertanyaan: "Apa arti kata 'Table'?", pilihan: ["Kursi", "Lampu", "Tempat Tidur", "Meja"], jawaban: 3, tag: "Rumah & Benda" },
+  { pertanyaan: "Apa bahasa Inggrisnya 'Tidur'?", pilihan: ["Eat", "Drink", "Sleep", "Run"], jawaban: 2, tag: "Kata Kerja" },
+  { pertanyaan: "Kata 'Smart' artinya...", pilihan: ["Kuat", "Jujur", "Pintar", "Berani"], jawaban: 2, tag: "Kata Sifat" },
+];
+
+// ── MENENGAH: 20 soal — kata-kata lebih sulit ──────────────────────────────
+const soalVocabularyMenengah = [
   { pertanyaan: "Apa arti kata 'Elephant'?", pilihan: ["Kelinci", "Harimau", "Gajah", "Ular"], jawaban: 2, tag: "Hewan" },
   { pertanyaan: "Kata 'Generous' artinya...", pilihan: ["Pemalas", "Dermawan", "Penakut", "Sombong"], jawaban: 1, tag: "Kata Sifat" },
   { pertanyaan: "Apa bahasa Inggrisnya 'Perpustakaan'?", pilihan: ["Laboratory", "Library", "Lavatory", "Laundry"], jawaban: 1, tag: "Tempat" },
@@ -30,11 +51,22 @@ const soalVocabulary = [
 function VocabularyQuizContent() {
   const params = useSearchParams();
   const pakaiTimer = params.get("timer") === "1";
+  const { config } = useLevel();
+
+  // Pilih soal sesuai level — default ke Menengah jika belum pilih level
+  const soalList = config?.vocabLevel === "pemula"
+    ? soalVocabularyPemula
+    : soalVocabularyMenengah;
+
+  const judulLevel = config?.vocabLevel === "pemula"
+    ? "Vocabulary Quiz 🌱"
+    : "Vocabulary Quiz 🚀";
+
   return (
     <QuizEngine
-      judul="Vocabulary Quiz"
+      judul={judulLevel}
       emoji="📚"
-      soalList={soalVocabulary}
+      soalList={soalList}
       warnaBg="bg-gradient-to-br from-blue-50 to-indigo-100"
       warnaBtn="bg-blue-600"
       kategori="vocabulary"
