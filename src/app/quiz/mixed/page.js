@@ -1,5 +1,6 @@
 // Quiz Mixed — 20 soal campuran vocabulary + grammar
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
@@ -26,7 +27,7 @@ const soalMixed = [
   { pertanyaan: "Pilih kalimat past tense yang benar:", pilihan: ["I buyed a new phone.", "I buyed a new phone yesterday.", "I bought a new phone yesterday.", "I was buy a new phone."], jawaban: 2, tag: "Grammar", penjelasan: "Irregular: buy → bought (bukan buyed)." },
 ];
 
-export default function MixedQuizPage() {
+function MixedQuizContent() {
   const params = useSearchParams();
   const pakaiTimer = params.get("timer") === "1";
   return (
@@ -39,5 +40,12 @@ export default function MixedQuizPage() {
       kategori="mixed"
       pakaiTimer={pakaiTimer}
     />
+  );
+}
+
+export default function MixedQuizPage() {
+  return (
+    <Suspense fallback={null}>
+      <MixedQuizContent />
   );
 }

@@ -1,5 +1,6 @@
 // Quiz Grammar — 16 soal tata bahasa dari berbagai topik
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
@@ -86,7 +87,7 @@ const soalGrammar = [
   },
 ];
 
-export default function GrammarQuizPage() {
+function GrammarQuizContent() {
   const params = useSearchParams();
   const pakaiTimer = params.get("timer") === "1";
   return (
@@ -99,5 +100,12 @@ export default function GrammarQuizPage() {
       kategori="grammar"
       pakaiTimer={pakaiTimer}
     />
+  );
+}
+
+export default function GrammarQuizPage() {
+  return (
+    <Suspense fallback={null}>
+      <GrammarQuizContent />
   );
 }

@@ -1,5 +1,6 @@
 // Quiz Vocabulary — 20 soal kosakata dari berbagai kategori
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
@@ -26,7 +27,7 @@ const soalVocabulary = [
   { pertanyaan: "Apa arti kata 'Forest'?", pilihan: ["Ladang", "Padang Rumput", "Hutan", "Rawa"], jawaban: 2, tag: "Alam & Cuaca" },
 ];
 
-export default function VocabularyQuizPage() {
+function VocabularyQuizContent() {
   const params = useSearchParams();
   const pakaiTimer = params.get("timer") === "1";
   return (
@@ -39,5 +40,12 @@ export default function VocabularyQuizPage() {
       kategori="vocabulary"
       pakaiTimer={pakaiTimer}
     />
+  );
+}
+
+export default function VocabularyQuizPage() {
+  return (
+    <Suspense fallback={null}>
+      <VocabularyQuizContent />
   );
 }
