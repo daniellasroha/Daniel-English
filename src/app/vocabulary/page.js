@@ -20,7 +20,7 @@ const kategoriMeta = {
   "Alam & Cuaca":  { emoji: "🌿", warna: "from-emerald-400 to-green-600",   bg: "bg-emerald-50", border: "border-emerald-200", teks: "text-emerald-700" },
   // Kategori baru khusus Pemula
   "Warna":         { emoji: "🎨", warna: "from-yellow-400 to-orange-500",   bg: "bg-yellow-50",  border: "border-yellow-200",  teks: "text-yellow-700" },
-  "Keluarga":      { emoji: "👨‍👩‍👧‍👦", warna: "from-rose-400 to-pink-600", bg: "bg-rose-50",    border: "border-rose-200",    teks: "text-rose-700" },
+  "Keluarga":      { emoji: "👪", warna: "from-rose-400 to-pink-600", bg: "bg-rose-50",    border: "border-rose-200",    teks: "text-rose-700" },
 };
 
 export default function VocabularyPage() {
