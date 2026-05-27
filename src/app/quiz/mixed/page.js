@@ -47,5 +47,6 @@ export default function MixedQuizPage() {
   return (
     <Suspense fallback={null}>
       <MixedQuizContent />
+    </Suspense>
   );
 }

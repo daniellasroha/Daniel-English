@@ -47,5 +47,6 @@ export default function VocabularyQuizPage() {
   return (
     <Suspense fallback={null}>
       <VocabularyQuizContent />
+    </Suspense>
   );
 }

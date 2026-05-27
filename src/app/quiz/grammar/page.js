@@ -107,5 +107,6 @@ export default function GrammarQuizPage() {
   return (
     <Suspense fallback={null}>
       <GrammarQuizContent />
+    </Suspense>
   );
 }
