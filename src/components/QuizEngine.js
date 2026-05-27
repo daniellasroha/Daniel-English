@@ -1,10 +1,12 @@
 // Komponen QuizEngine — mesin kuis yang dipakai ulang untuk semua kategori
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useProgress } from "@/hooks/useProgress";
 
-export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn }) {
+export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, kategori }) {
+  const { recordQuiz } = useProgress();
   const [soalAktif, setSoalAktif] = useState(0);
   const [pilihanDipilih, setPilihanDipilih] = useState(null);
   const [sudahDijawab, setSudahDijawab] = useState(false);
@@ -27,6 +29,7 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn }
   function soalBerikutnya() {
     if (soalAktif + 1 >= totalSoal) {
       setSelesai(true);
+      recordQuiz(kategori || "umum", skor + (pilihanDipilih === soal.jawaban ? 1 : 0), totalSoal);
     } else {
       setSoalAktif((s) => s + 1);
       setPilihanDipilih(null);

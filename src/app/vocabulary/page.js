@@ -4,14 +4,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { kosakata, kategoriList } from "@/data/vocabulary";
+import { useProgress } from "@/hooks/useProgress";
 
 export default function VocabularyPage() {
   const [kartuTerbuka, setKartuTerbuka] = useState({});
   const [cari, setCari] = useState("");
   const [kategoriAktif, setKategoriAktif] = useState("Semua");
+  const { recordVocab } = useProgress();
 
   function toggleKartu(id) {
     setKartuTerbuka((prev) => ({ ...prev, [id]: !prev[id] }));
+    if (!kartuTerbuka[id]) recordVocab(id);
   }
 
   // Filter berdasarkan pencarian dan kategori

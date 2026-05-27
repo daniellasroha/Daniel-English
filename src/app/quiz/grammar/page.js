@@ -92,6 +92,7 @@ export default function GrammarQuizPage() {
       soalList={soalGrammar}
       warnaBg="bg-gradient-to-br from-green-50 to-teal-100"
       warnaBtn="bg-green-600"
+      kategori="grammar"
     />
   );
 }

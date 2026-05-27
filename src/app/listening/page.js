@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useProgress } from "@/hooks/useProgress";
 
 // Data latihan listening — kata dan kalimat untuk didengarkan
 const materiListening = [
@@ -51,10 +52,9 @@ function warnaTingkat(tingkat) {
 }
 
 export default function ListeningPage() {
-  // State item yang sedang diputar
   const [sedangDiputar, setSedangDiputar] = useState(null);
-  // State kecepatan bicara
   const [kecepatan, setKecepatan] = useState(0.8);
+  const { recordListening } = useProgress();
 
   // Fungsi untuk memutar teks menggunakan Web Speech API
   function putarSuara(teks, id) {
@@ -73,10 +73,9 @@ export default function ListeningPage() {
     ucapan.rate = kecepatan; // Kecepatan bicara
     ucapan.pitch = 1; // Nada suara normal
 
-    // Set state sedang diputar
     setSedangDiputar(id);
+    recordListening();
 
-    // Ketika selesai diputar, reset state
     ucapan.onend = () => setSedangDiputar(null);
     ucapan.onerror = () => setSedangDiputar(null);
 

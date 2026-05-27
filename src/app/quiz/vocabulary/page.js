@@ -32,6 +32,7 @@ export default function VocabularyQuizPage() {
       soalList={soalVocabulary}
       warnaBg="bg-gradient-to-br from-blue-50 to-indigo-100"
       warnaBtn="bg-blue-600"
+      kategori="vocabulary"
     />
   );
 }

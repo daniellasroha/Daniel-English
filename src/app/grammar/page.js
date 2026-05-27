@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useProgress } from "@/hooks/useProgress";
 
 const materiGrammar = [
   {
@@ -149,9 +150,12 @@ const materiGrammar = [
 
 export default function GrammarPage() {
   const [topikAktif, setTopikAktif] = useState(null);
+  const { recordGrammar } = useProgress();
 
   function toggleTopik(id) {
-    setTopikAktif(topikAktif === id ? null : id);
+    const bukaSekarang = topikAktif !== id;
+    setTopikAktif(bukaSekarang ? id : null);
+    if (bukaSekarang) recordGrammar(id);
   }
 
   return (

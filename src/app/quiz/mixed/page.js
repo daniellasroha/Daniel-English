@@ -32,6 +32,7 @@ export default function MixedQuizPage() {
       soalList={soalMixed}
       warnaBg="bg-gradient-to-br from-purple-50 to-indigo-100"
       warnaBtn="bg-purple-600"
+      kategori="mixed"
     />
   );
 }
