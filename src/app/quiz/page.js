@@ -33,6 +33,17 @@ const kategoriKuis = [
     soal: "20 soal",
     badge: "⚡ Tantangan",
   },
+  {
+    href: "/quiz/spelling",
+    emoji: "⌨️",
+    judul: "Spelling Quiz",
+    deskripsi: "Lihat arti bahasa Indonesia, tulis dalam bahasa Inggris!",
+    warna: "from-teal-400 to-cyan-600",
+    bgLight: "bg-teal-50",
+    border: "border-teal-200",
+    soal: "15 soal acak",
+    badge: "🆕 Baru",
+  },
 ];
 
 export default function QuizPage() {

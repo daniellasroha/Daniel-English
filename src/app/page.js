@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
 import UsernameModal from "@/components/UsernameModal";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 // Data kartu menu — setiap fitur belajar
 const menuItems = [
@@ -52,6 +53,16 @@ const menuItems = [
     bgLight: "bg-pink-50",
     border: "border-pink-200",
   },
+  {
+    href: "/daily",
+    emoji: "⚡",
+    title: "Daily Challenge",
+    description: "1 soal spesial setiap hari — bangun streak kamu!",
+    color: "from-violet-400 to-purple-600",
+    bgLight: "bg-violet-50",
+    border: "border-violet-200",
+    badge: "BARU",
+  },
 ];
 
 export default function Home() {
@@ -75,8 +86,11 @@ export default function Home() {
               <p className="text-xs text-gray-400">Belajar bahasa Inggris mudah & menyenangkan</p>
             </div>
           </div>
-          <div className="bg-indigo-100 text-indigo-700 text-sm font-medium px-3 py-1 rounded-full">
-            Level: Pemula
+          <div className="flex items-center gap-2">
+            <div className="bg-indigo-100 text-indigo-700 text-sm font-medium px-3 py-1 rounded-full">
+              Level: Pemula
+            </div>
+            <DarkModeToggle />
           </div>
         </div>
       </header>

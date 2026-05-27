@@ -83,6 +83,22 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
               ))}
             </div>
 
+            {/* Tombol Share */}
+            <button
+              onClick={() => {
+                const teks = `Aku baru selesai ${judul} di Daniel English!\nNilai: ${nilaiHuruf} (${persen}%) — ${skor}/${totalSoal} benar 🎉\nYuk belajar bareng! 📚`;
+                if (navigator.share) {
+                  navigator.share({ title: "Daniel English", text: teks });
+                } else {
+                  navigator.clipboard.writeText(teks);
+                  alert("Hasil disalin ke clipboard! Paste dan bagikan ke temanmu 🎉");
+                }
+              }}
+              className="w-full mb-4 bg-gray-100 text-gray-700 py-2.5 rounded-xl font-semibold hover:bg-gray-200 transition text-sm"
+            >
+              📤 Bagikan Hasil
+            </button>
+
             <div className="flex gap-3 justify-center">
               <button onClick={ulangi} className={`${warnaBtn} text-white px-5 py-2.5 rounded-xl font-semibold hover:opacity-90 transition`}>
                 🔄 Ulangi
