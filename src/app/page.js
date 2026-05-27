@@ -61,6 +61,15 @@ const menuItems = [
     color: "from-violet-400 to-purple-600",
     bgLight: "bg-violet-50",
     border: "border-violet-200",
+  },
+  {
+    href: "/phrasebook",
+    emoji: "💬",
+    title: "Phrasebook",
+    description: "Kalimat percakapan sehari-hari siap pakai dengan audio",
+    color: "from-sky-400 to-blue-600",
+    bgLight: "bg-sky-50",
+    border: "border-sky-200",
     badge: "BARU",
   },
 ];

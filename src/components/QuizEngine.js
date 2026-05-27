@@ -1,49 +1,94 @@
 // Komponen QuizEngine — mesin kuis yang dipakai ulang untuk semua kategori
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useProgress } from "@/hooks/useProgress";
+import { useSound } from "@/hooks/useSound";
 
-export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, kategori }) {
+const WAKTU_TIMER = 15; // detik per soal
+
+export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, kategori, pakaiTimer = false }) {
   const { recordQuiz } = useProgress();
+  const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
+
   const [soalAktif, setSoalAktif] = useState(0);
   const [pilihanDipilih, setPilihanDipilih] = useState(null);
   const [sudahDijawab, setSudahDijawab] = useState(false);
   const [skor, setSkor] = useState(0);
   const [selesai, setSelesai] = useState(false);
   const [riwayat, setRiwayat] = useState([]);
+  const [waktuSisa, setWaktuSisa] = useState(WAKTU_TIMER);
+  const [habisWaktu, setHabisWaktu] = useState(false);
+  const timerRef = useRef(null);
 
   const soal = soalList[soalAktif];
   const totalSoal = soalList.length;
 
+  // Reset timer saat ganti soal
+  useEffect(() => {
+    if (!pakaiTimer || sudahDijawab || selesai) return;
+    setWaktuSisa(WAKTU_TIMER);
+    setHabisWaktu(false);
+
+    timerRef.current = setInterval(() => {
+      setWaktuSisa((prev) => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current);
+          // Waktu habis — otomatis salah
+          setHabisWaktu(true);
+          setSudahDijawab(true);
+          setPilihanDipilih(null);
+          bunyiSalah();
+          setRiwayat((r) => [...r, { benar: false, soal: soalList[soalAktif]?.pertanyaan }]);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timerRef.current);
+  }, [soalAktif, pakaiTimer, selesai]);
+
+  // Hentikan timer saat dijawab
+  useEffect(() => {
+    if (sudahDijawab) clearInterval(timerRef.current);
+  }, [sudahDijawab]);
+
   function pilihJawaban(index) {
     if (sudahDijawab) return;
+    clearInterval(timerRef.current);
     setPilihanDipilih(index);
     setSudahDijawab(true);
     const benar = index === soal.jawaban;
-    if (benar) setSkor((s) => s + 1);
+    if (benar) { setSkor((s) => s + 1); bunyiBenar(); }
+    else { bunyiSalah(); }
     setRiwayat((prev) => [...prev, { benar, soal: soal.pertanyaan }]);
   }
 
   function soalBerikutnya() {
     if (soalAktif + 1 >= totalSoal) {
       setSelesai(true);
-      recordQuiz(kategori || "umum", skor + (pilihanDipilih === soal.jawaban ? 1 : 0), totalSoal);
+      bunyiSelesai();
+      const skorFinal = skor + (pilihanDipilih === soal.jawaban && !habisWaktu ? 1 : 0);
+      recordQuiz(kategori || "umum", skorFinal, totalSoal);
     } else {
       setSoalAktif((s) => s + 1);
       setPilihanDipilih(null);
       setSudahDijawab(false);
+      setHabisWaktu(false);
     }
   }
 
   function ulangi() {
+    clearInterval(timerRef.current);
     setSoalAktif(0); setPilihanDipilih(null);
     setSudahDijawab(false); setSkor(0);
     setSelesai(false); setRiwayat([]);
+    setWaktuSisa(WAKTU_TIMER); setHabisWaktu(false);
   }
 
-  // Halaman hasil
+  // ---- Halaman hasil ----
   if (selesai) {
     const persen = Math.round((skor / totalSoal) * 100);
     const nilaiHuruf = persen >= 90 ? "A" : persen >= 75 ? "B" : persen >= 60 ? "C" : persen >= 50 ? "D" : "E";
@@ -71,12 +116,14 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
               <span className="text-3xl font-extrabold text-white">{nilaiHuruf}</span>
               <span className="text-white text-sm font-semibold">{persen}%</span>
             </div>
-            <p className="text-gray-500 text-sm mb-2">Benar: <strong className="text-gray-800">{skor}</strong> dari <strong className="text-gray-800">{totalSoal}</strong> soal</p>
+            <p className="text-gray-500 text-sm mb-2">
+              Benar: <strong className="text-gray-800">{skor}</strong> dari <strong className="text-gray-800">{totalSoal}</strong> soal
+            </p>
 
             {/* Review jawaban */}
             <div className="text-left mb-5 max-h-40 overflow-y-auto">
               {riwayat.map((r, i) => (
-                <div key={i} className={`flex items-start gap-2 text-xs py-1.5 border-b border-gray-100`}>
+                <div key={i} className="flex items-start gap-2 text-xs py-1.5 border-b border-gray-100">
                   <span>{r.benar ? "✅" : "❌"}</span>
                   <span className="text-gray-600">{r.soal}</span>
                 </div>
@@ -115,7 +162,10 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
     );
   }
 
-  // Halaman soal
+  // ---- Halaman soal ----
+  const timerPersen = (waktuSisa / WAKTU_TIMER) * 100;
+  const timerWarning = waktuSisa <= 5;
+
   return (
     <main className={`min-h-screen ${warnaBg}`}>
       <header className="bg-white shadow-sm">
@@ -125,18 +175,39 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
             <h1 className="text-lg font-bold text-indigo-700">{emoji} {judul}</h1>
             <p className="text-xs text-gray-400">Soal {soalAktif + 1} dari {totalSoal}</p>
           </div>
-          <div className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-bold">
-            ⭐ {skor} poin
+          <div className="flex items-center gap-2">
+            {/* Timer badge */}
+            {pakaiTimer && !sudahDijawab && (
+              <div className={`px-3 py-1 rounded-full text-sm font-extrabold transition ${
+                timerWarning ? "bg-red-100 text-red-600 animate-pulse" : "bg-orange-100 text-orange-600"
+              }`}>
+                ⏱ {waktuSisa}s
+              </div>
+            )}
+            <div className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-bold">
+              ⭐ {skor} poin
+            </div>
           </div>
         </div>
       </header>
 
       <div className="max-w-2xl mx-auto px-4 py-6">
-        {/* Progress bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
+        {/* Progress bar soal */}
+        <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
           <div className="bg-indigo-500 h-2 rounded-full transition-all duration-500"
             style={{ width: `${(soalAktif / totalSoal) * 100}%` }} />
         </div>
+
+        {/* Timer bar */}
+        {pakaiTimer && !sudahDijawab && (
+          <div className="w-full bg-gray-200 rounded-full h-2 mb-5 overflow-hidden">
+            <div
+              className={`h-2 rounded-full transition-all duration-1000 ${timerWarning ? "bg-red-500" : "bg-orange-400"}`}
+              style={{ width: `${timerPersen}%` }}
+            />
+          </div>
+        )}
+        {pakaiTimer && sudahDijawab && <div className="mb-5" />}
 
         {/* Kartu soal */}
         <div className="bg-white rounded-2xl shadow-md p-5 mb-5">
@@ -171,8 +242,16 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
         {/* Feedback */}
         {sudahDijawab && (
           <div>
-            <div className={`p-4 rounded-xl mb-3 text-center font-semibold text-sm ${pilihanDipilih === soal.jawaban ? "bg-green-100 text-green-700" : "bg-red-50 text-red-600"}`}>
-              {pilihanDipilih === soal.jawaban ? "🎉 Benar! Bagus sekali!" : `❌ Salah. Jawaban benar: "${soal.pilihan[soal.jawaban]}"`}
+            <div className={`p-4 rounded-xl mb-3 text-center font-semibold text-sm ${
+              habisWaktu ? "bg-orange-50 text-orange-600"
+              : pilihanDipilih === soal.jawaban ? "bg-green-100 text-green-700"
+              : "bg-red-50 text-red-600"
+            }`}>
+              {habisWaktu
+                ? `⏱ Waktu habis! Jawaban: "${soal.pilihan[soal.jawaban]}"`
+                : pilihanDipilih === soal.jawaban
+                ? "🎉 Benar! Bagus sekali!"
+                : `❌ Salah. Jawaban benar: "${soal.pilihan[soal.jawaban]}"`}
               {soal.penjelasan && <p className="text-gray-500 font-normal mt-1 text-xs">{soal.penjelasan}</p>}
             </div>
             <button onClick={soalBerikutnya}

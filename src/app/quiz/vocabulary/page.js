@@ -1,4 +1,6 @@
 // Quiz Vocabulary — 20 soal kosakata dari berbagai kategori
+"use client";
+import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
 const soalVocabulary = [
@@ -25,6 +27,8 @@ const soalVocabulary = [
 ];
 
 export default function VocabularyQuizPage() {
+  const params = useSearchParams();
+  const pakaiTimer = params.get("timer") === "1";
   return (
     <QuizEngine
       judul="Vocabulary Quiz"
@@ -33,6 +37,7 @@ export default function VocabularyQuizPage() {
       warnaBg="bg-gradient-to-br from-blue-50 to-indigo-100"
       warnaBtn="bg-blue-600"
       kategori="vocabulary"
+      pakaiTimer={pakaiTimer}
     />
   );
 }

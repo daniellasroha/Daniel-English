@@ -1,4 +1,6 @@
 // Halaman Quiz — pilih kategori kuis
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
 const kategoriKuis = [
@@ -47,6 +49,8 @@ const kategoriKuis = [
 ];
 
 export default function QuizPage() {
+  const [timer, setTimer] = useState(false);
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
       <header className="bg-white shadow-sm">
@@ -59,37 +63,66 @@ export default function QuizPage() {
         </div>
       </header>
 
-      <div className="max-w-2xl mx-auto px-4 py-10">
-        <div className="text-center mb-8">
+      <div className="max-w-2xl mx-auto px-4 py-8">
+        <div className="text-center mb-6">
           <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Pilih Kategori Kuis</h2>
           <p className="text-gray-500 text-sm">Setiap kategori punya soal yang berbeda. Selamat mencoba! 💪</p>
         </div>
 
+        {/* Toggle Timer */}
+        <div className="bg-white rounded-2xl border border-orange-200 p-4 mb-6 flex items-center justify-between shadow-sm">
+          <div>
+            <p className="font-bold text-gray-800">⏱ Mode Timer</p>
+            <p className="text-xs text-gray-400">15 detik per soal — lebih menantang!</p>
+          </div>
+          <button
+            onClick={() => setTimer((v) => !v)}
+            className={`w-14 h-7 rounded-full transition-all duration-300 relative ${
+              timer ? "bg-orange-500" : "bg-gray-200"
+            }`}
+          >
+            <span className={`absolute top-0.5 w-6 h-6 bg-white rounded-full shadow transition-all duration-300 ${
+              timer ? "left-7" : "left-0.5"
+            }`} />
+          </button>
+        </div>
+
         <div className="flex flex-col gap-4">
-          {kategoriKuis.map((kat) => (
-            <Link key={kat.href} href={kat.href}>
-              <div className={`rounded-2xl border ${kat.border} ${kat.bgLight} p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer relative`}>
-                {kat.badge && (
-                  <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                    {kat.badge}
-                  </span>
-                )}
-                <div className="flex items-center gap-4">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${kat.warna} flex items-center justify-center text-3xl shadow-md flex-shrink-0`}>
-                    {kat.emoji}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-800">{kat.judul}</h3>
-                    <p className="text-gray-500 text-sm">{kat.deskripsi}</p>
-                    <span className="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full mt-1 inline-block">
-                      {kat.soal}
+          {kategoriKuis.map((kat) => {
+            // Spelling quiz tidak pakai timer (ketik teks, tidak cocok)
+            const hrefFinal = kat.href === "/quiz/spelling"
+              ? kat.href
+              : timer ? `${kat.href}?timer=1` : kat.href;
+            return (
+              <Link key={kat.href} href={hrefFinal}>
+                <div className={`rounded-2xl border ${kat.border} ${kat.bgLight} p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer relative`}>
+                  {kat.badge && (
+                    <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      {kat.badge}
                     </span>
+                  )}
+                  {timer && kat.href !== "/quiz/spelling" && (
+                    <span className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      ⏱ Timer ON
+                    </span>
+                  )}
+                  <div className="flex items-center gap-4">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${kat.warna} flex items-center justify-center text-3xl shadow-md flex-shrink-0`}>
+                      {kat.emoji}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-800">{kat.judul}</h3>
+                      <p className="text-gray-500 text-sm">{kat.deskripsi}</p>
+                      <span className="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full mt-1 inline-block">
+                        {kat.soal}
+                      </span>
+                    </div>
+                    <span className="text-gray-400 text-2xl">›</span>
                   </div>
-                  <span className="text-gray-400 text-2xl">›</span>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </main>

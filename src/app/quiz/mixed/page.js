@@ -1,4 +1,6 @@
 // Quiz Mixed — 20 soal campuran vocabulary + grammar
+"use client";
+import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
 const soalMixed = [
@@ -25,6 +27,8 @@ const soalMixed = [
 ];
 
 export default function MixedQuizPage() {
+  const params = useSearchParams();
+  const pakaiTimer = params.get("timer") === "1";
   return (
     <QuizEngine
       judul="Mixed Quiz"
@@ -33,6 +37,7 @@ export default function MixedQuizPage() {
       warnaBg="bg-gradient-to-br from-purple-50 to-indigo-100"
       warnaBtn="bg-purple-600"
       kategori="mixed"
+      pakaiTimer={pakaiTimer}
     />
   );
 }

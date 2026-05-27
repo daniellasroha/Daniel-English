@@ -1,4 +1,6 @@
 // Quiz Grammar — 16 soal tata bahasa dari berbagai topik
+"use client";
+import { useSearchParams } from "next/navigation";
 import QuizEngine from "@/components/QuizEngine";
 
 const soalGrammar = [
@@ -85,6 +87,8 @@ const soalGrammar = [
 ];
 
 export default function GrammarQuizPage() {
+  const params = useSearchParams();
+  const pakaiTimer = params.get("timer") === "1";
   return (
     <QuizEngine
       judul="Grammar Quiz"
@@ -93,6 +97,7 @@ export default function GrammarQuizPage() {
       warnaBg="bg-gradient-to-br from-green-50 to-teal-100"
       warnaBtn="bg-green-600"
       kategori="grammar"
+      pakaiTimer={pakaiTimer}
     />
   );
 }
