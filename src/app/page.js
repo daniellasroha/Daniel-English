@@ -1,12 +1,14 @@
 // Halaman utama — menu navigasi ke semua fitur belajar
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
+import { useLevel, LEVEL_CONFIG } from "@/hooks/useLevel";
 import UsernameModal from "@/components/UsernameModal";
+import LevelModal from "@/components/LevelModal";
 import DarkModeToggle from "@/components/DarkModeToggle";
 
-// Data kartu menu — setiap fitur belajar
 const menuItems = [
   {
     href: "/vocabulary",
@@ -70,20 +72,32 @@ const menuItems = [
     color: "from-sky-400 to-blue-600",
     bgLight: "bg-sky-50",
     border: "border-sky-200",
-    badge: "BARU",
   },
 ];
 
 export default function Home() {
-  const { username, saveUsername, loaded } = useUsername();
+  const { username, saveUsername, loaded: loadedUser } = useUsername();
+  const { level, setLevel, config, loaded: loadedLevel } = useLevel();
+  const [gantiLevel, setGantiLevel] = useState(false);
 
-  // Tampilkan modal jika nama belum diisi (setelah localStorage terbaca)
-  const showModal = loaded && !username;
+  // Step 1: isi nama dulu
+  const showNameModal = loadedUser && !username;
+  // Step 2: setelah nama terisi, pilih level
+  const showLevelModal = loadedUser && loadedLevel && username && !level;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      {/* Modal input nama (muncul saat pertama kali) */}
-      {showModal && <UsernameModal onSave={saveUsername} />}
+      {/* Modal nama */}
+      {showNameModal && <UsernameModal onSave={saveUsername} />}
+
+      {/* Modal pilih level (pertama kali / ganti level) */}
+      {(showLevelModal || gantiLevel) && (
+        <LevelModal
+          onSave={(lvl) => { setLevel(lvl); setGantiLevel(false); }}
+          bolehTutup={gantiLevel}
+          onTutup={() => setGantiLevel(false)}
+        />
+      )}
 
       {/* Header */}
       <header className="bg-white shadow-sm">
@@ -96,9 +110,16 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <div className="bg-indigo-100 text-indigo-700 text-sm font-medium px-3 py-1 rounded-full">
-              Level: Pemula
-            </div>
+            {/* Tombol level — klik untuk ganti */}
+            <button
+              onClick={() => setGantiLevel(true)}
+              className={`flex items-center gap-1 text-sm font-semibold px-3 py-1 rounded-full transition hover:opacity-80 ${
+                config ? `${config.warnaLight} ${config.teks} border ${config.border}` : "bg-gray-100 text-gray-500"
+              }`}
+              title="Klik untuk ganti level"
+            >
+              {config ? `${config.emoji} ${config.label}` : "Pilih Level"}
+            </button>
             <DarkModeToggle />
           </div>
         </div>
@@ -109,6 +130,11 @@ export default function Home() {
         <h2 className="text-4xl font-extrabold text-gray-800 mb-3">
           {username ? `Halo, ${username}! 👋` : "Halo, Selamat Datang! 👋"}
         </h2>
+        {config && (
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-4 ${config.warnaLight} ${config.teks} border ${config.border}`}>
+            {config.emoji} Level {config.label} — {config.deskripsi.split(",")[0]}
+          </div>
+        )}
         <p className="text-lg text-gray-500 max-w-xl mx-auto">
           Pilih kategori di bawah untuk mulai belajar. Konsisten setiap hari
           adalah kunci sukses berbahasa Inggris!
@@ -120,27 +146,17 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {menuItems.map((item) => (
             <Link key={item.href} href={item.href}>
-              <div
-                className={`rounded-2xl border ${item.border} ${item.bgLight} p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer h-full relative`}
-              >
-                {/* Badge "Baru" jika ada */}
+              <div className={`rounded-2xl border ${item.border} ${item.bgLight} p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer h-full relative`}>
                 {item.badge && (
                   <span className="absolute top-3 right-3 bg-violet-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
                     {item.badge}
                   </span>
                 )}
-                {/* Icon bulat dengan gradient */}
-                <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-3xl mb-4 shadow-md`}
-                >
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-3xl mb-4 shadow-md`}>
                   {item.emoji}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             </Link>
           ))}
@@ -151,8 +167,7 @@ export default function Home() {
       <footer className="text-center py-6 text-gray-400 text-sm space-y-1">
         <p>💪 Belajar 15 menit sehari lebih baik dari 2 jam sebulan sekali!</p>
         <p className="text-gray-300 text-xs">
-          Made with ❤️ by{" "}
-          <span className="font-semibold text-indigo-400">Daniel Lasroha</span>
+          Made with ❤️ by <span className="font-semibold text-indigo-400">Daniel Lasroha</span>
         </p>
       </footer>
     </main>

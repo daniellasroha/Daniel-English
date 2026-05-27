@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useProgress } from "@/hooks/useProgress";
+import { useLevel } from "@/hooks/useLevel";
 
 const materiGrammar = [
   {
@@ -151,6 +152,12 @@ const materiGrammar = [
 export default function GrammarPage() {
   const [topikAktif, setTopikAktif] = useState(null);
   const { recordGrammar } = useProgress();
+  const { config } = useLevel();
+
+  // Filter topik berdasarkan level
+  const materiTersedia = config
+    ? materiGrammar.filter((m) => config.grammarTopics.includes(m.id))
+    : materiGrammar;
 
   function toggleTopik(id) {
     const bukaSekarang = topikAktif !== id;
@@ -165,7 +172,10 @@ export default function GrammarPage() {
           <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
           <div>
             <h1 className="text-xl font-bold text-green-700">✏️ Grammar</h1>
-            <p className="text-xs text-gray-400">8 topik — klik untuk pelajari</p>
+            <p className="text-xs text-gray-400">
+              {materiTersedia.length} topik
+              {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+            </p>
           </div>
         </div>
       </header>
@@ -176,7 +186,7 @@ export default function GrammarPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {materiGrammar.map((materi) => (
+          {materiTersedia.map((materi) => (
             <div key={materi.id} className={`rounded-2xl border ${materi.border} overflow-hidden shadow-sm`}>
               <button
                 onClick={() => toggleTopik(materi.id)}

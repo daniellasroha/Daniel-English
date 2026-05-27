@@ -6,6 +6,7 @@ import Link from "next/link";
 import { kosakata, kategoriList } from "@/data/vocabulary";
 import { useProgress } from "@/hooks/useProgress";
 import { useFavorites } from "@/hooks/useFavorites";
+import { useLevel } from "@/hooks/useLevel";
 
 export default function VocabularyPage() {
   const [kartuTerbuka, setKartuTerbuka] = useState({});
@@ -15,14 +16,20 @@ export default function VocabularyPage() {
 
   const { recordVocab } = useProgress();
   const { isFavorite, toggleFavorite, favorites } = useFavorites();
+  const { config, level } = useLevel();
+
+  // Filter kata berdasarkan level
+  const kosakataTersedia = config
+    ? kosakata.filter((k) => k.id <= config.vocabMaxId)
+    : kosakata;
 
   function toggleKartu(id) {
     setKartuTerbuka((prev) => ({ ...prev, [id]: !prev[id] }));
     if (!kartuTerbuka[id]) recordVocab(id);
   }
 
-  // Filter berdasarkan pencarian, kategori, dan favorit
-  const hasilFilter = kosakata.filter((kata) => {
+  // Filter berdasarkan pencarian, kategori, favorit, dan level
+  const hasilFilter = kosakataTersedia.filter((kata) => {
     const cocokCari =
       kata.english.toLowerCase().includes(cari.toLowerCase()) ||
       kata.indonesian.toLowerCase().includes(cari.toLowerCase());
@@ -40,7 +47,10 @@ export default function VocabularyPage() {
           <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
           <div className="flex-1">
             <h1 className="text-xl font-bold text-indigo-700">📚 Vocabulary</h1>
-            <p className="text-xs text-gray-400">{kosakata.length} kata dalam 8 kategori</p>
+            <p className="text-xs text-gray-400">
+              {kosakataTersedia.length} kata
+              {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+            </p>
           </div>
           <button
             onClick={() => setTampilFavorit((v) => !v)}

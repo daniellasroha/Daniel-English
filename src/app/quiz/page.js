@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useLevel } from "@/hooks/useLevel";
 
 const kategoriKuis = [
   {
@@ -50,6 +51,12 @@ const kategoriKuis = [
 
 export default function QuizPage() {
   const [timer, setTimer] = useState(false);
+  const { config } = useLevel();
+
+  // Filter quiz sesuai level
+  const kuis = config
+    ? kategoriKuis.filter((k) => config.quizRoutes.includes(k.href))
+    : kategoriKuis;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
@@ -58,7 +65,10 @@ export default function QuizPage() {
           <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
           <div>
             <h1 className="text-xl font-bold text-indigo-700">🧠 Quiz</h1>
-            <p className="text-xs text-gray-400">Pilih kategori untuk mulai</p>
+            <p className="text-xs text-gray-400">
+              {kuis.length} jenis quiz
+              {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+            </p>
           </div>
         </div>
       </header>
@@ -88,7 +98,7 @@ export default function QuizPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          {kategoriKuis.map((kat) => {
+          {kuis.map((kat) => {
             // Spelling quiz tidak pakai timer (ketik teks, tidak cocok)
             const hrefFinal = kat.href === "/quiz/spelling"
               ? kat.href
