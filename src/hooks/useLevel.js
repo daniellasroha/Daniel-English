@@ -13,10 +13,9 @@ export const LEVEL_CONFIG = {
     warnaLight: "bg-green-50",
     border: "border-green-300",
     teks: "text-green-700",
-    deskripsi: "Kosakata dasar, tata bahasa sederhana, dan quiz pilihan ganda",
-    vocabIds: null,        // null = filter by maxId
-    vocabMaxId: 64,        // hanya kata id 1-64
-    grammarTopics: [1, 2, 3, 4], // Simple Present, Simple Past, To Be, Present Continuous
+    deskripsi: "Kosakata paling dasar, grammar inti, dan quiz pilihan ganda",
+    vocabLevel: "pemula",          // hanya kata dengan level: "pemula" (40 kata)
+    grammarTopics: [1, 3],         // Simple Present Tense + To Be (paling fundamental)
     quizRoutes: ["/quiz/vocabulary", "/quiz/grammar"],
   },
   menengah: {
@@ -27,8 +26,8 @@ export const LEVEL_CONFIG = {
     border: "border-indigo-300",
     teks: "text-indigo-700",
     deskripsi: "Semua kosakata, semua topik grammar, dan semua jenis quiz",
-    vocabMaxId: 9999,      // semua kata
-    grammarTopics: [1, 2, 3, 4, 5, 6, 7, 8], // semua topik
+    vocabLevel: "semua",           // semua 112 kata
+    grammarTopics: [1, 2, 3, 4, 5, 6, 7, 8], // semua 8 topik
     quizRoutes: ["/quiz/vocabulary", "/quiz/grammar", "/quiz/mixed", "/quiz/spelling"],
   },
 };

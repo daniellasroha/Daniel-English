@@ -20,7 +20,9 @@ export default function VocabularyPage() {
 
   // Filter kata berdasarkan level
   const kosakataTersedia = config
-    ? kosakata.filter((k) => k.id <= config.vocabMaxId)
+    ? (config.vocabLevel === "pemula"
+        ? kosakata.filter((k) => k.level === "pemula")
+        : kosakata)
     : kosakata;
 
   function toggleKartu(id) {
