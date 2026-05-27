@@ -11,6 +11,16 @@ import DarkModeToggle from "@/components/DarkModeToggle";
 
 const menuItems = [
   {
+    href: "/belajar",
+    emoji: "🗺️",
+    title: "Belajar Terstruktur",
+    description: "Alur belajar bertahap seperti Busuu — dari salam pertama hingga percakapan sehari-hari",
+    color: "from-indigo-400 to-purple-600",
+    bgLight: "bg-indigo-50",
+    border: "border-indigo-200",
+    badge: "✨ Baru",
+  },
+  {
     href: "/vocabulary",
     emoji: "📚",
     title: "Vocabulary",
