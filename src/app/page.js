@@ -83,6 +83,16 @@ const menuItems = [
     bgLight: "bg-sky-50",
     border: "border-sky-200",
   },
+  {
+    href: "/leaderboard",
+    emoji: "🏆",
+    title: "Leaderboard",
+    description: "Lihat ranking kamu dibanding semua pelajar lainnya",
+    color: "from-yellow-400 to-orange-500",
+    bgLight: "bg-yellow-50",
+    border: "border-yellow-200",
+    badge: "🔥 Baru",
+  },
 ];
 
 export default function Home() {

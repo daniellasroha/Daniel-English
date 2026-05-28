@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { learningPath as unitBelajar } from "@/data/learningPath";
+import { syncLeaderboard } from "@/lib/leaderboard";
 
 const KEY = "daniel_english_belajar";
 
@@ -28,6 +29,16 @@ export function useLearning() {
       try {
         localStorage.setItem(KEY, JSON.stringify(next));
       } catch {}
+
+      // Sync ke leaderboard (fire-and-forget)
+      try {
+        const username = localStorage.getItem("daniel_english_username") || "";
+        const level    = localStorage.getItem("daniel_english_level")    || "pemula";
+        const quizRaw  = localStorage.getItem("daniel_english_progress");
+        const quizHistory = quizRaw ? (JSON.parse(quizRaw).quiz || []) : [];
+        syncLeaderboard({ username, level, completedLessons: next, quizHistory });
+      } catch {}
+
       return next;
     });
   }, []);

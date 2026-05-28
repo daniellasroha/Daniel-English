@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { syncLeaderboard } from "@/lib/leaderboard";
 
 const KEY = "daniel_english_progress";
 
@@ -79,7 +80,7 @@ export function useProgress() {
     }
   }, []);
 
-  // Catat hasil quiz
+  // Catat hasil quiz + sync leaderboard
   const recordQuiz = useCallback((category, score, total) => {
     const d = loadData();
     const t = today();
@@ -87,6 +88,14 @@ export function useProgress() {
     if (!d.sessions.includes(t)) d.sessions = [...d.sessions, t];
     saveData(d);
     setData({ ...d });
+
+    // Sync ke leaderboard (fire-and-forget)
+    try {
+      const username = localStorage.getItem("daniel_english_username") || "";
+      const level    = localStorage.getItem("daniel_english_level")    || "pemula";
+      const lessons  = JSON.parse(localStorage.getItem("daniel_english_belajar") || "[]");
+      syncLeaderboard({ username, level, completedLessons: lessons, quizHistory: d.quiz });
+    } catch {}
   }, []);
 
   // Catat vocab dilihat
