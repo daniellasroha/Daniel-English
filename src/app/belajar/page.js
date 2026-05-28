@@ -7,6 +7,43 @@ import { learningPath as unitBelajar } from "@/data/learningPath";
 import { useLearning } from "@/hooks/useLearning";
 import { useLevel } from "@/hooks/useLevel";
 
+// ─── SOUND EFFECTS (Web Audio API, no external files) ─────────────────────────
+function playBenar() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    // Dua nada naik — "ding ding"
+    [0, 0.15].forEach((offset, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(i === 0 ? 880 : 1100, ctx.currentTime + offset);
+      gain.gain.setValueAtTime(0.25, ctx.currentTime + offset);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.25);
+      osc.start(ctx.currentTime + offset);
+      osc.stop(ctx.currentTime + offset + 0.25);
+    });
+  } catch {}
+}
+
+function playSalah() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(220, ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(150, ctx.currentTime + 0.25);
+    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.3);
+  } catch {}
+}
+
 // ─── KOMPONEN: Kartu Vocab (flashcard) ────────────────────────────────────────
 function VocabCard({ kartu, meta, index, total }) {
   const [terbuka, setTerbuka] = useState(false);
@@ -52,7 +89,12 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
   function pilih(i) {
     if (dipilih !== null) return;
     setDipilih(i);
-    if (i === soal.jawaban) setBenar((b) => b + 1);
+    if (i === soal.jawaban) {
+      setBenar((b) => b + 1);
+      playBenar();
+    } else {
+      playSalah();
+    }
   }
 
   function lanjut() {
@@ -104,10 +146,17 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
       <div className="grid grid-cols-1 gap-3 mb-4">
         {soal.pilihan.map((p, i) => {
           let style = "border-2 border-gray-200 bg-white text-gray-700 hover:border-indigo-300 hover:bg-indigo-50";
+          let icon = null;
           if (dipilih !== null) {
-            if (i === soal.jawaban) style = "border-2 border-green-400 bg-green-50 text-green-700";
-            else if (i === dipilih) style = "border-2 border-red-400 bg-red-50 text-red-700";
-            else style = "border-2 border-gray-200 bg-white text-gray-400 opacity-60";
+            if (i === soal.jawaban) {
+              style = "border-2 border-green-400 bg-green-50 text-green-700";
+              icon = <span className="ml-2 text-green-500 font-bold">✓</span>;
+            } else if (i === dipilih) {
+              style = "border-2 border-red-400 bg-red-50 text-red-700";
+              icon = <span className="ml-2 text-red-500 font-bold">✗</span>;
+            } else {
+              style = "border-2 border-gray-200 bg-white text-gray-400 opacity-60";
+            }
           }
           return (
             <button
@@ -117,6 +166,7 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
             >
               <span className="text-xs text-gray-400 mr-2">{["A", "B", "C", "D"][i]}.</span>
               {p}
+              {icon}
             </button>
           );
         })}
@@ -135,7 +185,16 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
 }
 
 // ─── KOMPONEN: Tampilan Pelajaran ─────────────────────────────────────────────
-function TampilanPelajaran({ unit, pelajaran, lessonIndex, onKembali, onSelesai, sudahSelesai }) {
+function TampilanPelajaran({
+  unit,
+  pelajaran,
+  lessonIndex,
+  onKembali,
+  onSelesai,
+  sudahSelesai,
+  nextLesson,
+  onNextLesson,
+}) {
   const meta = unit;
   const [fase, setFase] = useState(sudahSelesai ? "done" : "vocab"); // vocab | quiz | done
   const [vocabIdx, setVocabIdx] = useState(0);
@@ -189,6 +248,7 @@ function TampilanPelajaran({ unit, pelajaran, lessonIndex, onKembali, onSelesai,
     );
   }
 
+  // ── Selesai / Done screen ──
   if (fase === "done") {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
@@ -197,18 +257,36 @@ function TampilanPelajaran({ unit, pelajaran, lessonIndex, onKembali, onSelesai,
           <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Pelajaran Selesai!</h2>
           <p className="text-gray-500 mb-1 text-sm">{pelajaran.judul}</p>
           <p className={`font-semibold ${meta.teks} text-sm mb-6`}>{unit.judul}</p>
-          <button
-            onClick={onKembali}
-            className={`w-full py-3 rounded-2xl text-white font-bold bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105 transition-transform`}
-          >
-            Kembali ke Unit
-          </button>
+
+          <div className="flex flex-col gap-3">
+            {/* Tombol next chapter — muncul kalau ada pelajaran berikutnya */}
+            {nextLesson && (
+              <button
+                onClick={onNextLesson}
+                className={`w-full py-3 rounded-2xl text-white font-bold bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105 transition-transform flex items-center justify-center gap-2`}
+              >
+                <span>Pelajaran Berikutnya</span>
+                <span className="text-xl">→</span>
+              </button>
+            )}
+
+            <button
+              onClick={onKembali}
+              className={`w-full py-3 rounded-2xl font-bold border-2 transition hover:shadow-md ${
+                nextLesson
+                  ? `${meta.border} ${meta.bg} ${meta.teks}`
+                  : `text-white bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105`
+              }`}
+            >
+              Kembali ke Unit
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
-  // Vocab phase
+  // ── Vocab phase ──
   if (fase === "vocab" && isVocab) {
     const kartu = pelajaran.kartu[vocabIdx];
     const isLast = vocabIdx === pelajaran.kartu.length - 1;
@@ -286,7 +364,7 @@ function TampilanPelajaran({ unit, pelajaran, lessonIndex, onKembali, onSelesai,
     );
   }
 
-  // Quiz phase (after vocab)
+  // ── Quiz phase (after vocab) ──
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <header className="bg-white shadow-sm sticky top-0 z-10">
@@ -336,7 +414,6 @@ export default function BelajarPage() {
   } = useLearning();
 
   const { config } = useLevel();
-  // Pemula sees only pemula units; menengah sees all 20 units
   const isPemula = !config || config.vocabLevel === "pemula";
   const unitsTampil = isPemula
     ? unitBelajar.filter((u) => u.level === "pemula")
@@ -347,14 +424,31 @@ export default function BelajarPage() {
     const unit = unitBelajar.find((u) => u.id === unitDipilih);
     const lessonIndex = unit.pelajaran.findIndex((p) => p.id === pelajaranDipilih);
     const pelajaran = unit.pelajaran[lessonIndex];
+
+    // Cari pelajaran berikutnya (dalam unit yang sama)
+    const nextLesson = unit.pelajaran[lessonIndex + 1] || null;
+
+    function handleSelesai() {
+      completeLesson(pelajaran.id);
+      // Tetap di layar "done" — tombol next/back yang handle navigasi
+    }
+
+    function handleNextLesson() {
+      if (nextLesson) {
+        setPelajaranDipilih(nextLesson.id);
+      }
+    }
+
     return (
       <TampilanPelajaran
         unit={unit}
         pelajaran={pelajaran}
         lessonIndex={lessonIndex}
         onKembali={() => setPelajaranDipilih(null)}
-        onSelesai={() => { completeLesson(pelajaran.id); setPelajaranDipilih(null); }}
+        onSelesai={handleSelesai}
         sudahSelesai={isLessonDone(pelajaran.id)}
+        nextLesson={nextLesson}
+        onNextLesson={handleNextLesson}
       />
     );
   }
@@ -363,7 +457,6 @@ export default function BelajarPage() {
   if (unitDipilih) {
     const unit = unitBelajar.find((u) => u.id === unitDipilih);
     const { done, total } = getUnitProgress(unitDipilih);
-    const unitIndex = unitBelajar.findIndex((u) => u.id === unitDipilih);
 
     return (
       <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -412,7 +505,7 @@ export default function BelajarPage() {
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow flex-shrink-0 ${
-                      done ? `bg-gradient-to-br ${unit.warna}` : unlocked ? "bg-gray-100" : "bg-gray-100"
+                      done ? `bg-gradient-to-br ${unit.warna}` : "bg-gray-100"
                     }`}>
                       {done ? "⭐" : unlocked ? pelajaran.emoji : "🔒"}
                     </div>
@@ -444,7 +537,6 @@ export default function BelajarPage() {
   }
 
   // ── View 1: Path overview ──
-  // Calculate progress only from visible units (respects level filter)
   const { totalDone, totalAll } = loaded
     ? unitsTampil.reduce(
         (acc, u) => {
@@ -500,7 +592,6 @@ export default function BelajarPage() {
               const firstLessonUnlocked = loaded ? isLessonUnlocked(unit.id, 0) : unitIdx === 0;
               const allDone = done === total && total > 0;
               const persen = total > 0 ? Math.round((done / total) * 100) : 0;
-              // Show menengah section separator for menengah users
               const showMenengahSeparator = !isPemula && unit.level === "menengah" &&
                 (unitIdx === 0 || unitsTampil[unitIdx - 1].level === "pemula");
 
