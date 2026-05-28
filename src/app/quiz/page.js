@@ -60,6 +60,18 @@ const kategoriKuis = [
     border: "border-teal-200",
     soalMenengah: "15 soal acak",
   },
+  {
+    href: "/quiz/typing",
+    emoji: "✍️",
+    judul: "Typing Quiz",
+    deskripsi: "Baca kalimat Indonesia, ketik sendiri terjemahannya — latihan paling efektif!",
+    warna: "from-violet-400 to-purple-600",
+    bgLight: "bg-violet-50",
+    border: "border-violet-200",
+    soalPemula: "15 soal",
+    soalMenengah: "15 soal",
+    badge: "✍️ Ketik",
+  },
 ];
 
 export default function QuizPage() {

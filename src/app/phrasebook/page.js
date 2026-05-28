@@ -1,7 +1,7 @@
-// Halaman Phrasebook — kalimat percakapan sehari-hari
+// Halaman Phrasebook — kalimat percakapan sehari-hari + mode latihan ketik
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const kategoriPhrase = [
@@ -127,8 +127,281 @@ const kategoriPhrase = [
   },
 ];
 
+// Normalisasi jawaban: lowercase, hapus tanda baca akhir, trim whitespace
+function normalize(str) {
+  return str.trim().toLowerCase().replace(/[.,!?]+$/, "").trim();
+}
+
+// Cek apakah jawaban diterima (exact atau close enough)
+function cekJawaban(input, jawaban) {
+  const a = normalize(input);
+  const b = normalize(jawaban);
+  if (a === b) return "benar";
+  // Boleh ada 1 karakter beda (typo ringan) untuk frasa panjang (>8 char)
+  if (b.length > 8) {
+    let diff = 0;
+    const maxLen = Math.max(a.length, b.length);
+    for (let i = 0; i < maxLen; i++) {
+      if ((a[i] || "") !== (b[i] || "")) diff++;
+      if (diff > 1) break;
+    }
+    if (diff <= 1) return "hampir"; // hampir benar
+  }
+  return "salah";
+}
+
+// Komponen Mode Latihan Ketik
+function ModeLatihan({ kategori, onKembali }) {
+  const frasa = kategori.frasa;
+  const [index, setIndex] = useState(0);
+  const [input, setInput] = useState("");
+  const [hasil, setHasil] = useState(null); // null | "benar" | "hampir" | "salah"
+  const [skor, setSkor] = useState(0);
+  const [selesai, setSelesai] = useState(false);
+  const [riwayat, setRiwayat] = useState([]);
+  const [sedangDiputar, setSedangDiputar] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => inputRef.current?.focus(), 100);
+  }, [index]);
+
+  function putar(teks) {
+    window.speechSynthesis.cancel();
+    const ucapan = new SpeechSynthesisUtterance(teks);
+    ucapan.lang = "en-US";
+    ucapan.rate = 0.85;
+    setSedangDiputar(true);
+    ucapan.onend = () => setSedangDiputar(false);
+    ucapan.onerror = () => setSedangDiputar(false);
+    window.speechSynthesis.speak(ucapan);
+  }
+
+  function cek() {
+    if (!input.trim() || hasil) return;
+    const soal = frasa[index];
+    const status = cekJawaban(input, soal.english);
+    setHasil(status);
+    if (status === "benar" || status === "hampir") setSkor((s) => s + 1);
+    setRiwayat((prev) => [...prev, {
+      indonesia: soal.indonesia,
+      english: soal.english,
+      jawaban: input.trim(),
+      status,
+    }]);
+    // Putar audio jawaban benar otomatis
+    setTimeout(() => putar(soal.english), 200);
+  }
+
+  function lanjut() {
+    if (index + 1 >= frasa.length) {
+      setSelesai(true);
+    } else {
+      setIndex((i) => i + 1);
+      setInput("");
+      setHasil(null);
+    }
+  }
+
+  function handleKey(e) {
+    if (e.key === "Enter") {
+      if (!hasil) cek();
+      else lanjut();
+    }
+  }
+
+  function ulangi() {
+    setIndex(0);
+    setInput("");
+    setHasil(null);
+    setSkor(0);
+    setSelesai(false);
+    setRiwayat([]);
+  }
+
+  const persen = Math.round((skor / frasa.length) * 100);
+  const soalSaatIni = frasa[index];
+
+  // Layar selesai
+  if (selesai) {
+    return (
+      <div className="max-w-xl mx-auto px-4 py-8">
+        <div className={`rounded-3xl p-8 text-center shadow-lg mb-6 ${
+          persen >= 80 ? "bg-gradient-to-br from-green-400 to-emerald-500"
+          : persen >= 60 ? "bg-gradient-to-br from-yellow-400 to-orange-400"
+          : "bg-gradient-to-br from-red-400 to-rose-500"
+        } text-white`}>
+          <div className="text-6xl mb-3">
+            {persen >= 80 ? "🎉" : persen >= 60 ? "👍" : "💪"}
+          </div>
+          <p className="text-4xl font-extrabold mb-1">{persen}%</p>
+          <p className="text-xl font-bold mb-1">{skor} / {frasa.length} Benar</p>
+          <p className="text-sm opacity-90">
+            {persen >= 80 ? "Luar biasa! Kamu hafal frasa ini!" : persen >= 60 ? "Bagus! Latihan lagi untuk sempurna." : "Jangan menyerah! Coba lagi."}
+          </p>
+        </div>
+
+        {/* Review */}
+        <div className="flex flex-col gap-3 mb-6">
+          {riwayat.map((item, i) => (
+            <div key={i} className={`rounded-2xl p-4 border-2 ${
+              item.status === "benar" ? "bg-green-50 border-green-200"
+              : item.status === "hampir" ? "bg-yellow-50 border-yellow-200"
+              : "bg-red-50 border-red-200"
+            }`}>
+              <p className="text-xs text-gray-400 mb-1">🇮🇩 {item.indonesia}</p>
+              <p className={`font-semibold text-sm ${
+                item.status === "benar" ? "text-green-700"
+                : item.status === "hampir" ? "text-yellow-700"
+                : "text-red-600"
+              }`}>
+                {item.status === "benar" ? "✓ " : item.status === "hampir" ? "≈ " : "✗ "}
+                Kamu: "{item.jawaban}"
+              </p>
+              {item.status !== "benar" && (
+                <p className="text-green-700 font-bold text-sm mt-1">✅ Jawaban: {item.english}</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <button
+            onClick={ulangi}
+            className={`w-full py-4 rounded-2xl text-white font-bold text-base bg-gradient-to-r ${kategori.warna} shadow-lg`}
+          >
+            🔄 Ulangi Latihan
+          </button>
+          <button
+            onClick={onKembali}
+            className="w-full py-3 rounded-2xl bg-gray-100 text-gray-600 font-semibold"
+          >
+            ← Kembali ke Frasa
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-xl mx-auto px-4 py-6">
+      {/* Header latihan */}
+      <div className="flex items-center justify-between mb-5">
+        <button
+          onClick={onKembali}
+          className="text-sky-600 font-semibold text-sm hover:text-sky-800 transition"
+        >
+          ← Kembali
+        </button>
+        <span className="text-sm font-bold text-gray-600">
+          {index + 1} / {frasa.length}
+        </span>
+      </div>
+
+      {/* Progress bar */}
+      <div className="w-full bg-gray-100 rounded-full h-2 mb-6">
+        <div
+          className={`h-2 rounded-full bg-gradient-to-r ${kategori.warna} transition-all duration-500`}
+          style={{ width: `${((index) / frasa.length) * 100}%` }}
+        />
+      </div>
+
+      {/* Kartu soal */}
+      <div className={`rounded-3xl border-2 ${kategori.border} ${kategori.bgLight} p-6 mb-5 shadow-md`}>
+        <p className="text-xs text-gray-400 mb-2 font-semibold uppercase tracking-wide">Terjemahkan ke bahasa Inggris:</p>
+        <p className="text-2xl font-extrabold text-gray-800 mb-1">{soalSaatIni.indonesia}</p>
+        <p className="text-xs text-gray-400">📌 {soalSaatIni.konteks}</p>
+      </div>
+
+      {/* Input ketik */}
+      <div className="mb-4">
+        <input
+          ref={inputRef}
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKey}
+          disabled={!!hasil}
+          placeholder="Ketik dalam bahasa Inggris..."
+          className={`w-full px-5 py-4 rounded-2xl border-2 text-lg font-semibold focus:outline-none transition ${
+            hasil === "benar" ? "border-green-400 bg-green-50 text-green-700"
+            : hasil === "hampir" ? "border-yellow-400 bg-yellow-50 text-yellow-700"
+            : hasil === "salah" ? "border-red-400 bg-red-50 text-red-600"
+            : "border-gray-200 bg-white text-gray-800 focus:border-sky-400"
+          }`}
+        />
+      </div>
+
+      {/* Feedback */}
+      {hasil && (
+        <div className={`rounded-2xl p-4 mb-4 ${
+          hasil === "benar" ? "bg-green-50 border-2 border-green-200"
+          : hasil === "hampir" ? "bg-yellow-50 border-2 border-yellow-200"
+          : "bg-red-50 border-2 border-red-200"
+        }`}>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className={`font-bold text-base ${
+                hasil === "benar" ? "text-green-700"
+                : hasil === "hampir" ? "text-yellow-700"
+                : "text-red-600"
+              }`}>
+                {hasil === "benar" ? "✓ Benar!" : hasil === "hampir" ? "≈ Hampir benar!" : "✗ Kurang tepat"}
+              </p>
+              {hasil !== "benar" && (
+                <p className="text-green-700 font-semibold text-sm mt-1">
+                  Jawaban: <span className="font-bold">{soalSaatIni.english}</span>
+                </p>
+              )}
+              {hasil === "hampir" && (
+                <p className="text-yellow-600 text-xs mt-0.5">Skor dihitung karena hampir benar 👍</p>
+              )}
+            </div>
+            <button
+              onClick={() => putar(soalSaatIni.english)}
+              className={`w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0 ${
+                sedangDiputar ? "bg-sky-500 text-white" : "bg-sky-50 text-sky-500"
+              }`}
+            >
+              {sedangDiputar ? "⏹" : "🔊"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Tombol aksi */}
+      {!hasil ? (
+        <button
+          onClick={cek}
+          disabled={!input.trim()}
+          className={`w-full py-4 rounded-2xl text-white font-bold text-base transition ${
+            input.trim()
+              ? `bg-gradient-to-r ${kategori.warna} shadow-lg hover:opacity-90`
+              : "bg-gray-200 text-gray-400 cursor-not-allowed"
+          }`}
+        >
+          Cek Jawaban
+        </button>
+      ) : (
+        <button
+          onClick={lanjut}
+          className={`w-full py-4 rounded-2xl text-white font-bold text-base bg-gradient-to-r ${kategori.warna} shadow-lg`}
+        >
+          {index + 1 >= frasa.length ? "Lihat Hasil →" : "Lanjut →"}
+        </button>
+      )}
+
+      {/* Skor sementara */}
+      <p className="text-center text-xs text-gray-400 mt-3">
+        Skor: {skor} benar dari {index + (hasil ? 1 : 0)} soal
+      </p>
+    </div>
+  );
+}
+
 export default function PhrasebookPage() {
   const [kategoriAktif, setKategoriAktif] = useState(null);
+  const [modeLatihan, setModeLatihan] = useState(false);
   const [sedangDiputar, setSedangDiputar] = useState(null);
 
   function putar(teks, id) {
@@ -141,6 +414,29 @@ export default function PhrasebookPage() {
     ucapan.onend = () => setSedangDiputar(null);
     ucapan.onerror = () => setSedangDiputar(null);
     window.speechSynthesis.speak(ucapan);
+  }
+
+  // Mode latihan aktif
+  if (kategoriAktif && modeLatihan) {
+    return (
+      <main className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100">
+        <header className="bg-white shadow-sm sticky top-0 z-10">
+          <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-3">
+            <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${kategoriAktif.warna} flex items-center justify-center text-xl shadow`}>
+              {kategoriAktif.emoji}
+            </div>
+            <div>
+              <h1 className="text-base font-bold text-sky-700">🎯 Latihan: {kategoriAktif.judul}</h1>
+              <p className="text-xs text-gray-400">Ketik terjemahan bahasa Inggris</p>
+            </div>
+          </div>
+        </header>
+        <ModeLatihan
+          kategori={kategoriAktif}
+          onKembali={() => setModeLatihan(false)}
+        />
+      </main>
+    );
   }
 
   return (
@@ -161,20 +457,20 @@ export default function PhrasebookPage() {
         {!kategoriAktif && (
           <>
             <p className="text-center text-gray-500 text-sm mb-6">
-              Pilih kategori untuk mulai belajar frasa sehari-hari 👇
+              Pilih kategori untuk belajar frasa sehari-hari 👇
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {kategoriPhrase.map((kat) => (
                 <button
                   key={kat.id}
-                  onClick={() => setKategoriAktif(kat)}
+                  onClick={() => { setKategoriAktif(kat); setModeLatihan(false); }}
                   className={`rounded-2xl border ${kat.border} ${kat.bgLight} p-5 text-left hover:shadow-lg hover:-translate-y-1 transition-all duration-200`}
                 >
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${kat.warna} flex items-center justify-center text-2xl mb-3 shadow`}>
                     {kat.emoji}
                   </div>
                   <h3 className="font-bold text-gray-800">{kat.judul}</h3>
-                  <p className="text-gray-400 text-xs mt-1">{kat.frasa.length} frasa</p>
+                  <p className="text-gray-400 text-xs mt-1">{kat.frasa.length} frasa · ada latihan ketik</p>
                 </button>
               ))}
             </div>
@@ -182,7 +478,7 @@ export default function PhrasebookPage() {
         )}
 
         {/* Daftar frasa dalam kategori */}
-        {kategoriAktif && (
+        {kategoriAktif && !modeLatihan && (
           <>
             <button
               onClick={() => { setKategoriAktif(null); window.speechSynthesis.cancel(); }}
@@ -191,17 +487,19 @@ export default function PhrasebookPage() {
               ← Kembali ke Kategori
             </button>
 
-            <div className="flex items-center gap-3 mb-5">
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${kategoriAktif.warna} flex items-center justify-center text-2xl shadow`}>
-                {kategoriAktif.emoji}
-              </div>
-              <div>
-                <h2 className="text-xl font-bold text-gray-800">{kategoriAktif.judul}</h2>
-                <p className="text-xs text-gray-400">{kategoriAktif.frasa.length} frasa — tekan 🔊 untuk dengar pengucapan</p>
+            <div className="flex items-center justify-between gap-3 mb-5">
+              <div className="flex items-center gap-3">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${kategoriAktif.warna} flex items-center justify-center text-2xl shadow`}>
+                  {kategoriAktif.emoji}
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-gray-800">{kategoriAktif.judul}</h2>
+                  <p className="text-xs text-gray-400">{kategoriAktif.frasa.length} frasa — tekan 🔊 untuk dengar</p>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 mb-6">
               {kategoriAktif.frasa.map((f, i) => {
                 const id = `${kategoriAktif.id}-${i}`;
                 const diputar = sedangDiputar === id;
@@ -232,6 +530,18 @@ export default function PhrasebookPage() {
                 );
               })}
             </div>
+
+            {/* Tombol mulai latihan */}
+            <button
+              onClick={() => setModeLatihan(true)}
+              className={`w-full py-5 rounded-2xl text-white font-extrabold text-lg bg-gradient-to-r ${kategoriAktif.warna} shadow-xl hover:opacity-90 transition flex items-center justify-center gap-3`}
+            >
+              <span>🎯 Mulai Latihan Ketik</span>
+              <span className="text-sm font-semibold opacity-80">({kategoriAktif.frasa.length} soal)</span>
+            </button>
+            <p className="text-center text-xs text-gray-400 mt-2">
+              Lihat terjemahan Indonesia → ketik sendiri dalam Inggris
+            </p>
           </>
         )}
       </div>
