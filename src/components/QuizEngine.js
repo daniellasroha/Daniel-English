@@ -8,10 +8,22 @@ import { useSound } from "@/hooks/useSound";
 
 const WAKTU_TIMER = 15; // detik per soal
 
-export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, kategori, pakaiTimer = false }) {
+// Fisher-Yates shuffle — acak urutan soal
+function acakSoal(arr, max) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return max && max < copy.length ? copy.slice(0, max) : copy;
+}
+
+export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, kategori, pakaiTimer = false, maxSoal }) {
   const { recordQuiz } = useProgress();
   const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
 
+  // Soal diacak setiap kali quiz dimulai/diulang
+  const [soalAcak, setSoalAcak] = useState(() => acakSoal(soalList, maxSoal));
   const [soalAktif, setSoalAktif] = useState(0);
   const [pilihanDipilih, setPilihanDipilih] = useState(null);
   const [sudahDijawab, setSudahDijawab] = useState(false);
@@ -22,8 +34,8 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
   const [habisWaktu, setHabisWaktu] = useState(false);
   const timerRef = useRef(null);
 
-  const soal = soalList[soalAktif];
-  const totalSoal = soalList.length;
+  const soal = soalAcak[soalAktif];
+  const totalSoal = soalAcak.length;
 
   // Reset timer saat ganti soal
   useEffect(() => {
@@ -40,7 +52,7 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
           setSudahDijawab(true);
           setPilihanDipilih(null);
           bunyiSalah();
-          setRiwayat((r) => [...r, { benar: false, soal: soalList[soalAktif]?.pertanyaan }]);
+          setRiwayat((r) => [...r, { benar: false, soal: soalAcak[soalAktif]?.pertanyaan }]);
           return 0;
         }
         return prev - 1;
@@ -70,7 +82,7 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
     if (soalAktif + 1 >= totalSoal) {
       setSelesai(true);
       bunyiSelesai();
-      const skorFinal = skor + (pilihanDipilih === soal.jawaban && !habisWaktu ? 1 : 0);
+      const skorFinal = skor + (pilihanDipilih === soal?.jawaban && !habisWaktu ? 1 : 0);
       recordQuiz(kategori || "umum", skorFinal, totalSoal);
     } else {
       setSoalAktif((s) => s + 1);
@@ -82,6 +94,7 @@ export default function QuizEngine({ judul, emoji, soalList, warnaBg, warnaBtn, 
 
   function ulangi() {
     clearInterval(timerRef.current);
+    setSoalAcak(acakSoal(soalList, maxSoal)); // acak ulang soal baru
     setSoalAktif(0); setPilihanDipilih(null);
     setSudahDijawab(false); setSkor(0);
     setSelesai(false); setRiwayat([]);
