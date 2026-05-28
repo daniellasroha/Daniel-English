@@ -196,11 +196,14 @@ function TampilanPelajaran({
   onNextLesson,
 }) {
   const meta = unit;
-  const [fase, setFase] = useState(sudahSelesai ? "done" : "vocab"); // vocab | quiz | done
+  const [fase, setFase] = useState("vocab"); // vocab | quiz | done — selalu mulai dari awal
   const [vocabIdx, setVocabIdx] = useState(0);
 
   const isVocab = pelajaran.tipe === "vocab";
   const isQuiz = pelajaran.tipe === "quiz";
+
+  // Kalau pelajaran sudah selesai tapi user klik dari daftar → mulai dari awal, bukan langsung "done"
+  // (sudahSelesai hanya untuk tahu status, bukan untuk skip)
 
   function handleVocabNext() {
     if (isVocab && vocabIdx < pelajaran.kartu.length - 1) {
@@ -269,6 +272,14 @@ function TampilanPelajaran({
                 <span className="text-xl">→</span>
               </button>
             )}
+
+            {/* Tombol ulangi pelajaran */}
+            <button
+              onClick={() => { setFase(isVocab ? "vocab" : "quiz"); setVocabIdx(0); }}
+              className="w-full py-3 rounded-2xl font-bold border-2 border-gray-200 text-gray-600 hover:bg-gray-50 transition flex items-center justify-center gap-2"
+            >
+              <span>🔄</span> Ulangi Pelajaran
+            </button>
 
             <button
               onClick={onKembali}
