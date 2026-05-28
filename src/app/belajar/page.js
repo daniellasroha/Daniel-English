@@ -420,6 +420,7 @@ export default function BelajarPage() {
     : unitBelajar;
 
   // ── View 3: Pelajaran ──
+  // (unitsTampil dipakai di View 2 dan View 1)
   if (pelajaranDipilih && unitDipilih) {
     const unit = unitBelajar.find((u) => u.id === unitDipilih);
     const lessonIndex = unit.pelajaran.findIndex((p) => p.id === pelajaranDipilih);
@@ -457,6 +458,8 @@ export default function BelajarPage() {
   if (unitDipilih) {
     const unit = unitBelajar.find((u) => u.id === unitDipilih);
     const { done, total } = getUnitProgress(unitDipilih);
+    const currentUnitIdx = unitsTampil.findIndex((u) => u.id === unitDipilih);
+    const nextUnit = unitsTampil[currentUnitIdx + 1] || null;
 
     return (
       <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -531,12 +534,38 @@ export default function BelajarPage() {
               );
             })}
           </div>
+
+          {/* Tombol next unit */}
+          <div className="mt-8 flex flex-col gap-3">
+            {nextUnit && (
+              <button
+                onClick={() => setUnitDipilih(nextUnit.id)}
+                className={`w-full py-4 rounded-2xl text-white font-bold text-base bg-gradient-to-r ${nextUnit.warna} shadow-lg hover:scale-105 transition-transform flex items-center justify-between px-6`}
+              >
+                <span className="flex items-center gap-2">
+                  <span className="text-xl">{nextUnit.emoji}</span>
+                  <span>
+                    <span className="block text-xs font-normal opacity-80">Unit Berikutnya</span>
+                    {nextUnit.judul}
+                  </span>
+                </span>
+                <span className="text-2xl">→</span>
+              </button>
+            )}
+            <button
+              onClick={() => setUnitDipilih(null)}
+              className="w-full py-3 rounded-2xl border-2 border-gray-200 text-gray-500 font-semibold hover:bg-gray-50 transition text-sm"
+            >
+              ← Kembali ke Semua Unit
+            </button>
+          </div>
         </div>
       </main>
     );
   }
 
   // ── View 1: Path overview ──
+  // unitsTampil sudah dihitung di atas
   const { totalDone, totalAll } = loaded
     ? unitsTampil.reduce(
         (acc, u) => {
