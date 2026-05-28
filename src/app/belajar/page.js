@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { learningPath as unitBelajar } from "@/data/learningPath";
 import { useLearning } from "@/hooks/useLearning";
+import { useLevel } from "@/hooks/useLevel";
 
 // ─── KOMPONEN: Kartu Vocab (flashcard) ────────────────────────────────────────
 function VocabCard({ kartu, meta, index, total }) {
@@ -330,10 +331,16 @@ export default function BelajarPage() {
     isLessonDone,
     isLessonUnlocked,
     getUnitProgress,
-    getTotalProgress,
     completeLesson,
     loaded,
   } = useLearning();
+
+  const { config } = useLevel();
+  // Pemula sees only pemula units; menengah sees all 20 units
+  const isPemula = !config || config.vocabLevel === "pemula";
+  const unitsTampil = isPemula
+    ? unitBelajar.filter((u) => u.level === "pemula")
+    : unitBelajar;
 
   // ── View 3: Pelajaran ──
   if (pelajaranDipilih && unitDipilih) {
@@ -437,7 +444,16 @@ export default function BelajarPage() {
   }
 
   // ── View 1: Path overview ──
-  const { done: totalDone, total: totalAll } = loaded ? getTotalProgress() : { done: 0, total: 0 };
+  // Calculate progress only from visible units (respects level filter)
+  const { totalDone, totalAll } = loaded
+    ? unitsTampil.reduce(
+        (acc, u) => {
+          const p = getUnitProgress(u.id);
+          return { totalDone: acc.totalDone + p.done, totalAll: acc.totalAll + p.total };
+        },
+        { totalDone: 0, totalAll: 0 }
+      )
+    : { totalDone: 0, totalAll: 0 };
   const totalPersen = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0;
 
   return (
@@ -447,7 +463,7 @@ export default function BelajarPage() {
           <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
           <div>
             <h1 className="text-xl font-bold text-indigo-700">🗺️ Belajar Terstruktur</h1>
-            <p className="text-xs text-gray-400">{totalDone}/{totalAll} pelajaran selesai</p>
+            <p className="text-xs text-gray-400">{totalDone}/{totalAll} pelajaran selesai · {unitsTampil.length} unit</p>
           </div>
         </div>
       </header>
@@ -479,67 +495,86 @@ export default function BelajarPage() {
           <div className="absolute left-7 top-8 bottom-8 w-0.5 bg-gradient-to-b from-indigo-200 to-transparent" />
 
           <div className="flex flex-col gap-4">
-            {unitBelajar.map((unit, unitIdx) => {
+            {unitsTampil.map((unit, unitIdx) => {
               const { done, total } = loaded ? getUnitProgress(unit.id) : { done: 0, total: 0 };
               const firstLessonUnlocked = loaded ? isLessonUnlocked(unit.id, 0) : unitIdx === 0;
-              const allDone = done === total;
+              const allDone = done === total && total > 0;
               const persen = total > 0 ? Math.round((done / total) * 100) : 0;
+              // Show menengah section separator for menengah users
+              const showMenengahSeparator = !isPemula && unit.level === "menengah" &&
+                (unitIdx === 0 || unitsTampil[unitIdx - 1].level === "pemula");
 
               return (
-                <div key={unit.id} className="relative pl-16">
-                  {/* Circle connector */}
-                  <div className={`absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-lg shadow-md border-2 border-white ${
-                    allDone
-                      ? `bg-gradient-to-br ${unit.warna}`
-                      : firstLessonUnlocked
-                      ? `bg-gradient-to-br ${unit.warna} opacity-70`
-                      : "bg-gray-200"
-                  }`}>
-                    {allDone ? "✓" : firstLessonUnlocked ? unit.emoji : "🔒"}
-                  </div>
-
-                  <button
-                    onClick={() => firstLessonUnlocked && setUnitDipilih(unit.id)}
-                    disabled={!firstLessonUnlocked}
-                    className={`w-full text-left rounded-2xl border-2 p-4 transition-all ${
-                      allDone
-                        ? `${unit.border} ${unit.bg} shadow-md`
-                        : firstLessonUnlocked
-                        ? "border-gray-200 bg-white hover:shadow-md hover:-translate-y-0.5"
-                        : "border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed"
-                    }`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs text-gray-400 font-mono">Unit {unitIdx + 1}</span>
-                          {allDone && (
-                            <span className="text-xs bg-white rounded-full px-2 py-0.5 border border-green-200 text-green-600 font-semibold">Selesai ✓</span>
-                          )}
-                          {!firstLessonUnlocked && (
-                            <span className="text-xs bg-gray-100 rounded-full px-2 py-0.5 text-gray-400">Terkunci</span>
-                          )}
+                <div key={unit.id}>
+                  {showMenengahSeparator && (
+                    <div className="relative pl-16 mb-2">
+                      <div className="rounded-2xl border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50 px-5 py-3 flex items-center gap-3">
+                        <span className="text-2xl">🎓</span>
+                        <div>
+                          <p className="font-bold text-purple-700 text-sm">Materi Menengah</p>
+                          <p className="text-xs text-purple-400">Lanjutan setelah menguasai materi pemula</p>
                         </div>
-                        <p className={`font-bold text-base ${firstLessonUnlocked ? unit.teks : "text-gray-400"}`}>{unit.judul}</p>
-                        <p className="text-xs text-gray-400 mt-0.5 leading-snug">{unit.deskripsi}</p>
-
-                        {firstLessonUnlocked && (
-                          <div className="mt-2">
-                            <div className="flex justify-between text-xs text-gray-400 mb-1">
-                              <span>{done}/{total} pelajaran</span>
-                              <span>{persen}%</span>
-                            </div>
-                            <div className="w-full h-1.5 bg-gray-100 rounded-full">
-                              <div
-                                className={`h-full rounded-full bg-gradient-to-r ${unit.warna} transition-all`}
-                                style={{ width: `${persen}%` }}
-                              />
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
-                  </button>
+                  )}
+                  <div className="relative pl-16">
+                    {/* Circle connector */}
+                    <div className={`absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-lg shadow-md border-2 border-white ${
+                      allDone
+                        ? `bg-gradient-to-br ${unit.warna}`
+                        : firstLessonUnlocked
+                        ? `bg-gradient-to-br ${unit.warna} opacity-70`
+                        : "bg-gray-200"
+                    }`}>
+                      {allDone ? "✓" : firstLessonUnlocked ? unit.emoji : "🔒"}
+                    </div>
+
+                    <button
+                      onClick={() => firstLessonUnlocked && setUnitDipilih(unit.id)}
+                      disabled={!firstLessonUnlocked}
+                      className={`w-full text-left rounded-2xl border-2 p-4 transition-all ${
+                        allDone
+                          ? `${unit.border} ${unit.bg} shadow-md`
+                          : firstLessonUnlocked
+                          ? "border-gray-200 bg-white hover:shadow-md hover:-translate-y-0.5"
+                          : "border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed"
+                      }`}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs text-gray-400 font-mono">Unit {unitIdx + 1}</span>
+                            {unit.level === "menengah" && (
+                              <span className="text-xs bg-purple-100 rounded-full px-2 py-0.5 text-purple-500 font-semibold">Menengah</span>
+                            )}
+                            {allDone && (
+                              <span className="text-xs bg-white rounded-full px-2 py-0.5 border border-green-200 text-green-600 font-semibold">Selesai ✓</span>
+                            )}
+                            {!firstLessonUnlocked && (
+                              <span className="text-xs bg-gray-100 rounded-full px-2 py-0.5 text-gray-400">Terkunci</span>
+                            )}
+                          </div>
+                          <p className={`font-bold text-base ${firstLessonUnlocked ? unit.teks : "text-gray-400"}`}>{unit.judul}</p>
+                          <p className="text-xs text-gray-400 mt-0.5 leading-snug">{unit.deskripsi}</p>
+
+                          {firstLessonUnlocked && (
+                            <div className="mt-2">
+                              <div className="flex justify-between text-xs text-gray-400 mb-1">
+                                <span>{done}/{total} pelajaran</span>
+                                <span>{persen}%</span>
+                              </div>
+                              <div className="w-full h-1.5 bg-gray-100 rounded-full">
+                                <div
+                                  className={`h-full rounded-full bg-gradient-to-r ${unit.warna} transition-all`}
+                                  style={{ width: `${persen}%` }}
+                                />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </button>
+                  </div>
                 </div>
               );
             })}
