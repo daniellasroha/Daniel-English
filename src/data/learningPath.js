@@ -1,6 +1,6 @@
 // Learning Path — Kurikulum Bahasa Inggris Terstruktur
-// Pemula: 17 Unit (A1) | Menengah: 16 Unit (A2)
-// Total: 33 unit
+// Pemula: 18 Unit (A1) | Menengah: 19 Unit (A2)
+// Total: 37 unit
 
 export const learningPath = [
   {
@@ -5551,6 +5551,255 @@ export const learningPath = [
     ]
   },
   {
+    "id": 18,
+    "judul": "Imperative: Perintah & Larangan",
+    "deskripsi": "Ungkapkan perintah, permintaan, dan larangan tanpa subjek",
+    "emoji": "📢",
+    "warna": "from-red-400 to-orange-500",
+    "bg": "bg-red-50",
+    "border": "border-red-200",
+    "teks": "text-red-700",
+    "level": "pemula",
+    "pelajaran": [
+      {
+        "id": "18-1",
+        "judul": "Imperative Positif",
+        "emoji": "✅",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Come here!",
+            "arti": "Ke sini!",
+            "emoji": "👋",
+            "contoh": "Come here, please. I need your help."
+          },
+          {
+            "kata": "Sit down!",
+            "arti": "Duduk!",
+            "emoji": "🪑",
+            "contoh": "Sit down, class. The lesson is starting."
+          },
+          {
+            "kata": "Open your book!",
+            "arti": "Buka bukumu!",
+            "emoji": "📖",
+            "contoh": "Open your book to page 10."
+          },
+          {
+            "kata": "Listen carefully!",
+            "arti": "Dengarkan baik-baik!",
+            "emoji": "👂",
+            "contoh": "Listen carefully. This is important."
+          },
+          {
+            "kata": "Look at the board!",
+            "arti": "Lihat papan tulis!",
+            "emoji": "📋",
+            "contoh": "Look at the board and copy the notes."
+          },
+          {
+            "kata": "Write your name!",
+            "arti": "Tulis namamu!",
+            "emoji": "✏️",
+            "contoh": "Write your name at the top of the paper."
+          },
+          {
+            "kata": "Be quiet!",
+            "arti": "Diam!",
+            "emoji": "🤫",
+            "contoh": "Be quiet! The baby is sleeping."
+          },
+          {
+            "kata": "Stand up!",
+            "arti": "Berdiri!",
+            "emoji": "🧍",
+            "contoh": "Stand up when the teacher enters the room."
+          }
+        ]
+      },
+      {
+        "id": "18-2",
+        "judul": "Imperative Negatif: Don't + verb",
+        "emoji": "🚫",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Don't run!",
+            "arti": "Jangan berlari!",
+            "emoji": "🏃",
+            "contoh": "Don't run in the hallway!"
+          },
+          {
+            "kata": "Don't talk!",
+            "arti": "Jangan bicara!",
+            "emoji": "🤐",
+            "contoh": "Don't talk while the teacher is speaking."
+          },
+          {
+            "kata": "Don't touch that!",
+            "arti": "Jangan sentuh itu!",
+            "emoji": "✋",
+            "contoh": "Don't touch that! It is very hot."
+          },
+          {
+            "kata": "Don't be late!",
+            "arti": "Jangan terlambat!",
+            "emoji": "⏰",
+            "contoh": "Don't be late for school tomorrow."
+          },
+          {
+            "kata": "Don't forget!",
+            "arti": "Jangan lupa!",
+            "emoji": "🧠",
+            "contoh": "Don't forget your homework!"
+          },
+          {
+            "kata": "Don't open the door!",
+            "arti": "Jangan buka pintunya!",
+            "emoji": "🚪",
+            "contoh": "Don't open the door. It is locked."
+          },
+          {
+            "kata": "Don't eat in class!",
+            "arti": "Jangan makan di kelas!",
+            "emoji": "🍔",
+            "contoh": "Don't eat in class, please."
+          },
+          {
+            "kata": "Don't worry!",
+            "arti": "Jangan khawatir!",
+            "emoji": "😊",
+            "contoh": "Don't worry. Everything will be fine."
+          }
+        ]
+      },
+      {
+        "id": "18-3",
+        "judul": "Imperative dalam Berbagai Situasi",
+        "emoji": "🌍",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Please help me.",
+            "arti": "Tolong bantu saya. (sopan)",
+            "emoji": "🤝",
+            "contoh": "Please help me carry this box."
+          },
+          {
+            "kata": "Turn left here.",
+            "arti": "Belok kiri di sini. (petunjuk arah)",
+            "emoji": "⬅️",
+            "contoh": "Turn left here, then go straight."
+          },
+          {
+            "kata": "Add salt and stir.",
+            "arti": "Tambahkan garam dan aduk. (resep)",
+            "emoji": "🍳",
+            "contoh": "Add salt and stir for 2 minutes."
+          },
+          {
+            "kata": "Click the button.",
+            "arti": "Klik tombolnya. (instruksi teknologi)",
+            "emoji": "💻",
+            "contoh": "Click the button to start the game."
+          },
+          {
+            "kata": "Call me tonight.",
+            "arti": "Telepon saya malam ini. (permintaan)",
+            "emoji": "📞",
+            "contoh": "Call me tonight after dinner."
+          },
+          {
+            "kata": "Have a good day!",
+            "arti": "Semoga harimu menyenangkan! (harapan)",
+            "emoji": "☀️",
+            "contoh": "Have a good day at school!"
+          },
+          {
+            "kata": "Take care!",
+            "arti": "Jaga diri baik-baik! (perpisahan)",
+            "emoji": "💛",
+            "contoh": "Take care! See you tomorrow."
+          },
+          {
+            "kata": "Enjoy your meal!",
+            "arti": "Selamat makan! (saat makan)",
+            "emoji": "🍽️",
+            "contoh": "Enjoy your meal. Bon appetit!"
+          }
+        ]
+      },
+      {
+        "id": "18-4",
+        "judul": "Kuis: Imperative",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Imperative dibentuk dari...",
+            "pilihan": [
+              "subjek + verb",
+              "hanya verb tanpa subjek",
+              "to be + verb",
+              "verb + -ing"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Jangan berlari!' → ___",
+            "pilihan": [
+              "Not run!",
+              "Don't run!",
+              "No running!",
+              "Don't runs!"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Mana yang BUKAN kalimat imperative?",
+            "pilihan": [
+              "Sit down!",
+              "Open the door.",
+              "She is running.",
+              "Don't be late!"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'___ your book to page 5.' (buka)",
+            "pilihan": [
+              "Opens",
+              "Opening",
+              "Open",
+              "To open"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'Don't ___ in class!' (makan)",
+            "pilihan": [
+              "eats",
+              "eating",
+              "eat",
+              "to eat"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Cara membuat imperative lebih sopan:",
+            "pilihan": [
+              "Tambah 'very'",
+              "Tambah 'please'",
+              "Tambah 'do'",
+              "Tambah 'be'"
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "unit-18",
     "judul": "There is / There are",
     "level": "menengah",
@@ -9621,6 +9870,809 @@ export const learningPath = [
               "bersalju"
             ],
             "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-34",
+    "judul": "Present Perfect",
+    "level": "menengah",
+    "deskripsi": "Ungkapkan pengalaman dan kejadian yang baru saja terjadi dengan have/has + V3",
+    "emoji": "✨",
+    "warna": "from-emerald-500 to-teal-500",
+    "bg": "bg-emerald-50",
+    "border": "border-emerald-200",
+    "teks": "text-emerald-700",
+    "pelajaran": [
+      {
+        "id": "u34-l1",
+        "judul": "Rumus: have/has + V3 (Past Participle)",
+        "emoji": "📌",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have eaten",
+            "arti": "Saya sudah makan",
+            "emoji": "🍽️",
+            "contoh": "I have eaten lunch already."
+          },
+          {
+            "kata": "She has finished",
+            "arti": "Dia sudah selesai",
+            "emoji": "✅",
+            "contoh": "She has finished her homework."
+          },
+          {
+            "kata": "They have arrived",
+            "arti": "Mereka sudah tiba",
+            "emoji": "🚗",
+            "contoh": "They have arrived at the hotel."
+          },
+          {
+            "kata": "He has worked here for 5 years",
+            "arti": "Dia sudah bekerja di sini 5 tahun",
+            "emoji": "💼",
+            "contoh": "He has worked here for 5 years."
+          },
+          {
+            "kata": "I have lived in Jakarta",
+            "arti": "Saya pernah tinggal di Jakarta",
+            "emoji": "🏙️",
+            "contoh": "I have lived in Jakarta before."
+          },
+          {
+            "kata": "We haven't met before",
+            "arti": "Kita belum pernah bertemu",
+            "emoji": "🤝",
+            "contoh": "We haven't met before, have we?"
+          },
+          {
+            "kata": "She hasn't called me",
+            "arti": "Dia belum meneleponku",
+            "emoji": "📞",
+            "contoh": "She hasn't called me yet."
+          },
+          {
+            "kata": "have/has + V3",
+            "arti": "Rumus Present Perfect",
+            "emoji": "📐",
+            "contoh": "I have seen. She has seen. (bukan: I have saw)"
+          }
+        ]
+      },
+      {
+        "id": "u34-l2",
+        "judul": "ever, never: Pengalaman Hidup",
+        "emoji": "🌍",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Have you ever been to Bali?",
+            "arti": "Apakah kamu pernah ke Bali?",
+            "emoji": "🏝️",
+            "contoh": "Have you ever been to Bali? Yes, I have."
+          },
+          {
+            "kata": "I have never eaten sushi",
+            "arti": "Saya tidak pernah makan sushi",
+            "emoji": "🍣",
+            "contoh": "I have never eaten sushi in my life."
+          },
+          {
+            "kata": "She has never seen snow",
+            "arti": "Dia tidak pernah melihat salju",
+            "emoji": "❄️",
+            "contoh": "She has never seen snow before."
+          },
+          {
+            "kata": "Have you ever flown on a plane?",
+            "arti": "Apakah kamu pernah naik pesawat?",
+            "emoji": "✈️",
+            "contoh": "Have you ever flown on a plane? Yes, many times."
+          },
+          {
+            "kata": "I've met him before.",
+            "arti": "Saya pernah bertemu dengannya.",
+            "emoji": "🤝",
+            "contoh": "I've met him before at a conference."
+          },
+          {
+            "kata": "He has never tried spicy food",
+            "arti": "Dia tidak pernah mencoba makanan pedas",
+            "emoji": "🌶️",
+            "contoh": "He has never tried spicy food."
+          },
+          {
+            "kata": "Yes, I have.",
+            "arti": "Ya, pernah. (jawaban positif)",
+            "emoji": "👍",
+            "contoh": "Have you ever been abroad? Yes, I have."
+          },
+          {
+            "kata": "No, I haven't.",
+            "arti": "Tidak, belum pernah.",
+            "emoji": "👎",
+            "contoh": "Have you ever driven a car? No, I haven't."
+          }
+        ]
+      },
+      {
+        "id": "u34-l3",
+        "judul": "just, already, yet",
+        "emoji": "⏱️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have just eaten",
+            "arti": "Saya baru saja makan (just = baru saja)",
+            "emoji": "🍽️",
+            "contoh": "I have just eaten, so I am not hungry."
+          },
+          {
+            "kata": "She has already left",
+            "arti": "Dia sudah pergi (already = sudah)",
+            "emoji": "🚶",
+            "contoh": "She has already left. You missed her."
+          },
+          {
+            "kata": "Have you finished yet?",
+            "arti": "Apakah kamu sudah selesai? (yet = sudah/belum)",
+            "emoji": "❓",
+            "contoh": "Have you finished yet? Not yet."
+          },
+          {
+            "kata": "I haven't eaten yet",
+            "arti": "Saya belum makan (yet dengan negatif)",
+            "emoji": "😋",
+            "contoh": "I haven't eaten yet. I am still cooking."
+          },
+          {
+            "kata": "He has just arrived",
+            "arti": "Dia baru saja tiba",
+            "emoji": "🏠",
+            "contoh": "He has just arrived from Surabaya."
+          },
+          {
+            "kata": "I have already seen that film",
+            "arti": "Saya sudah pernah menonton film itu",
+            "emoji": "🎬",
+            "contoh": "I have already seen that film. Let's watch another one."
+          },
+          {
+            "kata": "She hasn't called yet",
+            "arti": "Dia belum menelepon",
+            "emoji": "📱",
+            "contoh": "She hasn't called yet. Should I call her?"
+          },
+          {
+            "kata": "I've just finished my homework",
+            "arti": "Saya baru saja selesai mengerjakan PR",
+            "emoji": "📚",
+            "contoh": "Great news! I've just finished my homework."
+          }
+        ]
+      },
+      {
+        "id": "u34-l4",
+        "judul": "Present Perfect vs Simple Past",
+        "emoji": "⚖️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have seen that film.",
+            "arti": "Pernah (waktu tidak disebutkan) → Present Perfect",
+            "emoji": "🎬",
+            "contoh": "I have seen that film. It is great!"
+          },
+          {
+            "kata": "I saw that film yesterday.",
+            "arti": "Waktu disebutkan (yesterday) → Simple Past",
+            "emoji": "📅",
+            "contoh": "I saw that film yesterday at the cinema."
+          },
+          {
+            "kata": "She has lived here for 3 years.",
+            "arti": "Masih berlangsung sampai sekarang → Present Perfect",
+            "emoji": "🏠",
+            "contoh": "She has lived here for 3 years and still lives here."
+          },
+          {
+            "kata": "She lived here in 2010.",
+            "arti": "Selesai di masa lalu → Simple Past",
+            "emoji": "🗓️",
+            "contoh": "She lived here in 2010, but moved to Bali."
+          },
+          {
+            "kata": "Have you eaten lunch?",
+            "arti": "Belum/sudah makan? (hari ini, waktu tidak pasti)",
+            "emoji": "🍚",
+            "contoh": "Have you eaten lunch? Not yet."
+          },
+          {
+            "kata": "Did you eat lunch?",
+            "arti": "Sudah makan? (waktu tertentu, mis. tadi)",
+            "emoji": "⏰",
+            "contoh": "Did you eat lunch at 12? Yes, I did."
+          },
+          {
+            "kata": "He has never visited London.",
+            "arti": "Pengalaman hidup → Present Perfect",
+            "emoji": "🇬🇧",
+            "contoh": "He has never visited London in his life."
+          },
+          {
+            "kata": "He visited London in 2019.",
+            "arti": "Waktu spesifik → Simple Past",
+            "emoji": "📅",
+            "contoh": "He visited London in 2019 for a conference."
+          }
+        ]
+      },
+      {
+        "id": "u34-l5",
+        "judul": "Kuis: Present Perfect",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Present Perfect yang benar:",
+            "pilihan": [
+              "have/has + V1",
+              "have/has + V2",
+              "have/has + V3",
+              "have/has + V-ing"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'She ___ her homework.' (sudah selesai)",
+            "pilihan": [
+              "has finish",
+              "has finished",
+              "have finished",
+              "finished"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Have you ever ___ sushi?' (makan)",
+            "pilihan": [
+              "ate",
+              "eaten",
+              "eat",
+              "eats"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'I have ___ arrived.' (baru saja)",
+            "pilihan": [
+              "already",
+              "yet",
+              "just",
+              "ever"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Mana yang menggunakan Simple Past (bukan Present Perfect)?",
+            "pilihan": [
+              "I have never seen snow.",
+              "She has already eaten.",
+              "He visited Paris last year.",
+              "Have you ever been to Bali?"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'I haven't eaten ___.' (belum)",
+            "pilihan": [
+              "just",
+              "already",
+              "ever",
+              "yet"
+            ],
+            "jawaban": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-35",
+    "judul": "Conjunctions & Linking Words",
+    "level": "menengah",
+    "deskripsi": "Hubungkan ide dan kalimat dengan kata penghubung yang tepat",
+    "emoji": "🔗",
+    "warna": "from-blue-500 to-cyan-500",
+    "bg": "bg-blue-50",
+    "border": "border-blue-200",
+    "teks": "text-blue-700",
+    "pelajaran": [
+      {
+        "id": "u35-l1",
+        "judul": "and, but, or, so",
+        "emoji": "➕",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "and",
+            "arti": "dan (menambahkan)",
+            "emoji": "➕",
+            "contoh": "I like coffee and tea."
+          },
+          {
+            "kata": "but",
+            "arti": "tapi (kontras)",
+            "emoji": "↔️",
+            "contoh": "I like coffee, but she prefers tea."
+          },
+          {
+            "kata": "or",
+            "arti": "atau (pilihan)",
+            "emoji": "⚖️",
+            "contoh": "Do you want coffee or tea?"
+          },
+          {
+            "kata": "so",
+            "arti": "jadi/sehingga (akibat)",
+            "emoji": "➡️",
+            "contoh": "It was raining, so I stayed at home."
+          },
+          {
+            "kata": "I am tired but happy.",
+            "arti": "Saya lelah tapi bahagia.",
+            "emoji": "😊",
+            "contoh": "I worked all day. I am tired but happy."
+          },
+          {
+            "kata": "She studied hard, so she passed.",
+            "arti": "Dia belajar keras, jadi dia lulus.",
+            "emoji": "🎓",
+            "contoh": "She studied hard, so she passed the exam."
+          },
+          {
+            "kata": "You can walk or take a bus.",
+            "arti": "Kamu bisa jalan atau naik bus.",
+            "emoji": "🚌",
+            "contoh": "You can walk or take a bus to school."
+          },
+          {
+            "kata": "He is tall and handsome.",
+            "arti": "Dia tinggi dan tampan.",
+            "emoji": "👦",
+            "contoh": "He is tall and handsome."
+          }
+        ]
+      },
+      {
+        "id": "u35-l2",
+        "judul": "because, although, however",
+        "emoji": "💡",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "because",
+            "arti": "karena (alasan)",
+            "emoji": "🤔",
+            "contoh": "I stayed home because it was raining."
+          },
+          {
+            "kata": "although / even though",
+            "arti": "meskipun (kontras kuat)",
+            "emoji": "😤",
+            "contoh": "Although she was tired, she kept working."
+          },
+          {
+            "kata": "however",
+            "arti": "namun/akan tetapi (kontras formal)",
+            "emoji": "📝",
+            "contoh": "It was expensive. However, I bought it."
+          },
+          {
+            "kata": "therefore",
+            "arti": "oleh karena itu (kesimpulan)",
+            "emoji": "✅",
+            "contoh": "She worked hard. Therefore, she got promoted."
+          },
+          {
+            "kata": "Why are you late? Because the bus was slow.",
+            "arti": "Mengapa terlambat? Karena busnya lambat.",
+            "emoji": "🚌",
+            "contoh": "Why are you late? Because the bus was slow."
+          },
+          {
+            "kata": "Although it was cold, we went swimming.",
+            "arti": "Meskipun dingin, kami tetap berenang.",
+            "emoji": "🏊",
+            "contoh": "Although it was cold, we went swimming."
+          },
+          {
+            "kata": "I wanted to help. However, I was busy.",
+            "arti": "Saya ingin membantu. Namun, saya sibuk.",
+            "emoji": "😕",
+            "contoh": "I wanted to help. However, I was too busy."
+          },
+          {
+            "kata": "He was sick, so he did not go to school.",
+            "arti": "Dia sakit, jadi tidak ke sekolah.",
+            "emoji": "🤒",
+            "contoh": "He was sick, so he did not go to school."
+          }
+        ]
+      },
+      {
+        "id": "u35-l3",
+        "judul": "when, before, after, while",
+        "emoji": "⏰",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "when",
+            "arti": "ketika/saat",
+            "emoji": "⏰",
+            "contoh": "Call me when you arrive."
+          },
+          {
+            "kata": "before",
+            "arti": "sebelum",
+            "emoji": "⬅️",
+            "contoh": "Wash your hands before you eat."
+          },
+          {
+            "kata": "after",
+            "arti": "setelah",
+            "emoji": "➡️",
+            "contoh": "I always drink tea after dinner."
+          },
+          {
+            "kata": "while",
+            "arti": "sementara/sambil",
+            "emoji": "🔄",
+            "contoh": "She listened to music while she studied."
+          },
+          {
+            "kata": "When I was young, I loved cartoons.",
+            "arti": "Ketika saya kecil, saya suka kartun.",
+            "emoji": "📺",
+            "contoh": "When I was young, I loved watching cartoons."
+          },
+          {
+            "kata": "Before going out, check the weather.",
+            "arti": "Sebelum keluar, cek cuacanya.",
+            "emoji": "🌤️",
+            "contoh": "Before going out, always check the weather."
+          },
+          {
+            "kata": "After school, I play football.",
+            "arti": "Setelah sekolah, saya main bola.",
+            "emoji": "⚽",
+            "contoh": "After school, I usually play football with friends."
+          },
+          {
+            "kata": "He fell asleep while watching TV.",
+            "arti": "Dia ketiduran sambil nonton TV.",
+            "emoji": "😴",
+            "contoh": "He fell asleep while watching TV last night."
+          }
+        ]
+      },
+      {
+        "id": "u35-l4",
+        "judul": "Kuis: Conjunctions",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "'Saya suka kopi ___ dia suka teh.' (tapi)",
+            "pilihan": [
+              "and",
+              "or",
+              "but",
+              "so"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'It was raining, ___ I stayed at home.' (jadi)",
+            "pilihan": [
+              "but",
+              "or",
+              "because",
+              "so"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "'___ she was tired, she kept working.' (meskipun)",
+            "pilihan": [
+              "Because",
+              "Although",
+              "However",
+              "So"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Wash your hands ___ you eat.' (sebelum)",
+            "pilihan": [
+              "after",
+              "while",
+              "before",
+              "when"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'I stayed home ___ it was raining.' (karena)",
+            "pilihan": [
+              "so",
+              "but",
+              "although",
+              "because"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "'She listened to music ___ she studied.' (sambil)",
+            "pilihan": [
+              "before",
+              "after",
+              "while",
+              "when"
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-36",
+    "judul": "Have got",
+    "level": "menengah",
+    "deskripsi": "Pelajari cara menggunakan have got sebagai alternatif have dalam Bahasa Inggris",
+    "emoji": "🤲",
+    "warna": "from-violet-500 to-indigo-500",
+    "bg": "bg-violet-50",
+    "border": "border-violet-200",
+    "teks": "text-violet-700",
+    "pelajaran": [
+      {
+        "id": "u36-l1",
+        "judul": "I've got / She's got (positif)",
+        "emoji": "✅",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I've got a car.",
+            "arti": "Saya punya mobil. (= I have a car)",
+            "emoji": "🚗",
+            "contoh": "I've got a new car. It's red."
+          },
+          {
+            "kata": "She's got blue eyes.",
+            "arti": "Dia memiliki mata biru.",
+            "emoji": "👁️",
+            "contoh": "She's got beautiful blue eyes."
+          },
+          {
+            "kata": "He's got a brother.",
+            "arti": "Dia punya seorang saudara laki-laki.",
+            "emoji": "👦",
+            "contoh": "He's got one brother and two sisters."
+          },
+          {
+            "kata": "We've got a big house.",
+            "arti": "Kami punya rumah besar.",
+            "emoji": "🏠",
+            "contoh": "We've got a big house with a garden."
+          },
+          {
+            "kata": "They've got a lot of money.",
+            "arti": "Mereka punya banyak uang.",
+            "emoji": "💰",
+            "contoh": "They've got a lot of money, so they travel a lot."
+          },
+          {
+            "kata": "I've got a headache.",
+            "arti": "Saya sakit kepala.",
+            "emoji": "🤕",
+            "contoh": "I've got a headache. I need to rest."
+          },
+          {
+            "kata": "She's got a meeting today.",
+            "arti": "Dia ada rapat hari ini.",
+            "emoji": "💼",
+            "contoh": "She's got an important meeting at 10 AM."
+          },
+          {
+            "kata": "have got = have (British English)",
+            "arti": "have got lebih umum di British English",
+            "emoji": "🇬🇧",
+            "contoh": "I have a car. = I've got a car. (sama artinya)"
+          }
+        ]
+      },
+      {
+        "id": "u36-l2",
+        "judul": "I haven't got (negatif)",
+        "emoji": "❌",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I haven't got a car.",
+            "arti": "Saya tidak punya mobil.",
+            "emoji": "🚗",
+            "contoh": "I haven't got a car. I take the bus."
+          },
+          {
+            "kata": "She hasn't got any money.",
+            "arti": "Dia tidak punya uang.",
+            "emoji": "💸",
+            "contoh": "She hasn't got any money left."
+          },
+          {
+            "kata": "He hasn't got a sister.",
+            "arti": "Dia tidak punya saudara perempuan.",
+            "emoji": "👧",
+            "contoh": "He hasn't got a sister, only brothers."
+          },
+          {
+            "kata": "We haven't got time.",
+            "arti": "Kami tidak punya waktu.",
+            "emoji": "⏰",
+            "contoh": "Sorry, we haven't got time to stop."
+          },
+          {
+            "kata": "They haven't got a garden.",
+            "arti": "Mereka tidak punya taman.",
+            "emoji": "🌿",
+            "contoh": "They haven't got a garden in their apartment."
+          },
+          {
+            "kata": "I haven't got the answer.",
+            "arti": "Saya tidak tahu jawabannya.",
+            "emoji": "❓",
+            "contoh": "Sorry, I haven't got the answer to that."
+          },
+          {
+            "kata": "haven't got = don't have",
+            "arti": "Keduanya berarti 'tidak punya'",
+            "emoji": "📌",
+            "contoh": "I haven't got a car. = I don't have a car."
+          },
+          {
+            "kata": "hasn't got = doesn't have",
+            "arti": "Untuk he/she/it",
+            "emoji": "📌",
+            "contoh": "She hasn't got a bike. = She doesn't have a bike."
+          }
+        ]
+      },
+      {
+        "id": "u36-l3",
+        "judul": "Have you got...? (tanya)",
+        "emoji": "❓",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Have you got a pen?",
+            "arti": "Apakah kamu punya pena?",
+            "emoji": "✏️",
+            "contoh": "Have you got a pen I can borrow?"
+          },
+          {
+            "kata": "Has she got a car?",
+            "arti": "Apakah dia punya mobil?",
+            "emoji": "🚗",
+            "contoh": "Has she got a car? Yes, she has."
+          },
+          {
+            "kata": "Have they got children?",
+            "arti": "Apakah mereka punya anak?",
+            "emoji": "👶",
+            "contoh": "Have they got any children? Yes, two."
+          },
+          {
+            "kata": "Yes, I have.",
+            "arti": "Ya, punya. (jawaban positif)",
+            "emoji": "👍",
+            "contoh": "Have you got a phone? Yes, I have."
+          },
+          {
+            "kata": "No, I haven't.",
+            "arti": "Tidak, tidak punya.",
+            "emoji": "👎",
+            "contoh": "Have you got a car? No, I haven't."
+          },
+          {
+            "kata": "Have you got the time?",
+            "arti": "Apakah kamu tahu jam berapa sekarang?",
+            "emoji": "⌚",
+            "contoh": "Excuse me, have you got the time? It's 3 PM."
+          },
+          {
+            "kata": "Has he got a job?",
+            "arti": "Apakah dia sudah punya pekerjaan?",
+            "emoji": "💼",
+            "contoh": "Has he got a job yet? Yes, he starts next Monday."
+          },
+          {
+            "kata": "Have you got any questions?",
+            "arti": "Apakah ada pertanyaan?",
+            "emoji": "🙋",
+            "contoh": "Have you got any questions about the lesson?"
+          }
+        ]
+      },
+      {
+        "id": "u36-l4",
+        "judul": "Kuis: Have got",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "'Saya punya mobil baru.' dengan have got:",
+            "pilihan": [
+              "I have got a new car.",
+              "I've got a new car.",
+              "I got a new car.",
+              "I've get a new car."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'She ___ any money.' (tidak punya)",
+            "pilihan": [
+              "haven't got",
+              "hasn't got",
+              "hasn't have",
+              "don't got"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'___ you got a pen?' (pertanyaan)",
+            "pilihan": [
+              "Do",
+              "Does",
+              "Have",
+              "Has"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'Has she got a car?' — Jawaban positif:",
+            "pilihan": [
+              "Yes, she does.",
+              "Yes, she has.",
+              "Yes, she got.",
+              "Yes, she have."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Mana yang BENAR?",
+            "pilihan": [
+              "I've got a car. = I have a car.",
+              "I've got = I had",
+              "She's got = She is got",
+              "Have you got = Do you got"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "'I haven't got time.' Artinya:",
+            "pilihan": [
+              "Saya tidak punya waktu.",
+              "Saya sudah punya waktu.",
+              "Apakah saya punya waktu?",
+              "Saya tidak punya jam."
+            ],
+            "jawaban": 0
           }
         ]
       }
