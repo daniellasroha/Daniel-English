@@ -5,6 +5,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
 import { useProgress, hitungStreak, hitungRataQuiz } from "@/hooks/useProgress";
+import { useLearning } from "@/hooks/useLearning";
+import { useBadges } from "@/hooks/useBadges";
+import { learningPath as unitBelajar } from "@/data/learningPath";
 
 // Format tanggal ke bahasa Indonesia
 function formatTanggal(str) {
@@ -41,6 +44,7 @@ export default function ProgressPage() {
 
   const { username, saveUsername } = useUsername();
   const { data } = useProgress();
+  const { completedLessons } = useLearning();
 
   // Hitung statistik real
   const streak = data ? hitungStreak(data.sessions) : 0;
@@ -81,6 +85,9 @@ export default function ProgressPage() {
       setInputNama("");
     }
   }
+
+  const badges = useBadges({ completedLessons, streak, progressData: data, unitBelajar });
+  const earnedCount = badges.filter(b => b.earned).length;
 
   const statistik = [
     { label: "Hari Belajar", nilai: totalSesi.toString(), ikon: "🔥", warna: "text-orange-600", bg: "bg-orange-50" },
@@ -156,18 +163,21 @@ export default function ProgressPage() {
         </div>
 
         {/* Tab navigasi */}
-        <div className="flex gap-2 mb-6 bg-white rounded-xl p-1 shadow-sm border border-pink-100">
-          {["ringkasan", "aktivitas", "target"].map((tab) => (
+        <div className="flex gap-1 mb-6 bg-white rounded-xl p-1 shadow-sm border border-pink-100">
+          {["ringkasan", "badge", "aktivitas", "target"].map((tab) => (
             <button
               key={tab}
               onClick={() => setTabAktif(tab)}
-              className={`flex-1 py-2 rounded-lg text-sm font-semibold capitalize transition ${
+              className={`flex-1 py-2 rounded-lg text-xs font-semibold capitalize transition ${
                 tabAktif === tab
                   ? "bg-pink-500 text-white shadow"
                   : "text-gray-500 hover:bg-pink-50"
               }`}
             >
-              {tab === "ringkasan" ? "📈 Ringkasan" : tab === "aktivitas" ? "📋 Aktivitas" : "🎯 Target"}
+              {tab === "ringkasan" ? "📈 Ringkasan"
+                : tab === "badge" ? `🏅 Badge`
+                : tab === "aktivitas" ? "📋 Aktivitas"
+                : "🎯 Target"}
             </button>
           ))}
         </div>
@@ -243,6 +253,55 @@ export default function ProgressPage() {
                 <p>Belum ada data progress. Mulai belajar dulu yuk!</p>
               </div>
             )}
+          </div>
+        )}
+
+        {/* TAB: Badge */}
+        {tabAktif === "badge" && (
+          <div>
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl p-5 mb-5 text-white shadow-lg">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">🏅</span>
+                <div>
+                  <p className="font-extrabold text-xl">{earnedCount} / {badges.length} Badge</p>
+                  <p className="text-yellow-100 text-sm">Terus belajar untuk membuka semua badge!</p>
+                </div>
+              </div>
+              <div className="mt-3 w-full bg-white bg-opacity-30 rounded-full h-3">
+                <div
+                  className="bg-white h-3 rounded-full transition-all duration-700"
+                  style={{ width: `${Math.round((earnedCount / badges.length) * 100)}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {badges.map((badge) => (
+                <div
+                  key={badge.id}
+                  className={`rounded-2xl p-4 border-2 transition-all ${
+                    badge.earned
+                      ? `${badge.bg} ${badge.border} shadow-md`
+                      : "bg-gray-50 border-gray-200 opacity-50 grayscale"
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-3xl">{badge.emoji}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className={`font-bold text-sm truncate ${badge.earned ? badge.teks : "text-gray-400"}`}>
+                        {badge.judul}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-0.5 leading-tight">{badge.deskripsi}</p>
+                    </div>
+                  </div>
+                  {badge.earned && (
+                    <div className={`mt-2 text-xs font-semibold ${badge.teks} flex items-center gap-1`}>
+                      <span>✓</span> Diraih!
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

@@ -1,4 +1,4 @@
-// Halaman Grammar — 8 topik lengkap dengan rumus, contoh, dan tips
+// Halaman Grammar — topik + latihan langsung per topik
 "use client";
 
 import { useState } from "react";
@@ -6,6 +6,170 @@ import Link from "next/link";
 import { useProgress } from "@/hooks/useProgress";
 import { useLevel } from "@/hooks/useLevel";
 
+// ─── SOAL LATIHAN per topik (5 soal) ──────────────────────────────────────────
+const soalPerTopik = {
+  1: [ // Simple Present
+    { p: "She ___ (go) to school every morning.", opts: ["go","goes","went","going"], j: 1 },
+    { p: "They ___ (play) football on Sundays.", opts: ["plays","play","played","playing"], j: 1 },
+    { p: "Kalimat negatif: He ___ like coffee.", opts: ["not","don't","doesn't","isn't"], j: 2 },
+    { p: "Kalimat tanya: ___ she speak French?", opts: ["Do","Does","Is","Has"], j: 1 },
+    { p: "He ___ (watch) TV every night.", opts: ["watch","watchs","watches","watching"], j: 2 },
+  ],
+  2: [ // Simple Past
+    { p: "Past tense dari 'go' adalah...", opts: ["goed","goes","went","gone"], j: 2 },
+    { p: "Past tense dari 'eat' adalah...", opts: ["eated","aten","ate","eats"], j: 2 },
+    { p: "She ___ (not come) yesterday.", opts: ["doesn't come","didn't come","wasn't come","hadn't come"], j: 1 },
+    { p: "___ you finish the homework last night?", opts: ["Do","Does","Did","Have"], j: 2 },
+    { p: "Past tense dari 'buy' adalah...", opts: ["buyed","boughten","bought","buys"], j: 2 },
+  ],
+  3: [ // To Be
+    { p: "Pilih To Be: 'I ___ a student.'", opts: ["is","am","are","be"], j: 1 },
+    { p: "Pilih To Be: 'She ___ happy.'", opts: ["am","is","are","be"], j: 1 },
+    { p: "Pilih To Be: 'They ___ my friends.'", opts: ["is","am","are","be"], j: 2 },
+    { p: "Bentuk lampau: 'I ___ tired yesterday.'", opts: ["am","is","was","were"], j: 2 },
+    { p: "Bentuk lampau: 'They ___ at school.'", opts: ["was","were","are","been"], j: 1 },
+  ],
+  4: [ // Present Continuous
+    { p: "She ___ eating now.", opts: ["is","are","was","be"], j: 0 },
+    { p: "They ___ (play) outside right now.", opts: ["is playing","are playing","was playing","plays"], j: 1 },
+    { p: "Bentuk -ing dari 'run': He is ___.", opts: ["runing","running","runned","runs"], j: 1 },
+    { p: "___ you studying now?", opts: ["Do","Are","Is","Have"], j: 1 },
+    { p: "Bentuk -ing dari 'swim': She is ___.", opts: ["swiming","swimming","swammed","swims"], j: 1 },
+  ],
+  5: [ // Future
+    { p: "I ___ call you later.", opts: ["am","was","will","have"], j: 2 },
+    { p: "She ___ going to study tonight.", opts: ["will","is","are","was"], j: 1 },
+    { p: "Future negatif: We ___ go.", opts: ["don't will","won't","will not to","aren't will"], j: 1 },
+    { p: "Terjemahkan: 'Saya akan pergi ke Jakarta.'", opts: ["I go to Jakarta.","I went to Jakarta.","I will go to Jakarta.","I am going Jakarta."], j: 2 },
+    { p: "They ___ going to visit us next week.", opts: ["will","is","are","was"], j: 2 },
+  ],
+  6: [ // Modal
+    { p: "I ___ speak English well.", opts: ["will","can","must","should"], j: 1 },
+    { p: "You ___ wear a seatbelt. (kewajiban)", opts: ["can","might","must","would"], j: 2 },
+    { p: "You ___ rest more. (saran)", opts: ["must","can","should","will"], j: 2 },
+    { p: "It ___ rain today. (kemungkinan)", opts: ["must","might","should","can"], j: 1 },
+    { p: "___ I borrow your pen? (izin sopan)", opts: ["Must","Should","May","Will"], j: 2 },
+  ],
+  7: [ // Articles
+    { p: "Pilih artikel: '___ apple'", opts: ["a","an","the","—"], j: 1 },
+    { p: "Pilih artikel: '___ book'", opts: ["a","an","the","—"], j: 0 },
+    { p: "Artikel spesifik: 'Close ___ door.'", opts: ["a","an","the","—"], j: 2 },
+    { p: "Pilih artikel: '___ hour'", opts: ["a","an","the","—"], j: 1 },
+    { p: "Superlative: 'She is ___ best.'", opts: ["a","an","the","—"], j: 2 },
+  ],
+  8: [ // Comparative & Superlative
+    { p: "She is ___ than her sister. (tall)", opts: ["more tall","tallest","taller","tall"], j: 2 },
+    { p: "He is the ___ student. (smart)", opts: ["smarter","more smart","smartest","smart"], j: 2 },
+    { p: "Comparative 'good': This is ___ than that.", opts: ["gooder","more good","better","best"], j: 2 },
+    { p: "Superlative 'bad': the ___ day.", opts: ["baddest","most bad","worse","worst"], j: 3 },
+    { p: "This room is ___ than mine. (big)", opts: ["more big","bigger","biggest","bigest"], j: 1 },
+  ],
+  9: [ // Salam
+    { p: "Sapaan di pagi hari adalah...", opts: ["Good night","Good afternoon","Good morning","Good evening"], j: 2 },
+    { p: "Cara memperkenalkan nama: '___ is Daniel'", opts: ["I name","My name","Your name","Name I"], j: 1 },
+    { p: "Apa arti 'Nice to meet you'?", opts: ["Apa kabar?","Sampai jumpa","Senang bertemu","Terima kasih"], j: 2 },
+    { p: "Sapaan perpisahan yang umum:", opts: ["Hello","Sorry","Goodbye","Please"], j: 2 },
+    { p: "Jawaban umum untuk 'How are you?'", opts: ["My name is...","I am fine, thank you.","Nice to meet you.","Good morning!"], j: 1 },
+  ],
+  10: [ // Kata Ganti
+    { p: "Kata ganti untuk 'dia (perempuan)' adalah...", opts: ["He","She","It","They"], j: 1 },
+    { p: "Kata ganti jamak untuk orang adalah...", opts: ["It","We","He","She"], j: 1 },
+    { p: "Possessive untuk 'he': ___ bag is red.", opts: ["He","Him","His","Himself"], j: 2 },
+    { p: "Possessive untuk 'I': This is ___ book.", opts: ["I","Me","My","Mine"], j: 2 },
+    { p: "Kata ganti untuk benda mati: ___ is a table.", opts: ["He","She","It","They"], j: 2 },
+  ],
+};
+
+// ─── Komponen Mini Quiz Grammar ───────────────────────────────────────────────
+function MiniQuizGrammar({ topikId, warna, border, bg }) {
+  const soalList = soalPerTopik[topikId] || [];
+  const [idx, setIdx] = useState(0);
+  const [dipilih, setDipilih] = useState(null);
+  const [benar, setBenar] = useState(0);
+  const [selesai, setSelesai] = useState(false);
+
+  if (!soalList.length) return null;
+
+  const soal = soalList[idx];
+
+  function pilih(i) {
+    if (dipilih !== null) return;
+    setDipilih(i);
+    if (i === soal.j) setBenar(b => b + 1);
+  }
+
+  function lanjut() {
+    if (idx >= soalList.length - 1) {
+      setSelesai(true);
+    } else {
+      setIdx(n => n + 1);
+      setDipilih(null);
+    }
+  }
+
+  function ulangi() {
+    setIdx(0);
+    setDipilih(null);
+    setBenar(0);
+    setSelesai(false);
+  }
+
+  if (selesai) {
+    const persen = Math.round((benar / soalList.length) * 100);
+    return (
+      <div className="mt-4 text-center py-6 bg-gray-50 rounded-2xl border border-gray-200">
+        <div className="text-5xl mb-2">{persen === 100 ? "🏆" : persen >= 60 ? "⭐" : "💪"}</div>
+        <p className="font-extrabold text-gray-800 text-xl">{persen === 100 ? "Sempurna!" : persen >= 60 ? "Bagus!" : "Terus Berlatih!"}</p>
+        <p className="text-gray-500 text-sm mt-1">{benar}/{soalList.length} benar · {persen}%</p>
+        <button onClick={ulangi} className={`mt-4 px-6 py-2 rounded-xl text-white font-bold bg-gradient-to-r ${warna} hover:scale-105 transition-transform shadow`}>
+          🔄 Ulangi Latihan
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-4">
+      <div className="flex justify-between text-xs text-gray-400 mb-2">
+        <span>Soal {idx + 1}/{soalList.length}</span>
+        <span>{benar} benar</span>
+      </div>
+      <div className="w-full h-1.5 bg-gray-100 rounded-full mb-4">
+        <div className={`h-full rounded-full bg-gradient-to-r ${warna} transition-all`} style={{ width: `${(idx / soalList.length) * 100}%` }} />
+      </div>
+
+      <div className={`rounded-xl border-2 ${border} ${bg} p-4 mb-4`}>
+        <p className="font-semibold text-gray-800">{soal.p}</p>
+      </div>
+
+      <div className="flex flex-col gap-2 mb-3">
+        {soal.opts.map((o, i) => {
+          let style = "border-2 border-gray-200 bg-white text-gray-700 hover:border-indigo-300 hover:bg-indigo-50";
+          let icon = null;
+          if (dipilih !== null) {
+            if (i === soal.j) { style = "border-2 border-green-400 bg-green-50 text-green-700"; icon = <span className="ml-1 font-bold">✓</span>; }
+            else if (i === dipilih) { style = "border-2 border-red-400 bg-red-50 text-red-700"; icon = <span className="ml-1 font-bold">✗</span>; }
+            else style = "border-2 border-gray-200 bg-white text-gray-400 opacity-50";
+          }
+          return (
+            <button key={i} onClick={() => pilih(i)} className={`w-full text-left px-4 py-2.5 rounded-xl font-medium transition-all text-sm ${style}`}>
+              <span className="text-xs text-gray-400 mr-2">{["A","B","C","D"][i]}.</span>
+              {o}{icon}
+            </button>
+          );
+        })}
+      </div>
+
+      {dipilih !== null && (
+        <button onClick={lanjut} className={`w-full py-2.5 rounded-xl text-white font-bold bg-gradient-to-r ${warna} hover:scale-105 transition-transform shadow`}>
+          {idx < soalList.length - 1 ? "Soal Berikutnya →" : "Lihat Hasil"}
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── Data materi grammar ──────────────────────────────────────────────────────
 const materiGrammar = [
   {
     id: 1, judul: "Simple Present Tense", emoji: "⏰",
@@ -45,7 +209,7 @@ const materiGrammar = [
   {
     id: 3, judul: "To Be (is, am, are, was, were)", emoji: "🔗",
     warna: "from-purple-400 to-purple-600", bgLight: "bg-purple-50", border: "border-purple-200",
-    penjelasan: "To Be menghubungkan subjek dengan keadaan, profesi, atau sifat. Bentuknya berubah tergantung subjek dan waktu.",
+    penjelasan: "To Be menghubungkan subjek dengan keadaan, profesi, atau sifat.",
     rumus: [
       { subjek: "I (sekarang)", kata_kerja: "am", contoh: "I am a student." },
       { subjek: "He / She / It (sekarang)", kata_kerja: "is", contoh: "She is happy." },
@@ -64,7 +228,7 @@ const materiGrammar = [
   {
     id: 4, judul: "Present Continuous Tense", emoji: "🔄",
     warna: "from-orange-400 to-orange-600", bgLight: "bg-orange-50", border: "border-orange-200",
-    penjelasan: "Digunakan untuk kejadian yang sedang berlangsung saat ini atau rencana di masa depan dekat.",
+    penjelasan: "Digunakan untuk kejadian yang sedang berlangsung saat ini.",
     rumus: [
       { subjek: "I", kata_kerja: "am + Verb-ing", contoh: "I am eating now." },
       { subjek: "He / She / It", kata_kerja: "is + Verb-ing", contoh: "She is reading." },
@@ -76,12 +240,12 @@ const materiGrammar = [
       { indonesia: "Kami sedang belajar bahasa Inggris.", inggris: "We are studying English." },
       { indonesia: "Apakah kamu sedang mendengarkan?", inggris: "Are you listening?" },
     ],
-    tips: "Kata kunci: now, right now, at the moment, currently, look!, listen! — menandakan Present Continuous.",
+    tips: "Kata kunci: now, right now, at the moment, currently, look!, listen!",
   },
   {
     id: 5, judul: "Future Tense (will & going to)", emoji: "🔮",
     warna: "from-teal-400 to-teal-600", bgLight: "bg-teal-50", border: "border-teal-200",
-    penjelasan: "Digunakan untuk menyatakan rencana atau prediksi di masa depan. 'Will' untuk keputusan spontan, 'going to' untuk rencana yang sudah dipikirkan.",
+    penjelasan: "'Will' untuk keputusan spontan, 'going to' untuk rencana yang sudah dipikirkan.",
     rumus: [
       { subjek: "Semua subjek (will)", kata_kerja: "will + Verb 1", contoh: "I will call you later." },
       { subjek: "Semua subjek (going to)", kata_kerja: "am/is/are + going to + Verb 1", contoh: "She is going to study tonight." },
@@ -93,12 +257,12 @@ const materiGrammar = [
       { indonesia: "Dia tidak akan hadir besok.", inggris: "She won't come tomorrow." },
       { indonesia: "Apakah kamu akan datang ke pesta?", inggris: "Will you come to the party?" },
     ],
-    tips: "Gunakan 'will' untuk keputusan mendadak (Oh, I'll help you!) dan 'going to' untuk rencana yang sudah terencana (I'm going to study tonight).",
+    tips: "Gunakan 'will' untuk keputusan mendadak dan 'going to' untuk rencana yang sudah terencana.",
   },
   {
     id: 6, judul: "Modal Verbs (can, must, should)", emoji: "🎛️",
     warna: "from-pink-400 to-pink-600", bgLight: "bg-pink-50", border: "border-pink-200",
-    penjelasan: "Modal verbs digunakan untuk menyatakan kemampuan, keharusan, atau saran. Selalu diikuti Verb 1 (bentuk dasar).",
+    penjelasan: "Modal verbs digunakan untuk menyatakan kemampuan, keharusan, atau saran. Selalu diikuti Verb 1.",
     rumus: [
       { subjek: "can", kata_kerja: "kemampuan / izin", contoh: "I can swim. Can I go?" },
       { subjek: "must", kata_kerja: "keharusan kuat", contoh: "You must wear a seatbelt." },
@@ -111,12 +275,12 @@ const materiGrammar = [
       { indonesia: "Sebaiknya kamu pergi ke dokter.", inggris: "You should see a doctor." },
       { indonesia: "Mungkin hujan nanti malam.", inggris: "It might rain tonight." },
     ],
-    tips: "Modal verbs tidak pernah berubah bentuk (tidak ada -s/-ed). Selalu ikuti dengan Verb 1: She can sing ✓, She can sings ✗.",
+    tips: "Modal verbs tidak pernah berubah bentuk. Selalu ikuti dengan Verb 1: She can sing ✓, She can sings ✗.",
   },
   {
     id: 7, judul: "Articles (a, an, the)", emoji: "📌",
     warna: "from-yellow-400 to-yellow-600", bgLight: "bg-yellow-50", border: "border-yellow-200",
-    penjelasan: "Articles digunakan sebelum kata benda. 'A/an' untuk benda yang pertama kali disebut atau tidak spesifik, 'the' untuk benda yang sudah diketahui atau spesifik.",
+    penjelasan: "'A/an' untuk benda tidak spesifik, 'the' untuk benda yang sudah diketahui atau spesifik.",
     rumus: [
       { subjek: "a", kata_kerja: "sebelum konsonan (b,c,d...)", contoh: "a book, a cat, a dog" },
       { subjek: "an", kata_kerja: "sebelum vokal (a,e,i,o,u)", contoh: "an apple, an egg, an orange" },
@@ -128,27 +292,25 @@ const materiGrammar = [
       { indonesia: "Tutup pintunya!", inggris: "Close the door!" },
       { indonesia: "Matahari terbit di timur.", inggris: "The sun rises in the east." },
     ],
-    tips: "Pakai 'an' berdasarkan bunyi, bukan huruf. Contoh: 'an hour' (h-nya tidak berbunyi), 'a university' (u-nya berbunyi 'yu' seperti konsonan).",
+    tips: "Pakai 'an' berdasarkan bunyi: 'an hour' (h-nya tak berbunyi), 'a university' (u-nya berbunyi 'yu').",
   },
   {
     id: 8, judul: "Comparative & Superlative", emoji: "📊",
     warna: "from-red-400 to-red-600", bgLight: "bg-red-50", border: "border-red-200",
-    penjelasan: "Digunakan untuk membandingkan dua hal (comparative) atau menyatakan yang paling (superlative).",
+    penjelasan: "Comparative untuk membandingkan dua hal, superlative untuk menyatakan yang paling.",
     rumus: [
-      { subjek: "Kata sifat pendek", kata_kerja: "+ er (comparative) / + est (superlative)", contoh: "tall → taller → tallest" },
+      { subjek: "Kata sifat pendek", kata_kerja: "+ er / + est", contoh: "tall → taller → tallest" },
       { subjek: "Kata sifat panjang", kata_kerja: "more + adj / most + adj", contoh: "beautiful → more beautiful → most beautiful" },
       { subjek: "Tidak beraturan", kata_kerja: "good→better→best / bad→worse→worst", contoh: "This is better than that." },
     ],
     contohKalimat: [
       { indonesia: "Dia lebih tinggi dari saya.", inggris: "He is taller than me." },
-      { indonesia: "Ini adalah film terbaik yang pernah saya tonton.", inggris: "This is the best movie I've ever watched." },
-      { indonesia: "Mobil ini lebih mahal dari sepeda motor.", inggris: "This car is more expensive than a motorcycle." },
-      { indonesia: "Dia adalah siswa paling pintar di kelas.", inggris: "She is the smartest student in class." },
+      { indonesia: "Ini adalah film terbaik.", inggris: "This is the best movie." },
+      { indonesia: "Mobil ini lebih mahal.", inggris: "This car is more expensive than a motorcycle." },
+      { indonesia: "Dia siswa paling pintar.", inggris: "She is the smartest student in class." },
     ],
-    tips: "Untuk kata sifat 1-2 suku kata: tambahkan -er/-est. Untuk 3+ suku kata: gunakan more/most. Jangan gabungkan keduanya: more taller ✗, taller ✓.",
+    tips: "1-2 suku kata: tambahkan -er/-est. 3+ suku kata: gunakan more/most. Jangan gabungkan: more taller ✗",
   },
-
-  // ── TOPIK KHUSUS PEMULA ──────────────────────────────────────────────────
   {
     id: 9, judul: "Salam & Perkenalan", emoji: "👋",
     warna: "from-yellow-400 to-orange-500", bgLight: "bg-yellow-50", border: "border-yellow-200",
@@ -156,7 +318,7 @@ const materiGrammar = [
     rumus: [
       { subjek: "Salam harian", kata_kerja: "Good morning / afternoon / evening / night", contoh: "Good morning, how are you?" },
       { subjek: "Perkenalan", kata_kerja: "My name is... / I am...", contoh: "My name is Daniel." },
-      { subjek: "Menanyakan kabar", kata_kerja: "How are you? → I am fine, thank you.", contoh: "How are you? — I am fine, thank you!" },
+      { subjek: "Menanyakan kabar", kata_kerja: "How are you? → I am fine, thank you.", contoh: "How are you? — I am fine!" },
       { subjek: "Perpisahan", kata_kerja: "Goodbye / See you / Bye", contoh: "Goodbye! See you tomorrow." },
     ],
     contohKalimat: [
@@ -164,36 +326,34 @@ const materiGrammar = [
       { indonesia: "Nama saya Daniel.", inggris: "My name is Daniel." },
       { indonesia: "Saya baik-baik saja, terima kasih.", inggris: "I am fine, thank you." },
       { indonesia: "Senang bertemu denganmu.", inggris: "Nice to meet you." },
-      { indonesia: "Sampai jumpa besok!", inggris: "See you tomorrow!" },
     ],
-    tips: "Gunakan 'Good morning' sampai jam 12 siang, 'Good afternoon' sampai jam 6 sore, dan 'Good evening' setelah jam 6 sore.",
+    tips: "Gunakan 'Good morning' sampai jam 12, 'Good afternoon' sampai jam 6 sore, 'Good evening' setelahnya.",
   },
   {
     id: 10, judul: "Kata Ganti Orang", emoji: "👤",
     warna: "from-lime-400 to-green-500", bgLight: "bg-lime-50", border: "border-lime-200",
-    penjelasan: "Kata ganti orang (pronouns) digunakan untuk menggantikan nama orang. Ini adalah pondasi dari semua kalimat bahasa Inggris.",
+    penjelasan: "Kata ganti orang (pronouns) menggantikan nama. Ini adalah pondasi dari semua kalimat bahasa Inggris.",
     rumus: [
-      { subjek: "Tunggal", kata_kerja: "I (saya) · You (kamu) · He (dia laki-laki) · She (dia perempuan) · It (benda/hewan)", contoh: "I am happy. She is a teacher." },
-      { subjek: "Jamak", kata_kerja: "We (kami/kita) · You (kalian) · They (mereka)", contoh: "We are students. They are friends." },
+      { subjek: "Tunggal", kata_kerja: "I · You · He · She · It", contoh: "I am happy. She is a teacher." },
+      { subjek: "Jamak", kata_kerja: "We · You · They", contoh: "We are students. They are friends." },
       { subjek: "Kepemilikan", kata_kerja: "My · Your · His · Her · Its · Our · Their", contoh: "My name is... / Her book is red." },
     ],
     contohKalimat: [
       { indonesia: "Saya seorang pelajar.", inggris: "I am a student." },
       { indonesia: "Dia (perempuan) seorang guru.", inggris: "She is a teacher." },
       { indonesia: "Mereka teman saya.", inggris: "They are my friends." },
-      { indonesia: "Kami belajar bahasa Inggris.", inggris: "We study English." },
       { indonesia: "Namanya Daniel. (laki-laki)", inggris: "His name is Daniel." },
     ],
-    tips: "Ingat: 'He' untuk laki-laki, 'She' untuk perempuan, 'It' untuk benda atau hewan. Jangan sampai tertukar!",
+    tips: "'He' untuk laki-laki, 'She' untuk perempuan, 'It' untuk benda atau hewan. Jangan sampai tertukar!",
   },
 ];
 
 export default function GrammarPage() {
   const [topikAktif, setTopikAktif] = useState(null);
+  const [latihanAktif, setLatihanAktif] = useState(null);
   const { recordGrammar } = useProgress();
   const { config } = useLevel();
 
-  // Filter topik berdasarkan level
   const materiTersedia = config
     ? materiGrammar.filter((m) => config.grammarTopics.includes(m.id))
     : materiGrammar;
@@ -201,6 +361,7 @@ export default function GrammarPage() {
   function toggleTopik(id) {
     const bukaSekarang = topikAktif !== id;
     setTopikAktif(bukaSekarang ? id : null);
+    if (!bukaSekarang) setLatihanAktif(null);
     if (bukaSekarang) recordGrammar(id);
   }
 
@@ -221,7 +382,7 @@ export default function GrammarPage() {
 
       <div className="max-w-3xl mx-auto px-4 py-6">
         <div className="bg-white rounded-2xl p-4 mb-5 border border-green-200 shadow-sm text-sm text-gray-600">
-          📌 Pelajari setiap topik secara berurutan. Klik judul topik untuk membuka materi lengkapnya.
+          📌 Pelajari setiap topik, lalu uji pemahamanmu dengan tombol <strong>🎯 Latihan</strong> di setiap topik.
         </div>
 
         <div className="flex flex-col gap-3">
@@ -237,7 +398,7 @@ export default function GrammarPage() {
                   </div>
                   <div className="text-left">
                     <span className="font-bold text-gray-800">{materi.judul}</span>
-                    <p className="text-xs text-gray-400 mt-0.5">{materi.rumus.length} rumus · {materi.contohKalimat.length} contoh</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{materi.rumus.length} rumus · {materi.contohKalimat.length} contoh · 5 soal latihan</p>
                   </div>
                 </div>
                 <span className="text-gray-400 text-lg">{topikAktif === materi.id ? "▲" : "▼"}</span>
@@ -279,9 +440,26 @@ export default function GrammarPage() {
                     ))}
                   </div>
 
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3">
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mb-5">
                     <p className="text-yellow-700 text-sm">💡 <strong>Tips:</strong> {materi.tips}</p>
                   </div>
+
+                  {/* Tombol Latihan */}
+                  <button
+                    onClick={() => setLatihanAktif(latihanAktif === materi.id ? null : materi.id)}
+                    className={`w-full py-3 rounded-2xl font-bold text-white bg-gradient-to-r ${materi.warna} hover:scale-105 transition-transform shadow-md flex items-center justify-center gap-2`}
+                  >
+                    🎯 {latihanAktif === materi.id ? "Sembunyikan Latihan" : "Mulai Latihan (5 soal)"}
+                  </button>
+
+                  {latihanAktif === materi.id && (
+                    <MiniQuizGrammar
+                      topikId={materi.id}
+                      warna={materi.warna}
+                      border={materi.border}
+                      bg={materi.bgLight}
+                    />
+                  )}
                 </div>
               )}
             </div>
