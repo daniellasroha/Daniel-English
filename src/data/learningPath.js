@@ -407,13 +407,13 @@ export const learningPath = [
             "kata": "Six (6)",
             "arti": "Enam",
             "emoji": "6️⃣",
-            "contoh": "Six days a week."
+            "contoh": "I have six books on my desk."
           },
           {
             "kata": "Seven (7)",
             "arti": "Tujuh",
             "emoji": "7️⃣",
-            "contoh": "Seven colors of rainbow."
+            "contoh": "There are seven days in a week."
           },
           {
             "kata": "Eight (8)",
@@ -425,13 +425,13 @@ export const learningPath = [
             "kata": "Nine (9)",
             "arti": "Sembilan",
             "emoji": "9️⃣",
-            "contoh": "Nine players on each side."
+            "contoh": "My sister is nine years old."
           },
           {
             "kata": "Ten (10)",
             "arti": "Sepuluh",
             "emoji": "🔟",
-            "contoh": "Ten fingers on two hands."
+            "contoh": "I got ten out of ten on the quiz!"
           }
         ],
         "soal": [
@@ -497,13 +497,13 @@ export const learningPath = [
             "kata": "Eleven (11)",
             "arti": "Sebelas",
             "emoji": "🔢",
-            "contoh": "There are eleven students."
+            "contoh": "My class has eleven boys and nine girls."
           },
           {
             "kata": "Twelve (12)",
             "arti": "Dua belas",
             "emoji": "🔢",
-            "contoh": "There are twelve months in a year."
+            "contoh": "She got twelve presents on her birthday."
           },
           {
             "kata": "Thirteen (13)",
@@ -527,13 +527,13 @@ export const learningPath = [
             "kata": "Sixteen (16)",
             "arti": "Enam belas",
             "emoji": "🔢",
-            "contoh": "There are sixteen teams."
+            "contoh": "My brother just turned sixteen."
           },
           {
             "kata": "Seventeen (17)",
             "arti": "Tujuh belas",
             "emoji": "🔢",
-            "contoh": "Indonesia's independence: August seventeen."
+            "contoh": "She is seventeen years old and loves to read."
           },
           {
             "kata": "Eighteen (18)",
@@ -545,13 +545,13 @@ export const learningPath = [
             "kata": "Nineteen (19)",
             "arti": "Sembilan belas",
             "emoji": "🔢",
-            "contoh": "The shop closes at nineteen."
+            "contoh": "He is nineteen and just started university."
           },
           {
             "kata": "Twenty (20)",
             "arti": "Dua puluh",
             "emoji": "🔢",
-            "contoh": "I have twenty classmates."
+            "contoh": "She has twenty photos on her phone."
           }
         ],
         "soal": [
@@ -623,25 +623,25 @@ export const learningPath = [
             "kata": "Thirty (30)",
             "arti": "Tiga puluh",
             "emoji": "🔢",
-            "contoh": "I have thirty students."
+            "contoh": "My dad is thirty-five years old."
           },
           {
             "kata": "Forty (40)",
             "arti": "Empat puluh",
             "emoji": "🔢",
-            "contoh": "He is forty years old."
+            "contoh": "There are forty students in the school hall."
           },
           {
             "kata": "Fifty (50)",
             "arti": "Lima puluh",
             "emoji": "🔢",
-            "contoh": "Fifty percent is half."
+            "contoh": "We need fifty chairs for the event."
           },
           {
             "kata": "Sixty (60)",
             "arti": "Enam puluh",
             "emoji": "🔢",
-            "contoh": "There are sixty seconds in a minute."
+            "contoh": "My grandma is sixty and still very active."
           },
           {
             "kata": "Seventy (70)",
@@ -653,7 +653,7 @@ export const learningPath = [
             "kata": "Eighty (80)",
             "arti": "Delapan puluh",
             "emoji": "🔢",
-            "contoh": "The score is eighty."
+            "contoh": "She scored eighty on the English test."
           },
           {
             "kata": "Ninety (90)",
@@ -669,9 +669,9 @@ export const learningPath = [
           },
           {
             "kata": "Twenty-five (25)",
-            "arti": "Dua puluh lima — gabungan puluhan + satuan",
+            "arti": "Dua puluh lima",
             "emoji": "🔢",
-            "contoh": "Twenty-five plus five equals thirty."
+            "contoh": "There are twenty-five students in my class."
           }
         ],
         "soal": [
@@ -1325,49 +1325,49 @@ export const learningPath = [
             "kata": "I am a student at this school",
             "arti": "Saya adalah murid di sekolah ini",
             "emoji": "🏫",
-            "contoh": "I am a student at this school since last year."
+            "contoh": "Hi! I am a student at this school. My name is Rina."
           },
           {
             "kata": "She is a very kind teacher",
             "arti": "Dia adalah guru yang sangat baik",
             "emoji": "👩‍🏫",
-            "contoh": "She is a very kind teacher to all of us."
+            "contoh": "\"She is a very kind teacher,\" said all the students."
           },
           {
             "kata": "They are my best friends",
             "arti": "Mereka adalah teman terbaik saya",
             "emoji": "👫",
-            "contoh": "They are my best friends since childhood."
+            "contoh": "I always eat lunch with them — they are my best friends."
           },
           {
             "kata": "He is not a doctor",
             "arti": "Dia bukan seorang dokter",
             "emoji": "🩺",
-            "contoh": "He is not a doctor, he is a nurse."
+            "contoh": "\"He is not a doctor,\" Mum said. \"He is a nurse.\""
           },
           {
             "kata": "We are happy to be here",
             "arti": "Kami senang berada di sini",
             "emoji": "😊",
-            "contoh": "We are happy to be here today."
+            "contoh": "\"We are happy to be here,\" said the students to their host family."
           },
           {
             "kata": "It is a beautiful sunny day",
             "arti": "Ini adalah hari yang indah dan cerah",
             "emoji": "☀️",
-            "contoh": "It is a beautiful sunny day outside."
+            "contoh": "Look outside — it is a beautiful sunny day. Let's go to the park!"
           },
           {
             "kata": "You are a very hard worker",
-            "arti": "Kamu adalah pekerja yang sangat rajin",
+            "arti": "Kamu adalah orang yang sangat rajin",
             "emoji": "💼",
-            "contoh": "You are a very hard worker."
+            "contoh": "\"You are a very hard worker, Daniel,\" said the teacher with a smile."
           },
           {
             "kata": "Are you a new student here?",
             "arti": "Apakah kamu murid baru di sini?",
             "emoji": "❓",
-            "contoh": "Are you a new student here? Yes, I am."
+            "contoh": "\"Are you a new student here?\" asked Budi. \"Yes, I just moved from Bandung.\""
           }
         ]
       },
@@ -1459,16 +1459,16 @@ export const learningPath = [
         "tipe": "vocab",
         "kartu": [
           {
-            "kata": "a + consonant",
-            "arti": "'a' digunakan sebelum kata yang dimulai KONSONAN (b,c,d,f,g,...)",
-            "emoji": "📌",
-            "contoh": "a book, a cat, a dog, a table"
+            "kata": "a bag / a pen / a dog",
+            "arti": "\"a\" dipakai sebelum bunyi konsonan (b, p, d, ...)",
+            "emoji": "🎒",
+            "contoh": "I need a bag. She has a pen. He sees a dog."
           },
           {
-            "kata": "an + vowel",
-            "arti": "'an' digunakan sebelum kata yang dimulai VOKAL (a,e,i,o,u)",
-            "emoji": "🔤",
-            "contoh": "an apple, an egg, an idea, an orange"
+            "kata": "an apple / an egg / an idea",
+            "arti": "\"an\" dipakai sebelum bunyi vokal (a, e, i, o, u)",
+            "emoji": "🍎",
+            "contoh": "She eats an apple. I have an idea. He wants an egg."
           },
           {
             "kata": "a book",
@@ -1567,22 +1567,22 @@ export const learningPath = [
         "tipe": "vocab",
         "kartu": [
           {
-            "kata": "the (spesifik)",
-            "arti": "'the' untuk benda SPESIFIK yang sudah diketahui — ada 'yang itu'",
-            "emoji": "🎯",
-            "contoh": "Please close the door. (pintu yang ada di sini)"
+            "kata": "Close the door.",
+            "arti": "\"the\" = benda yang sudah diketahui atau ada di sini",
+            "emoji": "🚪",
+            "contoh": "Please close the door. Can you turn off the light?"
           },
           {
-            "kata": "the (satu-satunya)",
-            "arti": "'the' untuk benda yang SATU-SATUNYA di dunia",
-            "emoji": "🌍",
-            "contoh": "The sun is hot. The moon is round."
+            "kata": "The sun / the moon / the earth",
+            "arti": "\"the\" untuk benda satu-satunya di dunia",
+            "emoji": "☀️",
+            "contoh": "The sun is very hot. The moon shines at night."
           },
           {
-            "kata": "a → the",
-            "arti": "Pertama kali disebut pakai 'a', selanjutnya pakai 'the'",
-            "emoji": "🔄",
-            "contoh": "I saw a cat. The cat was black."
+            "kata": "I saw a cat. The cat was cute.",
+            "arti": "Pertama disebut → \"a\". Kedua kali disebut → \"the\"",
+            "emoji": "🐱",
+            "contoh": "I found a key. The key was on the floor."
           },
           {
             "kata": "the school",
@@ -1591,16 +1591,16 @@ export const learningPath = [
             "contoh": "I go to the school near my house."
           },
           {
-            "kata": "the + superlative",
-            "arti": "'the' selalu digunakan sebelum kata superlative (the best, the biggest)",
+            "kata": "She is the best student.",
+            "arti": "\"the\" selalu dipakai sebelum kata superlative (terbaik, terbesar, dll)",
             "emoji": "🏆",
-            "contoh": "She is the best student."
+            "contoh": "He is the tallest boy. She is the smartest in the class."
           },
           {
-            "kata": "Tanpa artikel",
-            "arti": "Nama orang, kota, negara TIDAK pakai artikel — Indonesia (bukan 'the Indonesia')",
+            "kata": "Indonesia / Budi / Jakarta",
+            "arti": "Nama orang, kota, dan negara TIDAK pakai artikel",
             "emoji": "🌏",
-            "contoh": "I live in Indonesia. She is Daniel."
+            "contoh": "I live in Indonesia. She is from Jakarta. His name is Budi."
           }
         ],
         "soal": [
