@@ -479,6 +479,7 @@ export default function BelajarPage() {
 
     return (
       <TampilanPelajaran
+        key={pelajaranDipilih}
         unit={unit}
         pelajaran={pelajaran}
         lessonIndex={lessonIndex}
@@ -574,9 +575,9 @@ export default function BelajarPage() {
             })}
           </div>
 
-          {/* Tombol next unit */}
+          {/* Tombol next unit — hanya muncul setelah semua pelajaran unit selesai */}
           <div className="mt-8 flex flex-col gap-3">
-            {nextUnit && (
+            {nextUnit && done === total && (
               <button
                 onClick={() => setUnitDipilih(nextUnit.id)}
                 className={`w-full py-4 rounded-2xl text-white font-bold text-base bg-gradient-to-r ${nextUnit.warna} shadow-lg hover:scale-105 transition-transform flex items-center justify-between px-6`}
