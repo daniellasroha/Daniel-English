@@ -246,7 +246,7 @@ export const learningPath = [
             "kata": "See you later",
             "arti": "Sampai jumpa lagi",
             "emoji": "🤝",
-            "contoh": "I have to go now. See you later!"
+            "contoh": "Bye for now! See you later!"
           },
           {
             "kata": "See you tomorrow",
@@ -282,7 +282,7 @@ export const learningPath = [
             "kata": "See you soon",
             "arti": "Sampai jumpa segera",
             "emoji": "👐",
-            "contoh": "Okay, I have to go. See you soon!"
+            "contoh": "Okay, time to go. See you soon!"
           }
         ]
       },
@@ -545,7 +545,7 @@ export const learningPath = [
             "kata": "Nineteen (19)",
             "arti": "Sembilan belas",
             "emoji": "🔢",
-            "contoh": "He is nineteen and just started university."
+            "contoh": "He is nineteen years old."
           },
           {
             "kata": "Twenty (20)",
@@ -635,7 +635,7 @@ export const learningPath = [
             "kata": "Fifty (50)",
             "arti": "Lima puluh",
             "emoji": "🔢",
-            "contoh": "We need fifty chairs for the event."
+            "contoh": "There are fifty students in the school hall."
           },
           {
             "kata": "Sixty (60)",
@@ -653,7 +653,7 @@ export const learningPath = [
             "kata": "Eighty (80)",
             "arti": "Delapan puluh",
             "emoji": "🔢",
-            "contoh": "She scored eighty on the English test."
+            "contoh": "She gets eighty on the English test."
           },
           {
             "kata": "Ninety (90)",
@@ -1337,7 +1337,7 @@ export const learningPath = [
             "kata": "They are my best friends",
             "arti": "Mereka adalah teman terbaik saya",
             "emoji": "👫",
-            "contoh": "I always eat lunch with them — they are my best friends."
+            "contoh": "They are my best friends. We eat lunch together."
           },
           {
             "kata": "He is not a doctor",
@@ -1349,7 +1349,7 @@ export const learningPath = [
             "kata": "We are happy to be here",
             "arti": "Kami senang berada di sini",
             "emoji": "😊",
-            "contoh": "\"We are happy to be here,\" said the students to their host family."
+            "contoh": "\"We are happy to be here,\" said the students to their teacher."
           },
           {
             "kata": "It is a beautiful sunny day",
@@ -1501,10 +1501,10 @@ export const learningPath = [
             "contoh": "Wait an hour, please."
           },
           {
-            "kata": "a university",
-            "arti": "sebuah universitas — 'university' bunyinya 'yu' (konsonan) → pakai 'a'",
-            "emoji": "🎓",
-            "contoh": "She goes to a university."
+            "kata": "a uniform",
+            "arti": "sebuah seragam — 'uniform' bunyinya 'yu' (konsonan) → pakai 'a', bukan 'an'",
+            "emoji": "👔",
+            "contoh": "He wears a uniform to school."
           }
         ],
         "soal": [
@@ -1539,7 +1539,7 @@ export const learningPath = [
             "jawaban": 3
           },
           {
-            "pertanyaan": "Pilih artikel yang benar: '___ university'",
+            "pertanyaan": "Pilih artikel yang benar: '___ uniform'",
             "pilihan": [
               "an",
               "a",
@@ -4537,7 +4537,7 @@ export const learningPath = [
             "kata": "He can jump high",
             "arti": "Dia bisa melompat tinggi",
             "emoji": "🦘",
-            "contoh": "He can jump high like a kangaroo."
+            "contoh": "He can jump very high!"
           }
         ]
       },
@@ -4563,7 +4563,7 @@ export const learningPath = [
             "kata": "He can't swim",
             "arti": "Dia tidak bisa berenang",
             "emoji": "🏊",
-            "contoh": "He can't swim, so he wears a life jacket."
+            "contoh": "He can't swim, so he learns in the pool."
           },
           {
             "kata": "They can't come",
@@ -5408,13 +5408,13 @@ export const learningPath = [
             "kata": "tomorrow",
             "arti": "besok",
             "emoji": "➡️",
-            "contoh": "I will go to school tomorrow."
+            "contoh": "I go to school tomorrow. It is Monday."
           },
           {
             "kata": "yesterday",
             "arti": "kemarin",
             "emoji": "⬅️",
-            "contoh": "I stayed at home yesterday."
+            "contoh": "Yesterday is Sunday. Today is Monday."
           },
           {
             "kata": "every day",
@@ -5613,7 +5613,7 @@ export const learningPath = [
             "kata": "Don't worry!",
             "arti": "Jangan khawatir!",
             "emoji": "😊",
-            "contoh": "Don't worry. Everything will be fine."
+            "contoh": "Don't worry. You are okay!"
           }
         ]
       },
@@ -5636,10 +5636,10 @@ export const learningPath = [
             "contoh": "Turn left here, then go straight."
           },
           {
-            "kata": "Add salt and stir.",
+            "kata": "Add salt and mix.",
             "arti": "Tambahkan garam dan aduk. (resep)",
             "emoji": "🍳",
-            "contoh": "Add salt and stir for 2 minutes."
+            "contoh": "Add salt and mix well."
           },
           {
             "kata": "Click the button.",
@@ -5862,12 +5862,12 @@ export const learningPath = [
           {
             "kata": "AM / a.m.",
             "arti": "sebelum tengah hari (dini hari–siang)",
-            "contoh": "The flight is at 6 AM."
+            "contoh": "School starts at 7 AM."
           },
           {
             "kata": "PM / p.m.",
             "arti": "setelah tengah hari (siang–malam)",
-            "contoh": "The meeting is at 3 PM."
+            "contoh": "Class ends at 3 PM."
           }
         ]
       },
@@ -6388,7 +6388,7 @@ export const learningPath = [
           {
             "kata": "It's snowing.",
             "arti": "Sedang turun salju.",
-            "contoh": "It's snowing outside. The roads are slippery."
+            "contoh": "It's snowing outside. Stay inside!"
           },
           {
             "kata": "I love / I don't like ... weather.",
