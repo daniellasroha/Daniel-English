@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { learningPath as unitBelajar } from "@/data/learningPath";
 import { syncLeaderboard } from "@/lib/leaderboard";
+import { pushProgress } from "@/lib/syncProgress";
 
 const KEY = "daniel_english_belajar";
 
@@ -30,13 +31,14 @@ export function useLearning() {
         localStorage.setItem(KEY, JSON.stringify(next));
       } catch {}
 
-      // Sync ke leaderboard (fire-and-forget)
+      // Sync ke leaderboard + backup progress (fire-and-forget)
       try {
         const username = localStorage.getItem("daniel_english_username") || "";
         const level    = localStorage.getItem("daniel_english_level")    || "a1";
         const quizRaw  = localStorage.getItem("daniel_english_progress");
         const quizHistory = quizRaw ? (JSON.parse(quizRaw).quiz || []) : [];
         syncLeaderboard({ username, level, completedLessons: next, quizHistory });
+        pushProgress(username);
       } catch {}
 
       return next;

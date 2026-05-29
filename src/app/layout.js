@@ -1,4 +1,5 @@
 import "./globals.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const metadata = {
   title: "Daniel English",
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ErrorBoundary>{children}</ErrorBoundary>
+      </body>
     </html>
   );
 }

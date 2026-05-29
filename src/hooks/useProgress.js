@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { syncLeaderboard } from "@/lib/leaderboard";
+import { pushProgress } from "@/lib/syncProgress";
 
 const KEY = "daniel_english_progress";
 
@@ -80,7 +81,7 @@ export function useProgress() {
     }
   }, []);
 
-  // Catat hasil quiz + sync leaderboard
+  // Catat hasil quiz + sync leaderboard + backup progress
   const recordQuiz = useCallback((category, score, total) => {
     const d = loadData();
     const t = today();
@@ -89,12 +90,13 @@ export function useProgress() {
     saveData(d);
     setData({ ...d });
 
-    // Sync ke leaderboard (fire-and-forget)
+    // Sync ke leaderboard + backup progress (fire-and-forget)
     try {
       const username = localStorage.getItem("daniel_english_username") || "";
       const level    = localStorage.getItem("daniel_english_level")    || "a1";
       const lessons  = JSON.parse(localStorage.getItem("daniel_english_belajar") || "[]");
       syncLeaderboard({ username, level, completedLessons: lessons, quizHistory: d.quiz });
+      pushProgress(username);
     } catch {}
   }, []);
 
@@ -108,6 +110,9 @@ export function useProgress() {
     if (!d.sessions.includes(t)) d.sessions = [...d.sessions, t];
     saveData(d);
     setData({ ...d });
+    try {
+      pushProgress(localStorage.getItem("daniel_english_username") || "");
+    } catch {}
   }, []);
 
   // Catat grammar dibuka
@@ -120,6 +125,9 @@ export function useProgress() {
     if (!d.sessions.includes(t)) d.sessions = [...d.sessions, t];
     saveData(d);
     setData({ ...d });
+    try {
+      pushProgress(localStorage.getItem("daniel_english_username") || "");
+    } catch {}
   }, []);
 
   // Catat listening diputar
@@ -130,6 +138,9 @@ export function useProgress() {
     if (!d.sessions.includes(t)) d.sessions = [...d.sessions, t];
     saveData(d);
     setData({ ...d });
+    try {
+      pushProgress(localStorage.getItem("daniel_english_username") || "");
+    } catch {}
   }, []);
 
   return {
