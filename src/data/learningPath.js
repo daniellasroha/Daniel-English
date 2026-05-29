@@ -1,6 +1,6 @@
 // Learning Path — Kurikulum Bahasa Inggris Terstruktur
-// A1: 25 Unit | A2: 19 Unit | B1: 1 Unit (Present Perfect)
-// Total: 45 unit
+// A1: 25 Unit | A2: 19 Unit | B1: 9 Unit
+// Total: 53 unit
 
 export const learningPath = [
   {
@@ -12108,6 +12108,1576 @@ export const learningPath = [
               "yet"
             ],
             "jawaban": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-38",
+    "judul": "Past Continuous",
+    "deskripsi": "Ungkapkan aksi yang sedang berlangsung di masa lalu dengan was/were + V-ing",
+    "emoji": "⏳",
+    "warna": "from-blue-500 to-blue-700",
+    "bg": "bg-blue-50",
+    "border": "border-blue-300",
+    "teks": "text-blue-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u38-l1",
+        "judul": "was/were + V-ing",
+        "emoji": "⏳",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "was/were + V-ing",
+            "arti": "Rumus Past Continuous — aksi yang sedang berlangsung di masa lalu",
+            "emoji": "📐",
+            "contoh": "I was sleeping at 10 PM last night."
+          },
+          {
+            "kata": "I was studying",
+            "arti": "saya sedang belajar (di masa lalu)",
+            "emoji": "📚",
+            "contoh": "I was studying when the phone rang."
+          },
+          {
+            "kata": "She was cooking",
+            "arti": "dia sedang memasak",
+            "emoji": "🍳",
+            "contoh": "She was cooking dinner when I arrived."
+          },
+          {
+            "kata": "They were playing",
+            "arti": "mereka sedang bermain",
+            "emoji": "⚽",
+            "contoh": "They were playing football in the park."
+          },
+          {
+            "kata": "It was raining",
+            "arti": "sedang hujan",
+            "emoji": "🌧️",
+            "contoh": "It was raining when we left the house."
+          },
+          {
+            "kata": "He was working late",
+            "arti": "dia sedang bekerja larut malam",
+            "emoji": "💼",
+            "contoh": "He was working late last night."
+          },
+          {
+            "kata": "We were watching TV",
+            "arti": "kami sedang menonton TV",
+            "emoji": "📺",
+            "contoh": "We were watching TV at 8 o'clock."
+          }
+        ]
+      },
+      {
+        "id": "u38-l2",
+        "judul": "Past Continuous + Simple Past",
+        "emoji": "⚡",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "when + Simple Past",
+            "arti": "ketika + aksi yang memotong (Simple Past)",
+            "emoji": "✂️",
+            "contoh": "I was having dinner when you called."
+          },
+          {
+            "kata": "while + Past Continuous",
+            "arti": "sementara + aksi yang sedang berlangsung",
+            "emoji": "🔄",
+            "contoh": "She fell asleep while she was reading."
+          },
+          {
+            "kata": "I wasn't listening",
+            "arti": "saya tidak sedang mendengarkan",
+            "emoji": "🙉",
+            "contoh": "I wasn't listening when the teacher explained it."
+          },
+          {
+            "kata": "Were they watching?",
+            "arti": "apakah mereka sedang menonton?",
+            "emoji": "❓",
+            "contoh": "Were they watching the game last night?"
+          },
+          {
+            "kata": "What were you doing?",
+            "arti": "apa yang sedang kamu lakukan?",
+            "emoji": "🤔",
+            "contoh": "What were you doing at 9 PM?"
+          },
+          {
+            "kata": "She wasn't sleeping",
+            "arti": "dia tidak sedang tidur",
+            "emoji": "🚫",
+            "contoh": "She wasn't sleeping — she was reading."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'I ___ studying when the phone rang.'",
+            "pilihan": [
+              "am",
+              "was",
+              "were",
+              "have been"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kalimat Past Continuous yang benar:",
+            "pilihan": [
+              "She cooking when I arrived.",
+              "She was cook when I arrived.",
+              "She was cooking when I arrived.",
+              "She has cooked when I arrived."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'What ___ you doing at 8 PM?' Isi yang tepat:",
+            "pilihan": [
+              "was",
+              "were",
+              "are",
+              "have"
+            ],
+            "jawaban": 1
+          }
+        ]
+      },
+      {
+        "id": "u38-l3",
+        "judul": "Kuis: Past Continuous",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Past Continuous adalah...",
+            "pilihan": [
+              "V-ing saja",
+              "was/were + V-ing",
+              "had + V-ing",
+              "will + V-ing"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'She ___ cooking when I arrived.'",
+            "pilihan": [
+              "was",
+              "were",
+              "is",
+              "has been"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "'What ___ you doing at 8 PM?'",
+            "pilihan": [
+              "was",
+              "were",
+              "are",
+              "have"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kalimat Past Continuous yang benar:",
+            "pilihan": [
+              "I sleeping when the alarm rang.",
+              "I was sleep when the alarm rang.",
+              "I was sleeping when the alarm rang.",
+              "I been sleeping when the alarm rang."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'They weren't listening.' artinya:",
+            "pilihan": [
+              "Mereka sudah mendengarkan.",
+              "Mereka tidak sedang mendengarkan.",
+              "Mereka tidak pernah mendengarkan.",
+              "Mereka tidak akan mendengarkan."
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-39",
+    "judul": "Present Perfect Continuous",
+    "deskripsi": "Ungkapkan aksi yang sudah berlangsung lama dan masih terjadi dengan have/has been + V-ing",
+    "emoji": "🔄",
+    "warna": "from-purple-500 to-violet-600",
+    "bg": "bg-purple-50",
+    "border": "border-purple-300",
+    "teks": "text-purple-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u39-l1",
+        "judul": "have/has been + V-ing",
+        "emoji": "🔄",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "have/has been + V-ing",
+            "arti": "Rumus Present Perfect Continuous — aksi yang dimulai di masa lalu dan masih berlanjut",
+            "emoji": "📐",
+            "contoh": "I have been studying for two hours."
+          },
+          {
+            "kata": "I have been waiting",
+            "arti": "saya sudah lama menunggu (dan masih menunggu)",
+            "emoji": "⏱️",
+            "contoh": "I have been waiting here for 30 minutes."
+          },
+          {
+            "kata": "She has been working",
+            "arti": "dia sudah lama bekerja (dan masih bekerja)",
+            "emoji": "💼",
+            "contoh": "She has been working at this company for 5 years."
+          },
+          {
+            "kata": "They have been living",
+            "arti": "mereka sudah lama tinggal (dan masih tinggal)",
+            "emoji": "🏠",
+            "contoh": "They have been living in Bali since 2020."
+          },
+          {
+            "kata": "It has been raining",
+            "arti": "sudah lama hujan (masih hujan)",
+            "emoji": "🌧️",
+            "contoh": "It has been raining all morning."
+          },
+          {
+            "kata": "How long have you been...?",
+            "arti": "sudah berapa lama kamu...?",
+            "emoji": "❓",
+            "contoh": "How long have you been studying English?"
+          },
+          {
+            "kata": "He hasn't been sleeping well",
+            "arti": "dia tidak tidur nyenyak belakangan ini",
+            "emoji": "😴",
+            "contoh": "He hasn't been sleeping well lately."
+          }
+        ]
+      },
+      {
+        "id": "u39-l2",
+        "judul": "for, since, lately, all day",
+        "emoji": "📅",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "for + durasi",
+            "arti": "selama + durasi waktu",
+            "emoji": "⏰",
+            "contoh": "I have been working here for three years."
+          },
+          {
+            "kata": "since + titik waktu",
+            "arti": "sejak + titik waktu tertentu",
+            "emoji": "📅",
+            "contoh": "She has been feeling sick since Monday."
+          },
+          {
+            "kata": "lately",
+            "arti": "belakangan ini",
+            "emoji": "🕐",
+            "contoh": "He has been working very hard lately."
+          },
+          {
+            "kata": "all day / all morning",
+            "arti": "sepanjang hari / sepanjang pagi",
+            "emoji": "☀️",
+            "contoh": "I have been studying all day."
+          },
+          {
+            "kata": "PP Cont vs PP",
+            "arti": "PP Cont = fokus pada durasi; PP = fokus pada hasil",
+            "emoji": "⚖️",
+            "contoh": "I have been reading (focus: duration) vs I have read it (focus: done)."
+          },
+          {
+            "kata": "Her eyes are red.",
+            "arti": "tanda-tanda yang terlihat akibat aksi yang baru berlangsung",
+            "emoji": "👁️",
+            "contoh": "Her eyes are red. She has been crying."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'I ___ been studying for two hours.'",
+            "pilihan": [
+              "has",
+              "have",
+              "had",
+              "am"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'She ___ been working here since 2019.'",
+            "pilihan": [
+              "have",
+              "has",
+              "had",
+              "is"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kapan kita gunakan Present Perfect Continuous?",
+            "pilihan": [
+              "Aksi di masa lalu yang sudah selesai",
+              "Untuk menekankan berapa lama suatu aksi berlangsung",
+              "Rencana masa depan",
+              "Kebiasaan saat ini"
+            ],
+            "jawaban": 1
+          }
+        ]
+      },
+      {
+        "id": "u39-l3",
+        "judul": "Kuis: Present Perfect Continuous",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Present Perfect Continuous:",
+            "pilihan": [
+              "have/has + V3",
+              "have/has + been + V-ing",
+              "was/were + V-ing",
+              "will + be + V-ing"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'She ___ been crying all morning.'",
+            "pilihan": [
+              "have",
+              "has",
+              "had",
+              "is"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'How long ___ you been waiting?'",
+            "pilihan": [
+              "has",
+              "have",
+              "had",
+              "are"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Pilih kalimat Present Perfect Continuous yang benar:",
+            "pilihan": [
+              "I have been live here since 2018.",
+              "I have been living here since 2018.",
+              "I was living here since 2018.",
+              "I had been live here since 2018."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'It has been raining all day.' artinya:",
+            "pilihan": [
+              "Hujan sebentar tadi.",
+              "Akan hujan sepanjang hari.",
+              "Sudah hujan sepanjang hari.",
+              "Hujan setiap hari."
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-40",
+    "judul": "First Conditional",
+    "deskripsi": "Ungkapkan kondisi nyata yang mungkin terjadi di masa depan dengan If + present, will",
+    "emoji": "🔵",
+    "warna": "from-green-500 to-teal-600",
+    "bg": "bg-green-50",
+    "border": "border-green-300",
+    "teks": "text-green-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u40-l1",
+        "judul": "If + present simple, will + V1",
+        "emoji": "🔵",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "First Conditional",
+            "arti": "If + present simple, will + V1 — kondisi nyata yang mungkin terjadi",
+            "emoji": "📐",
+            "contoh": "If it rains, I will stay at home."
+          },
+          {
+            "kata": "If I study hard",
+            "arti": "jika saya belajar keras (mungkin terjadi)",
+            "emoji": "📚",
+            "contoh": "If I study hard, I will pass the exam."
+          },
+          {
+            "kata": "If she calls me",
+            "arti": "jika dia menelepon saya",
+            "emoji": "📞",
+            "contoh": "If she calls me, I will answer immediately."
+          },
+          {
+            "kata": "If you eat too much",
+            "arti": "jika kamu makan terlalu banyak",
+            "emoji": "🍽️",
+            "contoh": "If you eat too much, you will feel sick."
+          },
+          {
+            "kata": "If we hurry",
+            "arti": "jika kami bergerak cepat",
+            "emoji": "🏃",
+            "contoh": "If we hurry, we will catch the bus."
+          },
+          {
+            "kata": "I won't go if...",
+            "arti": "saya tidak akan pergi jika...",
+            "emoji": "🚫",
+            "contoh": "I won't go outside if it is too cold."
+          },
+          {
+            "kata": "Will you help me if I need it?",
+            "arti": "apakah kamu akan membantu jika saya butuh?",
+            "emoji": "🤝",
+            "contoh": "Will you help me if I ask you?"
+          }
+        ]
+      },
+      {
+        "id": "u40-l2",
+        "judul": "Unless, When vs If, & Variasi",
+        "emoji": "💡",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "unless = if...not",
+            "arti": "unless = kecuali jika / jika tidak",
+            "emoji": "⚠️",
+            "contoh": "Unless you hurry, you will miss the train."
+          },
+          {
+            "kata": "If...imperative",
+            "arti": "Klausa utama bisa berupa perintah (imperative)",
+            "emoji": "📢",
+            "contoh": "If you see him, tell him to call me."
+          },
+          {
+            "kata": "When vs If",
+            "arti": "When = pasti terjadi; If = mungkin terjadi",
+            "emoji": "⚖️",
+            "contoh": "When I get home, I will call you. (pasti pulang)"
+          },
+          {
+            "kata": "Urutan bebas",
+            "arti": "Klausa If bisa di depan atau belakang",
+            "emoji": "🔄",
+            "contoh": "I will call you if I arrive late. = If I arrive late, I will call you."
+          },
+          {
+            "kata": "might/can instead of will",
+            "arti": "Bisa pakai might atau can",
+            "emoji": "💭",
+            "contoh": "If you study, you might pass the exam."
+          },
+          {
+            "kata": "What will you do if...?",
+            "arti": "Pertanyaan dengan First Conditional",
+            "emoji": "❓",
+            "contoh": "What will you do if you fail the exam?"
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'If it rains, I ___ stay at home.'",
+            "pilihan": [
+              "would",
+              "will",
+              "am",
+              "was"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "First Conditional digunakan untuk:",
+            "pilihan": [
+              "Kondisi yang tidak mungkin terjadi",
+              "Kondisi yang mungkin terjadi di masa depan",
+              "Kejadian di masa lalu",
+              "Aksi yang sedang berlangsung"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Unless = ...",
+            "pilihan": [
+              "if",
+              "if...not",
+              "although",
+              "because"
+            ],
+            "jawaban": 1
+          }
+        ]
+      },
+      {
+        "id": "u40-l3",
+        "judul": "Kuis: First Conditional",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus First Conditional:",
+            "pilihan": [
+              "If + past, would + V1",
+              "If + present simple, will + V1",
+              "If + present, would + V1",
+              "If + past, will + V1"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'If she studies, she ___ pass the exam.'",
+            "pilihan": [
+              "would",
+              "will",
+              "was",
+              "had"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kalimat First Conditional yang benar:",
+            "pilihan": [
+              "If it is hot, I would go swimming.",
+              "If it is hot, I will go swimming.",
+              "If it was hot, I will go swimming.",
+              "If it would be hot, I swim."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Unless you hurry, you will miss the bus.' artinya:",
+            "pilihan": [
+              "Jika kamu bergegas, kamu akan ketinggalan bus.",
+              "Jika kamu tidak bergegas, kamu akan ketinggalan bus.",
+              "Kamu pasti ketinggalan bus.",
+              "Kamu tidak perlu bergegas."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Perbedaan 'When' dan 'If':",
+            "pilihan": [
+              "Tidak ada perbedaan",
+              "When = pasti terjadi; If = mungkin terjadi",
+              "When = masa depan; If = masa lalu",
+              "When = formal; If = informal"
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-41",
+    "judul": "Second Conditional",
+    "deskripsi": "Ungkapkan situasi imajiner atau tidak nyata dengan If + past, would + V1",
+    "emoji": "💭",
+    "warna": "from-violet-500 to-purple-700",
+    "bg": "bg-violet-50",
+    "border": "border-violet-300",
+    "teks": "text-violet-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u41-l1",
+        "judul": "If + past simple, would + V1",
+        "emoji": "💭",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Second Conditional",
+            "arti": "If + past simple, would + V1 — situasi imajiner atau tidak mungkin terjadi saat ini",
+            "emoji": "📐",
+            "contoh": "If I had a car, I would drive to school."
+          },
+          {
+            "kata": "If I were rich",
+            "arti": "jika saya kaya (tapi saya tidak kaya sekarang)",
+            "emoji": "💰",
+            "contoh": "If I were rich, I would travel the world."
+          },
+          {
+            "kata": "If she studied more",
+            "arti": "jika dia belajar lebih rajin (tapi tidak)",
+            "emoji": "📚",
+            "contoh": "If she studied more, she would get better grades."
+          },
+          {
+            "kata": "I would help you",
+            "arti": "saya akan membantumu (kondisi imajiner)",
+            "emoji": "🤝",
+            "contoh": "I would help you if I could."
+          },
+          {
+            "kata": "If I were you",
+            "arti": "jika saya menjadi kamu — cara memberi saran",
+            "emoji": "💡",
+            "contoh": "If I were you, I would apologize."
+          },
+          {
+            "kata": "What would you do if...?",
+            "arti": "apa yang akan kamu lakukan jika...? — pertanyaan imajiner",
+            "emoji": "❓",
+            "contoh": "What would you do if you won the lottery?"
+          },
+          {
+            "kata": "She wouldn't go if...",
+            "arti": "dia tidak akan pergi jika...",
+            "emoji": "🚫",
+            "contoh": "She wouldn't accept the job if the salary were low."
+          }
+        ]
+      },
+      {
+        "id": "u41-l2",
+        "judul": "Second vs First Conditional",
+        "emoji": "⚖️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "First vs Second",
+            "arti": "First = mungkin terjadi (real); Second = tidak mungkin/imajiner (unreal)",
+            "emoji": "⚖️",
+            "contoh": "If it rains... (1st - possible) vs If I were a bird... (2nd - imaginary)"
+          },
+          {
+            "kata": "were (bukan was)",
+            "arti": "Dalam Second Conditional, were dipakai untuk SEMUA subjek",
+            "emoji": "📌",
+            "contoh": "If she WERE here... / If I WERE you... (bukan: if I was you)"
+          },
+          {
+            "kata": "would/could/might",
+            "arti": "Klausa utama bisa pakai would, could, atau might",
+            "emoji": "🔀",
+            "contoh": "If I had time, I could help you. / I might visit if I had money."
+          },
+          {
+            "kata": "Dream + Second Conditional",
+            "arti": "Sering dipakai untuk mengungkapkan mimpi atau harapan",
+            "emoji": "🌟",
+            "contoh": "If I could fly, I would travel everywhere for free."
+          },
+          {
+            "kata": "1st vs 2nd summary",
+            "arti": "If I have time, I will help (1st). If I had time, I would help (2nd).",
+            "emoji": "📋",
+            "contoh": "If it is sunny, I will go out. vs If it were sunny, I would go out."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'If I ___ rich, I would travel the world.'",
+            "pilihan": [
+              "am",
+              "was",
+              "were",
+              "will be"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Second Conditional digunakan untuk:",
+            "pilihan": [
+              "Kejadian nyata di masa depan",
+              "Situasi imajiner atau tidak mungkin",
+              "Kebiasaan di masa lalu",
+              "Aksi yang sedang berlangsung"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Dalam Second Conditional, 'to be' yang digunakan untuk semua subjek adalah:",
+            "pilihan": [
+              "was",
+              "is",
+              "were",
+              "be"
+            ],
+            "jawaban": 2
+          }
+        ]
+      },
+      {
+        "id": "u41-l3",
+        "judul": "Kuis: Second Conditional",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Second Conditional:",
+            "pilihan": [
+              "If + present, will + V1",
+              "If + past simple, would + V1",
+              "If + past, will + V1",
+              "If + present, would + V1"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'If she ___ time, she would call you.'",
+            "pilihan": [
+              "has",
+              "had",
+              "have",
+              "has had"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Untuk semua subjek di Second Conditional, kata 'to be' yang dipakai:",
+            "pilihan": [
+              "was",
+              "is",
+              "am",
+              "were"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "Kalimat Second Conditional yang benar:",
+            "pilihan": [
+              "If I will be a bird, I would fly.",
+              "If I am a bird, I would fly.",
+              "If I were a bird, I would fly.",
+              "If I were a bird, I will fly."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Perbedaan First dan Second Conditional:",
+            "pilihan": [
+              "Tidak ada perbedaan",
+              "First = mungkin terjadi; Second = imajiner/tidak mungkin",
+              "First = masa lalu; Second = masa depan",
+              "First = formal; Second = informal"
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-42",
+    "judul": "Passive Voice",
+    "deskripsi": "Pelajari kalimat pasif — fokus pada objek bukan pelaku dengan is/was + V3",
+    "emoji": "🔄",
+    "warna": "from-orange-500 to-red-600",
+    "bg": "bg-orange-50",
+    "border": "border-orange-300",
+    "teks": "text-orange-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u42-l1",
+        "judul": "Present Passive: is/are + V3",
+        "emoji": "🔄",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "is/are + V3",
+            "arti": "Rumus Present Passive — objek menjadi subjek kalimat",
+            "emoji": "📐",
+            "contoh": "English is spoken in many countries."
+          },
+          {
+            "kata": "is + V3 (tunggal)",
+            "arti": "untuk subjek tunggal",
+            "emoji": "1️⃣",
+            "contoh": "The book is written by a famous author."
+          },
+          {
+            "kata": "are + V3 (jamak)",
+            "arti": "untuk subjek jamak",
+            "emoji": "2️⃣",
+            "contoh": "The letters are sent every Monday."
+          },
+          {
+            "kata": "Active → Passive",
+            "arti": "They make cars here → Cars are made here",
+            "emoji": "🔁",
+            "contoh": "People speak French in Paris. → French is spoken in Paris."
+          },
+          {
+            "kata": "by + agent",
+            "arti": "oleh siapa (opsional, jika penting)",
+            "emoji": "👤",
+            "contoh": "This song is sung by Adele."
+          },
+          {
+            "kata": "Rice is eaten in Asia",
+            "arti": "nasi dimakan di Asia",
+            "emoji": "🍚",
+            "contoh": "Rice is eaten by millions of people every day."
+          },
+          {
+            "kata": "The door is locked",
+            "arti": "pintunya terkunci",
+            "emoji": "🔒",
+            "contoh": "The door is locked every night for safety."
+          }
+        ]
+      },
+      {
+        "id": "u42-l2",
+        "judul": "Past Passive: was/were + V3",
+        "emoji": "📜",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "was + V3 (tunggal past)",
+            "arti": "untuk subjek tunggal di masa lalu",
+            "emoji": "1️⃣",
+            "contoh": "The Eiffel Tower was built in 1889."
+          },
+          {
+            "kata": "were + V3 (jamak past)",
+            "arti": "untuk subjek jamak di masa lalu",
+            "emoji": "2️⃣",
+            "contoh": "The windows were broken during the storm."
+          },
+          {
+            "kata": "Active → Past Passive",
+            "arti": "Someone stole my bag → My bag was stolen",
+            "emoji": "🔁",
+            "contoh": "They built the bridge in 1990. → The bridge was built in 1990."
+          },
+          {
+            "kata": "was not / were not",
+            "arti": "negatif Past Passive",
+            "emoji": "🚫",
+            "contoh": "The report was not finished on time."
+          },
+          {
+            "kata": "Was...? / Were...?",
+            "arti": "pertanyaan Past Passive",
+            "emoji": "❓",
+            "contoh": "Was the building damaged in the earthquake?"
+          },
+          {
+            "kata": "Indonesia was colonized",
+            "arti": "Indonesia dijajah (past passive)",
+            "emoji": "🏛️",
+            "contoh": "Indonesia was colonized for hundreds of years."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'English ___ spoken in many countries.' (present passive)",
+            "pilihan": [
+              "was",
+              "is",
+              "are",
+              "has"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'The bridge ___ built in 1990.' (past passive, tunggal)",
+            "pilihan": [
+              "is",
+              "are",
+              "was",
+              "were"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'They make cars here.' → kalimat pasifnya:",
+            "pilihan": [
+              "Cars make here.",
+              "Cars are made here.",
+              "Cars were made here.",
+              "Cars is made here."
+            ],
+            "jawaban": 1
+          }
+        ]
+      },
+      {
+        "id": "u42-l3",
+        "judul": "Kuis: Passive Voice",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Present Passive:",
+            "pilihan": [
+              "V3 saja",
+              "is/are + V3",
+              "was/were + V3",
+              "has/have + V3"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'This book ___ written by Pramoedya.' (present passive)",
+            "pilihan": [
+              "was",
+              "is",
+              "are",
+              "were"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'The windows ___ broken during the storm.' (past passive, jamak)",
+            "pilihan": [
+              "is",
+              "are",
+              "was",
+              "were"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "Kalimat Passive yang benar:",
+            "pilihan": [
+              "The Eiffel Tower built in 1889.",
+              "The Eiffel Tower is build in 1889.",
+              "The Eiffel Tower was built in 1889.",
+              "The Eiffel Tower were built in 1889."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Kenapa kita pakai kalimat Passive?",
+            "pilihan": [
+              "Karena lebih pendek",
+              "Ketika pelaku tidak penting atau tidak diketahui",
+              "Karena lebih formal",
+              "Karena lebih mudah"
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-43",
+    "judul": "Relative Clauses",
+    "deskripsi": "Pelajari cara menggabungkan dua kalimat dengan who, which, that, where",
+    "emoji": "🔗",
+    "warna": "from-teal-500 to-cyan-600",
+    "bg": "bg-teal-50",
+    "border": "border-teal-300",
+    "teks": "text-teal-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u43-l1",
+        "judul": "who, which, that",
+        "emoji": "🔗",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Relative Clause",
+            "arti": "Klausa yang memberi informasi tambahan tentang kata benda sebelumnya",
+            "emoji": "📐",
+            "contoh": "The man who lives next door is a doctor."
+          },
+          {
+            "kata": "who (untuk orang)",
+            "arti": "who = yang — untuk orang",
+            "emoji": "👤",
+            "contoh": "She is the teacher who taught me English."
+          },
+          {
+            "kata": "which (untuk benda)",
+            "arti": "which = yang — untuk benda atau hewan",
+            "emoji": "📦",
+            "contoh": "This is the book which changed my life."
+          },
+          {
+            "kata": "that (orang atau benda)",
+            "arti": "that bisa digunakan untuk orang dan benda",
+            "emoji": "🏷️",
+            "contoh": "The car that I bought last year is very fast."
+          },
+          {
+            "kata": "The woman who called",
+            "arti": "wanita yang menelepon",
+            "emoji": "📞",
+            "contoh": "The woman who called you is my sister."
+          },
+          {
+            "kata": "The phone which I lost",
+            "arti": "telepon yang saya hilangkan",
+            "emoji": "📱",
+            "contoh": "The phone which I lost was very expensive."
+          },
+          {
+            "kata": "The students who study hard",
+            "arti": "siswa yang belajar keras",
+            "emoji": "📚",
+            "contoh": "The students who study hard will pass the exam."
+          }
+        ]
+      },
+      {
+        "id": "u43-l2",
+        "judul": "where, when, whose",
+        "emoji": "📍",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "where (untuk tempat)",
+            "arti": "where = di mana — untuk tempat",
+            "emoji": "📍",
+            "contoh": "This is the school where I studied."
+          },
+          {
+            "kata": "when (untuk waktu)",
+            "arti": "when = ketika — untuk waktu",
+            "emoji": "📅",
+            "contoh": "I remember the day when we first met."
+          },
+          {
+            "kata": "whose (kepemilikan)",
+            "arti": "whose = yang miliknya — untuk kepemilikan",
+            "emoji": "🏷️",
+            "contoh": "The girl whose bag is red is my friend."
+          },
+          {
+            "kata": "Defining relative clause",
+            "arti": "Tanpa koma — informasi penting untuk mengidentifikasi",
+            "emoji": "🎯",
+            "contoh": "The man who called is my boss. (tanpa koma)"
+          },
+          {
+            "kata": "That is the cafe where we meet.",
+            "arti": "Praktik where clause",
+            "emoji": "☕",
+            "contoh": "That is the cafe where we always have lunch."
+          },
+          {
+            "kata": "who/which bisa dihilangkan",
+            "arti": "Jika who/which adalah objek kalimat, bisa dihilangkan",
+            "emoji": "✂️",
+            "contoh": "The book (that) I read was good. = The book that I read was good."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'She is the teacher ___ taught me English.'",
+            "pilihan": [
+              "which",
+              "who",
+              "where",
+              "whose"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'This is the city ___ I was born.'",
+            "pilihan": [
+              "who",
+              "which",
+              "where",
+              "that"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Untuk benda, relative pronoun yang digunakan:",
+            "pilihan": [
+              "who",
+              "whose",
+              "which atau that",
+              "where"
+            ],
+            "jawaban": 2
+          }
+        ]
+      },
+      {
+        "id": "u43-l3",
+        "judul": "Kuis: Relative Clauses",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Untuk orang, relative pronoun yang digunakan:",
+            "pilihan": [
+              "which",
+              "who",
+              "where",
+              "whose"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Untuk benda, relative pronoun yang digunakan:",
+            "pilihan": [
+              "who",
+              "where",
+              "which atau that",
+              "whose"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Untuk tempat, relative pronoun yang digunakan:",
+            "pilihan": [
+              "who",
+              "which",
+              "that",
+              "where"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "Kalimat Relative Clause yang benar:",
+            "pilihan": [
+              "She is the student which always comes early.",
+              "She is the student who always comes early.",
+              "She is the student where always comes early.",
+              "She is the student whose always comes early."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'This is the house ___ I grew up.' Isi yang tepat:",
+            "pilihan": [
+              "who",
+              "which",
+              "that",
+              "where"
+            ],
+            "jawaban": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-44",
+    "judul": "Reported Speech",
+    "deskripsi": "Laporkan apa yang dikatakan orang lain dengan say/tell + that",
+    "emoji": "💬",
+    "warna": "from-rose-500 to-pink-600",
+    "bg": "bg-rose-50",
+    "border": "border-rose-300",
+    "teks": "text-rose-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u44-l1",
+        "judul": "say/tell + that (Reported Statements)",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Reported Speech",
+            "arti": "Melaporkan apa yang dikatakan orang lain — tense bergeser mundur",
+            "emoji": "📐",
+            "contoh": "Direct: I am tired. → Reported: She said she was tired."
+          },
+          {
+            "kata": "say + that",
+            "arti": "say diikuti langsung klausa (tanpa objek)",
+            "emoji": "🗣️",
+            "contoh": "He said (that) he was hungry."
+          },
+          {
+            "kata": "tell + orang + that",
+            "arti": "tell harus diikuti objek orang",
+            "emoji": "👂",
+            "contoh": "She told me that she would be late."
+          },
+          {
+            "kata": "am/is → was (backshift)",
+            "arti": "Present tense berubah ke Past dalam reported speech",
+            "emoji": "⏪",
+            "contoh": "I am happy. → He said he was happy."
+          },
+          {
+            "kata": "will → would (backshift)",
+            "arti": "will berubah menjadi would",
+            "emoji": "⏪",
+            "contoh": "I will call you. → She said she would call me."
+          },
+          {
+            "kata": "can → could (backshift)",
+            "arti": "can berubah menjadi could",
+            "emoji": "⏪",
+            "contoh": "I can help. → He said he could help."
+          },
+          {
+            "kata": "today → that day",
+            "arti": "Ekspresi waktu juga berubah dalam reported speech",
+            "emoji": "📅",
+            "contoh": "I will see you tomorrow. → He said he would see me the next day."
+          }
+        ]
+      },
+      {
+        "id": "u44-l2",
+        "judul": "Reported Questions & Commands",
+        "emoji": "❓",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "asked + if/whether",
+            "arti": "Reported yes/no question — pakai if atau whether",
+            "emoji": "❓",
+            "contoh": "Are you tired? → She asked if I was tired."
+          },
+          {
+            "kata": "asked + WH word",
+            "arti": "Reported WH-question — ikuti kata tanya aslinya",
+            "emoji": "🔍",
+            "contoh": "Where do you live? → He asked where I lived."
+          },
+          {
+            "kata": "told + to + V1 (command)",
+            "arti": "Reported command positif",
+            "emoji": "📢",
+            "contoh": "Sit down! → The teacher told us to sit down."
+          },
+          {
+            "kata": "told + not to + V1",
+            "arti": "Reported command negatif",
+            "emoji": "🚫",
+            "contoh": "Don't be late! → She told me not to be late."
+          },
+          {
+            "kata": "say vs tell",
+            "arti": "say = tidak harus ada objek; tell = harus ada objek orang",
+            "emoji": "⚖️",
+            "contoh": "He said it was fine. vs He told me it was fine."
+          },
+          {
+            "kata": "asked vs told",
+            "arti": "asked = bertanya; told = memerintah/memberitahu",
+            "emoji": "🔀",
+            "contoh": "She asked me to help. (request) vs She told me to help. (order)"
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Direct: 'I am tired.' → Reported: He said he ___",
+            "pilihan": [
+              "is tired.",
+              "was tired.",
+              "were tired.",
+              "will be tired."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'She told ___ that she would be late.'",
+            "pilihan": [
+              "to me",
+              "me",
+              "that",
+              "her"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Direct: 'I can swim.' → Reported: He said he ___ swim.",
+            "pilihan": [
+              "can",
+              "could",
+              "will",
+              "would"
+            ],
+            "jawaban": 1
+          }
+        ]
+      },
+      {
+        "id": "u44-l3",
+        "judul": "Kuis: Reported Speech",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Direct: 'I am busy.' → Reported: She said she ___",
+            "pilihan": [
+              "is busy.",
+              "was busy.",
+              "were busy.",
+              "will be busy."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "tell harus diikuti...",
+            "pilihan": [
+              "langsung klausa",
+              "objek orang",
+              "kata tanya",
+              "infinitive"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Direct: 'I will help you.' → Reported: He said he ___ help me.",
+            "pilihan": [
+              "will",
+              "would",
+              "can",
+              "could"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Direct: 'Don't touch that!' → Reported:",
+            "pilihan": [
+              "He said not to touch that.",
+              "He told me not to touch it.",
+              "He asked me not touch it.",
+              "He said me not touch it."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Backshift: 'can' berubah menjadi:",
+            "pilihan": [
+              "will",
+              "would",
+              "could",
+              "should"
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-45",
+    "judul": "Gerunds & Infinitives",
+    "deskripsi": "Pelajari perbedaan V-ing dan to + V1 setelah kata kerja tertentu",
+    "emoji": "✍️",
+    "warna": "from-amber-500 to-orange-600",
+    "bg": "bg-amber-50",
+    "border": "border-amber-300",
+    "teks": "text-amber-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u45-l1",
+        "judul": "Gerunds: V-ing sebagai kata benda",
+        "emoji": "✍️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Gerund = V-ing",
+            "arti": "Kata kerja + -ing yang berfungsi sebagai kata benda",
+            "emoji": "📐",
+            "contoh": "Swimming is good for your health."
+          },
+          {
+            "kata": "enjoy + V-ing",
+            "arti": "enjoy selalu diikuti gerund",
+            "emoji": "😊",
+            "contoh": "I enjoy reading books in the evening."
+          },
+          {
+            "kata": "like / love / hate + V-ing",
+            "arti": "like, love, hate bisa diikuti gerund",
+            "emoji": "❤️",
+            "contoh": "She loves dancing. He hates cooking."
+          },
+          {
+            "kata": "finish / stop + V-ing",
+            "arti": "finish dan stop diikuti gerund",
+            "emoji": "🛑",
+            "contoh": "Please stop talking during the class."
+          },
+          {
+            "kata": "preposition + V-ing",
+            "arti": "Setelah preposisi selalu pakai gerund",
+            "emoji": "📌",
+            "contoh": "I am good at playing guitar. Thank you for helping me."
+          },
+          {
+            "kata": "go + V-ing",
+            "arti": "go + gerund untuk aktivitas rekreasi",
+            "emoji": "🏊",
+            "contoh": "Let's go swimming this weekend."
+          },
+          {
+            "kata": "Gerund sebagai subjek",
+            "arti": "Gerund dapat menjadi subjek kalimat",
+            "emoji": "📝",
+            "contoh": "Studying every day is important. Eating vegetables is healthy."
+          }
+        ]
+      },
+      {
+        "id": "u45-l2",
+        "judul": "Infinitives: to + V1",
+        "emoji": "🎯",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Infinitive = to + V1",
+            "arti": "to + kata kerja bentuk dasar",
+            "emoji": "📐",
+            "contoh": "I want to learn English."
+          },
+          {
+            "kata": "want / need / decide + to",
+            "arti": "want, need, decide diikuti infinitive",
+            "emoji": "✅",
+            "contoh": "She decided to study abroad. He needs to rest."
+          },
+          {
+            "kata": "plan / hope / promise + to",
+            "arti": "plan, hope, promise diikuti infinitive",
+            "emoji": "🔮",
+            "contoh": "I plan to visit Japan next year."
+          },
+          {
+            "kata": "Infinitive of purpose",
+            "arti": "to + V1 untuk menyatakan tujuan",
+            "emoji": "🎯",
+            "contoh": "I go to the gym to stay healthy. She studies to get a good job."
+          },
+          {
+            "kata": "would like + to",
+            "arti": "would like = ingin (sopan)",
+            "emoji": "🙏",
+            "contoh": "I would like to order a coffee, please."
+          },
+          {
+            "kata": "stop + gerund vs stop + to",
+            "arti": "stop + gerund = berhenti melakukan; stop + to = berhenti untuk melakukan hal lain",
+            "emoji": "⚖️",
+            "contoh": "I stopped smoking. (berhenti merokok) vs I stopped to check my phone. (berhenti sebentar)"
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'I enjoy ___ books.' (membaca)",
+            "pilihan": [
+              "to read",
+              "reads",
+              "reading",
+              "read"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Melengkapi: 'She decided ___ study in the UK.'",
+            "pilihan": [
+              "to",
+              "for",
+              "about",
+              "in"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Setelah preposisi seperti 'at', 'for', 'in', kita pakai:",
+            "pilihan": [
+              "infinitive (to + V1)",
+              "past tense",
+              "gerund (V-ing)",
+              "present tense"
+            ],
+            "jawaban": 2
+          }
+        ]
+      },
+      {
+        "id": "u45-l3",
+        "judul": "Kuis: Gerunds & Infinitives",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Isi: 'I enjoy ___ music.' (mendengarkan)",
+            "pilihan": [
+              "to listen",
+              "listen",
+              "listening",
+              "listened"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Isi: 'She wants ___ learn French.'",
+            "pilihan": [
+              "to",
+              "for",
+              "about",
+              "-ing"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Kalimat yang benar:",
+            "pilihan": [
+              "He stopped to smoke last year.",
+              "He stopped smoke last year.",
+              "He stopped smoking last year.",
+              "He stop smoking last year."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Setelah preposisi, kita pakai:",
+            "pilihan": [
+              "to + V1 (infinitive)",
+              "V-ing (gerund)",
+              "V3 (past participle)",
+              "V1 (base form)"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kalimat tujuan yang benar (infinitive of purpose):",
+            "pilihan": [
+              "She studies for get a good job.",
+              "She studies to get a good job.",
+              "She studies getting a good job.",
+              "She studies get a good job."
+            ],
+            "jawaban": 1
           }
         ]
       }

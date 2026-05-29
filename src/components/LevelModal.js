@@ -1,27 +1,45 @@
 "use client";
 
 import { LEVEL_CONFIG } from "@/hooks/useLevel";
+import { learningPath } from "@/data/learningPath";
+import { kosakata } from "@/data/vocabulary";
 
-const DETAIL_KONTEN = {
-  a1: [
-    "📚 59 kata dasar",
-    "✏️ 4 topik grammar",
-    "🧠 25 unit belajar",
-    "🎯 4 jenis quiz",
-  ],
-  a2: [
-    "📚 132 kata (A1 + A2)",
-    "✏️ 8 topik grammar",
-    "🧠 44 unit belajar",
-    "🎯 6 jenis quiz",
-  ],
-  b1: [
-    "📚 132 kata lengkap",
-    "✏️ 8 topik grammar",
-    "🧠 45 unit + Present Perfect",
-    "🎯 6 jenis quiz + latihan lanjut",
-  ],
-};
+// Hitung otomatis dari data asli agar tidak perlu update manual
+function hitungDetailKonten(levelKey, cfg) {
+  const totalUnit = learningPath.length;
+  const unitA1 = learningPath.filter(u => u.level === "a1").length;
+  const unitA2 = learningPath.filter(u => u.level === "a1" || u.level === "a2").length;
+
+  const vocabA1 = kosakata.filter(k => k.level === "a1").length;
+  const vocabTotal = kosakata.length;
+
+  const grammarCount = cfg.grammarTopics.length;
+  const quizCount = cfg.quizRoutes.length;
+
+  if (levelKey === "a1") {
+    return [
+      `📚 ${vocabA1} kata dasar`,
+      `✏️ ${grammarCount} topik grammar`,
+      `🧠 ${unitA1} unit belajar`,
+      `🎯 ${quizCount} jenis quiz`,
+    ];
+  }
+  if (levelKey === "a2") {
+    return [
+      `📚 ${vocabTotal} kata (A1 + A2)`,
+      `✏️ ${grammarCount} topik grammar`,
+      `🧠 ${unitA2} unit belajar`,
+      `🎯 ${quizCount} jenis quiz`,
+    ];
+  }
+  // b1
+  return [
+    `📚 ${vocabTotal} kata lengkap`,
+    `✏️ ${grammarCount} topik grammar`,
+    `🧠 ${totalUnit} unit belajar`,
+    `🎯 ${quizCount} jenis quiz + latihan lanjut`,
+  ];
+}
 
 export default function LevelModal({ onSave, bolehTutup = false, onTutup }) {
   return (
@@ -62,7 +80,7 @@ export default function LevelModal({ onSave, bolehTutup = false, onTutup }) {
 
               {/* Detail konten */}
               <div className={`mt-3 pt-3 border-t ${cfg.border} flex flex-wrap gap-1.5`}>
-                {(DETAIL_KONTEN[key] || []).map((item, i) => (
+                {hitungDetailKonten(key, cfg).map((item, i) => (
                   <span key={i} className="text-xs bg-white px-2 py-0.5 rounded-full border border-gray-200 text-gray-500">
                     {item}
                   </span>

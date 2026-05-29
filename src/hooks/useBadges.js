@@ -48,7 +48,7 @@ export const SEMUA_BADGE = [
     id: "master",
     emoji: "🏆",
     judul: "Master",
-    deskripsi: "Selesaikan semua 37 unit",
+    deskripsi: "Selesaikan semua 53 unit",
     warna: "from-yellow-400 to-yellow-600",
     bg: "bg-yellow-50",
     border: "border-yellow-200",
@@ -121,8 +121,8 @@ export function useBadges({ completedLessons = [], streak = 0, progressData = nu
       const semuaUnits = unitBelajar;
 
       unitSelesai = semuaUnits.filter(u => {
-        const ids = u.pelajaran.map(p => p.id);
-        return ids.every(id => completedLessons.includes(id));
+        const lessonIds = u.pelajaran.map(p => p.id);
+        return lessonIds.every(id => completedLessons.includes(id));
       }).length;
 
       a1Tuntas = a1Units.every(u => {
