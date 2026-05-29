@@ -1,6 +1,6 @@
 // Learning Path — Kurikulum Bahasa Inggris Terstruktur
-// Pemula: 18 Unit (A1) | Menengah: 19 Unit (A2)
-// Total: 37 unit
+// A1: 22 Unit | A2: 18 Unit | B1: 1 Unit (Present Perfect)
+// Total: 41 unit
 
 export const learningPath = [
   {
@@ -5794,6 +5794,720 @@ export const learningPath = [
               "Tambah 'be'"
             ],
             "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 19,
+    "judul": "Telling Time (Jam & Waktu)",
+    "deskripsi": "Tanya dan jawab jam berapa sekarang — dasar komunikasi sehari-hari",
+    "emoji": "⏰",
+    "warna": "from-cyan-400 to-teal-500",
+    "bg": "bg-cyan-50",
+    "border": "border-cyan-200",
+    "teks": "text-cyan-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "19-1",
+        "judul": "Angka Jam & Menit",
+        "emoji": "🕐",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "What time is it?",
+            "arti": "Jam berapa sekarang?",
+            "contoh": "Excuse me, what time is it?"
+          },
+          {
+            "kata": "It's one o'clock.",
+            "arti": "Jam satu.",
+            "contoh": "It's one o'clock in the afternoon."
+          },
+          {
+            "kata": "It's two o'clock.",
+            "arti": "Jam dua.",
+            "contoh": "The class starts at two o'clock."
+          },
+          {
+            "kata": "It's half past three.",
+            "arti": "Jam setengah empat. (3:30)",
+            "contoh": "It's half past three — time for a break!"
+          },
+          {
+            "kata": "It's quarter past four.",
+            "arti": "Jam empat lebih seperempat. (4:15)",
+            "contoh": "It's quarter past four, so we're late."
+          },
+          {
+            "kata": "It's quarter to five.",
+            "arti": "Jam empat kurang seperempat. (4:45)",
+            "contoh": "It's quarter to five — almost time to go."
+          },
+          {
+            "kata": "It's five thirty.",
+            "arti": "Jam lima tiga puluh. (5:30)",
+            "contoh": "My train leaves at five thirty."
+          },
+          {
+            "kata": "in the morning",
+            "arti": "pagi hari",
+            "contoh": "I wake up at six in the morning."
+          },
+          {
+            "kata": "in the afternoon",
+            "arti": "siang/sore hari",
+            "contoh": "We have lunch at one in the afternoon."
+          },
+          {
+            "kata": "in the evening",
+            "arti": "malam hari",
+            "contoh": "She studies in the evening."
+          },
+          {
+            "kata": "at night",
+            "arti": "malam",
+            "contoh": "I go to bed at ten at night."
+          },
+          {
+            "kata": "at noon",
+            "arti": "tengah hari",
+            "contoh": "We eat lunch at noon."
+          },
+          {
+            "kata": "at midnight",
+            "arti": "tengah malam",
+            "contoh": "The party ends at midnight."
+          }
+        ]
+      },
+      {
+        "id": "19-2",
+        "judul": "Cara Membaca Jam",
+        "emoji": "📖",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "o'clock",
+            "arti": "tepat (hanya untuk jam tepat)",
+            "contoh": "It's seven o'clock. (Tepat jam 7)"
+          },
+          {
+            "kata": "past",
+            "arti": "lebih (menit setelah jam)",
+            "contoh": "It's ten past eight. (8:10)"
+          },
+          {
+            "kata": "to",
+            "arti": "kurang (menit sebelum jam)",
+            "contoh": "It's ten to nine. (8:50)"
+          },
+          {
+            "kata": "half past",
+            "arti": "setengah (30 menit)",
+            "contoh": "It's half past six. (6:30)"
+          },
+          {
+            "kata": "quarter",
+            "arti": "seperempat (15 menit)",
+            "contoh": "It's quarter past two. (2:15)"
+          },
+          {
+            "kata": "AM / a.m.",
+            "arti": "sebelum tengah hari (dini hari–siang)",
+            "contoh": "The flight is at 6 AM."
+          },
+          {
+            "kata": "PM / p.m.",
+            "arti": "setelah tengah hari (siang–malam)",
+            "contoh": "The meeting is at 3 PM."
+          }
+        ]
+      },
+      {
+        "id": "19-3",
+        "judul": "Kuis: Telling Time",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Bagaimana cara mengatakan jam 3 tepat?",
+            "pilihan": [
+              "It's three past.",
+              "It's three o'clock.",
+              "It's o'clock three.",
+              "It's at three."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Apa arti 'It's half past seven.'?",
+            "pilihan": [
+              "Jam tujuh kurang.",
+              "Jam tujuh setengah. (7:30)",
+              "Jam setengah tujuh. (6:30)",
+              "Jam tujuh lebih."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Bagaimana cara mengatakan 4:15?",
+            "pilihan": [
+              "It's quarter to four.",
+              "It's quarter past four.",
+              "It's four quarter.",
+              "It's fifteen four."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kalimat 'It's ten to six.' = jam berapa?",
+            "pilihan": [
+              "6:10",
+              "5:50",
+              "6:50",
+              "5:10"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Cara tanya jam yang benar:",
+            "pilihan": [
+              "What is the time clock?",
+              "How much is the time?",
+              "What time is it?",
+              "Which time now?"
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "judul": "Bilangan Urut (Ordinal Numbers)",
+    "deskripsi": "Gunakan 1st, 2nd, 3rd untuk urutan, tanggal, dan peringkat",
+    "emoji": "🔢",
+    "warna": "from-violet-400 to-purple-500",
+    "bg": "bg-violet-50",
+    "border": "border-violet-200",
+    "teks": "text-violet-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "20-1",
+        "judul": "Ordinal Numbers 1–20",
+        "emoji": "📋",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "first (1st)",
+            "arti": "pertama",
+            "contoh": "She finished first in the race."
+          },
+          {
+            "kata": "second (2nd)",
+            "arti": "kedua",
+            "contoh": "He lives on the second floor."
+          },
+          {
+            "kata": "third (3rd)",
+            "arti": "ketiga",
+            "contoh": "Today is the third of May."
+          },
+          {
+            "kata": "fourth (4th)",
+            "arti": "keempat",
+            "contoh": "This is my fourth cup of coffee today."
+          },
+          {
+            "kata": "fifth (5th)",
+            "arti": "kelima",
+            "contoh": "We live on the fifth floor."
+          },
+          {
+            "kata": "sixth (6th)",
+            "arti": "keenam",
+            "contoh": "The sixth lesson is the hardest."
+          },
+          {
+            "kata": "seventh (7th)",
+            "arti": "ketujuh",
+            "contoh": "It's the seventh day of the week."
+          },
+          {
+            "kata": "eighth (8th)",
+            "arti": "kedelapan",
+            "contoh": "August is the eighth month."
+          },
+          {
+            "kata": "ninth (9th)",
+            "arti": "kesembilan",
+            "contoh": "She is in her ninth year of school."
+          },
+          {
+            "kata": "tenth (10th)",
+            "arti": "kesepuluh",
+            "contoh": "Today is the tenth of June."
+          },
+          {
+            "kata": "eleventh (11th)",
+            "arti": "kesebelas",
+            "contoh": "November is the eleventh month."
+          },
+          {
+            "kata": "twelfth (12th)",
+            "arti": "kedua belas",
+            "contoh": "December is the twelfth month."
+          },
+          {
+            "kata": "twentieth (20th)",
+            "arti": "kedua puluh",
+            "contoh": "Her birthday is on the twentieth."
+          },
+          {
+            "kata": "thirty-first (31st)",
+            "arti": "ketiga puluh satu",
+            "contoh": "New Year's Eve is on the thirty-first of December."
+          }
+        ]
+      },
+      {
+        "id": "20-2",
+        "judul": "Penggunaan Ordinal Numbers",
+        "emoji": "📅",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "the + ordinal (untuk tanggal)",
+            "arti": "digunakan untuk tanggal",
+            "contoh": "My birthday is on the fifth of April."
+          },
+          {
+            "kata": "floor number",
+            "arti": "lantai (gedung)",
+            "contoh": "The office is on the third floor."
+          },
+          {
+            "kata": "What floor is it on?",
+            "arti": "Di lantai berapa?",
+            "contoh": "— What floor is it? — It's on the second floor."
+          },
+          {
+            "kata": "What is the date today?",
+            "arti": "Tanggal berapa hari ini?",
+            "contoh": "— What's the date? — It's the fifteenth of March."
+          },
+          {
+            "kata": "in first place",
+            "arti": "di posisi pertama",
+            "contoh": "Our team is in first place."
+          }
+        ]
+      },
+      {
+        "id": "20-3",
+        "judul": "Kuis: Ordinal Numbers",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Bagaimana cara menulis kata ketiga dalam bahasa Inggris?",
+            "pilihan": [
+              "threeth",
+              "third",
+              "thirth",
+              "three"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Lengkapi: ___ lives on the ___ floor. (lantai 5)",
+            "pilihan": [
+              "five",
+              "fiveth",
+              "fifth",
+              "fifthe"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Cara mengatakan tanggal 1 Januari:",
+            "pilihan": [
+              "January one",
+              "the first of January",
+              "the one January",
+              "January first-th"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Ordinal number dari 8 adalah:",
+            "pilihan": [
+              "eightth",
+              "eighte",
+              "eighth",
+              "eightieth"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Lengkapi: Today is the ___ of December. (tanggal 31)",
+            "pilihan": [
+              "thirty-one",
+              "thirty-first",
+              "thirty-oneth",
+              "three-tenth"
+            ],
+            "jawaban": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "judul": "Kebangsaan & Negara",
+    "deskripsi": "Ceritakan asal negara dan kebangsaan dirimu dan orang lain",
+    "emoji": "🌍",
+    "warna": "from-emerald-400 to-green-600",
+    "bg": "bg-emerald-50",
+    "border": "border-emerald-200",
+    "teks": "text-emerald-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "21-1",
+        "judul": "Negara & Kebangsaan",
+        "emoji": "🗺️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Indonesia — Indonesian",
+            "arti": "Indonesia — orang Indonesia",
+            "contoh": "I am Indonesian. I am from Indonesia."
+          },
+          {
+            "kata": "England — English",
+            "arti": "Inggris — orang Inggris",
+            "contoh": "She is English. She is from England."
+          },
+          {
+            "kata": "America — American",
+            "arti": "Amerika — orang Amerika",
+            "contoh": "He is American. He is from America."
+          },
+          {
+            "kata": "Australia — Australian",
+            "arti": "Australia — orang Australia",
+            "contoh": "They are Australian. They are from Australia."
+          },
+          {
+            "kata": "Japan — Japanese",
+            "arti": "Jepang — orang Jepang",
+            "contoh": "She is Japanese. She speaks Japanese."
+          },
+          {
+            "kata": "China — Chinese",
+            "arti": "Tiongkok — orang Tiongkok",
+            "contoh": "He is Chinese. He is from Beijing."
+          },
+          {
+            "kata": "Korea — Korean",
+            "arti": "Korea — orang Korea",
+            "contoh": "My friend is Korean."
+          },
+          {
+            "kata": "Malaysia — Malaysian",
+            "arti": "Malaysia — orang Malaysia",
+            "contoh": "My neighbor is Malaysian."
+          },
+          {
+            "kata": "France — French",
+            "arti": "Prancis — orang Prancis",
+            "contoh": "The chef is French."
+          },
+          {
+            "kata": "Germany — German",
+            "arti": "Jerman — orang Jerman",
+            "contoh": "He is German. He lives in Berlin."
+          },
+          {
+            "kata": "Brazil — Brazilian",
+            "arti": "Brasil — orang Brasil",
+            "contoh": "She is Brazilian. She loves football."
+          },
+          {
+            "kata": "India — Indian",
+            "arti": "India — orang India",
+            "contoh": "He is Indian. He is from Mumbai."
+          }
+        ]
+      },
+      {
+        "id": "21-2",
+        "judul": "Bertanya tentang Asal",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Where are you from?",
+            "arti": "Dari mana kamu berasal?",
+            "contoh": "— Where are you from? — I am from Indonesia."
+          },
+          {
+            "kata": "I am from ...",
+            "arti": "Saya berasal dari ...",
+            "contoh": "I am from Jakarta, Indonesia."
+          },
+          {
+            "kata": "What nationality are you?",
+            "arti": "Apa kebangsaanmu?",
+            "contoh": "— What nationality are you? — I am Indonesian."
+          },
+          {
+            "kata": "I am + nationality",
+            "arti": "Saya orang [kebangsaan]",
+            "contoh": "I am Indonesian. She is French. He is Japanese."
+          },
+          {
+            "kata": "What language do you speak?",
+            "arti": "Bahasa apa yang kamu gunakan?",
+            "contoh": "— What language do you speak? — I speak Indonesian and English."
+          },
+          {
+            "kata": "He / She is from ...",
+            "arti": "Dia berasal dari ...",
+            "contoh": "She is from Japan. He is from Korea."
+          }
+        ]
+      },
+      {
+        "id": "21-3",
+        "judul": "Kuis: Kebangsaan & Negara",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Kebangsaan orang dari Jepang adalah:",
+            "pilihan": [
+              "Japanish",
+              "Japanish",
+              "Japanese",
+              "Japaner"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Jawaban benar untuk: Where are you from?",
+            "pilihan": [
+              "I am from Indonesian.",
+              "I from Indonesia.",
+              "I am from Indonesia.",
+              "I am Indonesia from."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Orang dari Prancis disebut:",
+            "pilihan": [
+              "Frenchman (semua)",
+              "Franceish",
+              "Francian",
+              "French"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "Lengkapi: She is ___. (orang dari Korea)",
+            "pilihan": [
+              "Korean",
+              "Korish",
+              "Korea",
+              "Koreans"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Mana kalimat yang benar?",
+            "pilihan": [
+              "I am from Indonesia. I am Indonesian.",
+              "I am Indonesian from Indonesia.",
+              "I from Indonesia am Indonesian.",
+              "Indonesia I am from."
+            ],
+            "jawaban": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "judul": "Cuaca Dasar",
+    "deskripsi": "Deskripsikan cuaca sehari-hari dengan kosakata A1 yang sederhana",
+    "emoji": "☀️",
+    "warna": "from-yellow-400 to-orange-400",
+    "bg": "bg-yellow-50",
+    "border": "border-yellow-200",
+    "teks": "text-yellow-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "22-1",
+        "judul": "Kosakata Cuaca Dasar",
+        "emoji": "🌤️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "sunny",
+            "arti": "cerah / bersinar",
+            "contoh": "It's sunny today. Let's go to the park."
+          },
+          {
+            "kata": "cloudy",
+            "arti": "mendung / berawan",
+            "contoh": "It's cloudy outside."
+          },
+          {
+            "kata": "rainy",
+            "arti": "hujan",
+            "contoh": "It's rainy today. Take your umbrella."
+          },
+          {
+            "kata": "windy",
+            "arti": "berangin",
+            "contoh": "It's windy. Hold your hat!"
+          },
+          {
+            "kata": "hot",
+            "arti": "panas",
+            "contoh": "It's very hot in July."
+          },
+          {
+            "kata": "cold",
+            "arti": "dingin",
+            "contoh": "It's cold today. Wear a jacket."
+          },
+          {
+            "kata": "warm",
+            "arti": "hangat",
+            "contoh": "It's warm and nice outside."
+          },
+          {
+            "kata": "cool",
+            "arti": "sejuk",
+            "contoh": "It's cool in the morning."
+          },
+          {
+            "kata": "snowy",
+            "arti": "bersalju",
+            "contoh": "It's snowy in December in some countries."
+          },
+          {
+            "kata": "foggy",
+            "arti": "berkabut",
+            "contoh": "It's foggy this morning. Drive carefully."
+          }
+        ]
+      },
+      {
+        "id": "22-2",
+        "judul": "Ekspresi Cuaca",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "What's the weather like?",
+            "arti": "Bagaimana cuacanya?",
+            "contoh": "— What's the weather like? — It's sunny and warm."
+          },
+          {
+            "kata": "How's the weather today?",
+            "arti": "Bagaimana cuaca hari ini?",
+            "contoh": "— How's the weather today? — It's cloudy."
+          },
+          {
+            "kata": "It's + weather adjective",
+            "arti": "Cuacanya [kata sifat]",
+            "contoh": "It's hot. / It's cold. / It's rainy."
+          },
+          {
+            "kata": "It's raining.",
+            "arti": "Sedang hujan.",
+            "contoh": "It's raining now. Stay inside."
+          },
+          {
+            "kata": "It's snowing.",
+            "arti": "Sedang turun salju.",
+            "contoh": "It's snowing outside. The roads are slippery."
+          },
+          {
+            "kata": "I love / I don't like ... weather.",
+            "arti": "Saya suka/tidak suka cuaca ...",
+            "contoh": "I love sunny weather. I don't like cold weather."
+          }
+        ]
+      },
+      {
+        "id": "22-3",
+        "judul": "Kuis: Cuaca Dasar",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Lengkapi: It's ___ today. Take your umbrella. (hujan)",
+            "pilihan": [
+              "sunny",
+              "windy",
+              "rainy",
+              "hot"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Cara bertanya cuaca yang benar:",
+            "pilihan": [
+              "How is weather?",
+              "What's the weather like?",
+              "What weather today?",
+              "How weather is?"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Lengkapi: It's ___ outside. (cerah/bersinar)",
+            "pilihan": [
+              "cloudy",
+              "foggy",
+              "sunny",
+              "cold"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Apa arti: It's cold?",
+            "pilihan": [
+              "Cuacanya panas.",
+              "Cuacanya dingin.",
+              "Cuacanya hujan.",
+              "Cuacanya berangin."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Pola kalimat cuaca yang benar:",
+            "pilihan": [
+              "Weather is sunny.",
+              "Sunny is it.",
+              "It's sunny.",
+              "Is sunny today."
+            ],
+            "jawaban": 2
           }
         ]
       }

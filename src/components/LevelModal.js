@@ -6,19 +6,19 @@ const DETAIL_KONTEN = {
   a1: [
     "📚 59 kata dasar",
     "✏️ 4 topik grammar",
-    "🧠 18 unit belajar",
+    "🧠 22 unit belajar",
     "🎯 4 jenis quiz",
   ],
   a2: [
     "📚 132 kata (A1 + A2)",
     "✏️ 8 topik grammar",
-    "🧠 36 unit belajar",
+    "🧠 40 unit belajar",
     "🎯 6 jenis quiz",
   ],
   b1: [
     "📚 132 kata lengkap",
     "✏️ 8 topik grammar",
-    "🧠 37 unit + Present Perfect",
+    "🧠 41 unit + Present Perfect",
     "🎯 6 jenis quiz + latihan lanjut",
   ],
 };
