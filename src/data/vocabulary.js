@@ -13,7 +13,7 @@ export const kosakata = [
   { id: 8,   english: "Potato",      indonesian: "Kentang",        emoji: "🥔", kategori: "Buah & Sayur", level: "menengah", contoh: "French fries are made from potatoes." },
   { id: 65,  english: "Strawberry",  indonesian: "Stroberi",       emoji: "🍓", kategori: "Buah & Sayur", level: "menengah", contoh: "She loves strawberry ice cream." },
   { id: 66,  english: "Grape",       indonesian: "Anggur",         emoji: "🍇", kategori: "Buah & Sayur", level: "menengah", contoh: "Grapes are used to make wine." },
-  { id: 67,  english: "Pineapple",   indonesian: "Nanas",          emoji: "🍍", kategori: "Buah & Sayur", level: "menengah", contoh: "Pineapple pizza is controversial." },
+  { id: 67,  english: "Pineapple",   indonesian: "Nanas",          emoji: "🍍", kategori: "Buah & Sayur", level: "menengah", contoh: "We add pineapple to our fruit salad."},
   { id: 68,  english: "Corn",        indonesian: "Jagung",         emoji: "🌽", kategori: "Buah & Sayur", level: "menengah", contoh: "We roast corn at the campfire." },
   { id: 69,  english: "Spinach",     indonesian: "Bayam",          emoji: "🥬", kategori: "Buah & Sayur", level: "menengah", contoh: "Spinach is rich in iron." },
   { id: 70,  english: "Cucumber",    indonesian: "Mentimun",       emoji: "🥒", kategori: "Buah & Sayur", level: "menengah", contoh: "Cucumber is cool and refreshing." },

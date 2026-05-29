@@ -968,13 +968,13 @@ export const learningPath = [
             "kata": "We",
             "arti": "Kami / Kita — saya dan orang lain",
             "emoji": "👥",
-            "contoh": "We are friends."
+            "contoh": "We are classmates. We study English together."
           },
           {
             "kata": "They",
             "arti": "Mereka — sekelompok orang atau benda",
             "emoji": "👨",
-            "contoh": "They are students."
+            "contoh": "They are my friends. They play football every day."
           }
         ],
         "soal": [
@@ -2766,7 +2766,7 @@ export const learningPath = [
             "kata": "Short",
             "arti": "Pendek",
             "emoji": "📏",
-            "contoh": "She is short."
+            "contoh": "My younger sister is short, but she is very fast."
           },
           {
             "kata": "Long",
@@ -3239,7 +3239,7 @@ export const learningPath = [
             "kata": "Noodle",
             "arti": "Mie",
             "emoji": "🍜",
-            "contoh": "Noodle is delicious."
+            "contoh": "Noodles are my favorite food for breakfast."
           },
           {
             "kata": "Cake",
@@ -4177,10 +4177,10 @@ export const learningPath = [
             "contoh": "They don't play football."
           },
           {
-            "kata": "Kata kerja kembali ke bentuk dasar!",
-            "arti": "Setelah don't/doesn't, kata kerja TIDAK pakai -s/-es",
+            "kata": "don't / doesn't + V1 (kata dasar)",
+            "arti": "Setelah don't atau doesn't, kata kerja kembali ke bentuk dasar (V1), tidak pakai -s/-es",
             "emoji": "⚠",
-            "contoh": "He doesn't go (bukan 'goes') to school."
+            "contoh": "He doesn't go to school on Sunday. (bukan: doesn't goes)"
           }
         ],
         "soal": [
@@ -4267,10 +4267,10 @@ export const learningPath = [
             "contoh": "It doesn't run on battery."
           },
           {
-            "kata": "He doesn't go (bukan 'goes')",
-            "arti": "Setelah doesn't, kata kerja kembali ke bentuk dasar (V1)",
+            "kata": "He doesn't go to school.",
+            "arti": "Setelah doesn't, kata kerja TIDAK pakai -s/-es — kembali ke V1",
             "emoji": "⚠",
-            "contoh": "She doesn't eat (bukan 'eats') breakfast."
+            "contoh": "She doesn't eat breakfast in the morning. (bukan: doesn't eats)"
           }
         ],
         "soal": [
@@ -4333,22 +4333,22 @@ export const learningPath = [
         "tipe": "vocab",
         "kartu": [
           {
-            "kata": "I / You / We / They → don't",
-            "arti": "Gunakan DON'T untuk: I, You, We, They",
+            "kata": "I don't, You don't, We don't, They don't",
+            "arti": "Gunakan don't untuk: I, You, We, They — bukan untuk He, She, It",
             "emoji": "🟦",
             "contoh": "I don't know. You don't care. They don't study."
           },
           {
-            "kata": "He / She / It → doesn't",
-            "arti": "Gunakan DOESN'T untuk: He, She, It",
+            "kata": "He doesn't, She doesn't, It doesn't",
+            "arti": "Gunakan doesn't untuk: He, She, It — bukan untuk I, You, We, They",
             "emoji": "🟥",
             "contoh": "He doesn't eat. She doesn't play. It doesn't work."
           },
           {
-            "kata": "Rumus negatif lengkap",
-            "arti": "S + don't/doesn't + V1 (kata kerja dasar tanpa -s/-es)",
+            "kata": "S + don't/doesn't + V1",
+            "arti": "Rumus negatif Simple Present: Subjek + don't/doesn't + kata kerja dasar",
             "emoji": "📝",
-            "contoh": "She doesn't eats → SALAH. She doesn't eat → BENAR."
+            "contoh": "She doesn't eat rice. (bukan: doesn't eats) — kata kerja selalu bentuk dasar."
           }
         ],
         "soal": [
@@ -6075,7 +6075,7 @@ export const learningPath = [
             "kata": "you",
             "arti": "kamu (objek)",
             "emoji": "👉",
-            "contoh": "I love you."
+            "contoh": "She called you this morning. I will help you."
           },
           {
             "kata": "him",
@@ -10267,13 +10267,13 @@ export const learningPath = [
           },
           {
             "kata": "however",
-            "arti": "namun/akan tetapi (kontras formal)",
+            "arti": "namun / akan tetapi — kontras formal (🔵 B1 Preview)",
             "emoji": "📝",
             "contoh": "It was expensive. However, I bought it."
           },
           {
             "kata": "therefore",
-            "arti": "oleh karena itu (kesimpulan)",
+            "arti": "oleh karena itu — menyimpulkan (🔵 B1 Preview)",
             "emoji": "✅",
             "contoh": "She worked hard. Therefore, she got promoted."
           },
@@ -10291,7 +10291,7 @@ export const learningPath = [
           },
           {
             "kata": "I wanted to help. However, I was busy.",
-            "arti": "Saya ingin membantu. Namun, saya sibuk.",
+            "arti": "Saya ingin membantu. Namun, saya terlalu sibuk. (🔵 B1 Preview)",
             "emoji": "😕",
             "contoh": "I wanted to help. However, I was too busy."
           },
