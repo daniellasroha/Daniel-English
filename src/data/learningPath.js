@@ -1827,10 +1827,10 @@ export const learningPath = [
     "judul": "Grammar: Kalimat Tanya",
     "deskripsi": "Kuasai kata tanya What, Who, Where, When, Why, How untuk bertanya dalam bahasa Inggris",
     "emoji": "❓",
-    "warna": "from-violet-400 to-purple-600",
-    "bg": "bg-violet-50",
-    "border": "border-violet-300",
-    "teks": "text-violet-700",
+    "warna": "from-orange-500 to-red-500",
+    "bg": "bg-orange-50",
+    "border": "border-orange-200",
+    "teks": "text-orange-700",
     "level": "a1",
     "pelajaran": [
       {
@@ -3193,10 +3193,10 @@ export const learningPath = [
     "judul": "Makanan & Minuman",
     "deskripsi": "Kosakata makanan dan minuman sehari-hari yang paling sering digunakan",
     "emoji": "🍔",
-    "warna": "from-orange-400 to-orange-600",
-    "bg": "bg-orange-50",
-    "border": "border-orange-300",
-    "teks": "text-orange-700",
+    "warna": "from-yellow-500 to-amber-600",
+    "bg": "bg-yellow-50",
+    "border": "border-yellow-200",
+    "teks": "text-yellow-700",
     "level": "a1",
     "pelajaran": [
       {
@@ -5749,10 +5749,10 @@ export const learningPath = [
     "judul": "Telling Time (Jam & Waktu)",
     "deskripsi": "Tanya dan jawab jam berapa sekarang — dasar komunikasi sehari-hari",
     "emoji": "⏰",
-    "warna": "from-cyan-400 to-teal-500",
-    "bg": "bg-cyan-50",
-    "border": "border-cyan-200",
-    "teks": "text-cyan-700",
+    "warna": "from-amber-400 to-yellow-500",
+    "bg": "bg-amber-50",
+    "border": "border-amber-200",
+    "teks": "text-amber-700",
     "level": "a1",
     "pelajaran": [
       {
@@ -5936,10 +5936,10 @@ export const learningPath = [
     "judul": "Bilangan Urut (Ordinal Numbers)",
     "deskripsi": "Gunakan 1st, 2nd, 3rd untuk urutan, tanggal, dan peringkat",
     "emoji": "🔢",
-    "warna": "from-violet-400 to-purple-500",
-    "bg": "bg-violet-50",
-    "border": "border-violet-200",
-    "teks": "text-violet-700",
+    "warna": "from-slate-500 to-gray-700",
+    "bg": "bg-slate-50",
+    "border": "border-slate-200",
+    "teks": "text-slate-700",
     "level": "a1",
     "pelajaran": [
       {
@@ -6118,10 +6118,10 @@ export const learningPath = [
     "judul": "Kebangsaan & Negara",
     "deskripsi": "Ceritakan asal negara dan kebangsaan dirimu dan orang lain",
     "emoji": "🌍",
-    "warna": "from-emerald-400 to-green-600",
-    "bg": "bg-emerald-50",
-    "border": "border-emerald-200",
-    "teks": "text-emerald-700",
+    "warna": "from-blue-500 to-indigo-600",
+    "bg": "bg-blue-50",
+    "border": "border-blue-200",
+    "teks": "text-blue-700",
     "level": "a1",
     "pelajaran": [
       {
@@ -6295,10 +6295,10 @@ export const learningPath = [
     "judul": "Cuaca Dasar",
     "deskripsi": "Deskripsikan cuaca sehari-hari dengan kosakata A1 yang sederhana",
     "emoji": "☀️",
-    "warna": "from-yellow-400 to-orange-400",
-    "bg": "bg-yellow-50",
-    "border": "border-yellow-200",
-    "teks": "text-yellow-700",
+    "warna": "from-sky-400 to-blue-500",
+    "bg": "bg-sky-50",
+    "border": "border-sky-200",
+    "teks": "text-sky-700",
     "level": "a1",
     "pelajaran": [
       {
