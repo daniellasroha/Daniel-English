@@ -1,6 +1,6 @@
 // Learning Path — Kurikulum Bahasa Inggris Terstruktur
-// A1: 22 Unit | A2: 18 Unit | B1: 1 Unit (Present Perfect)
-// Total: 41 unit
+// A1: 22 Unit | A2: 19 Unit | B1: 1 Unit (Present Perfect)
+// Total: 42 unit
 
 export const learningPath = [
   {
@@ -10353,57 +10353,49 @@ export const learningPath = [
     "pelajaran": [
       {
         "id": "u33-l1",
-        "judul": "Kosakata Cuaca",
-        "emoji": "⛅",
+        "judul": "Cuaca Lanjutan & Suhu",
+        "emoji": "🌡️",
         "tipe": "vocab",
         "kartu": [
           {
-            "kata": "sunny",
-            "arti": "cerah/bersinar matahari",
-            "emoji": "☀️",
-            "contoh": "It is a sunny day today."
-          },
-          {
-            "kata": "cloudy",
-            "arti": "berawan",
-            "emoji": "☁️",
-            "contoh": "It is cloudy this morning."
-          },
-          {
-            "kata": "rainy",
-            "arti": "hujan",
-            "emoji": "🌧️",
-            "contoh": "It is rainy outside. Bring an umbrella."
-          },
-          {
-            "kata": "windy",
-            "arti": "berangin",
-            "emoji": "💨",
-            "contoh": "It is very windy today."
-          },
-          {
             "kata": "stormy",
-            "arti": "badai",
-            "emoji": "⛈️",
-            "contoh": "It was stormy last night."
+            "arti": "badai (hujan + angin kencang)",
+            "contoh": "It was stormy last night. A tree fell down."
           },
           {
-            "kata": "foggy",
-            "arti": "berkabut",
-            "emoji": "🌫️",
-            "contoh": "It is foggy in the mountains."
+            "kata": "thunderstorm",
+            "arti": "badai petir",
+            "contoh": "There was a thunderstorm yesterday evening."
           },
           {
-            "kata": "hot",
-            "arti": "panas",
-            "emoji": "🌡️",
-            "contoh": "It is very hot today. I need a cold drink."
+            "kata": "humid",
+            "arti": "lembap (panas + lembab)",
+            "contoh": "It is hot and humid in Jakarta in December."
           },
           {
-            "kata": "cold",
-            "arti": "dingin",
-            "emoji": "❄️",
-            "contoh": "It is cold outside. Wear a jacket."
+            "kata": "freezing",
+            "arti": "sangat dingin / membeku",
+            "contoh": "It is freezing outside! I can see my breath."
+          },
+          {
+            "kata": "mild",
+            "arti": "sejuk nyaman (tidak terlalu panas/dingin)",
+            "contoh": "The weather is mild in spring."
+          },
+          {
+            "kata": "degrees Celsius",
+            "arti": "derajat Celsius",
+            "contoh": "It is 32 degrees Celsius today."
+          },
+          {
+            "kata": "weather forecast",
+            "arti": "prakiraan cuaca",
+            "contoh": "The weather forecast says it will rain tomorrow."
+          },
+          {
+            "kata": "flood",
+            "arti": "banjir",
+            "contoh": "Heavy rain caused a flood in the city."
           }
         ]
       },
@@ -10536,14 +10528,14 @@ export const learningPath = [
             "jawaban": 1
           },
           {
-            "pertanyaan": "'cloudy' artinya...",
+            "pertanyaan": "'thunderstorm' artinya...",
             "pilihan": [
-              "cerah",
-              "hujan",
-              "berawan",
-              "berangin"
+              "angin kencang",
+              "badai petir",
+              "hujan deras",
+              "cuaca berkabut"
             ],
-            "jawaban": 2
+            "jawaban": 1
           },
           {
             "pertanyaan": "'Musim gugur' dalam Bahasa Inggris adalah...",
@@ -10576,12 +10568,12 @@ export const learningPath = [
             "jawaban": 2
           },
           {
-            "pertanyaan": "'windy' artinya...",
+            "pertanyaan": "Kata yang berarti 'sangat dingin / membeku' adalah...",
             "pilihan": [
-              "panas",
-              "berkabut",
-              "berangin",
-              "bersalju"
+              "mild",
+              "humid",
+              "freezing",
+              "stormy"
             ],
             "jawaban": 2
           }
@@ -11387,6 +11379,158 @@ export const learningPath = [
               "Saya tidak punya jam."
             ],
             "jawaban": 0
+          }
+        ]
+      }
+    ]
+  }  ,
+  {
+    "id": "unit-37",
+    "judul": "Making Suggestions",
+    "level": "a2",
+    "deskripsi": "Ajak orang lain melakukan sesuatu dengan ekspresi Let's, Why don't we, How about, dan Shall we",
+    "emoji": "💡",
+    "warna": "from-amber-400 to-yellow-500",
+    "bg": "bg-amber-50",
+    "border": "border-amber-200",
+    "teks": "text-amber-700",
+    "pelajaran": [
+      {
+        "id": "u37-l1",
+        "judul": "Let's & Shall we",
+        "emoji": "🤝",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Let's + verb",
+            "arti": "Ayo kita ...",
+            "contoh": "Let's go to the park. (Ayo kita pergi ke taman.)"
+          },
+          {
+            "kata": "Let's not + verb",
+            "arti": "Jangan kita ... / Ayo kita tidak ...",
+            "contoh": "Let's not be late. (Jangan sampai kita terlambat.)"
+          },
+          {
+            "kata": "Shall we + verb?",
+            "arti": "Apakah kita akan ...? (tawaran/saran formal)",
+            "contoh": "Shall we start? (Apakah kita mulai?)"
+          },
+          {
+            "kata": "Shall we go?",
+            "arti": "Ayo kita pergi? / Kita pergi sekarang?",
+            "contoh": "It's getting late. Shall we go?"
+          },
+          {
+            "kata": "Good idea! / Sure! / OK!",
+            "arti": "Ide bagus! / Tentu! / Oke!",
+            "contoh": "Let's eat pizza! — Good idea!"
+          },
+          {
+            "kata": "Sorry, I can't. / I'd rather not.",
+            "arti": "Maaf, tidak bisa. / Saya tidak mau.",
+            "contoh": "Let's go swimming. — Sorry, I can't. I'm busy."
+          }
+        ]
+      },
+      {
+        "id": "u37-l2",
+        "judul": "Why don't we / How about / What about",
+        "emoji": "🗣️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Why don't we + verb?",
+            "arti": "Mengapa kita tidak ...? (saran bersama)",
+            "contoh": "Why don't we eat out tonight?"
+          },
+          {
+            "kata": "Why don't you + verb?",
+            "arti": "Mengapa kamu tidak ...? (saran untuk seseorang)",
+            "contoh": "You look tired. Why don't you rest?"
+          },
+          {
+            "kata": "How about + noun / -ing?",
+            "arti": "Bagaimana kalau ...?",
+            "contoh": "How about pizza? / How about going to the cinema?"
+          },
+          {
+            "kata": "What about + noun / -ing?",
+            "arti": "Bagaimana dengan ...? (= How about)",
+            "contoh": "What about tomorrow? / What about watching a movie?"
+          },
+          {
+            "kata": "I suggest + -ing",
+            "arti": "Saya menyarankan ...",
+            "contoh": "I suggest going early to avoid traffic."
+          },
+          {
+            "kata": "That sounds great / fun / nice.",
+            "arti": "Kedengarannya bagus / seru / menyenangkan.",
+            "contoh": "Let's go hiking! — That sounds great!"
+          },
+          {
+            "kata": "That's a great idea!",
+            "arti": "Itu ide yang bagus!",
+            "contoh": "Why don't we have a picnic? — That's a great idea!"
+          }
+        ]
+      },
+      {
+        "id": "u37-l3",
+        "judul": "Kuis: Making Suggestions",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Cara mengajak teman dengan ungkapan Let's:",
+            "pilihan": [
+              "Go to the beach, let's!",
+              "Let's go to the beach.",
+              "We shall going to beach.",
+              "How we go to beach?"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Why don't we order food?' artinya:",
+            "pilihan": [
+              "Kita tidak mau memesan makanan.",
+              "Mengapa kita memesan makanan?",
+              "Mengapa kita tidak memesan makanan?",
+              "Kita harus memesan makanan."
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Pola yang sama dengan 'How about watching a movie?':",
+            "pilihan": [
+              "Let's watch a movie.",
+              "We watch a movie?",
+              "Watch a movie, how?",
+              "Movie how about?"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Respon setuju yang tepat untuk saran:",
+            "pilihan": [
+              "I can't agree.",
+              "That sounds great!",
+              "No, let's not.",
+              "I don't know."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Mana yang BENAR?",
+            "pilihan": [
+              "Let's to go now.",
+              "How about we going?",
+              "Shall we start?",
+              "Why not we eat?"
+            ],
+            "jawaban": 2
           }
         ]
       }
