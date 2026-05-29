@@ -1057,14 +1057,14 @@ export const learningPath = [
             "jawaban": 3
           },
           {
-            "pertanyaan": "Kata ganti objek untuk 'I' adalah...",
+            "pertanyaan": "'She' digunakan untuk...",
             "pilihan": [
-              "my",
-              "mine",
-              "me",
-              "I"
+              "Sekelompok orang",
+              "Seorang pria",
+              "Benda atau hewan",
+              "Seorang wanita"
             ],
-            "jawaban": 2
+            "jawaban": 3
           },
           {
             "pertanyaan": "Untuk benda mati, kita gunakan...",
@@ -1077,24 +1077,24 @@ export const learningPath = [
             "jawaban": 3
           },
           {
-            "pertanyaan": "'She called ___ this morning.' (dia laki-laki)",
+            "pertanyaan": "Kalimat yang benar: '___ is my teacher.' (seorang wanita)",
             "pilihan": [
-              "he",
-              "his",
-              "him",
-              "her"
-            ],
-            "jawaban": 2
-          },
-          {
-            "pertanyaan": "Kata ganti objek untuk 'They' adalah...",
-            "pilihan": [
-              "their",
-              "theirs",
-              "they",
-              "them"
+              "He",
+              "It",
+              "They",
+              "She"
             ],
             "jawaban": 3
+          },
+          {
+            "pertanyaan": "Mana kalimat yang BENAR?",
+            "pilihan": [
+              "They is my friends.",
+              "We is classmates.",
+              "They are my friends.",
+              "We am happy."
+            ],
+            "jawaban": 2
           }
         ]
       }
@@ -4899,62 +4899,6 @@ export const learningPath = [
             "arti": "di luar",
             "emoji": "➡️",
             "contoh": "The children play outside."
-          }
-        ]
-      },
-      {
-        "id": "15-4",
-        "judul": "Preposisi Lanjutan",
-        "emoji": "🧭",
-        "tipe": "vocab",
-        "kartu": [
-          {
-            "kata": "opposite",
-            "arti": "di seberang",
-            "emoji": "🔄",
-            "contoh": "The bank is opposite the market."
-          },
-          {
-            "kata": "along",
-            "arti": "sepanjang",
-            "emoji": "➖",
-            "contoh": "We walked along the river."
-          },
-          {
-            "kata": "near",
-            "arti": "dekat",
-            "emoji": "📏",
-            "contoh": "Is there a hospital near here?"
-          },
-          {
-            "kata": "around",
-            "arti": "di sekitar",
-            "emoji": "🔵",
-            "contoh": "There are many trees around the school."
-          },
-          {
-            "kata": "through",
-            "arti": "melalui/melewati",
-            "emoji": "➡️",
-            "contoh": "We drove through the tunnel."
-          },
-          {
-            "kata": "across",
-            "arti": "menyeberangi",
-            "emoji": "🌉",
-            "contoh": "The school is across the street."
-          },
-          {
-            "kata": "beside",
-            "arti": "di samping",
-            "emoji": "↔️",
-            "contoh": "She sat beside her friend."
-          },
-          {
-            "kata": "toward",
-            "arti": "menuju",
-            "emoji": "🎯",
-            "contoh": "He walked toward the door."
           }
         ]
       },
