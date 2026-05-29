@@ -76,11 +76,11 @@ function TranslationQuizContent() {
   const pakaiTimer = params.get("timer") === "1";
   const { config } = useLevel();
 
-  const soalList = config?.vocabLevel === "pemula"
+  const soalList = config?.vocabLevel === "a1"
     ? soalTranslationPemula
     : soalTranslationMenengah;
 
-  const judulLevel = config?.vocabLevel === "pemula"
+  const judulLevel = config?.vocabLevel === "a1"
     ? "Translation Quiz 🌱"
     : "Translation Quiz 🚀";
 

@@ -109,11 +109,11 @@ function VocabularyQuizContent() {
   const pakaiTimer = params.get("timer") === "1";
   const { config } = useLevel();
 
-  const soalList = config?.vocabLevel === "pemula"
+  const soalList = config?.vocabLevel === "a1"
     ? soalVocabularyPemula
     : soalVocabularyMenengah;
 
-  const judulLevel = config?.vocabLevel === "pemula"
+  const judulLevel = config?.vocabLevel === "a1"
     ? "Vocabulary Quiz 🌱"
     : "Vocabulary Quiz 🚀";
 

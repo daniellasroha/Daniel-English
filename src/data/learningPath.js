@@ -12,7 +12,7 @@ export const learningPath = [
     "bg": "bg-yellow-50",
     "border": "border-yellow-300",
     "teks": "text-yellow-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "1-1",
@@ -365,7 +365,7 @@ export const learningPath = [
     "bg": "bg-pink-50",
     "border": "border-pink-300",
     "teks": "text-pink-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "2-1",
@@ -926,7 +926,7 @@ export const learningPath = [
     "bg": "bg-green-50",
     "border": "border-green-300",
     "teks": "text-green-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "3-1",
@@ -1109,7 +1109,7 @@ export const learningPath = [
     "bg": "bg-purple-50",
     "border": "border-purple-300",
     "teks": "text-purple-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "4-1",
@@ -1450,7 +1450,7 @@ export const learningPath = [
     "bg": "bg-cyan-50",
     "border": "border-cyan-300",
     "teks": "text-cyan-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "5-1",
@@ -1831,7 +1831,7 @@ export const learningPath = [
     "bg": "bg-violet-50",
     "border": "border-violet-300",
     "teks": "text-violet-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "6-1",
@@ -2172,7 +2172,7 @@ export const learningPath = [
     "bg": "bg-rose-50",
     "border": "border-rose-300",
     "teks": "text-rose-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "7-1",
@@ -2463,7 +2463,7 @@ export const learningPath = [
     "bg": "bg-orange-50",
     "border": "border-orange-300",
     "teks": "text-orange-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "8-1",
@@ -2736,7 +2736,7 @@ export const learningPath = [
     "bg": "bg-fuchsia-50",
     "border": "border-fuchsia-300",
     "teks": "text-fuchsia-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "9-1",
@@ -3197,7 +3197,7 @@ export const learningPath = [
     "bg": "bg-orange-50",
     "border": "border-orange-300",
     "teks": "text-orange-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "10-1",
@@ -3500,7 +3500,7 @@ export const learningPath = [
     "bg": "bg-teal-50",
     "border": "border-teal-300",
     "teks": "text-teal-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "11-1",
@@ -3809,7 +3809,7 @@ export const learningPath = [
     "bg": "bg-indigo-50",
     "border": "border-indigo-300",
     "teks": "text-indigo-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "12-1",
@@ -4138,7 +4138,7 @@ export const learningPath = [
     "bg": "bg-red-50",
     "border": "border-red-300",
     "teks": "text-red-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "13-1",
@@ -4483,7 +4483,7 @@ export const learningPath = [
     "bg": "bg-cyan-50",
     "border": "border-cyan-200",
     "teks": "text-cyan-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "14-1",
@@ -4732,7 +4732,7 @@ export const learningPath = [
     "bg": "bg-teal-50",
     "border": "border-teal-200",
     "teks": "text-teal-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "15-1",
@@ -5037,7 +5037,7 @@ export const learningPath = [
     "bg": "bg-lime-50",
     "border": "border-lime-200",
     "teks": "text-lime-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "16-1",
@@ -5286,7 +5286,7 @@ export const learningPath = [
     "bg": "bg-indigo-50",
     "border": "border-indigo-200",
     "teks": "text-indigo-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "17-1",
@@ -5559,7 +5559,7 @@ export const learningPath = [
     "bg": "bg-red-50",
     "border": "border-red-200",
     "teks": "text-red-700",
-    "level": "pemula",
+    "level": "a1",
     "pelajaran": [
       {
         "id": "18-1",
@@ -5802,7 +5802,7 @@ export const learningPath = [
   {
     "id": "unit-18",
     "judul": "There is / There are",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Ungkapkan keberadaan benda dan orang dengan there is dan there are",
     "emoji": "🏙️",
     "warna": "from-rose-500 to-pink-500",
@@ -6051,7 +6051,7 @@ export const learningPath = [
   {
     "id": "unit-19",
     "judul": "Kata Ganti Objek & Possessive Pronouns",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari kata ganti objek (me, him, her) dan kata ganti kepemilikan (mine, yours)",
     "emoji": "🤲",
     "warna": "from-violet-500 to-purple-500",
@@ -6300,7 +6300,7 @@ export const learningPath = [
   {
     "id": "unit-20",
     "judul": "Present Continuous Tense",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Ungkapkan kegiatan yang sedang berlangsung sekarang dengan am/is/are + Verb-ing",
     "emoji": "🏃",
     "warna": "from-sky-500 to-blue-500",
@@ -6605,7 +6605,7 @@ export const learningPath = [
   {
     "id": "unit-21",
     "judul": "Past Simple Reguler",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Ceritakan kejadian di masa lalu dengan kata kerja beraturan + ed",
     "emoji": "⏪",
     "warna": "from-amber-500 to-yellow-500",
@@ -6922,7 +6922,7 @@ export const learningPath = [
   {
     "id": "unit-22",
     "judul": "Past Simple Irreguler",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Hafal kata kerja tidak beraturan yang paling sering dipakai dalam Bahasa Inggris",
     "emoji": "🔀",
     "warna": "from-orange-500 to-red-500",
@@ -7195,7 +7195,7 @@ export const learningPath = [
   {
     "id": "unit-23",
     "judul": "Future: Going To & Will",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Bicara tentang rencana dan prediksi masa depan dengan going to dan will",
     "emoji": "🔮",
     "warna": "from-emerald-500 to-green-500",
@@ -7444,7 +7444,7 @@ export const learningPath = [
   {
     "id": "unit-24",
     "judul": "Comparatives & Superlatives",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Bandingkan orang, benda, dan tempat menggunakan comparative dan superlative",
     "emoji": "📊",
     "warna": "from-fuchsia-500 to-pink-500",
@@ -7693,7 +7693,7 @@ export const learningPath = [
   {
     "id": "unit-25",
     "judul": "Adverb of Frequency",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Ungkapkan seberapa sering sesuatu terjadi dengan always, usually, often, sometimes, never",
     "emoji": "🔁",
     "warna": "from-teal-500 to-cyan-500",
@@ -7942,7 +7942,7 @@ export const learningPath = [
   {
     "id": "unit-26",
     "judul": "Countable & Uncountable Nouns",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Bedakan kata benda yang bisa dihitung dan tidak bisa dihitung",
     "emoji": "🔢",
     "warna": "from-blue-500 to-indigo-500",
@@ -8191,7 +8191,7 @@ export const learningPath = [
   {
     "id": "unit-27",
     "judul": "Much, Many, A lot of",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Ungkapkan jumlah banyak dengan much, many, dan a lot of secara tepat",
     "emoji": "📈",
     "warna": "from-indigo-500 to-violet-500",
@@ -8384,7 +8384,7 @@ export const learningPath = [
   {
     "id": "unit-28",
     "judul": "Modal Verbs: Should, Must & Would",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Berikan saran, sampaikan kewajiban, dan buat permintaan sopan",
     "emoji": "🗣️",
     "warna": "from-purple-500 to-violet-500",
@@ -8633,7 +8633,7 @@ export const learningPath = [
   {
     "id": "unit-29",
     "judul": "Tubuh & Kesehatan",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari nama bagian tubuh, keluhan sakit, dan cara meminta saran kesehatan",
     "emoji": "🏥",
     "warna": "from-red-500 to-rose-500",
@@ -8882,7 +8882,7 @@ export const learningPath = [
   {
     "id": "unit-30",
     "judul": "Pakaian & Belanja",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari nama pakaian dan ungkapan belanja dalam Bahasa Inggris",
     "emoji": "👗",
     "warna": "from-pink-500 to-rose-400",
@@ -9131,7 +9131,7 @@ export const learningPath = [
   {
     "id": "unit-31",
     "judul": "Transportasi & Perjalanan",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari jenis transportasi, cara meminta arah, dan preposisi arah",
     "emoji": "🚆",
     "warna": "from-cyan-500 to-teal-500",
@@ -9380,7 +9380,7 @@ export const learningPath = [
   {
     "id": "unit-32",
     "judul": "Pekerjaan & Tempat Kerja",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari nama pekerjaan, tempat kerja, dan cara bertanya tentang profesi",
     "emoji": "👨‍💼",
     "warna": "from-lime-500 to-green-500",
@@ -9629,7 +9629,7 @@ export const learningPath = [
   {
     "id": "unit-33",
     "judul": "Cuaca & Musim",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari kosakata cuaca, musim, dan cara bertanya tentang cuaca hari ini",
     "emoji": "🌤️",
     "warna": "from-slate-400 to-gray-500",
@@ -9878,7 +9878,7 @@ export const learningPath = [
   {
     "id": "unit-34",
     "judul": "Present Perfect",
-    "level": "menengah",
+    "level": "b1",
     "deskripsi": "Ungkapkan pengalaman dan kejadian yang baru saja terjadi dengan have/has + V3",
     "emoji": "✨",
     "warna": "from-emerald-500 to-teal-500",
@@ -10183,7 +10183,7 @@ export const learningPath = [
   {
     "id": "unit-35",
     "judul": "Conjunctions & Linking Words",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Hubungkan ide dan kalimat dengan kata penghubung yang tepat",
     "emoji": "🔗",
     "warna": "from-blue-500 to-cyan-500",
@@ -10432,7 +10432,7 @@ export const learningPath = [
   {
     "id": "unit-36",
     "judul": "Have got",
-    "level": "menengah",
+    "level": "a2",
     "deskripsi": "Pelajari cara menggunakan have got sebagai alternatif have dalam Bahasa Inggris",
     "emoji": "🤲",
     "warna": "from-violet-500 to-indigo-500",

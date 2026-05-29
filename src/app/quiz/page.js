@@ -13,8 +13,8 @@ const kategoriKuis = [
     warna: "from-blue-400 to-blue-600",
     bgLight: "bg-blue-50",
     border: "border-blue-200",
-    soalPemula: "15 soal",
-    soalMenengah: "20 soal",
+    soalA1: "15 soal",
+    soalA2: "20 soal",
   },
   {
     href: "/quiz/grammar",
@@ -24,8 +24,8 @@ const kategoriKuis = [
     warna: "from-green-400 to-green-600",
     bgLight: "bg-green-50",
     border: "border-green-200",
-    soalPemula: "10 soal",
-    soalMenengah: "16 soal",
+    soalA1: "10 soal",
+    soalA2: "16 soal",
   },
   {
     href: "/quiz/translation",
@@ -35,8 +35,8 @@ const kategoriKuis = [
     warna: "from-sky-400 to-blue-600",
     bgLight: "bg-sky-50",
     border: "border-sky-200",
-    soalPemula: "12 soal",
-    soalMenengah: "15 soal",
+    soalA1: "12 soal",
+    soalA2: "15 soal",
     badge: "🆕 Baru",
   },
   {
@@ -47,7 +47,7 @@ const kategoriKuis = [
     warna: "from-purple-400 to-purple-600",
     bgLight: "bg-purple-50",
     border: "border-purple-200",
-    soalMenengah: "20 soal",
+    soalA2: "20 soal",
     badge: "⚡ Tantangan",
   },
   {
@@ -58,7 +58,7 @@ const kategoriKuis = [
     warna: "from-teal-400 to-cyan-600",
     bgLight: "bg-teal-50",
     border: "border-teal-200",
-    soalMenengah: "15 soal acak",
+    soalA2: "15 soal acak",
   },
   {
     href: "/quiz/typing",
@@ -68,8 +68,8 @@ const kategoriKuis = [
     warna: "from-violet-400 to-purple-600",
     bgLight: "bg-violet-50",
     border: "border-violet-200",
-    soalPemula: "15 soal",
-    soalMenengah: "15 soal",
+    soalA1: "15 soal",
+    soalA2: "15 soal",
     badge: "✍️ Ketik",
   },
 ];
@@ -85,8 +85,8 @@ export default function QuizPage() {
 
   // Tampilkan jumlah soal sesuai level
   const getSoal = (kat) => {
-    if (config?.vocabLevel === "pemula") return kat.soalPemula || kat.soalMenengah;
-    return kat.soalMenengah || kat.soalPemula;
+    if (config?.vocabLevel === "a1") return kat.soalA1 || kat.soalA2;
+    return kat.soalA2 || kat.soalA1;
   };
 
   return (
@@ -108,9 +108,11 @@ export default function QuizPage() {
         <div className="text-center mb-6">
           <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Pilih Kategori Kuis</h2>
           <p className="text-gray-500 text-sm">
-            {config?.vocabLevel === "pemula"
-              ? "Soal sudah disesuaikan untuk level Pemula 🌱 Selamat mencoba!"
-              : "Soal disesuaikan untuk level Menengah 🚀 Selamat mencoba!"}
+            {config?.vocabLevel === "a1"
+              ? "Soal sudah disesuaikan untuk level A1 🌱 Selamat mencoba!"
+              : config?.vocabLevel === "b1"
+              ? "Soal disesuaikan untuk level B1 🚀 Selamat mencoba!"
+              : "Soal disesuaikan untuk level A2 📗 Selamat mencoba!"}
           </p>
         </div>
 

@@ -33,8 +33,8 @@ export default function VocabularyPage() {
 
   // Filter kata berdasarkan level
   const kosakataTersedia = config
-    ? (config.vocabLevel === "pemula"
-        ? kosakata.filter((k) => k.level === "pemula")
+    ? (config.vocabLevel === "a1"
+        ? kosakata.filter((k) => k.level === "a1")
         : kosakata)
     : kosakata;
 

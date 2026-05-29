@@ -7,9 +7,10 @@ import { fetchLeaderboard } from "@/lib/leaderboard";
 import { useUsername } from "@/hooks/useUsername";
 
 const TABS = [
-  { key: "semua",    label: "Semua",    emoji: "🌐" },
-  { key: "pemula",   label: "Pemula",   emoji: "🌱" },
-  { key: "menengah", label: "Menengah", emoji: "🚀" },
+  { key: "semua", label: "Semua", emoji: "🌐" },
+  { key: "a1",    label: "A1",    emoji: "🌱" },
+  { key: "a2",    label: "A2",    emoji: "📗" },
+  { key: "b1",    label: "B1",    emoji: "🚀" },
 ];
 
 function MedalIcon({ rank }) {
@@ -24,15 +25,21 @@ function MedalIcon({ rank }) {
 }
 
 function LevelBadge({ level }) {
-  if (level === "menengah")
+  if (level === "b1" || level === "menengah")
     return (
-      <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-600 font-semibold">
-        🚀 Menengah
+      <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 font-semibold">
+        🚀 B1
+      </span>
+    );
+  if (level === "a2")
+    return (
+      <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 font-semibold">
+        📗 A2
       </span>
     );
   return (
     <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-600 font-semibold">
-      🌱 Pemula
+      🌱 A1
     </span>
   );
 }

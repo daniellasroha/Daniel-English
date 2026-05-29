@@ -47,7 +47,7 @@ export async function syncLeaderboard({ username, level, completedLessons, quizH
       docRef,
       {
         username: username.trim(),
-        level: level || "pemula",
+        level: level || "a1",
         belajarPoin,
         quizPoin,
         totalPoin,
@@ -63,7 +63,7 @@ export async function syncLeaderboard({ username, level, completedLessons, quizH
 }
 
 // ── Ambil Leaderboard ─────────────────────────────────────────────────────────
-// level: "pemula" | "menengah" | "semua"
+// level: "a1" | "a2" | "b1" | "semua"
 export async function fetchLeaderboard(level = "semua", maxRows = 50) {
   try {
     const col = collection(db, "leaderboard");

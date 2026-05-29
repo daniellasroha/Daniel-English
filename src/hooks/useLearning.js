@@ -33,7 +33,7 @@ export function useLearning() {
       // Sync ke leaderboard (fire-and-forget)
       try {
         const username = localStorage.getItem("daniel_english_username") || "";
-        const level    = localStorage.getItem("daniel_english_level")    || "pemula";
+        const level    = localStorage.getItem("daniel_english_level")    || "a1";
         const quizRaw  = localStorage.getItem("daniel_english_progress");
         const quizHistory = quizRaw ? (JSON.parse(quizRaw).quiz || []) : [];
         syncLeaderboard({ username, level, completedLessons: next, quizHistory });

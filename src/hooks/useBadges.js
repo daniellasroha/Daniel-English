@@ -35,9 +35,9 @@ export const SEMUA_BADGE = [
     teks: "text-blue-700",
   },
   {
-    id: "pemula_tuntas",
+    id: "a1_tuntas",
     emoji: "🎓",
-    judul: "Pemula Tuntas",
+    judul: "A1 Tuntas",
     deskripsi: "Selesaikan semua 18 unit A1",
     warna: "from-indigo-400 to-purple-500",
     bg: "bg-indigo-50",
@@ -113,11 +113,11 @@ export function useBadges({ completedLessons = [], streak = 0, progressData = nu
 
     // Hitung berapa unit yang sudah selesai 100%
     let unitSelesai = 0;
-    let pemulaTuntas = false;
+    let a1Tuntas = false;
     let masterTuntas = false;
 
     if (unitBelajar.length > 0) {
-      const pemulaUnits = unitBelajar.filter(u => u.level === "pemula");
+      const a1Units = unitBelajar.filter(u => u.level === "a1");
       const semuaUnits = unitBelajar;
 
       unitSelesai = semuaUnits.filter(u => {
@@ -125,7 +125,7 @@ export function useBadges({ completedLessons = [], streak = 0, progressData = nu
         return ids.every(id => completedLessons.includes(id));
       }).length;
 
-      pemulaTuntas = pemulaUnits.every(u => {
+      a1Tuntas = a1Units.every(u => {
         return u.pelajaran.every(p => completedLessons.includes(p.id));
       });
 
@@ -138,7 +138,7 @@ export function useBadges({ completedLessons = [], streak = 0, progressData = nu
     if (completedLessons.length >= 1) ids.add("first_lesson");
     if (unitSelesai >= 1) ids.add("first_unit");
     if (unitSelesai >= 5) ids.add("five_units");
-    if (pemulaTuntas) ids.add("pemula_tuntas");
+    if (a1Tuntas) ids.add("a1_tuntas");
     if (masterTuntas) ids.add("master");
 
     // Badge berdasarkan streak

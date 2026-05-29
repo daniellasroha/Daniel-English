@@ -97,11 +97,11 @@ function GrammarQuizContent() {
   const pakaiTimer = params.get("timer") === "1";
   const { config } = useLevel();
 
-  const soalList = config?.vocabLevel === "pemula"
+  const soalList = config?.vocabLevel === "a1"
     ? soalGrammarPemula
     : soalGrammarMenengah;
 
-  const judulLevel = config?.vocabLevel === "pemula"
+  const judulLevel = config?.vocabLevel === "a1"
     ? "Grammar Quiz 🌱"
     : "Grammar Quiz 🚀";
 

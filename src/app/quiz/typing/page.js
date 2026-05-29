@@ -21,11 +21,11 @@ const soalPool = [
   { id: 9, indonesia: "Tentu saja!", jawaban: ["Of course!","Of course"] , level: "mudah" },
   { id: 10, indonesia: "Tidak masalah!", jawaban: ["No problem!","No problem"], level: "mudah" },
   // Present tense
-  { id: 11, indonesia: "Saya makan nasi setiap hari.", jawaban: ["I eat rice every day.","I eat rice every day"], level: "menengah" },
-  { id: 12, indonesia: "Dia belajar setiap malam.", jawaban: ["She studies every night.","He studies every night.","She studies every night","He studies every night"], level: "menengah" },
-  { id: 13, indonesia: "Mereka bermain sepak bola.", jawaban: ["They play football.","They play soccer.","They play football","They play soccer"], level: "menengah" },
-  { id: 14, indonesia: "Saya tidak suka ikan.", jawaban: ["I don't like fish.","I do not like fish.","I don't like fish","I do not like fish"], level: "menengah" },
-  { id: 15, indonesia: "Apakah kamu suka kopi?", jawaban: ["Do you like coffee?","Do you like coffee"], level: "menengah" },
+  { id: 11, indonesia: "Saya makan nasi setiap hari.", jawaban: ["I eat rice every day.","I eat rice every day"], level: "a2" },
+  { id: 12, indonesia: "Dia belajar setiap malam.", jawaban: ["She studies every night.","He studies every night.","She studies every night","He studies every night"], level: "a2" },
+  { id: 13, indonesia: "Mereka bermain sepak bola.", jawaban: ["They play football.","They play soccer.","They play football","They play soccer"], level: "a2" },
+  { id: 14, indonesia: "Saya tidak suka ikan.", jawaban: ["I don't like fish.","I do not like fish.","I don't like fish","I do not like fish"], level: "a2" },
+  { id: 15, indonesia: "Apakah kamu suka kopi?", jawaban: ["Do you like coffee?","Do you like coffee"], level: "a2" },
   // To be
   { id: 16, indonesia: "Saya adalah seorang pelajar.", jawaban: ["I am a student.","I'm a student.","I am a student","I'm a student"], level: "mudah" },
   { id: 17, indonesia: "Dia adalah guru.", jawaban: ["He is a teacher.","She is a teacher.","He is a teacher","She is a teacher"], level: "mudah" },
@@ -33,28 +33,28 @@ const soalPool = [
   { id: 19, indonesia: "Langit berwarna biru.", jawaban: ["The sky is blue.","The sky is blue"], level: "mudah" },
   { id: 20, indonesia: "Ini adalah seekor anjing.", jawaban: ["This is a dog.","This is a dog"], level: "mudah" },
   // Kalimat lebih panjang
-  { id: 21, indonesia: "Saya sedang belajar sekarang.", jawaban: ["I am studying now.","I'm studying now.","I am studying now","I'm studying now"], level: "menengah" },
-  { id: 22, indonesia: "Dia pergi ke pasar kemarin.", jawaban: ["She went to the market yesterday.","He went to the market yesterday.","She went to the market yesterday","He went to the market yesterday"], level: "menengah" },
-  { id: 23, indonesia: "Saya akan pergi ke Bali besok.", jawaban: ["I will go to Bali tomorrow.","I will go to Bali tomorrow"], level: "menengah" },
-  { id: 24, indonesia: "Kamu sebaiknya belajar lebih rajin.", jawaban: ["You should study harder.","You should study harder"], level: "menengah" },
-  { id: 25, indonesia: "Saya bisa berbicara bahasa Inggris.", jawaban: ["I can speak English.","I can speak English"], level: "menengah" },
+  { id: 21, indonesia: "Saya sedang belajar sekarang.", jawaban: ["I am studying now.","I'm studying now.","I am studying now","I'm studying now"], level: "a2" },
+  { id: 22, indonesia: "Dia pergi ke pasar kemarin.", jawaban: ["She went to the market yesterday.","He went to the market yesterday.","She went to the market yesterday","He went to the market yesterday"], level: "a2" },
+  { id: 23, indonesia: "Saya akan pergi ke Bali besok.", jawaban: ["I will go to Bali tomorrow.","I will go to Bali tomorrow"], level: "a2" },
+  { id: 24, indonesia: "Kamu sebaiknya belajar lebih rajin.", jawaban: ["You should study harder.","You should study harder"], level: "a2" },
+  { id: 25, indonesia: "Saya bisa berbicara bahasa Inggris.", jawaban: ["I can speak English.","I can speak English"], level: "a2" },
   // Pertanyaan
   { id: 26, indonesia: "Di mana toiletnya?", jawaban: ["Where is the toilet?","Where is the toilet"], level: "mudah" },
   { id: 27, indonesia: "Berapa harganya?", jawaban: ["How much is it?","How much does it cost?","How much is it","How much does it cost"], level: "mudah" },
-  { id: 28, indonesia: "Apa yang sedang kamu lakukan?", jawaban: ["What are you doing?","What are you doing"], level: "menengah" },
-  { id: 29, indonesia: "Di mana kamu tinggal?", jawaban: ["Where do you live?","Where do you live"], level: "menengah" },
+  { id: 28, indonesia: "Apa yang sedang kamu lakukan?", jawaban: ["What are you doing?","What are you doing"], level: "a2" },
+  { id: 29, indonesia: "Di mana kamu tinggal?", jawaban: ["Where do you live?","Where do you live"], level: "a2" },
   { id: 30, indonesia: "Kapan ujiannya?", jawaban: ["When is the exam?","When is the exam"], level: "mudah" },
   // Kalimat advanced
-  { id: 31, indonesia: "Dia lebih tinggi dari saya.", jawaban: ["He is taller than me.","She is taller than me.","He is taller than me","She is taller than me"], level: "menengah" },
-  { id: 32, indonesia: "Matahari terbit di timur.", jawaban: ["The sun rises in the east.","The sun rises in the east"], level: "menengah" },
+  { id: 31, indonesia: "Dia lebih tinggi dari saya.", jawaban: ["He is taller than me.","She is taller than me.","He is taller than me","She is taller than me"], level: "a2" },
+  { id: 32, indonesia: "Matahari terbit di timur.", jawaban: ["The sun rises in the east.","The sun rises in the east"], level: "a2" },
   { id: 33, indonesia: "Saya tidak pernah makan daging.", jawaban: ["I have never eaten meat.","I have never eaten meat"], level: "sulit" },
-  { id: 34, indonesia: "Buku itu ada di atas meja.", jawaban: ["The book is on the table.","The book is on the table"], level: "menengah" },
-  { id: 35, indonesia: "Tolong jangan berisik.", jawaban: ["Please don't be noisy.","Don't be noisy, please.","Please don't be noisy","Don't be noisy please"], level: "menengah" },
+  { id: 34, indonesia: "Buku itu ada di atas meja.", jawaban: ["The book is on the table.","The book is on the table"], level: "a2" },
+  { id: 35, indonesia: "Tolong jangan berisik.", jawaban: ["Please don't be noisy.","Don't be noisy, please.","Please don't be noisy","Don't be noisy please"], level: "a2" },
   { id: 36, indonesia: "Saya sudah makan tadi.", jawaban: ["I have already eaten.","I've already eaten.","I have already eaten","I've already eaten"], level: "sulit" },
   { id: 37, indonesia: "Sebuah apel sehari membuat dokter menjauh.", jawaban: ["An apple a day keeps the doctor away.","An apple a day keeps the doctor away"], level: "sulit" },
   { id: 38, indonesia: "Bahasa Inggris itu menyenangkan!", jawaban: ["English is fun!","English is fun"], level: "mudah" },
   { id: 39, indonesia: "Saya butuh lebih banyak latihan.", jawaban: ["I need more practice.","I need more practice"], level: "mudah" },
-  { id: 40, indonesia: "Jangan khawatir, saya baik-baik saja.", jawaban: ["Don't worry, I'm okay.","Don't worry, I am okay.","Don't worry, I'm okay","Don't worry I'm okay"], level: "menengah" },
+  { id: 40, indonesia: "Jangan khawatir, saya baik-baik saja.", jawaban: ["Don't worry, I'm okay.","Don't worry, I am okay.","Don't worry, I'm okay","Don't worry I'm okay"], level: "a2" },
 ];
 
 const JUMLAH_SOAL = 15;
@@ -281,10 +281,10 @@ export default function TypingQuizPage() {
         <div className="flex justify-end mb-3">
           <span className={`text-xs font-bold px-3 py-1 rounded-full ${
             soalSaatIni.level === "mudah" ? "bg-green-100 text-green-700"
-            : soalSaatIni.level === "menengah" ? "bg-yellow-100 text-yellow-700"
+            : soalSaatIni.level === "a2" ? "bg-yellow-100 text-yellow-700"
             : "bg-red-100 text-red-700"
           }`}>
-            {soalSaatIni.level === "mudah" ? "🟢 Mudah" : soalSaatIni.level === "menengah" ? "🟡 Menengah" : "🔴 Sulit"}
+            {soalSaatIni.level === "mudah" ? "🟢 Mudah" : soalSaatIni.level === "a2" ? "🟡 A2" : "🔴 Sulit"}
           </span>
         </div>
 

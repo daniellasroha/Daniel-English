@@ -424,11 +424,13 @@ export default function BelajarPage() {
     loaded,
   } = useLearning();
 
-  const { config } = useLevel();
-  const isPemula = !config || config.vocabLevel === "pemula";
-  const unitsTampil = isPemula
-    ? unitBelajar.filter((u) => u.level === "pemula")
-    : unitBelajar;
+  const { config, level } = useLevel();
+  const userLevel = level || "a1";
+  const unitsTampil = userLevel === "a1"
+    ? unitBelajar.filter((u) => u.level === "a1")
+    : userLevel === "a2"
+    ? unitBelajar.filter((u) => u.level === "a1" || u.level === "a2")
+    : unitBelajar; // b1 → semua unit
 
   // ── View 3: Pelajaran ──
   // (unitsTampil dipakai di View 2 dan View 1)
@@ -632,18 +634,31 @@ export default function BelajarPage() {
               const firstLessonUnlocked = loaded ? isLessonUnlocked(unit.id, 0) : unitIdx === 0;
               const allDone = done === total && total > 0;
               const persen = total > 0 ? Math.round((done / total) * 100) : 0;
-              const showMenengahSeparator = !isPemula && unit.level === "menengah" &&
-                (unitIdx === 0 || unitsTampil[unitIdx - 1].level === "pemula");
+              const showA2Separator = unit.level === "a2" &&
+                (unitIdx === 0 || unitsTampil[unitIdx - 1].level === "a1");
+              const showB1Separator = unit.level === "b1" &&
+                (unitIdx === 0 || unitsTampil[unitIdx - 1].level !== "b1");
 
               return (
                 <div key={unit.id}>
-                  {showMenengahSeparator && (
+                  {showA2Separator && (
                     <div className="relative pl-16 mb-2">
-                      <div className="rounded-2xl border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50 px-5 py-3 flex items-center gap-3">
-                        <span className="text-2xl">🎓</span>
+                      <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-5 py-3 flex items-center gap-3">
+                        <span className="text-2xl">📗</span>
                         <div>
-                          <p className="font-bold text-purple-700 text-sm">Materi Menengah</p>
-                          <p className="text-xs text-purple-400">Lanjutan setelah menguasai materi pemula</p>
+                          <p className="font-bold text-blue-700 text-sm">Materi A2</p>
+                          <p className="text-xs text-blue-400">Lanjutan setelah menguasai A1</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {showB1Separator && (
+                    <div className="relative pl-16 mb-2">
+                      <div className="rounded-2xl border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-violet-50 px-5 py-3 flex items-center gap-3">
+                        <span className="text-2xl">🚀</span>
+                        <div>
+                          <p className="font-bold text-purple-700 text-sm">Materi B1</p>
+                          <p className="text-xs text-purple-400">Level menengah CEFR — setelah menguasai A2</p>
                         </div>
                       </div>
                     </div>
@@ -675,8 +690,11 @@ export default function BelajarPage() {
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-xs text-gray-400 font-mono">Unit {unitIdx + 1}</span>
-                            {unit.level === "menengah" && (
-                              <span className="text-xs bg-purple-100 rounded-full px-2 py-0.5 text-purple-500 font-semibold">Menengah</span>
+                            {unit.level === "a2" && (
+                              <span className="text-xs bg-blue-100 rounded-full px-2 py-0.5 text-blue-500 font-semibold">A2</span>
+                            )}
+                            {unit.level === "b1" && (
+                              <span className="text-xs bg-purple-100 rounded-full px-2 py-0.5 text-purple-500 font-semibold">B1</span>
                             )}
                             {allDone && (
                               <span className="text-xs bg-white rounded-full px-2 py-0.5 border border-green-200 text-green-600 font-semibold">Selesai ✓</span>

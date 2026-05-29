@@ -92,7 +92,7 @@ export function useProgress() {
     // Sync ke leaderboard (fire-and-forget)
     try {
       const username = localStorage.getItem("daniel_english_username") || "";
-      const level    = localStorage.getItem("daniel_english_level")    || "pemula";
+      const level    = localStorage.getItem("daniel_english_level")    || "a1";
       const lessons  = JSON.parse(localStorage.getItem("daniel_english_belajar") || "[]");
       syncLeaderboard({ username, level, completedLessons: lessons, quizHistory: d.quiz });
     } catch {}
