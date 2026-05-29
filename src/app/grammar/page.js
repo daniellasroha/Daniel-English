@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useProgress } from "@/hooks/useProgress";
 import { useLevel } from "@/hooks/useLevel";
+import { useSound } from "@/hooks/useSound";
 
 // ─── SOAL LATIHAN per topik (5 soal) ──────────────────────────────────────────
 const soalPerTopik = {
@@ -87,6 +88,7 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
   const [dipilih, setDipilih] = useState(null);
   const [benar, setBenar] = useState(0);
   const [selesai, setSelesai] = useState(false);
+  const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
 
   if (!soalList.length) return null;
 
@@ -95,12 +97,14 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
   function pilih(i) {
     if (dipilih !== null) return;
     setDipilih(i);
-    if (i === soal.j) setBenar(b => b + 1);
+    if (i === soal.j) { setBenar(b => b + 1); bunyiBenar(); }
+    else { bunyiSalah(); }
   }
 
   function lanjut() {
     if (idx >= soalList.length - 1) {
       setSelesai(true);
+      bunyiSelesai();
     } else {
       setIdx(n => n + 1);
       setDipilih(null);

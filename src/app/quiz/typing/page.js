@@ -4,6 +4,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useProgress } from "@/hooks/useProgress";
+import { useSound } from "@/hooks/useSound";
 
 // Pool kalimat: tampilkan Indonesia, user ketik Inggris
 // Kunci jawaban = semua varian yang diterima (array)
@@ -97,6 +98,7 @@ export default function TypingQuizPage() {
   const [riwayat, setRiwayat] = useState([]);
   const inputRef = useRef(null);
   const { recordQuiz } = useProgress();
+  const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
 
   useEffect(() => {
     if (mulai) setTimeout(() => inputRef.current?.focus(), 100);
@@ -119,7 +121,8 @@ export default function TypingQuizPage() {
     const status = cekJawaban(input, soal.jawaban);
     setHasil(status);
     const hitungBenar = status === "benar" || status === "hampir";
-    if (hitungBenar) setSkor((s) => s + 1);
+    if (hitungBenar) { setSkor((s) => s + 1); bunyiBenar(); }
+    else { bunyiSalah(); }
     setRiwayat((prev) => [...prev, {
       indonesia: soal.indonesia,
       jawaban: input.trim(),
@@ -130,9 +133,9 @@ export default function TypingQuizPage() {
 
   function lanjut() {
     if (index + 1 >= soalList.length) {
-      const finalSkor = skor + (hasil === "benar" || hasil === "hampir" ? 0 : 0);
       recordQuiz("typing", skor, soalList.length);
       setSelesai(true);
+      bunyiSelesai();
     } else {
       setIndex((i) => i + 1);
       setInput("");

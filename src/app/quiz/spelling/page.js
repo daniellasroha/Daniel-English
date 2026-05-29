@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { kosakata } from "@/data/vocabulary";
 import { useProgress } from "@/hooks/useProgress";
+import { useSound } from "@/hooks/useSound";
 
 // Ambil 15 kata acak dari vocabulary untuk soal spelling
 function acakKata(arr, n) {
@@ -24,6 +25,7 @@ export default function SpellingQuizPage() {
   const inputRef = useRef(null);
 
   const { recordQuiz } = useProgress();
+  const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
 
   function mulaiQuiz() {
     const list = acakKata(kosakata, 15);
@@ -43,7 +45,8 @@ export default function SpellingQuizPage() {
     const soal = soalList[index];
     const benar = jawaban.trim().toLowerCase() === soal.english.toLowerCase();
     setHasil(benar ? "benar" : "salah");
-    if (benar) setSkor((s) => s + 1);
+    if (benar) { setSkor((s) => s + 1); bunyiBenar(); }
+    else { bunyiSalah(); }
     setRiwayat((prev) => [...prev, {
       indonesian: soal.indonesian,
       english: soal.english,
@@ -56,6 +59,7 @@ export default function SpellingQuizPage() {
     if (index + 1 >= soalList.length) {
       setSelesai(true);
       recordQuiz("spelling", skor + (hasil === "benar" ? 1 : 0), soalList.length);
+      bunyiSelesai();
     } else {
       setIndex((i) => i + 1);
       setJawaban("");

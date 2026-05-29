@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useProgress, hitungStreak } from "@/hooks/useProgress";
+import { useSound } from "@/hooks/useSound";
 
 // ─── POOL SOAL (150+ soal) ────────────────────────────────────────────────────
 const soalPool = [
@@ -206,6 +207,7 @@ export default function DailyChallengePage() {
   const [loaded, setLoaded] = useState(false);
 
   const { data, recordSession } = useProgress();
+  const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
   const streak = data ? hitungStreak(data.sessions) : 0;
 
   useEffect(() => {
@@ -229,12 +231,16 @@ export default function DailyChallengePage() {
     newJawaban[soalAktif] = idx;
     setJawabanUser(newJawaban);
 
+    if (idx === soalHariIni[soalAktif]?.jawaban) bunyiBenar();
+    else bunyiSalah();
+
     if (soalAktif === soalHariIni.length - 1) {
       setTimeout(() => {
         setSudahSelesai(true);
         setSoalAktif(soalHariIni.length);
         localStorage.setItem(KEY_DAILY, JSON.stringify({ date: todayStr(), jawaban: newJawaban }));
-        recordSession(); // ← streak naik dari sini, bukan dari KEY_STREAK terpisah
+        recordSession();
+        bunyiSelesai();
       }, 800);
     } else {
       setTimeout(() => setSoalAktif(n => n + 1), 800);
