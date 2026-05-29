@@ -11159,311 +11159,6 @@ export const learningPath = [
     ]
   },
   {
-    "id": "unit-34",
-    "judul": "Present Perfect",
-    "level": "b1",
-    "deskripsi": "Ungkapkan pengalaman dan kejadian yang baru saja terjadi dengan have/has + V3",
-    "emoji": "✨",
-    "warna": "from-emerald-500 to-teal-500",
-    "bg": "bg-emerald-50",
-    "border": "border-emerald-200",
-    "teks": "text-emerald-700",
-    "pelajaran": [
-      {
-        "id": "u34-l1",
-        "judul": "Rumus: have/has + V3 (Past Participle)",
-        "emoji": "📌",
-        "tipe": "vocab",
-        "kartu": [
-          {
-            "kata": "I have eaten",
-            "arti": "Saya sudah makan",
-            "emoji": "🍽️",
-            "contoh": "I have eaten lunch already."
-          },
-          {
-            "kata": "She has finished",
-            "arti": "Dia sudah selesai",
-            "emoji": "✅",
-            "contoh": "She has finished her homework."
-          },
-          {
-            "kata": "They have arrived",
-            "arti": "Mereka sudah tiba",
-            "emoji": "🚗",
-            "contoh": "They have arrived at the hotel."
-          },
-          {
-            "kata": "He has worked here for 5 years",
-            "arti": "Dia sudah bekerja di sini 5 tahun",
-            "emoji": "💼",
-            "contoh": "He has worked here for 5 years."
-          },
-          {
-            "kata": "I have lived in Jakarta",
-            "arti": "Saya pernah tinggal di Jakarta",
-            "emoji": "🏙️",
-            "contoh": "I have lived in Jakarta before."
-          },
-          {
-            "kata": "We haven't met before",
-            "arti": "Kita belum pernah bertemu",
-            "emoji": "🤝",
-            "contoh": "We haven't met before, have we?"
-          },
-          {
-            "kata": "She hasn't called me",
-            "arti": "Dia belum meneleponku",
-            "emoji": "📞",
-            "contoh": "She hasn't called me yet."
-          },
-          {
-            "kata": "have/has + V3",
-            "arti": "Rumus Present Perfect",
-            "emoji": "📐",
-            "contoh": "I have seen. She has seen. (bukan: I have saw)"
-          }
-        ]
-      },
-      {
-        "id": "u34-l2",
-        "judul": "ever, never: Pengalaman Hidup",
-        "emoji": "🌍",
-        "tipe": "vocab",
-        "kartu": [
-          {
-            "kata": "Have you ever been to Bali?",
-            "arti": "Apakah kamu pernah ke Bali?",
-            "emoji": "🏝️",
-            "contoh": "Have you ever been to Bali? Yes, I have."
-          },
-          {
-            "kata": "I have never eaten sushi",
-            "arti": "Saya tidak pernah makan sushi",
-            "emoji": "🍣",
-            "contoh": "I have never eaten sushi in my life."
-          },
-          {
-            "kata": "She has never seen snow",
-            "arti": "Dia tidak pernah melihat salju",
-            "emoji": "❄️",
-            "contoh": "She has never seen snow before."
-          },
-          {
-            "kata": "Have you ever flown on a plane?",
-            "arti": "Apakah kamu pernah naik pesawat?",
-            "emoji": "✈️",
-            "contoh": "Have you ever flown on a plane? Yes, many times."
-          },
-          {
-            "kata": "I've met him before.",
-            "arti": "Saya pernah bertemu dengannya.",
-            "emoji": "🤝",
-            "contoh": "I've met him before at a conference."
-          },
-          {
-            "kata": "He has never tried spicy food",
-            "arti": "Dia tidak pernah mencoba makanan pedas",
-            "emoji": "🌶️",
-            "contoh": "He has never tried spicy food."
-          },
-          {
-            "kata": "Yes, I have.",
-            "arti": "Ya, pernah. (jawaban positif)",
-            "emoji": "👍",
-            "contoh": "Have you ever been abroad? Yes, I have."
-          },
-          {
-            "kata": "No, I haven't.",
-            "arti": "Tidak, belum pernah.",
-            "emoji": "👎",
-            "contoh": "Have you ever driven a car? No, I haven't."
-          }
-        ]
-      },
-      {
-        "id": "u34-l3",
-        "judul": "just, already, yet",
-        "emoji": "⏱️",
-        "tipe": "vocab",
-        "kartu": [
-          {
-            "kata": "I have just eaten",
-            "arti": "Saya baru saja makan (just = baru saja)",
-            "emoji": "🍽️",
-            "contoh": "I have just eaten, so I am not hungry."
-          },
-          {
-            "kata": "She has already left",
-            "arti": "Dia sudah pergi (already = sudah)",
-            "emoji": "🚶",
-            "contoh": "She has already left. You missed her."
-          },
-          {
-            "kata": "Have you finished yet?",
-            "arti": "Apakah kamu sudah selesai? (yet = sudah/belum)",
-            "emoji": "❓",
-            "contoh": "Have you finished yet? Not yet."
-          },
-          {
-            "kata": "I haven't eaten yet",
-            "arti": "Saya belum makan (yet dengan negatif)",
-            "emoji": "😋",
-            "contoh": "I haven't eaten yet. I am still cooking."
-          },
-          {
-            "kata": "He has just arrived",
-            "arti": "Dia baru saja tiba",
-            "emoji": "🏠",
-            "contoh": "He has just arrived from Surabaya."
-          },
-          {
-            "kata": "I have already seen that film",
-            "arti": "Saya sudah pernah menonton film itu",
-            "emoji": "🎬",
-            "contoh": "I have already seen that film. Let's watch another one."
-          },
-          {
-            "kata": "She hasn't called yet",
-            "arti": "Dia belum menelepon",
-            "emoji": "📱",
-            "contoh": "She hasn't called yet. Should I call her?"
-          },
-          {
-            "kata": "I've just finished my homework",
-            "arti": "Saya baru saja selesai mengerjakan PR",
-            "emoji": "📚",
-            "contoh": "Great news! I've just finished my homework."
-          }
-        ]
-      },
-      {
-        "id": "u34-l4",
-        "judul": "Present Perfect vs Simple Past",
-        "emoji": "⚖️",
-        "tipe": "vocab",
-        "kartu": [
-          {
-            "kata": "I have seen that film.",
-            "arti": "Pernah (waktu tidak disebutkan) → Present Perfect",
-            "emoji": "🎬",
-            "contoh": "I have seen that film. It is great!"
-          },
-          {
-            "kata": "I saw that film yesterday.",
-            "arti": "Waktu disebutkan (yesterday) → Simple Past",
-            "emoji": "📅",
-            "contoh": "I saw that film yesterday at the cinema."
-          },
-          {
-            "kata": "She has lived here for 3 years.",
-            "arti": "Masih berlangsung sampai sekarang → Present Perfect",
-            "emoji": "🏠",
-            "contoh": "She has lived here for 3 years and still lives here."
-          },
-          {
-            "kata": "She lived here in 2010.",
-            "arti": "Selesai di masa lalu → Simple Past",
-            "emoji": "🗓️",
-            "contoh": "She lived here in 2010, but moved to Bali."
-          },
-          {
-            "kata": "Have you eaten lunch?",
-            "arti": "Belum/sudah makan? (hari ini, waktu tidak pasti)",
-            "emoji": "🍚",
-            "contoh": "Have you eaten lunch? Not yet."
-          },
-          {
-            "kata": "Did you eat lunch?",
-            "arti": "Sudah makan? (waktu tertentu, mis. tadi)",
-            "emoji": "⏰",
-            "contoh": "Did you eat lunch at 12? Yes, I did."
-          },
-          {
-            "kata": "He has never visited London.",
-            "arti": "Pengalaman hidup → Present Perfect",
-            "emoji": "🇬🇧",
-            "contoh": "He has never visited London in his life."
-          },
-          {
-            "kata": "He visited London in 2019.",
-            "arti": "Waktu spesifik → Simple Past",
-            "emoji": "📅",
-            "contoh": "He visited London in 2019 for a conference."
-          }
-        ]
-      },
-      {
-        "id": "u34-l5",
-        "judul": "Kuis: Present Perfect",
-        "emoji": "🧠",
-        "tipe": "quiz",
-        "soal": [
-          {
-            "pertanyaan": "Rumus Present Perfect yang benar:",
-            "pilihan": [
-              "have/has + V1",
-              "have/has + V2",
-              "have/has + V3",
-              "have/has + V-ing"
-            ],
-            "jawaban": 2
-          },
-          {
-            "pertanyaan": "'She ___ her homework.' (sudah selesai)",
-            "pilihan": [
-              "has finish",
-              "has finished",
-              "have finished",
-              "finished"
-            ],
-            "jawaban": 1
-          },
-          {
-            "pertanyaan": "'Have you ever ___ sushi?' (makan)",
-            "pilihan": [
-              "ate",
-              "eaten",
-              "eat",
-              "eats"
-            ],
-            "jawaban": 1
-          },
-          {
-            "pertanyaan": "'I have ___ arrived.' (baru saja)",
-            "pilihan": [
-              "already",
-              "yet",
-              "just",
-              "ever"
-            ],
-            "jawaban": 2
-          },
-          {
-            "pertanyaan": "Mana yang menggunakan Simple Past (bukan Present Perfect)?",
-            "pilihan": [
-              "I have never seen snow.",
-              "She has already eaten.",
-              "He visited Paris last year.",
-              "Have you ever been to Bali?"
-            ],
-            "jawaban": 2
-          },
-          {
-            "pertanyaan": "'I haven't eaten ___.' (belum)",
-            "pilihan": [
-              "just",
-              "already",
-              "ever",
-              "yet"
-            ],
-            "jawaban": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "unit-35",
     "judul": "Conjunctions & Linking Words",
     "level": "a2",
@@ -12108,6 +11803,311 @@ export const learningPath = [
               "Why not we eat?"
             ],
             "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-34",
+    "judul": "Present Perfect",
+    "level": "b1",
+    "deskripsi": "Ungkapkan pengalaman dan kejadian yang baru saja terjadi dengan have/has + V3",
+    "emoji": "✨",
+    "warna": "from-emerald-500 to-teal-500",
+    "bg": "bg-emerald-50",
+    "border": "border-emerald-200",
+    "teks": "text-emerald-700",
+    "pelajaran": [
+      {
+        "id": "u34-l1",
+        "judul": "Rumus: have/has + V3 (Past Participle)",
+        "emoji": "📌",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have eaten",
+            "arti": "Saya sudah makan",
+            "emoji": "🍽️",
+            "contoh": "I have eaten lunch already."
+          },
+          {
+            "kata": "She has finished",
+            "arti": "Dia sudah selesai",
+            "emoji": "✅",
+            "contoh": "She has finished her homework."
+          },
+          {
+            "kata": "They have arrived",
+            "arti": "Mereka sudah tiba",
+            "emoji": "🚗",
+            "contoh": "They have arrived at the hotel."
+          },
+          {
+            "kata": "He has worked here for 5 years",
+            "arti": "Dia sudah bekerja di sini 5 tahun",
+            "emoji": "💼",
+            "contoh": "He has worked here for 5 years."
+          },
+          {
+            "kata": "I have lived in Jakarta",
+            "arti": "Saya pernah tinggal di Jakarta",
+            "emoji": "🏙️",
+            "contoh": "I have lived in Jakarta before."
+          },
+          {
+            "kata": "We haven't met before",
+            "arti": "Kita belum pernah bertemu",
+            "emoji": "🤝",
+            "contoh": "We haven't met before. Nice to meet you!"
+          },
+          {
+            "kata": "She hasn't called me",
+            "arti": "Dia belum meneleponku",
+            "emoji": "📞",
+            "contoh": "She hasn't called me yet."
+          },
+          {
+            "kata": "have/has + V3",
+            "arti": "Rumus Present Perfect",
+            "emoji": "📐",
+            "contoh": "I have seen. She has seen. (bukan: I have saw)"
+          }
+        ]
+      },
+      {
+        "id": "u34-l2",
+        "judul": "ever, never: Pengalaman Hidup",
+        "emoji": "🌍",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Have you ever been to Bali?",
+            "arti": "Apakah kamu pernah ke Bali?",
+            "emoji": "🏝️",
+            "contoh": "Have you ever been to Bali? Yes, I have."
+          },
+          {
+            "kata": "I have never eaten sushi",
+            "arti": "Saya tidak pernah makan sushi",
+            "emoji": "🍣",
+            "contoh": "I have never eaten sushi in my life."
+          },
+          {
+            "kata": "She has never seen snow",
+            "arti": "Dia tidak pernah melihat salju",
+            "emoji": "❄️",
+            "contoh": "She has never seen snow before."
+          },
+          {
+            "kata": "Have you ever flown on a plane?",
+            "arti": "Apakah kamu pernah naik pesawat?",
+            "emoji": "✈️",
+            "contoh": "Have you ever flown on a plane? Yes, many times."
+          },
+          {
+            "kata": "I've met him before.",
+            "arti": "Saya pernah bertemu dengannya.",
+            "emoji": "🤝",
+            "contoh": "I've met him before at a conference."
+          },
+          {
+            "kata": "He has never tried spicy food",
+            "arti": "Dia tidak pernah mencoba makanan pedas",
+            "emoji": "🌶️",
+            "contoh": "He has never tried spicy food."
+          },
+          {
+            "kata": "Yes, I have.",
+            "arti": "Ya, pernah. (jawaban positif)",
+            "emoji": "👍",
+            "contoh": "Have you ever been abroad? Yes, I have."
+          },
+          {
+            "kata": "No, I haven't.",
+            "arti": "Tidak, belum pernah.",
+            "emoji": "👎",
+            "contoh": "Have you ever driven a car? No, I haven't."
+          }
+        ]
+      },
+      {
+        "id": "u34-l3",
+        "judul": "just, already, yet",
+        "emoji": "⏱️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have just eaten",
+            "arti": "Saya baru saja makan (just = baru saja)",
+            "emoji": "🍽️",
+            "contoh": "I have just eaten, so I am not hungry."
+          },
+          {
+            "kata": "She has already left",
+            "arti": "Dia sudah pergi (already = sudah)",
+            "emoji": "🚶",
+            "contoh": "She has already left. You missed her."
+          },
+          {
+            "kata": "Have you finished yet?",
+            "arti": "Apakah kamu sudah selesai? (yet = sudah/belum)",
+            "emoji": "❓",
+            "contoh": "Have you finished yet? Not yet."
+          },
+          {
+            "kata": "I haven't eaten yet",
+            "arti": "Saya belum makan (yet dengan negatif)",
+            "emoji": "😋",
+            "contoh": "I haven't eaten yet. I am still cooking."
+          },
+          {
+            "kata": "He has just arrived",
+            "arti": "Dia baru saja tiba",
+            "emoji": "🏠",
+            "contoh": "He has just arrived from Surabaya."
+          },
+          {
+            "kata": "I have already seen that film",
+            "arti": "Saya sudah pernah menonton film itu",
+            "emoji": "🎬",
+            "contoh": "I have already seen that film. Let's watch another one."
+          },
+          {
+            "kata": "She hasn't called yet",
+            "arti": "Dia belum menelepon",
+            "emoji": "📱",
+            "contoh": "She hasn't called yet. Should I call her?"
+          },
+          {
+            "kata": "I've just finished my homework",
+            "arti": "Saya baru saja selesai mengerjakan PR",
+            "emoji": "📚",
+            "contoh": "Great news! I've just finished my homework."
+          }
+        ]
+      },
+      {
+        "id": "u34-l4",
+        "judul": "Present Perfect vs Simple Past",
+        "emoji": "⚖️",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "I have seen that film.",
+            "arti": "Pernah (waktu tidak disebutkan) → Present Perfect",
+            "emoji": "🎬",
+            "contoh": "I have seen that film. It is great!"
+          },
+          {
+            "kata": "I saw that film yesterday.",
+            "arti": "Waktu disebutkan (yesterday) → Simple Past",
+            "emoji": "📅",
+            "contoh": "I saw that film yesterday at the cinema."
+          },
+          {
+            "kata": "She has lived here for 3 years.",
+            "arti": "Masih berlangsung sampai sekarang → Present Perfect",
+            "emoji": "🏠",
+            "contoh": "She has lived here for 3 years and still lives here."
+          },
+          {
+            "kata": "She lived here in 2010.",
+            "arti": "Selesai di masa lalu → Simple Past",
+            "emoji": "🗓️",
+            "contoh": "She lived here in 2010, but moved to Bali."
+          },
+          {
+            "kata": "Have you eaten lunch?",
+            "arti": "Belum/sudah makan? (hari ini, waktu tidak pasti)",
+            "emoji": "🍚",
+            "contoh": "Have you eaten lunch? Not yet."
+          },
+          {
+            "kata": "Did you eat lunch?",
+            "arti": "Sudah makan? (waktu tertentu, mis. tadi)",
+            "emoji": "⏰",
+            "contoh": "Did you eat lunch at 12? Yes, I did."
+          },
+          {
+            "kata": "He has never visited London.",
+            "arti": "Pengalaman hidup → Present Perfect",
+            "emoji": "🇬🇧",
+            "contoh": "He has never visited London in his life."
+          },
+          {
+            "kata": "He visited London in 2019.",
+            "arti": "Waktu spesifik → Simple Past",
+            "emoji": "📅",
+            "contoh": "He visited London in 2019 for a conference."
+          }
+        ]
+      },
+      {
+        "id": "u34-l5",
+        "judul": "Kuis: Present Perfect",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          {
+            "pertanyaan": "Rumus Present Perfect yang benar:",
+            "pilihan": [
+              "have/has + V1",
+              "have/has + V2",
+              "have/has + V3",
+              "have/has + V-ing"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'She ___ her homework.' (sudah selesai)",
+            "pilihan": [
+              "has finish",
+              "has finished",
+              "have finished",
+              "finished"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Have you ever ___ sushi?' (makan)",
+            "pilihan": [
+              "ate",
+              "eaten",
+              "eat",
+              "eats"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'I have ___ arrived.' (baru saja)",
+            "pilihan": [
+              "already",
+              "yet",
+              "just",
+              "ever"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Mana yang menggunakan Simple Past (bukan Present Perfect)?",
+            "pilihan": [
+              "I have never seen snow.",
+              "She has already eaten.",
+              "He visited Paris last year.",
+              "Have you ever been to Bali?"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "'I haven't eaten ___.' (belum)",
+            "pilihan": [
+              "just",
+              "already",
+              "ever",
+              "yet"
+            ],
+            "jawaban": 3
           }
         ]
       }
