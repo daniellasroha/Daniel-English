@@ -194,6 +194,8 @@ function TampilanPelajaran({
   sudahSelesai,
   nextLesson,
   onNextLesson,
+  nextUnit,
+  onNextUnit,
 }) {
   const meta = unit;
   const [fase, setFase] = useState("vocab"); // vocab | quiz | done — selalu mulai dari awal
@@ -262,13 +264,24 @@ function TampilanPelajaran({
           <p className={`font-semibold ${meta.teks} text-sm mb-6`}>{unit.judul}</p>
 
           <div className="flex flex-col gap-3">
-            {/* Tombol next chapter — muncul kalau ada pelajaran berikutnya */}
+            {/* Tombol pelajaran berikutnya — dalam unit yang sama */}
             {nextLesson && (
               <button
                 onClick={onNextLesson}
                 className={`w-full py-3 rounded-2xl text-white font-bold bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105 transition-transform flex items-center justify-center gap-2`}
               >
                 <span>Pelajaran Berikutnya</span>
+                <span className="text-xl">→</span>
+              </button>
+            )}
+
+            {/* Tombol unit berikutnya — muncul kalau ini pelajaran terakhir & masih ada unit berikutnya */}
+            {!nextLesson && nextUnit && (
+              <button
+                onClick={onNextUnit}
+                className={`w-full py-3 rounded-2xl text-white font-bold bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105 transition-transform flex items-center justify-center gap-2`}
+              >
+                <span>Unit Berikutnya</span>
                 <span className="text-xl">→</span>
               </button>
             )}
@@ -284,7 +297,7 @@ function TampilanPelajaran({
             <button
               onClick={onKembali}
               className={`w-full py-3 rounded-2xl font-bold border-2 transition hover:shadow-md ${
-                nextLesson
+                nextLesson || nextUnit
                   ? `${meta.border} ${meta.bg} ${meta.teks}`
                   : `text-white bg-gradient-to-r ${meta.warna} shadow-lg hover:scale-105`
               }`}
@@ -442,6 +455,10 @@ export default function BelajarPage() {
     // Cari pelajaran berikutnya (dalam unit yang sama)
     const nextLesson = unit.pelajaran[lessonIndex + 1] || null;
 
+    // Cari unit berikutnya (untuk tombol setelah pelajaran terakhir)
+    const currentUnitIdx = unitsTampil.findIndex((u) => u.id === unitDipilih);
+    const nextUnit = unitsTampil[currentUnitIdx + 1] || null;
+
     function handleSelesai() {
       completeLesson(pelajaran.id);
       // Tetap di layar "done" — tombol next/back yang handle navigasi
@@ -450,6 +467,13 @@ export default function BelajarPage() {
     function handleNextLesson() {
       if (nextLesson) {
         setPelajaranDipilih(nextLesson.id);
+      }
+    }
+
+    function handleNextUnit() {
+      if (nextUnit) {
+        setPelajaranDipilih(null);
+        setUnitDipilih(nextUnit.id);
       }
     }
 
@@ -463,6 +487,8 @@ export default function BelajarPage() {
         sudahSelesai={isLessonDone(pelajaran.id)}
         nextLesson={nextLesson}
         onNextLesson={handleNextLesson}
+        nextUnit={nextUnit}
+        onNextUnit={handleNextUnit}
       />
     );
   }
