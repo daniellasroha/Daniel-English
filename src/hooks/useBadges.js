@@ -38,7 +38,7 @@ export const SEMUA_BADGE = [
     id: "a1_tuntas",
     emoji: "🎓",
     judul: "A1 Tuntas",
-    deskripsi: "Selesaikan semua 22 unit A1",
+    deskripsi: "Selesaikan semua 25 unit A1",
     warna: "from-indigo-400 to-purple-500",
     bg: "bg-indigo-50",
     border: "border-indigo-200",

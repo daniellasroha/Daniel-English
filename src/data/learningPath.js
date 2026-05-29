@@ -1,6 +1,6 @@
 // Learning Path — Kurikulum Bahasa Inggris Terstruktur
-// A1: 22 Unit | A2: 19 Unit | B1: 1 Unit (Present Perfect)
-// Total: 42 unit
+// A1: 25 Unit | A2: 19 Unit | B1: 1 Unit (Present Perfect)
+// Total: 45 unit
 
 export const learningPath = [
   {
@@ -1823,6 +1823,219 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-5b",
+    "judul": "There is / There are",
+    "deskripsi": "Cara mengatakan ada sesuatu di suatu tempat — pola paling sering di bahasa Inggris A1",
+    "emoji": "📍",
+    "warna": "from-emerald-400 to-emerald-600",
+    "bg": "bg-emerald-50",
+    "border": "border-emerald-200",
+    "teks": "text-emerald-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "5b-1",
+        "judul": "There is & There are (Positif)",
+        "emoji": "✅",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "There is",
+            "arti": "Ada — digunakan untuk benda TUNGGAL (satu)",
+            "emoji": "1️⃣",
+            "contoh": "There is a book on the table."
+          },
+          {
+            "kata": "There are",
+            "arti": "Ada — digunakan untuk benda JAMAK (lebih dari satu)",
+            "emoji": "2️⃣",
+            "contoh": "There are three apples in the basket."
+          },
+          {
+            "kata": "There is a cat",
+            "arti": "Ada seekor kucing",
+            "emoji": "🐱",
+            "contoh": "There is a cat under the chair."
+          },
+          {
+            "kata": "There are many students",
+            "arti": "Ada banyak siswa",
+            "emoji": "👨‍🎓",
+            "contoh": "There are many students in the class."
+          },
+          {
+            "kata": "There is a park",
+            "arti": "Ada sebuah taman",
+            "emoji": "🌳",
+            "contoh": "There is a park next to the school."
+          },
+          {
+            "kata": "There are five rooms",
+            "arti": "Ada lima kamar",
+            "emoji": "🏠",
+            "contoh": "There are five rooms in my house."
+          },
+          {
+            "kata": "There is a big tree",
+            "arti": "Ada pohon yang besar",
+            "emoji": "🌲",
+            "contoh": "There is a big tree in the garden."
+          },
+          {
+            "kata": "There is a message",
+            "arti": "Ada sebuah pesan",
+            "emoji": "💬",
+            "contoh": "There is a message for you on your phone."
+          }
+        ]
+      },
+      {
+        "id": "5b-2",
+        "judul": "There isn't / There aren't & Pertanyaan",
+        "emoji": "❓",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "There isn't",
+            "arti": "Tidak ada (tunggal) — singkatan dari there is not",
+            "emoji": "❌",
+            "contoh": "There isn't a bank in this village."
+          },
+          {
+            "kata": "There aren't",
+            "arti": "Tidak ada (jamak) — singkatan dari there are not",
+            "emoji": "❌",
+            "contoh": "There aren't any chairs in this room."
+          },
+          {
+            "kata": "Is there a ...?",
+            "arti": "Apakah ada...? — untuk benda tunggal",
+            "emoji": "🔍",
+            "contoh": "Is there a market near here? — Yes, there is."
+          },
+          {
+            "kata": "Are there any ...?",
+            "arti": "Apakah ada...? — untuk benda jamak",
+            "emoji": "🔍",
+            "contoh": "Are there any books on the desk? — No, there aren't."
+          },
+          {
+            "kata": "How many ... are there?",
+            "arti": "Berapa banyak ... yang ada?",
+            "emoji": "🔢",
+            "contoh": "How many students are there? — There are twenty."
+          },
+          {
+            "kata": "Yes, there is. / No, there isn't.",
+            "arti": "Ya, ada. / Tidak, tidak ada. — jawaban pendek",
+            "emoji": "✅",
+            "contoh": "Is there a cat? — Yes, there is."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: '___ a dog in the garden.'",
+            "pilihan": [
+              "There is",
+              "There are",
+              "There have",
+              "It is"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Mana yang benar untuk DUA buku?",
+            "pilihan": [
+              "There is two books.",
+              "There are two books.",
+              "There have two books.",
+              "Two books is there."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Cara bertanya: Apakah ada pasar di dekat sini?",
+            "pilihan": [
+              "Are there a market near here?",
+              "There is a market near here?",
+              "Is there a market near here?",
+              "Is market near here?"
+            ],
+            "jawaban": 2
+          }
+        ]
+      },
+      {
+        "id": "5b-3",
+        "judul": "Kuis: There is / There are",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'There ___ a cat on the table.'",
+            "pilihan": [
+              "is",
+              "are",
+              "be",
+              "has"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Mana kalimat yang BENAR?",
+            "pilihan": [
+              "There is three apples.",
+              "There are three apples.",
+              "There has three apples.",
+              "Is there three apples."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'There ___ five rooms in my house.'",
+            "pilihan": [
+              "is",
+              "are",
+              "be",
+              "has"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'Tidak ada taman di sini.' = ___",
+            "pilihan": [
+              "There isn't a park here.",
+              "There aren't a park here.",
+              "There is not parks here.",
+              "Park is not here."
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Cara bertanya: Apakah ada pasar di dekat sini?",
+            "pilihan": [
+              "Is market near here?",
+              "Is there a market near here?",
+              "Are there a market near here?",
+              "There is a market near here?"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Jawaban 'ya' untuk pertanyaan 'Is there a cat?':",
+            "pilihan": [
+              "Yes, it is.",
+              "Yes, there are.",
+              "Yes, there is.",
+              "Yes, is there."
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": 6,
     "judul": "Grammar: Kalimat Tanya",
     "deskripsi": "Kuasai kata tanya What, Who, Where, When, Why, How untuk bertanya dalam bahasa Inggris",
@@ -2728,6 +2941,213 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-8b",
+    "judul": "Kata Ganti Objek (Object Pronouns)",
+    "deskripsi": "Pelajari me, him, her, us, them — kata ganti yang digunakan setelah kata kerja",
+    "emoji": "👤",
+    "warna": "from-blue-400 to-violet-500",
+    "bg": "bg-blue-50",
+    "border": "border-blue-200",
+    "teks": "text-blue-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "8b-1",
+        "judul": "Kata Ganti Objek: me, him, her, us, them",
+        "emoji": "👤",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "me",
+            "arti": "saya — digunakan SETELAH kata kerja (bukan sebagai subjek)",
+            "emoji": "🙋",
+            "contoh": "Can you help me, please?"
+          },
+          {
+            "kata": "him",
+            "arti": "dia (pria) — digunakan setelah kata kerja",
+            "emoji": "👦",
+            "contoh": "I know him. He is my classmate."
+          },
+          {
+            "kata": "her",
+            "arti": "dia (wanita) — digunakan setelah kata kerja",
+            "emoji": "👧",
+            "contoh": "She is kind. I like her very much."
+          },
+          {
+            "kata": "us",
+            "arti": "kami / kita — digunakan setelah kata kerja",
+            "emoji": "👫",
+            "contoh": "The teacher teaches us every day."
+          },
+          {
+            "kata": "them",
+            "arti": "mereka — digunakan setelah kata kerja",
+            "emoji": "👨‍👩‍👧‍👦",
+            "contoh": "They are my friends. I know them well."
+          },
+          {
+            "kata": "it (sama)",
+            "arti": "it tidak berubah — sama untuk subjek dan objek",
+            "emoji": "📦",
+            "contoh": "The cat is cute. I love it."
+          },
+          {
+            "kata": "I → me | he → him | she → her",
+            "arti": "Kata ganti subjek berubah saat menjadi objek",
+            "emoji": "🔄",
+            "contoh": "She sees me. I see her."
+          },
+          {
+            "kata": "we → us | they → them",
+            "arti": "Jamak: kata ganti subjek berubah saat menjadi objek",
+            "emoji": "🔄",
+            "contoh": "We call them. They call us."
+          }
+        ]
+      },
+      {
+        "id": "8b-2",
+        "judul": "Kata Ganti Objek dalam Kalimat",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "Give me the book.",
+            "arti": "Berikan buku itu kepadaku. — me setelah give",
+            "emoji": "📖",
+            "contoh": "Please give me the book on the table."
+          },
+          {
+            "kata": "I sit next to her.",
+            "arti": "Saya duduk di sebelah dia (wanita). — her setelah preposisi",
+            "emoji": "🪑",
+            "contoh": "She is my friend. I always sit next to her."
+          },
+          {
+            "kata": "Do you know him?",
+            "arti": "Apakah kamu mengenalnya? (pria) — him setelah know",
+            "emoji": "🤔",
+            "contoh": "He is tall. Do you know him?"
+          },
+          {
+            "kata": "I like them.",
+            "arti": "Saya suka mereka. — them setelah like",
+            "emoji": "❤️",
+            "contoh": "They are kind people. I like them a lot."
+          },
+          {
+            "kata": "Can you help us?",
+            "arti": "Bisakah kamu membantu kami? — us setelah help",
+            "emoji": "🤝",
+            "contoh": "We need help. Can you help us?"
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Melengkapi: 'She is my sister. I love ___.' (dia, wanita)",
+            "pilihan": [
+              "she",
+              "her",
+              "him",
+              "his"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'They are kind. I like ___.' (mereka)",
+            "pilihan": [
+              "they",
+              "their",
+              "them",
+              "us"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Melengkapi: 'Can you help ___?' (saya)",
+            "pilihan": [
+              "I",
+              "my",
+              "me",
+              "we"
+            ],
+            "jawaban": 2
+          }
+        ]
+      },
+      {
+        "id": "8b-3",
+        "judul": "Kuis: Kata Ganti Objek",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Kata ganti objek untuk 'I' adalah...",
+            "pilihan": [
+              "my",
+              "me",
+              "I",
+              "mine"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Melengkapi: 'He is my friend. I call ___ every day.' (dia, pria)",
+            "pilihan": [
+              "he",
+              "his",
+              "him",
+              "her"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Mana kalimat yang BENAR?",
+            "pilihan": [
+              "I see he at school.",
+              "I see him at school.",
+              "I see his at school.",
+              "I see he's at school."
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "Kata ganti objek untuk 'they' adalah...",
+            "pilihan": [
+              "their",
+              "they",
+              "theirs",
+              "them"
+            ],
+            "jawaban": 3
+          },
+          {
+            "pertanyaan": "Melengkapi: 'My teacher helps ___ every day.' (kami)",
+            "pilihan": [
+              "we",
+              "our",
+              "us",
+              "they"
+            ],
+            "jawaban": 2
+          },
+          {
+            "pertanyaan": "Mana kalimat yang BENAR?",
+            "pilihan": [
+              "Can you help I?",
+              "Can you help my?",
+              "Can you help me?",
+              "Can you help I am?"
+            ],
+            "jawaban": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": 9,
     "judul": "Kata Sifat / Adjectives",
     "deskripsi": "Pelajari kata sifat untuk mendeskripsikan orang, benda, dan perasaan",
@@ -3183,6 +3603,219 @@ export const learningPath = [
               "Cold"
             ],
             "jawaban": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-9b",
+    "judul": "Anggota Tubuh (Body Parts)",
+    "deskripsi": "Pelajari nama-nama bagian tubuh manusia dalam bahasa Inggris",
+    "emoji": "🧍",
+    "warna": "from-rose-300 to-pink-400",
+    "bg": "bg-rose-50",
+    "border": "border-rose-200",
+    "teks": "text-rose-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "9b-1",
+        "judul": "Kepala & Wajah",
+        "emoji": "😊",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "head",
+            "arti": "kepala",
+            "emoji": "👤",
+            "contoh": "My head is big."
+          },
+          {
+            "kata": "hair",
+            "arti": "rambut",
+            "emoji": "💇",
+            "contoh": "She has long black hair."
+          },
+          {
+            "kata": "eye / eyes",
+            "arti": "mata",
+            "emoji": "👁️",
+            "contoh": "His eyes are big and brown."
+          },
+          {
+            "kata": "ear / ears",
+            "arti": "telinga",
+            "emoji": "👂",
+            "contoh": "I have small ears."
+          },
+          {
+            "kata": "nose",
+            "arti": "hidung",
+            "emoji": "👃",
+            "contoh": "The baby has a small nose."
+          },
+          {
+            "kata": "mouth",
+            "arti": "mulut",
+            "emoji": "👄",
+            "contoh": "She has a big mouth."
+          },
+          {
+            "kata": "face",
+            "arti": "wajah",
+            "emoji": "😊",
+            "contoh": "She has a beautiful face."
+          }
+        ]
+      },
+      {
+        "id": "9b-2",
+        "judul": "Badan & Anggota Tubuh",
+        "emoji": "💪",
+        "tipe": "vocab",
+        "kartu": [
+          {
+            "kata": "neck",
+            "arti": "leher",
+            "emoji": "🦒",
+            "contoh": "The giraffe has a long neck."
+          },
+          {
+            "kata": "shoulder / shoulders",
+            "arti": "bahu",
+            "emoji": "🤷",
+            "contoh": "She has two shoulders."
+          },
+          {
+            "kata": "arm / arms",
+            "arti": "lengan",
+            "emoji": "💪",
+            "contoh": "She has long arms."
+          },
+          {
+            "kata": "hand / hands",
+            "arti": "tangan",
+            "emoji": "🖐️",
+            "contoh": "I wash my hands every day."
+          },
+          {
+            "kata": "finger / fingers",
+            "arti": "jari",
+            "emoji": "👆",
+            "contoh": "I have ten fingers."
+          },
+          {
+            "kata": "leg / legs",
+            "arti": "kaki (bagian atas)",
+            "emoji": "🦵",
+            "contoh": "My legs are long."
+          },
+          {
+            "kata": "foot / feet",
+            "arti": "telapak kaki",
+            "emoji": "🦶",
+            "contoh": "My feet are small."
+          }
+        ],
+        "soal": [
+          {
+            "pertanyaan": "Apa arti kata 'eyes'?",
+            "pilihan": [
+              "mata",
+              "hidung",
+              "mulut",
+              "telinga"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa bahasa Inggrisnya 'tangan'?",
+            "pilihan": [
+              "hand",
+              "foot",
+              "leg",
+              "arm"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa bahasa Inggrisnya 'jari'?",
+            "pilihan": [
+              "finger",
+              "arm",
+              "head",
+              "shoulder"
+            ],
+            "jawaban": 0
+          }
+        ]
+      },
+      {
+        "id": "9b-3",
+        "judul": "Kuis: Anggota Tubuh",
+        "emoji": "🧠",
+        "tipe": "kuis",
+        "soal": [
+          {
+            "pertanyaan": "Apa arti kata 'head'?",
+            "pilihan": [
+              "kepala",
+              "rambut",
+              "wajah",
+              "hidung"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa bahasa Inggrisnya 'hidung'?",
+            "pilihan": [
+              "nose",
+              "mouth",
+              "ear",
+              "eye"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa arti kata 'hair'?",
+            "pilihan": [
+              "kepala",
+              "rambut",
+              "mulut",
+              "leher"
+            ],
+            "jawaban": 1
+          },
+          {
+            "pertanyaan": "'She has big ___.' (mata)",
+            "pilihan": [
+              "eyes",
+              "ears",
+              "legs",
+              "hands"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa arti kata 'foot'?",
+            "pilihan": [
+              "telapak kaki",
+              "paha",
+              "lengan",
+              "bahu"
+            ],
+            "jawaban": 0
+          },
+          {
+            "pertanyaan": "Apa arti kata 'fingers'?",
+            "pilihan": [
+              "kaki",
+              "lengan",
+              "jari-jari",
+              "telinga"
+            ],
+            "jawaban": 2
           }
         ]
       }
