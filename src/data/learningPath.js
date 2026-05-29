@@ -6070,7 +6070,7 @@ export const learningPath = [
             "jawaban": 1
           },
           {
-            "pertanyaan": "Lengkapi: ___ lives on the ___ floor. (lantai 5)",
+            "pertanyaan": "Bagaimana cara mengatakan lantai 5 dalam bahasa Inggris?",
             "pilihan": [
               "five",
               "fiveth",
@@ -6100,7 +6100,7 @@ export const learningPath = [
             "jawaban": 2
           },
           {
-            "pertanyaan": "Lengkapi: Today is the ___ of December. (tanggal 31)",
+            "pertanyaan": "Bagaimana ordinal number untuk tanggal 31?",
             "pilihan": [
               "thirty-one",
               "thirty-first",
@@ -6239,8 +6239,8 @@ export const learningPath = [
           {
             "pertanyaan": "Kebangsaan orang dari Jepang adalah:",
             "pilihan": [
-              "Japanish",
-              "Japanish",
+              "Japanees",
+              "Japanian",
               "Japanese",
               "Japaner"
             ],
@@ -6259,7 +6259,7 @@ export const learningPath = [
           {
             "pertanyaan": "Orang dari Prancis disebut:",
             "pilihan": [
-              "Frenchman (semua)",
+              "Frenchan",
               "Franceish",
               "Francian",
               "French"
