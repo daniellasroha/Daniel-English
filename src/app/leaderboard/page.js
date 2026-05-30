@@ -6,8 +6,14 @@ import Link from "next/link";
 import { fetchLeaderboard } from "@/lib/leaderboard";
 import { useUsername } from "@/hooks/useUsername";
 
-const TABS = [
-  { key: "semua", label: "Semua", emoji: "🌐" },
+const PERIOD_TABS = [
+  { key: "harian",   label: "Harian",       emoji: "⚡", desc: "Reset tiap hari" },
+  { key: "mingguan", label: "Mingguan",      emoji: "📅", desc: "Reset tiap Senin" },
+  { key: "semua",    label: "Sepanjang Masa",emoji: "🌐", desc: "Skor akumulasi" },
+];
+
+const LEVEL_TABS = [
+  { key: "semua", label: "Semua", emoji: "👥" },
   { key: "a1",    label: "A1",    emoji: "🌱" },
   { key: "a2",    label: "A2",    emoji: "📗" },
   { key: "b1",    label: "B1",    emoji: "🚀" },
@@ -25,82 +31,100 @@ function MedalIcon({ rank }) {
 }
 
 function LevelBadge({ level }) {
-  if (level === "b1" || level === "menengah")
-    return (
-      <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 font-semibold">
-        🚀 B1
-      </span>
-    );
+  if (level === "b1")
+    return <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-600 font-semibold">🚀 B1</span>;
   if (level === "a2")
-    return (
-      <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 font-semibold">
-        📗 A2
-      </span>
-    );
-  return (
-    <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-600 font-semibold">
-      🌱 A1
-    </span>
-  );
+    return <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 font-semibold">📗 A2</span>;
+  return <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-600 font-semibold">🌱 A1</span>;
+}
+
+// Ambil poin yang tepat sesuai periode
+function getPoin(row, period) {
+  if (period === "harian")   return row.dailyPoin  ?? 0;
+  if (period === "mingguan") return row.weeklyPoin ?? 0;
+  return row.totalPoin ?? 0;
+}
+
+function getPoinLabel(period) {
+  if (period === "harian")   return "poin hari ini";
+  if (period === "mingguan") return "poin minggu ini";
+  return "total poin";
 }
 
 export default function LeaderboardPage() {
-  const [tab, setTab] = useState("semua");
-  const [rows, setRows] = useState([]);
+  const [period, setPeriod]   = useState("harian");
+  const [level, setLevel]     = useState("semua");
+  const [rows, setRows]       = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { username } = useUsername();
+  const [error, setError]     = useState(null);
+  const { username }          = useUsername();
 
-  const load = useCallback(async (level) => {
+  const load = useCallback(async (lvl, per) => {
     setLoading(true);
     setError(null);
     try {
-      const data = await fetchLeaderboard(level, 50);
+      const data = await fetchLeaderboard(lvl, 50, per);
       setRows(data);
-    } catch (e) {
+    } catch {
       setError("Gagal memuat data. Cek koneksi internet.");
     } finally {
       setLoading(false);
     }
   }, []);
 
-  useEffect(() => {
-    load(tab);
-  }, [tab, load]);
+  useEffect(() => { load(level, period); }, [level, period, load]);
 
   const myRank = username
     ? rows.findIndex((r) => r.username.toLowerCase() === username.toLowerCase()) + 1
     : 0;
+  const myPoin = myRank > 0 ? getPoin(rows[myRank - 1], period) : 0;
+
+  const activePeriod = PERIOD_TABS.find((t) => t.key === period);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
-          <Link href="/" className="text-orange-500 hover:text-orange-700 text-2xl">
-            ←
-          </Link>
+          <Link href="/" className="text-orange-500 hover:text-orange-700 text-2xl">←</Link>
           <div className="flex-1">
             <h1 className="text-xl font-extrabold text-gray-800">🏆 Leaderboard</h1>
-            <p className="text-xs text-gray-400">Ranking berdasarkan skor belajar & quiz</p>
+            <p className="text-xs text-gray-400">{activePeriod?.desc} · Ranking berdasarkan poin belajar & quiz</p>
           </div>
           <button
-            onClick={() => load(tab)}
+            onClick={() => load(level, period)}
             className="text-sm text-orange-500 font-semibold hover:text-orange-700"
           >
             ↻ Refresh
           </button>
         </div>
 
-        {/* Tabs */}
-        <div className="max-w-xl mx-auto px-4 pb-3 flex gap-2">
-          {TABS.map((t) => (
+        {/* Tab Periode */}
+        <div className="max-w-xl mx-auto px-4 pb-2 flex gap-2">
+          {PERIOD_TABS.map((t) => (
             <button
               key={t.key}
-              onClick={() => setTab(t.key)}
-              className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${
-                tab === t.key
+              onClick={() => setPeriod(t.key)}
+              className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
+                period === t.key
                   ? "bg-orange-500 text-white shadow"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+            >
+              {t.emoji} {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Level */}
+        <div className="max-w-xl mx-auto px-4 pb-3 flex gap-2">
+          {LEVEL_TABS.map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setLevel(t.key)}
+              className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                level === t.key
+                  ? "bg-gray-700 text-white"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
               }`}
             >
@@ -111,6 +135,24 @@ export default function LeaderboardPage() {
       </header>
 
       <div className="max-w-xl mx-auto px-4 py-6">
+
+        {/* Info reset */}
+        {period !== "semua" && (
+          <div className="mb-4 bg-white border border-orange-100 rounded-2xl px-4 py-3 flex items-center gap-3">
+            <span className="text-2xl">{activePeriod?.emoji}</span>
+            <div>
+              <p className="text-sm font-bold text-gray-700">
+                {period === "harian" ? "Leaderboard Harian" : "Leaderboard Mingguan"}
+              </p>
+              <p className="text-xs text-gray-400">
+                {period === "harian"
+                  ? "Menampilkan poin yang dikumpulkan HARI INI saja. Reset otomatis setiap tengah malam."
+                  : "Menampilkan poin yang dikumpulkan MINGGU INI saja. Reset setiap Senin pagi."}
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Posisi kamu */}
         {username && myRank > 0 && (
           <div className="mb-4 bg-orange-500 text-white rounded-2xl px-5 py-3 flex items-center gap-3 shadow-lg">
@@ -118,14 +160,18 @@ export default function LeaderboardPage() {
             <div>
               <p className="font-bold text-lg">{username}</p>
               <p className="text-orange-100 text-sm">
-                Posisimu: #{myRank} · {rows[myRank - 1]?.totalPoin ?? 0} poin
+                Posisimu: #{myRank} · {myPoin} {getPoinLabel(period)}
               </p>
             </div>
           </div>
         )}
-        {username && myRank === 0 && !loading && rows.length > 0 && (
+        {username && myRank === 0 && !loading && (
           <div className="mb-4 bg-white border border-orange-200 rounded-2xl px-5 py-3 text-center text-sm text-gray-500">
-            Kamu belum masuk leaderboard tab ini. Selesaikan lebih banyak pelajaran!
+            {period === "harian"
+              ? "Kamu belum aktif hari ini. Selesaikan pelajaran atau quiz untuk masuk ranking!"
+              : period === "mingguan"
+              ? "Kamu belum aktif minggu ini. Ayo belajar sekarang!"
+              : "Kamu belum masuk leaderboard. Selesaikan pelajaran untuk mulai!"}
           </div>
         )}
 
@@ -143,7 +189,7 @@ export default function LeaderboardPage() {
             <div className="text-4xl mb-3">😕</div>
             <p className="text-gray-500">{error}</p>
             <button
-              onClick={() => load(tab)}
+              onClick={() => load(level, period)}
               className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-xl font-bold"
             >
               Coba Lagi
@@ -154,8 +200,16 @@ export default function LeaderboardPage() {
         {/* Empty */}
         {!loading && !error && rows.length === 0 && (
           <div className="text-center py-16">
-            <div className="text-5xl mb-3">🏁</div>
-            <p className="text-gray-500 font-semibold">Belum ada peserta.</p>
+            <div className="text-5xl mb-3">
+              {period === "harian" ? "⚡" : period === "mingguan" ? "📅" : "🏁"}
+            </div>
+            <p className="text-gray-500 font-semibold">
+              {period === "harian"
+                ? "Belum ada yang aktif hari ini."
+                : period === "mingguan"
+                ? "Belum ada yang aktif minggu ini."
+                : "Belum ada peserta."}
+            </p>
             <p className="text-gray-400 text-sm mt-1">
               Jadilah yang pertama menyelesaikan pelajaran!
             </p>
@@ -166,10 +220,9 @@ export default function LeaderboardPage() {
         {!loading && !error && rows.length > 0 && (
           <div className="space-y-3">
             {rows.map((row, i) => {
-              const rank = i + 1;
-              const isMe =
-                username &&
-                row.username.toLowerCase() === username.toLowerCase();
+              const rank  = i + 1;
+              const isMe  = username && row.username.toLowerCase() === username.toLowerCase();
+              const poin  = getPoin(row, period);
               return (
                 <div
                   key={row.id}
@@ -193,24 +246,29 @@ export default function LeaderboardPage() {
                         {row.username}
                         {isMe && <span className="ml-1 text-xs text-orange-400">(kamu)</span>}
                       </span>
-                      {tab === "semua" && <LevelBadge level={row.level} />}
+                      {level === "semua" && <LevelBadge level={row.level} />}
                     </div>
-                    <div className="flex gap-3 mt-1">
-                      <span className="text-xs text-gray-400">
-                        📚 {row.belajarPoin ?? 0} poin belajar
-                      </span>
-                      <span className="text-xs text-gray-400">
-                        🧠 {row.quizPoin ?? 0} poin quiz
-                      </span>
-                    </div>
+                    {/* Sub-info berbeda per periode */}
+                    {period === "semua" ? (
+                      <div className="flex gap-3 mt-1">
+                        <span className="text-xs text-gray-400">📚 {row.belajarPoin ?? 0} belajar</span>
+                        <span className="text-xs text-gray-400">🧠 {row.quizPoin ?? 0} quiz</span>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-400 mt-1">
+                        Total all-time: {row.totalPoin ?? 0} poin
+                      </p>
+                    )}
                   </div>
 
-                  {/* Total poin */}
+                  {/* Poin utama */}
                   <div className="text-right flex-shrink-0">
-                    <p className={`text-xl font-extrabold ${isMe ? "text-orange-500" : rank <= 3 ? "text-yellow-600" : "text-gray-700"}`}>
-                      {row.totalPoin ?? 0}
+                    <p className={`text-xl font-extrabold ${
+                      isMe ? "text-orange-500" : rank <= 3 ? "text-yellow-600" : "text-gray-700"
+                    }`}>
+                      {poin}
                     </p>
-                    <p className="text-xs text-gray-400">poin</p>
+                    <p className="text-xs text-gray-400">{getPoinLabel(period)}</p>
                   </div>
                 </div>
               );
@@ -228,11 +286,13 @@ export default function LeaderboardPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-lg">🧠</span>
-              <span><strong className="text-gray-700">Quiz Harian</strong> — skor % per sesi (mis. 8/10 = 80 poin)</span>
+              <span><strong className="text-gray-700">Quiz</strong> — skor % per sesi (mis. 8/10 = 80 poin)</span>
             </div>
-            <p className="text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
-              Skor diperbarui otomatis setiap kamu menyelesaikan pelajaran atau quiz.
-            </p>
+            <div className="mt-3 pt-3 border-t border-gray-100 space-y-1">
+              <p className="text-xs text-gray-500"><strong>⚡ Harian</strong> — hanya poin yang dikumpulkan hari ini</p>
+              <p className="text-xs text-gray-500"><strong>📅 Mingguan</strong> — hanya poin yang dikumpulkan minggu ini</p>
+              <p className="text-xs text-gray-500"><strong>🌐 Sepanjang Masa</strong> — total akumulasi semua waktu</p>
+            </div>
           </div>
         </div>
       </div>
