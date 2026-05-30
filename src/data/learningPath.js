@@ -8314,6 +8314,148 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a2-01",
+    "judul": "Verb Patterns",
+    "deskripsi": "Belajar cara menggabungkan dua kata kerja: like/enjoy/hate + -ing dan want/need/plan + to",
+    "emoji": "🎯",
+    "warna": "from-rose-400 to-pink-500",
+    "bg": "bg-rose-50",
+    "border": "border-rose-300",
+    "teks": "text-rose-700",
+    "level": "a2",
+    "pelajaran": [
+      {
+        "id": "a2vp-1",
+        "judul": "Like, Love, Enjoy, Hate + -ing",
+        "emoji": "❤️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "like + -ing", "arti": "suka + kata kerja -ing", "emoji": "😊", "contoh": "I like reading books before bed." },
+          { "kata": "love + -ing", "arti": "sangat suka + kata kerja -ing", "emoji": "❤️", "contoh": "She loves swimming in the ocean." },
+          { "kata": "enjoy + -ing", "arti": "menikmati + kata kerja -ing", "emoji": "😄", "contoh": "He enjoys cooking for his family." },
+          { "kata": "hate + -ing", "arti": "membenci / tidak suka + kata kerja -ing", "emoji": "😤", "contoh": "I hate waking up early on weekends." },
+          { "kata": "don't mind + -ing", "arti": "tidak keberatan + kata kerja -ing", "emoji": "🤷", "contoh": "I don't mind waiting for you." },
+          { "kata": "finish + -ing", "arti": "selesai + kata kerja -ing", "emoji": "✅", "contoh": "She finished writing the report." },
+          { "kata": "stop + -ing", "arti": "berhenti + kata kerja -ing", "emoji": "🛑", "contoh": "He stopped eating junk food." }
+        ],
+        "soal": [
+          { "pertanyaan": "'She ___ swimming every morning.' (suka + -ing)", "pilihan": ["likes to swim", "likes swimming", "like swim", "liked to swimming"], "jawaban": 1 },
+          { "pertanyaan": "Kalimat yang benar untuk 'enjoy + -ing':", "pilihan": ["I enjoy to cook.", "I enjoy cook.", "I enjoy cooking.", "I enjoy cooked."], "jawaban": 2 },
+          { "pertanyaan": "'He ___ playing video games.' (sangat suka)", "pilihan": ["loves", "love", "is love", "loving"], "jawaban": 0 },
+          { "pertanyaan": "'I ___ getting up early.' (tidak suka)", "pilihan": ["hate to get", "hate gets", "hates getting", "hate getting"], "jawaban": 3 },
+          { "pertanyaan": "Pola yang benar untuk 'finish':", "pilihan": ["finish to do", "finish doing", "finish do", "finishes to done"], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "a2vp-2",
+        "judul": "Want, Need, Hope, Plan + to",
+        "emoji": "🚀",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "want to + V1", "arti": "ingin + kata kerja dasar", "emoji": "💭", "contoh": "I want to visit Japan someday." },
+          { "kata": "need to + V1", "arti": "perlu / harus + kata kerja dasar", "emoji": "🆘", "contoh": "You need to study harder for the exam." },
+          { "kata": "hope to + V1", "arti": "berharap + kata kerja dasar", "emoji": "🌟", "contoh": "She hopes to become a doctor." },
+          { "kata": "plan to + V1", "arti": "berencana + kata kerja dasar", "emoji": "📅", "contoh": "We plan to travel to Europe next year." },
+          { "kata": "decide to + V1", "arti": "memutuskan + kata kerja dasar", "emoji": "✅", "contoh": "He decided to learn English online." },
+          { "kata": "try to + V1", "arti": "berusaha / mencoba + kata kerja dasar", "emoji": "💪", "contoh": "I try to exercise every day." },
+          { "kata": "forget to + V1", "arti": "lupa + kata kerja dasar", "emoji": "😶", "contoh": "She forgot to bring her umbrella." }
+        ],
+        "soal": [
+          { "pertanyaan": "'I ___ visit Japan next year.' (berencana)", "pilihan": ["plan visiting", "plan to visit", "planning visit", "plans visiting"], "jawaban": 1 },
+          { "pertanyaan": "Kalimat yang benar untuk 'need + to':", "pilihan": ["I need study.", "I need studying.", "I need to study.", "I needing to study."], "jawaban": 2 },
+          { "pertanyaan": "'She ___ become a nurse.' (berharap)", "pilihan": ["hopes becoming", "hope to become", "hopes to become", "hoping become"], "jawaban": 2 },
+          { "pertanyaan": "'He ___ eat healthier food.' (mencoba)", "pilihan": ["trying eat", "tries eating", "try eating", "tries to eat"], "jawaban": 3 },
+          { "pertanyaan": "Perbedaan: 'I stopped ___ vs I forgot ___'", "pilihan": ["both use -ing", "stopped + -ing / forgot + to", "both use to", "stopped + to / forgot + -ing"], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "a2vp-3",
+        "judul": "Kuis: Verb Patterns",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'I enjoy ___ to music every evening.'", "pilihan": ["listen", "to listen", "listening", "listened"], "jawaban": 2 },
+          { "pertanyaan": "'She wants ___ a new job.'", "pilihan": ["finding", "find", "to find", "finds"], "jawaban": 2 },
+          { "pertanyaan": "'They decided ___ a new house.'", "pilihan": ["buying", "buy", "buys", "to buy"], "jawaban": 3 },
+          { "pertanyaan": "'He hates ___ to work by bus.'", "pilihan": ["go", "to go", "going", "goes"], "jawaban": 2 },
+          { "pertanyaan": "'I need ___ the doctor today.'", "pilihan": ["seeing", "see", "to see", "seen"], "jawaban": 2 },
+          { "pertanyaan": "'She finished ___ the report at midnight.'", "pilihan": ["to write", "write", "written", "writing"], "jawaban": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a2-02",
+    "judul": "Hobbies & Free Time",
+    "deskripsi": "Belajar kosakata dan ekspresi untuk membicarakan hobi dan waktu luang",
+    "emoji": "🎮",
+    "warna": "from-lime-400 to-green-500",
+    "bg": "bg-lime-50",
+    "border": "border-lime-300",
+    "teks": "text-lime-700",
+    "level": "a2",
+    "pelajaran": [
+      {
+        "id": "a2hb-1",
+        "judul": "Kosakata Hobi",
+        "emoji": "🏆",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Reading", "arti": "Membaca (hobi)", "emoji": "📚", "contoh": "My hobby is reading novels." },
+          { "kata": "Cooking", "arti": "Memasak (hobi)", "emoji": "🍳", "contoh": "She loves cooking traditional food." },
+          { "kata": "Swimming", "arti": "Berenang (hobi)", "emoji": "🏊", "contoh": "He goes swimming every weekend." },
+          { "kata": "Drawing / Painting", "arti": "Menggambar / Melukis", "emoji": "🎨", "contoh": "She enjoys drawing portraits of people." },
+          { "kata": "Playing music", "arti": "Bermain musik", "emoji": "🎸", "contoh": "He plays the guitar every evening." },
+          { "kata": "Watching films", "arti": "Menonton film", "emoji": "🎬", "contoh": "We love watching films on weekends." },
+          { "kata": "Gardening", "arti": "Berkebun", "emoji": "🌱", "contoh": "My grandmother enjoys gardening." },
+          { "kata": "Hiking", "arti": "Mendaki / Jalan di alam terbuka", "emoji": "🥾", "contoh": "They enjoy hiking in the mountains." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Reading' sebagai hobi?", "pilihan": ["Berlari", "Membaca", "Memasak", "Menggambar"], "jawaban": 1 },
+          { "pertanyaan": "'He goes ___ every weekend.' (berenang)", "pilihan": ["swim", "to swim", "swimming", "swam"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Gardening'?", "pilihan": ["Mendaki", "Memasak", "Melukis", "Berkebun"], "jawaban": 3 },
+          { "pertanyaan": "'She enjoys ___ portraits.' (menggambar)", "pilihan": ["draw", "to draw", "drawing", "drew"], "jawaban": 2 },
+          { "pertanyaan": "Hobi yang dilakukan di luar ruangan di alam adalah...", "pilihan": ["Reading", "Cooking", "Hiking", "Drawing"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a2hb-2",
+        "judul": "Ekspresi Waktu Luang",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "What do you do in your free time?", "arti": "Apa yang kamu lakukan di waktu luang?", "emoji": "❓", "contoh": "What do you do in your free time? — I read books." },
+          { "kata": "My hobby is...", "arti": "Hobi saya adalah...", "emoji": "🏆", "contoh": "My hobby is playing football with my friends." },
+          { "kata": "I'm interested in...", "arti": "Saya tertarik pada...", "emoji": "✨", "contoh": "I'm interested in photography and art." },
+          { "kata": "I prefer ... to ...", "arti": "Saya lebih suka ... daripada ...", "emoji": "⭐", "contoh": "I prefer swimming to running." },
+          { "kata": "I spend my free time...", "arti": "Saya menghabiskan waktu luang...", "emoji": "⏳", "contoh": "I spend my free time reading and cooking." },
+          { "kata": "I'm not really into...", "arti": "Saya kurang suka / tidak terlalu tertarik pada...", "emoji": "😐", "contoh": "I'm not really into sports." }
+        ],
+        "soal": [
+          { "pertanyaan": "Cara bertanya tentang hobi seseorang:", "pilihan": ["What is your job?", "What do you do in your free time?", "Where do you go?", "When do you sleep?"], "jawaban": 1 },
+          { "pertanyaan": "'I ___ swimming to running.' (lebih suka)", "pilihan": ["want", "like", "prefer", "enjoy"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'I'm interested in photography'?", "pilihan": ["Saya beli kamera", "Saya ahli foto", "Saya tidak suka foto", "Saya tertarik pada fotografi"], "jawaban": 3 },
+          { "pertanyaan": "'My ___ is playing guitar.' (hobi)", "pilihan": ["job", "hobby", "work", "life"], "jawaban": 1 },
+          { "pertanyaan": "'I spend my free time ___.' (membaca)", "pilihan": ["read", "to read", "reading", "reads"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a2hb-3",
+        "judul": "Kuis: Hobbies & Free Time",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Kalimat yang benar: 'Her hobby is...'", "pilihan": ["Her hobby is to dance.", "Her hobby is dancing.", "Her hobby is dance.", "Her hobby is danced."], "jawaban": 1 },
+          { "pertanyaan": "'What do you do ___ your free time?'", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 },
+          { "pertanyaan": "'I ___ cycling to driving.' (lebih suka)", "pilihan": ["enjoy", "like", "prefer", "love"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'I'm not really into sports'?", "pilihan": ["Saya sangat suka olahraga", "Saya ingin berolahraga", "Saya kurang suka olahraga", "Saya tidak bisa olahraga"], "jawaban": 2 },
+          { "pertanyaan": "'She ___ my free time reading.' (menghabiskan)", "pilihan": ["spends", "spend", "spending", "spent"], "jawaban": 0 },
+          { "pertanyaan": "'I'm interested ___ learning languages.'", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
     "id": "unit-21",
     "judul": "Past Simple Reguler",
     "level": "a2",
@@ -10586,6 +10728,79 @@ export const learningPath = [
             ],
             "jawaban": 1
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a2-03",
+    "judul": "Describing People",
+    "deskripsi": "Belajar mendeskripsikan penampilan fisik seseorang: tinggi, berat badan, rambut, dan mata",
+    "emoji": "👤",
+    "warna": "from-fuchsia-400 to-purple-500",
+    "bg": "bg-fuchsia-50",
+    "border": "border-fuchsia-300",
+    "teks": "text-fuchsia-700",
+    "level": "a2",
+    "pelajaran": [
+      {
+        "id": "a2dp-1",
+        "judul": "Tinggi, Berat & Usia",
+        "emoji": "📏",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Tall", "arti": "Tinggi (badan)", "emoji": "📏", "contoh": "He is very tall — almost two metres." },
+          { "kata": "Short", "arti": "Pendek (badan)", "emoji": "📐", "contoh": "She is short but very confident." },
+          { "kata": "Slim / Thin", "arti": "Kurus / Langsing", "emoji": "🧍", "contoh": "She is slim and very athletic." },
+          { "kata": "Overweight / Fat", "arti": "Gemuk / Kelebihan berat badan", "emoji": "🧑", "contoh": "He is a little overweight these days." },
+          { "kata": "Average height", "arti": "Tinggi rata-rata / Sedang", "emoji": "👤", "contoh": "My brother is of average height." },
+          { "kata": "Young", "arti": "Muda", "emoji": "🧒", "contoh": "She looks very young for her age." },
+          { "kata": "Middle-aged", "arti": "Paruh baya (40-60 tahun)", "emoji": "👨", "contoh": "My father is middle-aged but very active." },
+          { "kata": "Elderly", "arti": "Lanjut usia / Tua", "emoji": "👴", "contoh": "The elderly man walks slowly with a cane." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Tall'?", "pilihan": ["Pendek", "Gemuk", "Tinggi", "Kurus"], "jawaban": 2 },
+          { "pertanyaan": "Lawan kata 'Short' dalam konteks tinggi badan adalah...", "pilihan": ["Slim", "Young", "Fat", "Tall"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Slim'?", "pilihan": ["Tinggi", "Gemuk", "Tua", "Kurus/Langsing"], "jawaban": 3 },
+          { "pertanyaan": "'She is of ___ height.' (tidak tinggi tidak pendek)", "pilihan": ["tall", "short", "average", "young"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Elderly'?", "pilihan": ["Muda", "Paruh baya", "Lanjut usia", "Remaja"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a2dp-2",
+        "judul": "Rambut, Mata & Ciri Khas",
+        "emoji": "💇",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Long hair", "arti": "Rambut panjang", "emoji": "👩", "contoh": "She has long, black hair." },
+          { "kata": "Short hair", "arti": "Rambut pendek", "emoji": "👦", "contoh": "He has short, neat hair." },
+          { "kata": "Straight hair", "arti": "Rambut lurus", "emoji": "💇", "contoh": "She has straight, blonde hair." },
+          { "kata": "Curly hair", "arti": "Rambut keriting", "emoji": "👩‍🦱", "contoh": "He has curly, brown hair." },
+          { "kata": "Dark hair", "arti": "Rambut gelap (hitam/coklat tua)", "emoji": "🖤", "contoh": "Most Indonesians have dark hair." },
+          { "kata": "Blonde hair", "arti": "Rambut pirang / kuning", "emoji": "👱", "contoh": "She has beautiful blonde hair and blue eyes." },
+          { "kata": "Wears glasses", "arti": "Memakai kacamata", "emoji": "👓", "contoh": "My teacher wears glasses." },
+          { "kata": "Has a beard", "arti": "Berjenggot", "emoji": "🧔", "contoh": "My father has a beard and a moustache." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Curly hair'?", "pilihan": ["Rambut lurus", "Rambut panjang", "Rambut keriting", "Rambut pirang"], "jawaban": 2 },
+          { "pertanyaan": "'She has ___ hair.' (lurus)", "pilihan": ["curly", "straight", "blonde", "long"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Blonde hair'?", "pilihan": ["Rambut hitam", "Rambut keriting", "Rambut pendek", "Rambut pirang"], "jawaban": 3 },
+          { "pertanyaan": "'My teacher ___ glasses.' (memakai)", "pilihan": ["has", "wears", "is", "puts"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Has a beard'?", "pilihan": ["Memakai topi", "Berambut panjang", "Memakai kacamata", "Berjenggot"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a2dp-3",
+        "judul": "Kuis: Describing People",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Cara mendeskripsikan tinggi badan yang benar:", "pilihan": ["He is tall.", "He has tall.", "He wears tall.", "He does tall."], "jawaban": 0 },
+          { "pertanyaan": "Cara mendeskripsikan rambut yang benar:", "pilihan": ["She is long hair.", "She has long hair.", "She wears long hair.", "She does long hair."], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Middle-aged'?", "pilihan": ["Masa kanak-kanak", "Remaja", "Paruh baya", "Lanjut usia"], "jawaban": 2 },
+          { "pertanyaan": "'He ___ curly, dark hair and a beard.'", "pilihan": ["is", "wears", "has", "does"], "jawaban": 2 },
+          { "pertanyaan": "Lawan kata 'Slim' adalah...", "pilihan": ["Tall", "Young", "Overweight", "Elderly"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat deskripsi yang PALING LENGKAP:", "pilihan": ["She tall.", "She is tall and has long hair.", "She has tall.", "She long hair."], "jawaban": 1 }
         ]
       }
     ]

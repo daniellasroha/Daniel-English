@@ -172,6 +172,27 @@ export const kosakata = [
   { id: 147, english: "Supermarket",  indonesian: "Supermarket",        emoji: "🛒", kategori: "Tempat", level: "a1", contoh: "We buy food at the supermarket." },
   { id: 148, english: "Zoo",          indonesian: "Kebun Binatang",     emoji: "🦁", kategori: "Tempat", level: "a1", contoh: "We see many animals at the zoo." },
   { id: 149, english: "Post Office",  indonesian: "Kantor Pos",         emoji: "📮", kategori: "Tempat", level: "a1", contoh: "I send a letter at the post office." },
+  // === KATA KERJA A2 TAMBAHAN ===
+  { id: 150, english: "Prepare",     indonesian: "Mempersiapkan",       emoji: "📋", kategori: "Kata Kerja", level: "a2", contoh: "She prepares dinner every evening." },
+  { id: 151, english: "Arrive",      indonesian: "Tiba / Sampai",       emoji: "🛬", kategori: "Kata Kerja", level: "a2", contoh: "The train arrives at 9 o'clock." },
+  { id: 152, english: "Explain",     indonesian: "Menjelaskan",         emoji: "💬", kategori: "Kata Kerja", level: "a2", contoh: "Can you explain this question?" },
+  { id: 153, english: "Describe",    indonesian: "Mendeskripsikan",     emoji: "🗣️", kategori: "Kata Kerja", level: "a2", contoh: "Please describe what you see." },
+  { id: 154, english: "Invite",      indonesian: "Mengundang",          emoji: "💌", kategori: "Kata Kerja", level: "a2", contoh: "She invited all her friends to her party." },
+  { id: 155, english: "Offer",       indonesian: "Menawarkan",          emoji: "🤲", kategori: "Kata Kerja", level: "a2", contoh: "He offered to help me carry the bag." },
+  { id: 156, english: "Decide",      indonesian: "Memutuskan",          emoji: "✅", kategori: "Kata Kerja", level: "a2", contoh: "She decided to study medicine." },
+  { id: 157, english: "Remember",    indonesian: "Mengingat",           emoji: "🧠", kategori: "Kata Kerja", level: "a2", contoh: "Do you remember her name?" },
+  { id: 158, english: "Forget",      indonesian: "Melupakan / Lupa",    emoji: "😶", kategori: "Kata Kerja", level: "a2", contoh: "I always forget my keys." },
+  { id: 159, english: "Understand",  indonesian: "Memahami / Mengerti", emoji: "💡", kategori: "Kata Kerja", level: "a2", contoh: "I don't understand this lesson." },
+  { id: 160, english: "Enjoy",       indonesian: "Menikmati",           emoji: "😊", kategori: "Kata Kerja", level: "a2", contoh: "I enjoy reading in the evening." },
+  { id: 161, english: "Prefer",      indonesian: "Lebih suka",          emoji: "⭐", kategori: "Kata Kerja", level: "a2", contoh: "I prefer tea to coffee." },
+  { id: 162, english: "Choose",      indonesian: "Memilih",             emoji: "🎯", kategori: "Kata Kerja", level: "a2", contoh: "She chose the red dress for the party." },
+  { id: 163, english: "Receive",     indonesian: "Menerima",            emoji: "📩", kategori: "Kata Kerja", level: "a2", contoh: "I received a gift from my friend." },
+  { id: 164, english: "Spend",       indonesian: "Menghabiskan",        emoji: "⏳", kategori: "Kata Kerja", level: "a2", contoh: "He spends a lot of time on his phone." },
+  { id: 165, english: "Return",      indonesian: "Kembali / Pulang",    emoji: "🔙", kategori: "Kata Kerja", level: "a2", contoh: "She returned home late last night." },
+  { id: 166, english: "Need",        indonesian: "Membutuhkan",         emoji: "🆘", kategori: "Kata Kerja", level: "a2", contoh: "I need to finish this report today." },
+  { id: 167, english: "Hope",        indonesian: "Berharap",            emoji: "🌟", kategori: "Kata Kerja", level: "a2", contoh: "I hope to visit Paris one day." },
+  { id: 168, english: "Plan",        indonesian: "Merencanakan",        emoji: "📅", kategori: "Kata Kerja", level: "a2", contoh: "We plan to go on holiday next month." },
+  { id: 169, english: "Try",         indonesian: "Mencoba",             emoji: "💪", kategori: "Kata Kerja", level: "a2", contoh: "Try to speak English every day." },
 ];
 
 // Daftar semua kategori unik
