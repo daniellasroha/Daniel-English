@@ -2668,6 +2668,78 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a1-26",
+    "judul": "Ruangan & Rumah",
+    "deskripsi": "Mengenal nama-nama ruangan di dalam rumah dan benda-benda di dalamnya",
+    "emoji": "🏠",
+    "warna": "from-amber-400 to-orange-500",
+    "bg": "bg-amber-50",
+    "border": "border-amber-300",
+    "teks": "text-amber-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1r-1",
+        "judul": "Ruangan dalam Rumah",
+        "emoji": "🏠",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Bedroom", "arti": "Kamar tidur", "emoji": "🛏️", "contoh": "I sleep in my bedroom." },
+          { "kata": "Living room", "arti": "Ruang tamu", "emoji": "🛋️", "contoh": "We watch TV in the living room." },
+          { "kata": "Kitchen", "arti": "Dapur", "emoji": "🍳", "contoh": "My mother cooks in the kitchen." },
+          { "kata": "Bathroom", "arti": "Kamar mandi", "emoji": "🚿", "contoh": "I take a shower in the bathroom." },
+          { "kata": "Dining room", "arti": "Ruang makan", "emoji": "🍽️", "contoh": "We eat together in the dining room." },
+          { "kata": "Garden", "arti": "Kebun / Taman", "emoji": "🌳", "contoh": "There are flowers in the garden." },
+          { "kata": "Garage", "arti": "Garasi", "emoji": "🚗", "contoh": "My father parks his car in the garage." }
+        ],
+        "soal": [
+          { "pertanyaan": "Tempat kita tidur di rumah adalah...", "pilihan": ["Living room", "Kitchen", "Bedroom", "Garage"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Kitchen'?", "pilihan": ["Kamar mandi", "Ruang tamu", "Dapur", "Garasi"], "jawaban": 2 },
+          { "pertanyaan": "Tempat memasak adalah...", "pilihan": ["Bedroom", "Bathroom", "Dining room", "Kitchen"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Living room'?", "pilihan": ["Kamar tidur", "Ruang tamu", "Dapur", "Kebun"], "jawaban": 1 },
+          { "pertanyaan": "'Bathroom' artinya...", "pilihan": ["Dapur", "Ruang makan", "Kamar mandi", "Garasi"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1r-2",
+        "judul": "Benda di dalam Rumah",
+        "emoji": "🛋️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Bed", "arti": "Tempat tidur", "emoji": "🛏️", "contoh": "There is a big bed in my bedroom." },
+          { "kata": "Sofa", "arti": "Sofa / Kursi panjang", "emoji": "🛋️", "contoh": "The sofa is in the living room." },
+          { "kata": "Table", "arti": "Meja", "emoji": "🪑", "contoh": "There is a table in the dining room." },
+          { "kata": "Chair", "arti": "Kursi", "emoji": "🪑", "contoh": "I sit on a chair." },
+          { "kata": "Refrigerator", "arti": "Kulkas", "emoji": "🧊", "contoh": "The milk is in the refrigerator." },
+          { "kata": "Television", "arti": "Televisi", "emoji": "📺", "contoh": "There is a television in the living room." },
+          { "kata": "Wardrobe", "arti": "Lemari pakaian", "emoji": "🚪", "contoh": "My clothes are in the wardrobe." },
+          { "kata": "Mirror", "arti": "Cermin", "emoji": "🪞", "contoh": "There is a mirror in the bathroom." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Bed'?", "pilihan": ["Sofa", "Tempat tidur", "Meja", "Lemari"], "jawaban": 1 },
+          { "pertanyaan": "Benda untuk menyimpan makanan dan minuman dingin adalah...", "pilihan": ["Wardrobe", "Television", "Refrigerator", "Mirror"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Wardrobe'?", "pilihan": ["Cermin", "Kulkas", "Sofa", "Lemari pakaian"], "jawaban": 3 },
+          { "pertanyaan": "'There is a ___ in the living room.' (televisi)", "pilihan": ["Bed", "Television", "Refrigerator", "Mirror"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Mirror'?", "pilihan": ["Kursi", "Meja", "Cermin", "Sofa"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1r-3",
+        "judul": "Kuis: Ruangan & Rumah",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Tempat untuk memasak adalah...", "pilihan": ["Bedroom", "Living room", "Kitchen", "Garden"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Dining room'?", "pilihan": ["Dapur", "Ruang makan", "Kamar mandi", "Garasi"], "jawaban": 1 },
+          { "pertanyaan": "Benda yang biasanya ada di bathroom adalah...", "pilihan": ["Bed", "Sofa", "Mirror", "Refrigerator"], "jawaban": 2 },
+          { "pertanyaan": "'There are two ___ in my bedroom.' (kursi)", "pilihan": ["mirrors", "chairs", "sofas", "tables"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Garden'?", "pilihan": ["Dapur", "Garasi", "Kamar mandi", "Kebun/Taman"], "jawaban": 3 },
+          { "pertanyaan": "Kalimat yang benar tentang kamar tidur adalah...", "pilihan": ["I cook in the bedroom.", "I sleep in the bedroom.", "I eat in the bedroom.", "I park in the bedroom."], "jawaban": 1 }
+        ]
+      }
+    ]
+  },
+  {
     "id": 8,
     "judul": "Possessives",
     "deskripsi": "Pelajari kata kepemilikan my, your, his, her, its, our, their untuk menyatakan milik siapa",
@@ -3817,6 +3889,76 @@ export const learningPath = [
             ],
             "jawaban": 2
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-27",
+    "judul": "Pakaian Dasar",
+    "deskripsi": "Belajar nama-nama pakaian dan cara menyebutkan apa yang kamu pakai",
+    "emoji": "👕",
+    "warna": "from-sky-400 to-blue-500",
+    "bg": "bg-sky-50",
+    "border": "border-sky-300",
+    "teks": "text-sky-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1p-1",
+        "judul": "Pakaian Atas & Bawah",
+        "emoji": "👗",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Shirt", "arti": "Kemeja", "emoji": "👔", "contoh": "He wears a white shirt to work." },
+          { "kata": "T-shirt", "arti": "Kaos", "emoji": "👕", "contoh": "I wear a blue t-shirt every day." },
+          { "kata": "Dress", "arti": "Gaun / Rok terusan", "emoji": "👗", "contoh": "She wears a beautiful dress." },
+          { "kata": "Skirt", "arti": "Rok", "emoji": "👗", "contoh": "She wears a pink skirt to school." },
+          { "kata": "Pants / Trousers", "arti": "Celana panjang", "emoji": "👖", "contoh": "He wears black pants to the office." },
+          { "kata": "Jacket", "arti": "Jaket", "emoji": "🧥", "contoh": "It is cold, so I wear a jacket." },
+          { "kata": "Uniform", "arti": "Seragam", "emoji": "📋", "contoh": "We wear a uniform at school." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Shirt'?", "pilihan": ["Celana", "Jaket", "Kaos", "Kemeja"], "jawaban": 3 },
+          { "pertanyaan": "Pakaian wanita berbentuk satu potong panjang adalah...", "pilihan": ["Pants", "Jacket", "Dress", "Shirt"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Pants'?", "pilihan": ["Kemeja", "Celana panjang", "Rok", "Jaket"], "jawaban": 1 },
+          { "pertanyaan": "'It is cold, so I wear a ___.' (jaket)", "pilihan": ["skirt", "t-shirt", "dress", "jacket"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Uniform'?", "pilihan": ["Jaket", "Kaos", "Seragam", "Rok"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1p-2",
+        "judul": "Alas Kaki & Aksesori",
+        "emoji": "👟",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Shoes", "arti": "Sepatu", "emoji": "👟", "contoh": "I wear black shoes to school." },
+          { "kata": "Sandals", "arti": "Sandal", "emoji": "🩴", "contoh": "She wears sandals at the beach." },
+          { "kata": "Socks", "arti": "Kaos kaki", "emoji": "🧦", "contoh": "I always wear socks with my shoes." },
+          { "kata": "Hat", "arti": "Topi", "emoji": "🧢", "contoh": "He wears a hat in the sun." },
+          { "kata": "Bag", "arti": "Tas", "emoji": "🎒", "contoh": "She carries a bag to school." },
+          { "kata": "Glasses", "arti": "Kacamata", "emoji": "👓", "contoh": "He wears glasses when he reads." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Shoes'?", "pilihan": ["Sandal", "Kaos kaki", "Sepatu", "Topi"], "jawaban": 2 },
+          { "pertanyaan": "Aksesori yang dipakai di kepala untuk melindungi dari matahari adalah...", "pilihan": ["Glasses", "Bag", "Socks", "Hat"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Socks'?", "pilihan": ["Sepatu", "Sandal", "Tas", "Kaos kaki"], "jawaban": 3 },
+          { "pertanyaan": "'She wears ___ at the beach.' (sandal)", "pilihan": ["shoes", "sandals", "socks", "glasses"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Bag'?", "pilihan": ["Topi", "Kacamata", "Tas", "Kaos kaki"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1p-3",
+        "judul": "Kuis: Pakaian Dasar",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Apa arti 'Jacket'?", "pilihan": ["Kemeja", "Rok", "Gaun", "Jaket"], "jawaban": 3 },
+          { "pertanyaan": "'I wear ___ to school.' (sepatu)", "pilihan": ["sandals", "shoes", "socks", "hat"], "jawaban": 1 },
+          { "pertanyaan": "Apa bahasa Inggrisnya 'Kaos'?", "pilihan": ["Shirt", "T-shirt", "Dress", "Skirt"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Glasses'?", "pilihan": ["Topi", "Kacamata", "Tas", "Sandal"], "jawaban": 1 },
+          { "pertanyaan": "'She wears a white ___.' (kemeja)", "pilihan": ["pants", "skirt", "shirt", "shoes"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Socks'?", "pilihan": ["Sandal", "Sepatu", "Topi", "Kaos kaki"], "jawaban": 3 }
         ]
       }
     ]
@@ -5357,6 +5499,73 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a1-28",
+    "judul": "Short Answers (Jawaban Singkat)",
+    "deskripsi": "Belajar menjawab pertanyaan Ya/Tidak secara singkat dan benar dalam bahasa Inggris",
+    "emoji": "💬",
+    "warna": "from-violet-400 to-purple-500",
+    "bg": "bg-violet-50",
+    "border": "border-violet-300",
+    "teks": "text-violet-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1sa-1",
+        "judul": "Short Answers dengan To Be",
+        "emoji": "✅",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Yes, I am. / No, I'm not.", "arti": "Ya, saya. / Tidak, saya bukan.", "emoji": "✅", "contoh": "Are you a student? — Yes, I am." },
+          { "kata": "Yes, he is. / No, he isn't.", "arti": "Ya, dia (laki). / Tidak, dia bukan.", "emoji": "✅", "contoh": "Is he your brother? — Yes, he is." },
+          { "kata": "Yes, she is. / No, she isn't.", "arti": "Ya, dia (perempuan). / Tidak, dia bukan.", "emoji": "✅", "contoh": "Is she happy? — No, she isn't." },
+          { "kata": "Yes, they are. / No, they aren't.", "arti": "Ya, mereka. / Tidak, mereka bukan.", "emoji": "✅", "contoh": "Are they students? — Yes, they are." },
+          { "kata": "Yes, it is. / No, it isn't.", "arti": "Ya, itu. / Tidak, itu bukan.", "emoji": "✅", "contoh": "Is it a cat? — Yes, it is." }
+        ],
+        "soal": [
+          { "pertanyaan": "'Are you hungry?' — Jawaban singkat positif yang benar:", "pilihan": ["Yes, I do.", "Yes, I am.", "Yes, I can.", "Yes, I have."], "jawaban": 1 },
+          { "pertanyaan": "'Is she a teacher?' — Jawaban singkat negatif yang benar:", "pilihan": ["No, she doesn't.", "No, she can't.", "No, she isn't.", "No, she won't."], "jawaban": 2 },
+          { "pertanyaan": "'Are they your friends?' — Jawaban positif:", "pilihan": ["Yes, they do.", "Yes, they can.", "Yes, they have.", "Yes, they are."], "jawaban": 3 },
+          { "pertanyaan": "'Is it a dog?' — Jawaban negatif singkat:", "pilihan": ["No, it don't.", "No, it isn't.", "No, it can't.", "No, it hasn't."], "jawaban": 1 },
+          { "pertanyaan": "Short answer positif untuk 'Are you cold?':", "pilihan": ["Yes, I can.", "Yes, I do.", "Yes, I am.", "Yes, I have."], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1sa-2",
+        "judul": "Short Answers dengan Do/Does & Can",
+        "emoji": "🔄",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Yes, I do. / No, I don't.", "arti": "Ya, saya (suka/lakukan). / Tidak, saya tidak.", "emoji": "✅", "contoh": "Do you like rice? — Yes, I do." },
+          { "kata": "Yes, she does. / No, she doesn't.", "arti": "Ya, dia. / Tidak, dia tidak.", "emoji": "✅", "contoh": "Does she speak English? — Yes, she does." },
+          { "kata": "Yes, they do. / No, they don't.", "arti": "Ya, mereka. / Tidak, mereka tidak.", "emoji": "✅", "contoh": "Do they play football? — No, they don't." },
+          { "kata": "Yes, I can. / No, I can't.", "arti": "Ya, saya bisa. / Tidak, saya tidak bisa.", "emoji": "✅", "contoh": "Can you swim? — Yes, I can." },
+          { "kata": "Yes, he can. / No, he can't.", "arti": "Ya, dia bisa. / Tidak, dia tidak bisa.", "emoji": "✅", "contoh": "Can he drive? — No, he can't." }
+        ],
+        "soal": [
+          { "pertanyaan": "'Do you like cats?' — Jawaban singkat positif:", "pilihan": ["Yes, I am.", "Yes, I can.", "Yes, I do.", "Yes, I have."], "jawaban": 2 },
+          { "pertanyaan": "'Does she speak English?' — Jawaban singkat negatif:", "pilihan": ["No, she isn't.", "No, she doesn't.", "No, she can't.", "No, she don't."], "jawaban": 1 },
+          { "pertanyaan": "'Can you swim?' — Jawaban positif singkat:", "pilihan": ["Yes, I do.", "Yes, I am.", "Yes, I will.", "Yes, I can."], "jawaban": 3 },
+          { "pertanyaan": "'Do they play football?' — Jawaban negatif:", "pilihan": ["No, they aren't.", "No, they can't.", "No, they don't.", "No, they doesn't."], "jawaban": 2 },
+          { "pertanyaan": "Short answer positif untuk 'Can she dance?':", "pilihan": ["Yes, she do.", "Yes, she is.", "Yes, she can.", "Yes, she does."], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1sa-3",
+        "judul": "Kuis: Short Answers",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'Are you a student?' — Jawaban singkat positif:", "pilihan": ["Yes, I do.", "Yes, I can.", "Yes, I am.", "Yes, I have."], "jawaban": 2 },
+          { "pertanyaan": "'Do you like football?' — Jawaban negatif singkat:", "pilihan": ["No, I am not.", "No, I don't.", "No, I can't.", "No, I haven't."], "jawaban": 1 },
+          { "pertanyaan": "'Can he cook?' — Jawaban positif:", "pilihan": ["Yes, he does.", "Yes, he is.", "Yes, he do.", "Yes, he can."], "jawaban": 3 },
+          { "pertanyaan": "'Is she your sister?' — Jawaban negatif:", "pilihan": ["No, she doesn't.", "No, she can't.", "No, she isn't.", "No, she won't."], "jawaban": 2 },
+          { "pertanyaan": "'Does he speak English?' — Jawaban positif singkat:", "pilihan": ["Yes, he is.", "Yes, he does.", "Yes, he do.", "Yes, he can."], "jawaban": 1 },
+          { "pertanyaan": "Jawaban yang SALAH untuk 'Are they happy?':", "pilihan": ["Yes, they are.", "No, they aren't.", "Yes, they do.", "No, they aren't."], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
     "id": 15,
     "judul": "Tempat & Preposisi",
     "deskripsi": "Pelajari nama tempat dan kata depan: in, on, at, next to, between",
@@ -5601,6 +5810,148 @@ export const learningPath = [
             ],
             "jawaban": 2
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-29",
+    "judul": "Transportasi Dasar",
+    "deskripsi": "Belajar nama-nama kendaraan dan cara mengungkapkan bagaimana kamu bepergian",
+    "emoji": "🚌",
+    "warna": "from-orange-400 to-amber-500",
+    "bg": "bg-orange-50",
+    "border": "border-orange-300",
+    "teks": "text-orange-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1tr-1",
+        "judul": "Nama-nama Kendaraan",
+        "emoji": "🚗",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Car", "arti": "Mobil", "emoji": "🚗", "contoh": "My father drives a car to work." },
+          { "kata": "Bus", "arti": "Bus", "emoji": "🚌", "contoh": "I go to school by bus." },
+          { "kata": "Train", "arti": "Kereta api", "emoji": "🚆", "contoh": "The train is fast and comfortable." },
+          { "kata": "Bicycle", "arti": "Sepeda", "emoji": "🚲", "contoh": "She rides her bicycle every morning." },
+          { "kata": "Motorcycle", "arti": "Sepeda motor", "emoji": "🏍️", "contoh": "He rides a motorcycle to the market." },
+          { "kata": "Plane", "arti": "Pesawat", "emoji": "✈️", "contoh": "We fly to Bali by plane." },
+          { "kata": "Ship", "arti": "Kapal", "emoji": "🚢", "contoh": "A ship travels on the sea." },
+          { "kata": "Taxi", "arti": "Taksi", "emoji": "🚕", "contoh": "I take a taxi when it rains." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Bus'?", "pilihan": ["Mobil", "Kereta", "Bus", "Pesawat"], "jawaban": 2 },
+          { "pertanyaan": "Kendaraan yang terbang di udara adalah...", "pilihan": ["Ship", "Bicycle", "Taxi", "Plane"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Bicycle'?", "pilihan": ["Sepeda motor", "Mobil", "Sepeda", "Kereta"], "jawaban": 2 },
+          { "pertanyaan": "'My father drives a ___ to work.' (mobil)", "pilihan": ["bus", "train", "car", "ship"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Train'?", "pilihan": ["Bus", "Kereta api", "Pesawat", "Kapal"], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "a1tr-2",
+        "judul": "Cara Bepergian",
+        "emoji": "🗺️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I go by bus", "arti": "Saya pergi naik bus", "emoji": "🚌", "contoh": "I go to school by bus every day." },
+          { "kata": "I go by car", "arti": "Saya pergi naik mobil", "emoji": "🚗", "contoh": "My family goes to Bandung by car." },
+          { "kata": "I ride a bicycle", "arti": "Saya naik sepeda", "emoji": "🚲", "contoh": "I ride a bicycle to the park." },
+          { "kata": "I walk to...", "arti": "Saya jalan kaki ke...", "emoji": "🚶", "contoh": "I walk to school because it is near." },
+          { "kata": "I take a taxi", "arti": "Saya naik taksi", "emoji": "🚕", "contoh": "She takes a taxi to the airport." },
+          { "kata": "How do you go to school?", "arti": "Bagaimana kamu pergi ke sekolah?", "emoji": "❓", "contoh": "How do you go to school? — By bus." }
+        ],
+        "soal": [
+          { "pertanyaan": "'I go to school ___ bus.' (naik bus)", "pilihan": ["in", "on", "at", "by"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'I walk to school'?", "pilihan": ["Saya naik bus ke sekolah", "Saya naik sepeda ke sekolah", "Saya jalan kaki ke sekolah", "Saya naik taksi ke sekolah"], "jawaban": 2 },
+          { "pertanyaan": "'How ___ you go to school?' (cara bertanya cara bepergian)", "pilihan": ["is", "are", "do", "does"], "jawaban": 2 },
+          { "pertanyaan": "Cara bepergian dengan kendaraan menggunakan kata preposisi...", "pilihan": ["in", "by", "at", "on"], "jawaban": 1 },
+          { "pertanyaan": "'She ___ a taxi to the hospital.' (naik taksi)", "pilihan": ["goes", "rides", "drives", "takes"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1tr-3",
+        "judul": "Kuis: Transportasi",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Apa arti 'Motorcycle'?", "pilihan": ["Mobil", "Sepeda", "Sepeda motor", "Skuter"], "jawaban": 2 },
+          { "pertanyaan": "'I ___ to the park by bicycle.' (naik sepeda)", "pilihan": ["drive", "fly", "take", "ride"], "jawaban": 3 },
+          { "pertanyaan": "Kendaraan yang berjalan di atas rel adalah...", "pilihan": ["Bus", "Train", "Taxi", "Ship"], "jawaban": 1 },
+          { "pertanyaan": "'How do you go to the market?' — Jawaban yang benar:", "pilihan": ["I go school.", "I go by bus.", "I by bus go.", "Bus by I go."], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Ship'?", "pilihan": ["Pesawat", "Bus", "Kapal", "Kereta"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar untuk bepergian naik mobil:", "pilihan": ["I go by car.", "I go on car.", "I go in car.", "I go at car."], "jawaban": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-30",
+    "judul": "Belanja & Uang Dasar",
+    "deskripsi": "Belajar kosakata belanja dan cara bertanya harga dalam bahasa Inggris",
+    "emoji": "🛒",
+    "warna": "from-emerald-400 to-green-500",
+    "bg": "bg-emerald-50",
+    "border": "border-emerald-300",
+    "teks": "text-emerald-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1bl-1",
+        "judul": "Kosakata Belanja",
+        "emoji": "🛍️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Buy", "arti": "Membeli", "emoji": "🛒", "contoh": "I want to buy a new shirt." },
+          { "kata": "Sell", "arti": "Menjual", "emoji": "🏪", "contoh": "This shop sells fresh vegetables." },
+          { "kata": "Price", "arti": "Harga", "emoji": "🏷️", "contoh": "What is the price of this book?" },
+          { "kata": "Cheap", "arti": "Murah", "emoji": "💚", "contoh": "This bag is very cheap!" },
+          { "kata": "Expensive", "arti": "Mahal", "emoji": "💸", "contoh": "That car is too expensive for me." },
+          { "kata": "Pay", "arti": "Membayar", "emoji": "💳", "contoh": "I pay for my food at the cashier." },
+          { "kata": "Money", "arti": "Uang", "emoji": "💰", "contoh": "I have some money in my wallet." },
+          { "kata": "Change", "arti": "Kembalian", "emoji": "🪙", "contoh": "Here is your change — five thousand rupiah." }
+        ],
+        "soal": [
+          { "pertanyaan": "Apa arti 'Buy'?", "pilihan": ["Menjual", "Membeli", "Membayar", "Memberikan"], "jawaban": 1 },
+          { "pertanyaan": "Lawan kata 'Cheap' adalah...", "pilihan": ["Small", "Expensive", "Big", "Old"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Money'?", "pilihan": ["Harga", "Kembalian", "Uang", "Bayar"], "jawaban": 2 },
+          { "pertanyaan": "'This bag is very ___.' (murah)", "pilihan": ["expensive", "big", "cheap", "heavy"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Change' dalam konteks belanja?", "pilihan": ["Menukar baju", "Harga barang", "Diskon", "Kembalian uang"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1bl-2",
+        "judul": "Percakapan di Toko",
+        "emoji": "🏪",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "How much is it?", "arti": "Berapa harganya?", "emoji": "❓", "contoh": "Excuse me, how much is this jacket?" },
+          { "kata": "It is ... rupiah", "arti": "Harganya ... rupiah", "emoji": "💰", "contoh": "It is fifty thousand rupiah." },
+          { "kata": "Can I have...?", "arti": "Boleh saya minta...?", "emoji": "🙋", "contoh": "Can I have two apples, please?" },
+          { "kata": "I would like...", "arti": "Saya mau... / Saya ingin...", "emoji": "😊", "contoh": "I would like a glass of water, please." },
+          { "kata": "Here you are", "arti": "Ini (silakan)", "emoji": "🤝", "contoh": "Here you are! Enjoy your meal." },
+          { "kata": "Do you have...?", "arti": "Apakah ada...? / Apakah kamu punya...?", "emoji": "❓", "contoh": "Do you have a bigger size?" }
+        ],
+        "soal": [
+          { "pertanyaan": "Cara bertanya harga dalam bahasa Inggris:", "pilihan": ["How many is it?", "How much is it?", "What price it?", "How cost is it?"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'I would like a coffee'?", "pilihan": ["Saya tidak suka kopi", "Saya punya kopi", "Saya mau kopi", "Saya membeli kopi"], "jawaban": 2 },
+          { "pertanyaan": "'Can I ___ two oranges, please?' (minta)", "pilihan": ["want", "have", "buy", "get"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Here you are'?", "pilihan": ["Di sini kamu berada", "Ini (silakan)", "Di mana kamu?", "Terima kasih"], "jawaban": 1 },
+          { "pertanyaan": "Kasir berkata 'It is twenty thousand rupiah.' Artinya harganya...", "pilihan": ["Gratis", "Dua ribu", "Dua puluh ribu", "Dua ratus ribu"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1bl-3",
+        "judul": "Kuis: Belanja & Uang",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Apa arti 'Expensive'?", "pilihan": ["Murah", "Gratis", "Mahal", "Diskon"], "jawaban": 2 },
+          { "pertanyaan": "Cara bertanya harga yang benar:", "pilihan": ["How many does it cost?", "What price is it?", "How much is it?", "How is the price?"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Pay'?", "pilihan": ["Membeli", "Menjual", "Membayar", "Menerima"], "jawaban": 2 },
+          { "pertanyaan": "'I ___ like a cup of tea, please.' (saya mau)", "pilihan": ["can", "would", "do", "am"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Change' saat belanja?", "pilihan": ["Ganti baju", "Harga baru", "Kembalian uang", "Diskon"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar untuk membeli sesuatu:", "pilihan": ["Can I have two apples?", "Can I two apples?", "I can apples two?", "Have I two apples?"], "jawaban": 0 }
         ]
       }
     ]
