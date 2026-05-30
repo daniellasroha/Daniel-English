@@ -7,9 +7,8 @@ import { fetchLeaderboard } from "@/lib/leaderboard";
 import { useUsername } from "@/hooks/useUsername";
 
 const PERIOD_TABS = [
-  { key: "harian",   label: "Harian",       emoji: "⚡", desc: "Reset tiap hari" },
-  { key: "mingguan", label: "Mingguan",      emoji: "📅", desc: "Reset tiap Senin" },
-  { key: "semua",    label: "Sepanjang Masa",emoji: "🌐", desc: "Skor akumulasi" },
+  { key: "harian",   label: "Harian",  emoji: "⚡", desc: "Reset tiap hari" },
+  { key: "mingguan", label: "Mingguan",emoji: "📅", desc: "Reset tiap Senin" },
 ];
 
 const LEVEL_TABS = [
@@ -46,9 +45,7 @@ function getPoin(row, period) {
 }
 
 function getPoinLabel(period) {
-  if (period === "harian")   return "poin hari ini";
-  if (period === "mingguan") return "poin minggu ini";
-  return "total poin";
+  return period === "harian" ? "poin hari ini" : "poin minggu ini";
 }
 
 export default function LeaderboardPage() {
@@ -79,7 +76,7 @@ export default function LeaderboardPage() {
     : 0;
   const myPoin = myRank > 0 ? getPoin(rows[myRank - 1], period) : 0;
 
-  const activePeriod = PERIOD_TABS.find((t) => t.key === period);
+  const activePeriod = PERIOD_TABS.find((t) => t.key === period) ?? PERIOD_TABS[0];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50">
@@ -89,7 +86,7 @@ export default function LeaderboardPage() {
           <Link href="/" className="text-orange-500 hover:text-orange-700 text-2xl">←</Link>
           <div className="flex-1">
             <h1 className="text-xl font-extrabold text-gray-800">🏆 Leaderboard</h1>
-            <p className="text-xs text-gray-400">{activePeriod?.desc} · Ranking berdasarkan poin belajar & quiz</p>
+            <p className="text-xs text-gray-400">Ranking berdasarkan poin belajar & quiz</p>
           </div>
           <button
             onClick={() => load(level, period)}
@@ -137,21 +134,19 @@ export default function LeaderboardPage() {
       <div className="max-w-xl mx-auto px-4 py-6">
 
         {/* Info reset */}
-        {period !== "semua" && (
-          <div className="mb-4 bg-white border border-orange-100 rounded-2xl px-4 py-3 flex items-center gap-3">
-            <span className="text-2xl">{activePeriod?.emoji}</span>
-            <div>
-              <p className="text-sm font-bold text-gray-700">
-                {period === "harian" ? "Leaderboard Harian" : "Leaderboard Mingguan"}
-              </p>
-              <p className="text-xs text-gray-400">
-                {period === "harian"
-                  ? "Menampilkan poin yang dikumpulkan HARI INI saja. Reset otomatis setiap tengah malam."
-                  : "Menampilkan poin yang dikumpulkan MINGGU INI saja. Reset setiap Senin pagi."}
-              </p>
-            </div>
+        <div className="mb-4 bg-white border border-orange-100 rounded-2xl px-4 py-3 flex items-center gap-3">
+          <span className="text-2xl">{activePeriod?.emoji}</span>
+          <div>
+            <p className="text-sm font-bold text-gray-700">
+              {period === "harian" ? "Leaderboard Harian" : "Leaderboard Mingguan"}
+            </p>
+            <p className="text-xs text-gray-400">
+              {period === "harian"
+                ? "Poin yang dikumpulkan HARI INI saja. Reset otomatis setiap tengah malam."
+                : "Poin yang dikumpulkan MINGGU INI saja. Reset setiap Senin pagi."}
+            </p>
           </div>
-        )}
+        </div>
 
         {/* Posisi kamu */}
         {username && myRank > 0 && (
@@ -169,9 +164,7 @@ export default function LeaderboardPage() {
           <div className="mb-4 bg-white border border-orange-200 rounded-2xl px-5 py-3 text-center text-sm text-gray-500">
             {period === "harian"
               ? "Kamu belum aktif hari ini. Selesaikan pelajaran atau quiz untuk masuk ranking!"
-              : period === "mingguan"
-              ? "Kamu belum aktif minggu ini. Ayo belajar sekarang!"
-              : "Kamu belum masuk leaderboard. Selesaikan pelajaran untuk mulai!"}
+              : "Kamu belum aktif minggu ini. Ayo belajar sekarang!"}
           </div>
         )}
 
@@ -200,15 +193,11 @@ export default function LeaderboardPage() {
         {/* Empty */}
         {!loading && !error && rows.length === 0 && (
           <div className="text-center py-16">
-            <div className="text-5xl mb-3">
-              {period === "harian" ? "⚡" : period === "mingguan" ? "📅" : "🏁"}
-            </div>
+            <div className="text-5xl mb-3">{period === "harian" ? "⚡" : "📅"}</div>
             <p className="text-gray-500 font-semibold">
               {period === "harian"
                 ? "Belum ada yang aktif hari ini."
-                : period === "mingguan"
-                ? "Belum ada yang aktif minggu ini."
-                : "Belum ada peserta."}
+                : "Belum ada yang aktif minggu ini."}
             </p>
             <p className="text-gray-400 text-sm mt-1">
               Jadilah yang pertama menyelesaikan pelajaran!
@@ -248,17 +237,10 @@ export default function LeaderboardPage() {
                       </span>
                       {level === "semua" && <LevelBadge level={row.level} />}
                     </div>
-                    {/* Sub-info berbeda per periode */}
-                    {period === "semua" ? (
-                      <div className="flex gap-3 mt-1">
-                        <span className="text-xs text-gray-400">📚 {row.belajarPoin ?? 0} belajar</span>
-                        <span className="text-xs text-gray-400">🧠 {row.quizPoin ?? 0} quiz</span>
-                      </div>
-                    ) : (
-                      <p className="text-xs text-gray-400 mt-1">
-                        Total all-time: {row.totalPoin ?? 0} poin
-                      </p>
-                    )}
+                    <div className="flex gap-3 mt-1">
+                      <span className="text-xs text-gray-400">📚 {row.belajarPoin ?? 0} belajar</span>
+                      <span className="text-xs text-gray-400">🧠 {row.quizPoin ?? 0} quiz</span>
+                    </div>
                   </div>
 
                   {/* Poin utama */}
@@ -289,9 +271,8 @@ export default function LeaderboardPage() {
               <span><strong className="text-gray-700">Quiz</strong> — skor % per sesi (mis. 8/10 = 80 poin)</span>
             </div>
             <div className="mt-3 pt-3 border-t border-gray-100 space-y-1">
-              <p className="text-xs text-gray-500"><strong>⚡ Harian</strong> — hanya poin yang dikumpulkan hari ini</p>
-              <p className="text-xs text-gray-500"><strong>📅 Mingguan</strong> — hanya poin yang dikumpulkan minggu ini</p>
-              <p className="text-xs text-gray-500"><strong>🌐 Sepanjang Masa</strong> — total akumulasi semua waktu</p>
+              <p className="text-xs text-gray-500"><strong>⚡ Harian</strong> — hanya poin yang dikumpulkan hari ini, reset tiap tengah malam</p>
+              <p className="text-xs text-gray-500"><strong>📅 Mingguan</strong> — hanya poin yang dikumpulkan minggu ini, reset tiap Senin</p>
             </div>
           </div>
         </div>
