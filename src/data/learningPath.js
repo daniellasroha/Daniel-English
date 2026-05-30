@@ -5250,6 +5250,75 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a1-31",
+    "judul": "Konjungsi Dasar",
+    "deskripsi": "Belajar kata penghubung (and, but, or, because, so) untuk membuat kalimat yang lebih panjang dan alami",
+    "emoji": "🔗",
+    "warna": "from-teal-400 to-cyan-500",
+    "bg": "bg-teal-50",
+    "border": "border-teal-300",
+    "teks": "text-teal-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1kj-1",
+        "judul": "And, But, Or",
+        "emoji": "🔗",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "and", "arti": "dan", "emoji": "➕", "contoh": "I eat rice and drink water every day." },
+          { "kata": "but", "arti": "tetapi / tapi", "emoji": "↔️", "contoh": "I like cats but I don't like dogs." },
+          { "kata": "or", "arti": "atau", "emoji": "❓", "contoh": "Do you want tea or coffee?" },
+          { "kata": "and (menggabungkan sifat)", "arti": "dan (menghubungkan dua sifat)", "emoji": "➕", "contoh": "She is smart and beautiful." },
+          { "kata": "but (kontras)", "arti": "tetapi (menunjukkan perbedaan)", "emoji": "↔️", "contoh": "He is strong but not very fast." },
+          { "kata": "or (pilihan)", "arti": "atau (memberikan pilihan)", "emoji": "❓", "contoh": "Is it a cat or a dog?" }
+        ],
+        "soal": [
+          { "pertanyaan": "Pilih kata yang tepat: 'I like apples ___ bananas.'", "pilihan": ["but", "or", "and", "because"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'but' dalam kalimat?", "pilihan": ["dan", "atau", "tetapi", "karena"], "jawaban": 2 },
+          { "pertanyaan": "'She is tired ___ she is still working.' (tetapi)", "pilihan": ["and", "or", "so", "but"], "jawaban": 3 },
+          { "pertanyaan": "'Do you want rice ___ bread?' (atau)", "pilihan": ["and", "but", "or", "because"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar menggunakan 'and':", "pilihan": ["I eat and I am tired.", "I eat and but drink.", "I like cats and dogs.", "She is happy but and sad."], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1kj-2",
+        "judul": "Because dan So",
+        "emoji": "💡",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "because", "arti": "karena", "emoji": "💡", "contoh": "I am tired because I worked all day." },
+          { "kata": "so", "arti": "jadi / maka", "emoji": "➡️", "contoh": "It was raining, so I took an umbrella." },
+          { "kata": "because (alasan perasaan)", "arti": "karena (menjelaskan alasan)", "emoji": "💡", "contoh": "She is happy because it is her birthday." },
+          { "kata": "so (akibat)", "arti": "sehingga / maka (menunjukkan akibat)", "emoji": "➡️", "contoh": "He studied hard, so he passed the exam." },
+          { "kata": "because (alasan tindakan)", "arti": "karena (alasan melakukan sesuatu)", "emoji": "💡", "contoh": "I drink water because I am thirsty." },
+          { "kata": "so (kesimpulan)", "arti": "jadi (akibat dari sesuatu)", "emoji": "➡️", "contoh": "The food is delicious, so I eat a lot." }
+        ],
+        "soal": [
+          { "pertanyaan": "'I wear a jacket ___ it is cold.' (karena)", "pilihan": ["so", "and", "but", "because"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'so' dalam kalimat?", "pilihan": ["karena", "tetapi", "dan", "jadi / maka"], "jawaban": 3 },
+          { "pertanyaan": "'It was hot, ___ I drank water.' (jadi)", "pilihan": ["because", "so", "but", "or"], "jawaban": 1 },
+          { "pertanyaan": "'She cried ___ she was sad.' (karena)", "pilihan": ["so", "or", "because", "but"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar menggunakan 'so':", "pilihan": ["I am hungry because I eat.", "I am hungry, so I eat.", "I eat so because hungry.", "Because I eat so hungry."], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "a1kj-3",
+        "judul": "Kuis: Konjungsi Dasar",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'I like English ___ I study every day.' (karena)", "pilihan": ["but", "or", "so", "because"], "jawaban": 3 },
+          { "pertanyaan": "'She is tired, ___ she goes to sleep.' (jadi)", "pilihan": ["because", "so", "but", "and"], "jawaban": 1 },
+          { "pertanyaan": "'Do you want to walk ___ take the bus?' (atau)", "pilihan": ["and", "but", "or", "so"], "jawaban": 2 },
+          { "pertanyaan": "'He is young ___ very talented.' (tetapi)", "pilihan": ["and", "or", "but", "because"], "jawaban": 2 },
+          { "pertanyaan": "'I eat rice ___ vegetables every day.' (dan)", "pilihan": ["but", "and", "or", "so"], "jawaban": 1 },
+          { "pertanyaan": "Perbedaan 'because' dan 'so': 'I am cold ___ I wear a jacket.'", "pilihan": ["so", "because", "and", "but"], "jawaban": 0 }
+        ]
+      }
+    ]
+  },
+  {
     "id": 14,
     "judul": "Can / Can't",
     "deskripsi": "Ungkapkan kemampuan dan ketidakmampuan dengan can dan can't",
