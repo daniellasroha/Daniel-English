@@ -193,6 +193,50 @@ export const kosakata = [
   { id: 167, english: "Hope",        indonesian: "Berharap",            emoji: "🌟", kategori: "Kata Kerja", level: "a2", contoh: "I hope to visit Paris one day." },
   { id: 168, english: "Plan",        indonesian: "Merencanakan",        emoji: "📅", kategori: "Kata Kerja", level: "a2", contoh: "We plan to go on holiday next month." },
   { id: 169, english: "Try",         indonesian: "Mencoba",             emoji: "💪", kategori: "Kata Kerja", level: "a2", contoh: "Try to speak English every day." },
+  // === KATA SIFAT A1 TAMBAHAN (big, small, hot, cold, dst) ===
+  { id: 170, english: "Big",      indonesian: "Besar",           emoji: "🐘", kategori: "Kata Sifat", level: "a1", contoh: "An elephant is a very big animal." },
+  { id: 171, english: "Small",    indonesian: "Kecil",           emoji: "🐭", kategori: "Kata Sifat", level: "a1", contoh: "A mouse is a small animal." },
+  { id: 172, english: "Old",      indonesian: "Tua / Lama",      emoji: "👴", kategori: "Kata Sifat", level: "a1", contoh: "This is an old building." },
+  { id: 173, english: "New",      indonesian: "Baru",            emoji: "✨", kategori: "Kata Sifat", level: "a1", contoh: "I have a new pencil case." },
+  { id: 174, english: "Hot",      indonesian: "Panas",           emoji: "🔥", kategori: "Kata Sifat", level: "a1", contoh: "Be careful — the soup is hot!" },
+  { id: 175, english: "Cold",     indonesian: "Dingin",          emoji: "🧊", kategori: "Kata Sifat", level: "a1", contoh: "The water is very cold." },
+  { id: 176, english: "Fast",     indonesian: "Cepat",           emoji: "🏎️", kategori: "Kata Sifat", level: "a1", contoh: "A cheetah is very fast." },
+  { id: 177, english: "Slow",     indonesian: "Lambat",          emoji: "🐢", kategori: "Kata Sifat", level: "a1", contoh: "A turtle is very slow." },
+  { id: 178, english: "Long",     indonesian: "Panjang",         emoji: "📏", kategori: "Kata Sifat", level: "a1", contoh: "The river is very long." },
+  { id: 179, english: "Short",    indonesian: "Pendek",          emoji: "📐", kategori: "Kata Sifat", level: "a1", contoh: "She has short hair." },
+  { id: 180, english: "Good",     indonesian: "Baik / Bagus",    emoji: "👍", kategori: "Kata Sifat", level: "a1", contoh: "She is a good student." },
+  { id: 181, english: "Bad",      indonesian: "Buruk / Jelek",   emoji: "👎", kategori: "Kata Sifat", level: "a1", contoh: "The weather is bad today." },
+  { id: 182, english: "Easy",     indonesian: "Mudah",           emoji: "😊", kategori: "Kata Sifat", level: "a1", contoh: "This exercise is easy." },
+  { id: 183, english: "Hard",     indonesian: "Sulit / Keras",   emoji: "😤", kategori: "Kata Sifat", level: "a1", contoh: "The exam is hard." },
+  { id: 184, english: "Clean",    indonesian: "Bersih",          emoji: "✨", kategori: "Kata Sifat", level: "a1", contoh: "Keep your room clean." },
+  { id: 185, english: "Dirty",    indonesian: "Kotor",           emoji: "🤢", kategori: "Kata Sifat", level: "a1", contoh: "Wash your hands — they are dirty!" },
+
+  // === PERASAAN A1 TAMBAHAN ===
+  { id: 186, english: "Hungry",   indonesian: "Lapar",           emoji: "🍽️", kategori: "Perasaan", level: "a1", contoh: "I am very hungry after school." },
+  { id: 187, english: "Thirsty",  indonesian: "Haus",            emoji: "🥤", kategori: "Perasaan", level: "a1", contoh: "Can I have some water? I am thirsty." },
+  { id: 188, english: "Sick",     indonesian: "Sakit",           emoji: "🤒", kategori: "Perasaan", level: "a1", contoh: "I am sick today, so I stay at home." },
+  { id: 189, english: "Sleepy",   indonesian: "Ngantuk",         emoji: "😴", kategori: "Perasaan", level: "a1", contoh: "I am sleepy because I slept late." },
+  { id: 190, english: "Fine",     indonesian: "Baik-baik saja",  emoji: "😊", kategori: "Perasaan", level: "a1", contoh: "I am fine, thank you for asking!" },
+  { id: 191, english: "Great",    indonesian: "Sangat baik / Luar biasa", emoji: "🌟", kategori: "Perasaan", level: "a1", contoh: "I feel great today!" },
+  { id: 192, english: "Lonely",   indonesian: "Kesepian",        emoji: "😔", kategori: "Perasaan", level: "a1", contoh: "She feels lonely when her friends are away." },
+  { id: 193, english: "Surprised",indonesian: "Terkejut",        emoji: "😮", kategori: "Perasaan", level: "a1", contoh: "I was surprised by the good news." },
+
+  // === RUMAH & BENDA A1 TAMBAHAN ===
+  { id: 194, english: "Book",     indonesian: "Buku",            emoji: "📚", kategori: "Rumah & Benda", level: "a1", contoh: "I read a book every night." },
+  { id: 195, english: "Pen",      indonesian: "Pena",            emoji: "🖊️", kategori: "Rumah & Benda", level: "a1", contoh: "Can I borrow your pen?" },
+  { id: 196, english: "Door",     indonesian: "Pintu",           emoji: "🚪", kategori: "Rumah & Benda", level: "a1", contoh: "Please close the door." },
+  { id: 197, english: "Key",      indonesian: "Kunci",           emoji: "🔑", kategori: "Rumah & Benda", level: "a1", contoh: "I lost my house key." },
+  { id: 198, english: "Plate",    indonesian: "Piring",          emoji: "🍽️", kategori: "Rumah & Benda", level: "a1", contoh: "Put the food on the plate." },
+  { id: 199, english: "Cup",      indonesian: "Cangkir / Gelas", emoji: "☕", kategori: "Rumah & Benda", level: "a1", contoh: "She drinks tea from a cup." },
+  { id: 200, english: "Spoon",    indonesian: "Sendok",          emoji: "🥄", kategori: "Rumah & Benda", level: "a1", contoh: "I eat soup with a spoon." },
+
+  // === ALAM & CUACA A1 TAMBAHAN ===
+  { id: 201, english: "Tree",     indonesian: "Pohon",           emoji: "🌳", kategori: "Alam & Cuaca", level: "a1", contoh: "There is a big tree in our garden." },
+  { id: 202, english: "Flower",   indonesian: "Bunga",           emoji: "🌸", kategori: "Alam & Cuaca", level: "a1", contoh: "She picks flowers in the garden." },
+  { id: 203, english: "Sky",      indonesian: "Langit",          emoji: "☁️", kategori: "Alam & Cuaca", level: "a1", contoh: "The sky is blue and clear today." },
+  { id: 204, english: "Star",     indonesian: "Bintang",         emoji: "⭐", kategori: "Alam & Cuaca", level: "a1", contoh: "I can see many stars at night." },
+  { id: 205, english: "Moon",     indonesian: "Bulan",           emoji: "🌙", kategori: "Alam & Cuaca", level: "a1", contoh: "The moon is bright tonight." },
+  { id: 206, english: "Sea",      indonesian: "Laut",            emoji: "🌊", kategori: "Alam & Cuaca", level: "a1", contoh: "We swim in the sea every summer." },
 ];
 
 // Daftar semua kategori unik

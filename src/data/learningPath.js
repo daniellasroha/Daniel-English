@@ -1823,6 +1823,75 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a1-32",
+    "judul": "This, That, These, Those",
+    "deskripsi": "Belajar menunjuk benda yang dekat dan jauh menggunakan this, that, these, dan those",
+    "emoji": "👉",
+    "warna": "from-cyan-400 to-teal-500",
+    "bg": "bg-cyan-50",
+    "border": "border-cyan-300",
+    "teks": "text-cyan-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1dem-1",
+        "judul": "This & That (Tunggal)",
+        "emoji": "👆",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "This", "arti": "Ini (benda dekat, tunggal)", "emoji": "👆", "contoh": "This is my book." },
+          { "kata": "That", "arti": "Itu (benda jauh, tunggal)", "emoji": "👉", "contoh": "That is a big house." },
+          { "kata": "This + noun", "arti": "Kata benda yang dekat ini", "emoji": "📖", "contoh": "This cat is very cute." },
+          { "kata": "That + noun", "arti": "Kata benda yang jauh itu", "emoji": "🏠", "contoh": "That building is very tall." },
+          { "kata": "Is this a ...?", "arti": "Apakah ini sebuah ...?", "emoji": "❓", "contoh": "Is this a dog? Yes, it is." },
+          { "kata": "Is that a ...?", "arti": "Apakah itu sebuah ...?", "emoji": "❓", "contoh": "Is that a school? No, it isn't." }
+        ],
+        "soal": [
+          { "pertanyaan": "Benda yang ada di dekat kamu disebut...", "pilihan": ["That", "Those", "This", "These"], "jawaban": 2 },
+          { "pertanyaan": "'___ is my bag.' (tas yang ada di tanganmu)", "pilihan": ["That", "Those", "These", "This"], "jawaban": 3 },
+          { "pertanyaan": "'___ building is very old.' (gedung yang jauh)", "pilihan": ["This", "That", "These", "Those"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'That is a big car'?", "pilihan": ["Ini mobil besar.", "Itu mobil kecil.", "Itu adalah mobil yang besar.", "Ini bukan mobil."], "jawaban": 2 },
+          { "pertanyaan": "'Is ___ your pen?' (pena di mejamu, dekat)", "pilihan": ["that", "those", "these", "this"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1dem-2",
+        "judul": "These & Those (Jamak)",
+        "emoji": "👐",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "These", "arti": "Ini (benda dekat, jamak)", "emoji": "📚", "contoh": "These are my books." },
+          { "kata": "Those", "arti": "Itu (benda jauh, jamak)", "emoji": "🏠", "contoh": "Those are big houses." },
+          { "kata": "These + noun (jamak)", "arti": "Benda-benda dekat ini", "emoji": "🐱", "contoh": "These cats are very cute." },
+          { "kata": "Those + noun (jamak)", "arti": "Benda-benda jauh itu", "emoji": "🐶", "contoh": "Those dogs are very loud." },
+          { "kata": "Are these ...?", "arti": "Apakah ini ... (jamak)?", "emoji": "❓", "contoh": "Are these your books? Yes, they are." },
+          { "kata": "Are those ...?", "arti": "Apakah itu ... (jamak)?", "emoji": "❓", "contoh": "Are those your friends? No, they aren't." }
+        ],
+        "soal": [
+          { "pertanyaan": "Benda-benda yang jauh dan banyak disebut...", "pilihan": ["This", "That", "These", "Those"], "jawaban": 3 },
+          { "pertanyaan": "'___ are my pencils.' (pensil di mejamu, banyak)", "pilihan": ["That", "Those", "These", "This"], "jawaban": 2 },
+          { "pertanyaan": "'___ flowers are beautiful.' (bunga-bunga yang jauh)", "pilihan": ["This", "That", "These", "Those"], "jawaban": 3 },
+          { "pertanyaan": "Apa perbedaan 'this' dan 'these'?", "pilihan": ["Tidak ada bedanya", "This = dekat, these = jauh", "This = tunggal, these = jamak", "This = jauh, these = dekat"], "jawaban": 2 },
+          { "pertanyaan": "'Are ___ your shoes?' (sepatu-sepatu yang jauh itu)", "pilihan": ["this", "that", "these", "those"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1dem-3",
+        "judul": "Kuis: This, That, These, Those",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'___ is my father.' (menunjuk orang yang ada di sampingmu)", "pilihan": ["Those", "These", "That", "This"], "jawaban": 3 },
+          { "pertanyaan": "'___ are my friends.' (menunjuk teman-teman yang jauh di sana)", "pilihan": ["This", "That", "These", "Those"], "jawaban": 3 },
+          { "pertanyaan": "Kata yang dipakai untuk SATU benda yang JAUH adalah...", "pilihan": ["This", "That", "These", "Those"], "jawaban": 1 },
+          { "pertanyaan": "'Is ___ a cat?' — benda tunggal yang jauh", "pilihan": ["this", "these", "that", "those"], "jawaban": 2 },
+          { "pertanyaan": "'___ book is interesting.' (buku yang sedang kamu pegang)", "pilihan": ["That", "Those", "These", "This"], "jawaban": 3 },
+          { "pertanyaan": "Kalimat yang SALAH adalah...", "pilihan": ["This is a dog.", "Those are cats.", "These is a book.", "That is a car."], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
     "id": "unit-5b",
     "judul": "There is / There are",
     "deskripsi": "Cara mengatakan ada sesuatu di suatu tempat — pola paling sering di bahasa Inggris A1",
@@ -2663,6 +2732,75 @@ export const learningPath = [
             ],
             "jawaban": 1
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-33",
+    "judul": "Have / Has (Kepemilikan)",
+    "deskripsi": "Belajar menyatakan kepemilikan menggunakan have dan has dalam kalimat positif, negatif, dan tanya",
+    "emoji": "🤲",
+    "warna": "from-indigo-400 to-blue-500",
+    "bg": "bg-indigo-50",
+    "border": "border-indigo-300",
+    "teks": "text-indigo-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1hv-1",
+        "judul": "Have & Has (Positif)",
+        "emoji": "✅",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I / You / We / They have", "arti": "Saya / Kamu / Kami / Mereka punya", "emoji": "🤲", "contoh": "I have a cat. / We have a dog." },
+          { "kata": "He / She / It has", "arti": "Dia (laki/perempuan/benda) punya", "emoji": "🤲", "contoh": "She has a red bike." },
+          { "kata": "I have a ...", "arti": "Saya punya sebuah ...", "emoji": "✋", "contoh": "I have a new phone." },
+          { "kata": "My father has a ...", "arti": "Ayah saya punya sebuah ...", "emoji": "👨", "contoh": "My father has a big car." },
+          { "kata": "She has ... hair", "arti": "Dia berambut ... (mendeskripsikan penampilan)", "emoji": "💇", "contoh": "She has long, black hair." },
+          { "kata": "We have a ... at home", "arti": "Kami punya ... di rumah", "emoji": "🏠", "contoh": "We have a big garden at home." }
+        ],
+        "soal": [
+          { "pertanyaan": "'She ___ a blue pencil case.' (punya)", "pilihan": ["have", "has", "is", "are"], "jawaban": 1 },
+          { "pertanyaan": "'I ___ two brothers.' (punya)", "pilihan": ["has", "is", "have", "am"], "jawaban": 2 },
+          { "pertanyaan": "Rumus yang benar untuk He/She/It adalah...", "pilihan": ["He have", "He has", "He is have", "He having"], "jawaban": 1 },
+          { "pertanyaan": "'We ___ a cat and a dog.' (punya)", "pilihan": ["has", "is", "are", "have"], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'My sister has long hair'?", "pilihan": ["Kakakku suka rambut panjang.", "Kakakku berambut panjang.", "Rambut panjang milik kakakku.", "Kakakku mau rambut panjang."], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "a1hv-2",
+        "judul": "Don't Have / Doesn't Have & Tanya",
+        "emoji": "❓",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I don't have", "arti": "Saya tidak punya", "emoji": "❌", "contoh": "I don't have a sister." },
+          { "kata": "She doesn't have", "arti": "Dia tidak punya", "emoji": "❌", "contoh": "She doesn't have a phone." },
+          { "kata": "Do you have ...?", "arti": "Apakah kamu punya ...?", "emoji": "❓", "contoh": "Do you have a pen? Yes, I do." },
+          { "kata": "Does he have ...?", "arti": "Apakah dia (laki) punya ...?", "emoji": "❓", "contoh": "Does he have a car? No, he doesn't." },
+          { "kata": "What do you have?", "arti": "Apa yang kamu punya?", "emoji": "❓", "contoh": "What do you have in your bag?" },
+          { "kata": "How many ... do you have?", "arti": "Berapa banyak ... yang kamu punya?", "emoji": "🔢", "contoh": "How many brothers do you have?" }
+        ],
+        "soal": [
+          { "pertanyaan": "'I ___ a bicycle.' (tidak punya)", "pilihan": ["doesn't have", "don't has", "don't have", "not have"], "jawaban": 2 },
+          { "pertanyaan": "'___ she have a dog?' (pertanyaan)", "pilihan": ["Do", "Have", "Has", "Does"], "jawaban": 3 },
+          { "pertanyaan": "'He ___ a car.' (tidak punya — He/She/It)", "pilihan": ["don't have", "doesn't have", "not has", "isn't have"], "jawaban": 1 },
+          { "pertanyaan": "'Do you have a pen?' — Jawaban negatif:", "pilihan": ["No, I haven't.", "No, I don't.", "No, I doesn't.", "No, I'm not."], "jawaban": 1 },
+          { "pertanyaan": "Kalimat tanya yang benar:", "pilihan": ["Have she a cat?", "Does she has a cat?", "Does she have a cat?", "Is she have a cat?"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1hv-3",
+        "judul": "Kuis: Have / Has",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'My mother ___ brown eyes.' (punya)", "pilihan": ["have", "is", "has", "are"], "jawaban": 2 },
+          { "pertanyaan": "'They ___ a big house in Jakarta.' (punya)", "pilihan": ["has", "is", "have", "are"], "jawaban": 2 },
+          { "pertanyaan": "'___ you have a ruler?' (pertanyaan)", "pilihan": ["Does", "Is", "Have", "Do"], "jawaban": 3 },
+          { "pertanyaan": "'She ___ a brother.' (tidak punya)", "pilihan": ["don't have", "isn't have", "doesn't have", "hasn't"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang BENAR adalah...", "pilihan": ["He have a dog.", "She have two cats.", "I has a pen.", "We have a garden."], "jawaban": 3 },
+          { "pertanyaan": "Apa arti 'Do you have a dictionary?'", "pilihan": ["Apakah kamu suka kamus?", "Di mana kamusmu?", "Apakah kamu punya kamus?", "Kamus itu milikmu?"], "jawaban": 2 }
         ]
       }
     ]
@@ -5250,6 +5388,75 @@ export const learningPath = [
     ]
   },
   {
+    "id": "unit-a1-34",
+    "judul": "Like / Don't Like (Suka & Tidak Suka)",
+    "deskripsi": "Belajar menyatakan kesukaan dan ketidaksukaan menggunakan like, love, don't like, dan hate",
+    "emoji": "❤️",
+    "warna": "from-pink-400 to-rose-500",
+    "bg": "bg-pink-50",
+    "border": "border-pink-300",
+    "teks": "text-pink-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1lk-1",
+        "judul": "Like & Don't Like",
+        "emoji": "👍",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I like + noun", "arti": "Saya suka + kata benda", "emoji": "😊", "contoh": "I like cats and dogs." },
+          { "kata": "I don't like + noun", "arti": "Saya tidak suka + kata benda", "emoji": "😒", "contoh": "I don't like spiders." },
+          { "kata": "She likes + noun", "arti": "Dia (perempuan) suka + kata benda", "emoji": "❤️", "contoh": "She likes chocolate and fruit." },
+          { "kata": "He doesn't like + noun", "arti": "Dia (laki-laki) tidak suka + kata benda", "emoji": "😤", "contoh": "He doesn't like vegetables." },
+          { "kata": "Do you like ...?", "arti": "Apakah kamu suka ...?", "emoji": "❓", "contoh": "Do you like football? Yes, I do!" },
+          { "kata": "What do you like?", "arti": "Apa yang kamu suka?", "emoji": "❓", "contoh": "What do you like? I like music." }
+        ],
+        "soal": [
+          { "pertanyaan": "'She ___ football.' (suka — She)", "pilihan": ["like", "likes", "is like", "liking"], "jawaban": 1 },
+          { "pertanyaan": "'I ___ snakes.' (tidak suka — I)", "pilihan": ["doesn't like", "not like", "don't likes", "don't like"], "jawaban": 3 },
+          { "pertanyaan": "'___ you like pizza?' (tanya)", "pilihan": ["Does", "Is", "Do", "Are"], "jawaban": 2 },
+          { "pertanyaan": "'He ___ vegetables.' (tidak suka — He)", "pilihan": ["don't like", "not like", "doesn't like", "isn't like"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar adalah...", "pilihan": ["I likes cats.", "She like dogs.", "He don't like fish.", "We like music."], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1lk-2",
+        "judul": "Love, Like, Don't Like, Hate",
+        "emoji": "💝",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "love", "arti": "sangat suka / mencintai", "emoji": "❤️", "contoh": "I love my family and friends." },
+          { "kata": "like", "arti": "suka", "emoji": "👍", "contoh": "I like bananas." },
+          { "kata": "don't like", "arti": "tidak suka", "emoji": "👎", "contoh": "I don't like noise." },
+          { "kata": "hate", "arti": "sangat tidak suka / membenci", "emoji": "😡", "contoh": "I hate rainy days." },
+          { "kata": "Urutan: love > like > don't like > hate", "arti": "Tingkatan kesukaan dari sangat suka hingga sangat tidak suka", "emoji": "📊", "contoh": "I love cats. I like dogs. I don't like snakes. I hate spiders." },
+          { "kata": "What about you? / And you?", "arti": "Bagaimana dengan kamu? / Dan kamu?", "emoji": "🔄", "contoh": "I like tea. What about you? — I love coffee!" }
+        ],
+        "soal": [
+          { "pertanyaan": "Tingkatan kesukaan yang paling tinggi adalah...", "pilihan": ["like", "don't like", "love", "hate"], "jawaban": 2 },
+          { "pertanyaan": "'She ___ spiders — they scare her!' (sangat tidak suka)", "pilihan": ["likes", "loves", "hates", "wants"], "jawaban": 2 },
+          { "pertanyaan": "Lawan kata dari 'love' adalah...", "pilihan": ["like", "don't like", "hate", "want"], "jawaban": 2 },
+          { "pertanyaan": "'I ___ my parents very much.' (sangat suka / mencintai)", "pilihan": ["like", "hate", "want", "love"], "jawaban": 3 },
+          { "pertanyaan": "Kalimat yang mengungkapkan ketidaksukaan adalah...", "pilihan": ["I love cats.", "I like dogs.", "I don't like hot weather.", "I want a cat."], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1lk-3",
+        "judul": "Kuis: Like / Don't Like",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'My sister ___ roses.' (suka — She)", "pilihan": ["like", "is like", "likes", "liking"], "jawaban": 2 },
+          { "pertanyaan": "'I ___ horror films.' (tidak suka — I)", "pilihan": ["doesn't like", "don't like", "not like", "hate likes"], "jawaban": 1 },
+          { "pertanyaan": "'___ she like swimming?' (tanya)", "pilihan": ["Do", "Is", "Are", "Does"], "jawaban": 3 },
+          { "pertanyaan": "Kata yang menunjukkan SANGAT TIDAK SUKA adalah...", "pilihan": ["like", "love", "hate", "want"], "jawaban": 2 },
+          { "pertanyaan": "'What ___ you like?' (pertanyaan umum)", "pilihan": ["does", "is", "do", "are"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang SALAH secara grammar:", "pilihan": ["I like music.", "She likes cats.", "He like football.", "They don't like noise."], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
     "id": "unit-a1-31",
     "judul": "Konjungsi Dasar",
     "deskripsi": "Belajar kata penghubung (and, but, or, because, so) untuk membuat kalimat yang lebih panjang dan alami",
@@ -5630,6 +5837,77 @@ export const learningPath = [
           { "pertanyaan": "'Is she your sister?' — Jawaban negatif:", "pilihan": ["No, she doesn't.", "No, she can't.", "No, she isn't.", "No, she won't."], "jawaban": 2 },
           { "pertanyaan": "'Does he speak English?' — Jawaban positif singkat:", "pilihan": ["Yes, he is.", "Yes, he does.", "Yes, he do.", "Yes, he can."], "jawaban": 1 },
           { "pertanyaan": "Jawaban yang SALAH untuk 'Are they happy?':", "pilihan": ["Yes, they are.", "No, they aren't.", "Yes, they do.", "No, they aren't."], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-35",
+    "judul": "Profesi Dasar",
+    "deskripsi": "Belajar nama-nama pekerjaan dan cara menjawab pertanyaan 'What do you do?'",
+    "emoji": "👨‍💼",
+    "warna": "from-blue-400 to-indigo-500",
+    "bg": "bg-blue-50",
+    "border": "border-blue-300",
+    "teks": "text-blue-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1pr-1",
+        "judul": "Nama-nama Profesi",
+        "emoji": "💼",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Doctor", "arti": "Dokter", "emoji": "👨‍⚕️", "contoh": "My uncle is a doctor at the hospital." },
+          { "kata": "Teacher", "arti": "Guru", "emoji": "👨‍🏫", "contoh": "My teacher is very kind and patient." },
+          { "kata": "Nurse", "arti": "Perawat", "emoji": "👩‍⚕️", "contoh": "The nurse helps the doctor at the hospital." },
+          { "kata": "Police officer", "arti": "Polisi", "emoji": "👮", "contoh": "The police officer helps people stay safe." },
+          { "kata": "Farmer", "arti": "Petani", "emoji": "👨‍🌾", "contoh": "The farmer grows rice and vegetables." },
+          { "kata": "Driver", "arti": "Pengemudi / Sopir", "emoji": "🚗", "contoh": "My father is a bus driver." },
+          { "kata": "Cook / Chef", "arti": "Juru masak / Koki", "emoji": "👨‍🍳", "contoh": "The chef cooks delicious food." },
+          { "kata": "Pilot", "arti": "Pilot", "emoji": "👨‍✈️", "contoh": "The pilot flies the plane safely." }
+        ],
+        "soal": [
+          { "pertanyaan": "Orang yang bekerja merawat pasien di rumah sakit adalah...", "pilihan": ["Teacher", "Pilot", "Nurse", "Farmer"], "jawaban": 2 },
+          { "pertanyaan": "Apa arti 'Farmer'?", "pilihan": ["Dokter", "Guru", "Pilot", "Petani"], "jawaban": 3 },
+          { "pertanyaan": "Orang yang mengemudikan pesawat disebut...", "pilihan": ["Driver", "Pilot", "Cook", "Police officer"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'Police officer'?", "pilihan": ["Dokter", "Guru", "Polisi", "Koki"], "jawaban": 2 },
+          { "pertanyaan": "'The ___ cooks delicious food.' (koki)", "pilihan": ["nurse", "teacher", "chef", "farmer"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1pr-2",
+        "judul": "Berbicara tentang Profesi",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "What do you do?", "arti": "Apa pekerjaanmu? / Apa profesimu?", "emoji": "❓", "contoh": "What do you do? — I am a teacher." },
+          { "kata": "I am a + profesi", "arti": "Saya adalah seorang ...", "emoji": "👤", "contoh": "I am a student." },
+          { "kata": "She is a + profesi", "arti": "Dia (perempuan) adalah seorang ...", "emoji": "👩", "contoh": "She is a doctor." },
+          { "kata": "He works as a ...", "arti": "Dia (laki) bekerja sebagai ...", "emoji": "👨", "contoh": "He works as a driver." },
+          { "kata": "What does your father do?", "arti": "Apa pekerjaan ayahmu?", "emoji": "❓", "contoh": "What does your father do? — He is an engineer." },
+          { "kata": "Where do you work?", "arti": "Di mana kamu bekerja?", "emoji": "❓", "contoh": "Where do you work? — I work at a hospital." }
+        ],
+        "soal": [
+          { "pertanyaan": "Cara bertanya tentang pekerjaan seseorang:", "pilihan": ["What are you?", "Where are you?", "What do you do?", "Who are you?"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang benar untuk menyatakan profesi:", "pilihan": ["I am teacher.", "I work teacher.", "I am a teacher.", "I do a teacher."], "jawaban": 2 },
+          { "pertanyaan": "'What ___ your mother do?' (pekerjaan ibu — She)", "pilihan": ["do", "is", "are", "does"], "jawaban": 3 },
+          { "pertanyaan": "'She is ___ nurse.' (artikel yang benar)", "pilihan": ["a", "the", "an", "—"], "jawaban": 2 },
+          { "pertanyaan": "'He ___ as a police officer.' (bekerja sebagai)", "pilihan": ["is", "does", "works", "has"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1pr-3",
+        "judul": "Kuis: Profesi Dasar",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Apa arti 'Doctor'?", "pilihan": ["Guru", "Dokter", "Perawat", "Pilot"], "jawaban": 1 },
+          { "pertanyaan": "'What do you do?' — Jawaban yang benar:", "pilihan": ["I do teacher.", "I am teacher.", "I am a teacher.", "I work teacher."], "jawaban": 2 },
+          { "pertanyaan": "'She is ___ engineer.' (artikel yang benar)", "pilihan": ["a", "an", "the", "—"], "jawaban": 1 },
+          { "pertanyaan": "Orang yang menanam padi dan sayuran adalah...", "pilihan": ["Chef", "Pilot", "Driver", "Farmer"], "jawaban": 3 },
+          { "pertanyaan": "'What does he ___?' (bertanya pekerjaan)", "pilihan": ["is", "do", "work", "have"], "jawaban": 1 },
+          { "pertanyaan": "'My sister ___ as a nurse.' (bekerja sebagai)", "pilihan": ["is", "has", "works", "does"], "jawaban": 2 }
         ]
       }
     ]
@@ -6980,6 +7258,76 @@ export const learningPath = [
             ],
             "jawaban": 2
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-a1-36",
+    "judul": "Preposisi Waktu: in, on, at",
+    "deskripsi": "Belajar menggunakan in, on, dan at untuk menyatakan waktu, hari, bulan, dan tahun",
+    "emoji": "⏰",
+    "warna": "from-slate-400 to-gray-600",
+    "bg": "bg-slate-50",
+    "border": "border-slate-300",
+    "teks": "text-slate-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1pw-1",
+        "judul": "In, On, At — Aturan Dasar",
+        "emoji": "📅",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "in + bulan", "arti": "pada bulan ...", "emoji": "📆", "contoh": "My birthday is in January." },
+          { "kata": "in + tahun", "arti": "pada tahun ...", "emoji": "📆", "contoh": "I was born in 2005." },
+          { "kata": "in + bagian hari", "arti": "pada ... (pagi/siang/sore)", "emoji": "🌅", "contoh": "I study in the morning." },
+          { "kata": "on + hari", "arti": "pada hari ...", "emoji": "📅", "contoh": "We play football on Saturday." },
+          { "kata": "on + tanggal", "arti": "pada tanggal ...", "emoji": "📅", "contoh": "The exam is on 15 March." },
+          { "kata": "at + jam", "arti": "pada pukul ...", "emoji": "🕐", "contoh": "School starts at 7 o'clock." },
+          { "kata": "at night", "arti": "pada malam hari (pengecualian!)", "emoji": "🌙", "contoh": "I sleep at night. (bukan 'in the night')" }
+        ],
+        "soal": [
+          { "pertanyaan": "'My birthday is ___ July.' (bulan)", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 },
+          { "pertanyaan": "'We have class ___ Monday.' (hari)", "pilihan": ["in", "at", "by", "on"], "jawaban": 3 },
+          { "pertanyaan": "'School starts ___ 7 o'clock.' (jam)", "pilihan": ["in", "on", "at", "by"], "jawaban": 2 },
+          { "pertanyaan": "'I read books ___ the evening.' (bagian hari)", "pilihan": ["on", "at", "by", "in"], "jawaban": 3 },
+          { "pertanyaan": "'The test is ___ 20 April.' (tanggal)", "pilihan": ["in", "at", "on", "by"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1pw-2",
+        "judul": "Latihan Preposisi Waktu",
+        "emoji": "✏️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "in the morning", "arti": "di pagi hari", "emoji": "🌅", "contoh": "I exercise in the morning." },
+          { "kata": "in the afternoon", "arti": "di siang hari", "emoji": "☀️", "contoh": "We have lunch in the afternoon." },
+          { "kata": "in the evening", "arti": "di sore hari", "emoji": "🌆", "contoh": "She reads in the evening." },
+          { "kata": "at night", "arti": "di malam hari", "emoji": "🌙", "contoh": "I sleep at night." },
+          { "kata": "on weekdays", "arti": "pada hari kerja (Senin–Jumat)", "emoji": "📅", "contoh": "I go to school on weekdays." },
+          { "kata": "on weekends", "arti": "pada akhir pekan (Sabtu–Minggu)", "emoji": "🎉", "contoh": "We relax on weekends." }
+        ],
+        "soal": [
+          { "pertanyaan": "'I have breakfast ___ the morning.' (pagi)", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 },
+          { "pertanyaan": "'She sleeps ___ night.' (malam — pengecualian!)", "pilihan": ["in", "on", "by", "at"], "jawaban": 3 },
+          { "pertanyaan": "'We play football ___ weekends.' (akhir pekan)", "pilihan": ["in", "at", "on", "by"], "jawaban": 2 },
+          { "pertanyaan": "'I was born ___ 2008.' (tahun)", "pilihan": ["on", "at", "by", "in"], "jawaban": 3 },
+          { "pertanyaan": "Preposisi waktu yang SALAH:", "pilihan": ["at 6 o'clock", "on Monday", "in January", "on the morning"], "jawaban": 3 }
+        ]
+      },
+      {
+        "id": "a1pw-3",
+        "judul": "Kuis: Preposisi Waktu",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'My sister's birthday is ___ March.'", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 },
+          { "pertanyaan": "'The meeting is ___ Tuesday.'", "pilihan": ["in", "at", "on", "by"], "jawaban": 2 },
+          { "pertanyaan": "'Dinner is ready ___ 6 o'clock.'", "pilihan": ["in", "on", "by", "at"], "jawaban": 3 },
+          { "pertanyaan": "'I do homework ___ the afternoon.'", "pilihan": ["on", "at", "in", "by"], "jawaban": 2 },
+          { "pertanyaan": "'She was born ___ 10 May.'", "pilihan": ["in", "at", "on", "by"], "jawaban": 2 },
+          { "pertanyaan": "Mana yang BENAR?", "pilihan": ["I sleep in night.", "I sleep on night.", "I sleep at night.", "I sleep by night."], "jawaban": 2 }
         ]
       }
     ]
