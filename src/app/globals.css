@@ -1,66 +1,192 @@
+/* ─── FONTS ─────────────────────────────────────────────────────────────────── */
+/* @import harus di baris paling atas sebelum @tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  transition: background 0.3s, color 0.3s;
+/* ─── DESIGN TOKENS: LIGHT MODE ─────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:    #FAF7F2;   /* warm cream — canvas utama halaman */
+  --bg-paper:   #FFFEF9;   /* warm white — kartu, modal */
+  --bg-subtle:  #F2EEE7;   /* sedikit lebih gelap — section bg */
+
+  /* Brand: Forest Green */
+  --brand:       #2D5A3D;
+  --brand-hover: #3D7A52;
+  --brand-light: #E8F0EB;
+
+  /* Gold accent */
+  --gold:        #C9933A;
+  --gold-light:  #FDF3E3;
+
+  /* Level colors — sesuai CEFR */
+  --a1:          #059669;  /* emerald-600 */
+  --a1-light:    #D1FAE5;
+  --a2:          #1D4ED8;  /* royal blue */
+  --a2-light:    #DBEAFE;
+  --b1:          #D97706;  /* amber */
+  --b1-light:    #FEF3C7;
+
+  /* Text */
+  --text-primary:   #1C1A17;
+  --text-secondary: #5C5346;
+  --text-muted:     #9C8E7E;
+  --text-inverse:   #FFFEF9;
+
+  /* Borders */
+  --border:         #E8E2D9;
+  --border-strong:  #C4BAB0;
+
+  /* Shadows */
+  --shadow-card:       0 1px 3px rgba(28,26,23,.06), 0 4px 16px rgba(28,26,23,.05);
+  --shadow-card-hover: 0 4px 12px rgba(28,26,23,.10), 0 16px 40px rgba(28,26,23,.08);
+  --shadow-btn:        0 2px 8px rgba(45,90,61,.30);
 }
 
-/* =====================
-   DARK MODE OVERRIDES
-   ===================== */
+/* ─── DESIGN TOKENS: DARK MODE ───────────────────────────────────────────────── */
+/* DarkModeToggle menambahkan class 'dark' pada <html> — tidak perlu ubah logika */
+html.dark {
+  /* Backgrounds — warm dark brown, BUKAN cold slate */
+  --bg-base:    #18160F;
+  --bg-paper:   #1E1B13;
+  --bg-subtle:  #252219;
 
-/* Background halaman */
-html.dark body {
-  background: #0f172a;
-  color: #f1f5f9;
+  /* Brand */
+  --brand:       #4A9B67;
+  --brand-hover: #5AAF78;
+  --brand-light: #1A2E21;
+
+  /* Gold */
+  --gold:        #E2A84B;
+  --gold-light:  #2A2010;
+
+  /* Levels — lebih terang agar terlihat di bg gelap */
+  --a1:          #34D399;
+  --a1-light:    #063320;
+  --a2:          #60A5FA;
+  --a2-light:    #0D1F44;
+  --b1:          #FBBF24;
+  --b1-light:    #2D2005;
+
+  /* Text */
+  --text-primary:   #F5F0E8;
+  --text-secondary: #B8AD9E;
+  --text-muted:     #7A7067;
+  --text-inverse:   #1C1A17;
+
+  /* Borders */
+  --border:         #2E2B22;
+  --border-strong:  #3D3A30;
+
+  /* Shadows */
+  --shadow-card:       0 1px 3px rgba(0,0,0,.30), 0 4px 16px rgba(0,0,0,.20);
+  --shadow-card-hover: 0 4px 12px rgba(0,0,0,.40), 0 16px 40px rgba(0,0,0,.30);
+  --shadow-btn:        0 2px 8px rgba(74,155,103,.40);
 }
 
-/* Semua background putih → abu gelap */
-html.dark .bg-white {
-  background-color: #1e293b !important;
+/* ─── BASE ELEMENTS ──────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Serif otomatis untuk semua heading */
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    color: var(--text-primary);
+  }
+
+  /* Scrollbar — warm & subtle */
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { background: var(--bg-subtle); }
+  ::-webkit-scrollbar-thumb  { background: var(--border-strong); border-radius: 3px; }
 }
 
-/* Gradient halaman utama */
-html.dark .bg-gradient-to-br {
-  --tw-gradient-from: #0f172a;
-  --tw-gradient-to: #1e3a5f;
+/* ─── UTILITY CLASSES ────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Typography helpers */
+  .font-serif { font-family: 'Playfair Display', Georgia, serif !important; }
+  .font-sans  { font-family: 'Inter', system-ui, sans-serif  !important; }
+
+  /* ── Kartu standar ─────────────────────────────────────────── */
+  .card-de {
+    background-color: var(--bg-paper);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card-de:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* ── Tombol utama ──────────────────────────────────────────── */
+  .btn-primary {
+    background-color: var(--brand);
+    color: var(--text-inverse);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: var(--shadow-btn);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    padding: 0.625rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  .btn-primary:hover { background-color: var(--brand-hover); }
+
+  /* ── Pill level ────────────────────────────────────────────── */
+  .level-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .level-pill:hover { opacity: 0.8; }
+
+  /* ── Badge "Baru" / gold ───────────────────────────────────── */
+  .badge-gold {
+    background-color: var(--gold-light);
+    color: var(--gold);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    letter-spacing: 0.02em;
+  }
 }
 
-/* Card, header, modal */
-html.dark header {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-}
+/* ─── LEGACY DARK MODE ───────────────────────────────────────────────────────── */
+/* Hanya untuk halaman yang BELUM didesain ulang.
+   Akan dihapus satu per satu saat setiap halaman diperbarui. */
 
-/* Text warna gelap → terang */
-html.dark .text-gray-800 { color: #e2e8f0 !important; }
-html.dark .text-gray-700 { color: #cbd5e1 !important; }
-html.dark .text-gray-600 { color: #94a3b8 !important; }
-html.dark .text-gray-500 { color: #64748b !important; }
-html.dark .text-gray-400 { color: #475569 !important; }
-html.dark .text-gray-300 { color: #334155 !important; }
-
-/* Border */
-html.dark .border-blue-100,
-html.dark .border-blue-200,
-html.dark .border-indigo-200,
-html.dark .border-green-200,
-html.dark .border-pink-100,
-html.dark .border-purple-100,
-html.dark .border-orange-100,
-html.dark .border-gray-100,
-html.dark .border-gray-200,
-html.dark .border-teal-200,
-html.dark .border-violet-200,
-html.dark .border-yellow-200 {
-  border-color: #334155 !important;
-}
-
-/* Background terang → gelap */
+html.dark .bg-white          { background-color: #1E1B13 !important; }
 html.dark .bg-gray-50,
-html.dark .bg-gray-100,
+html.dark .bg-gray-100       { background-color: #252219 !important; }
 html.dark .bg-indigo-50,
 html.dark .bg-blue-50,
 html.dark .bg-green-50,
@@ -69,61 +195,70 @@ html.dark .bg-pink-50,
 html.dark .bg-orange-50,
 html.dark .bg-teal-50,
 html.dark .bg-violet-50,
-html.dark .bg-yellow-50 {
-  background-color: #0f172a !important;
-}
+html.dark .bg-yellow-50,
+html.dark .bg-sky-50,
+html.dark .bg-amber-50,
+html.dark .bg-rose-50,
+html.dark .bg-lime-50,
+html.dark .bg-fuchsia-50,
+html.dark .bg-cyan-50,
+html.dark .bg-emerald-50,
+html.dark .bg-slate-50       { background-color: #1E1B13 !important; }
 
-/* Input fields */
+html.dark header              { background-color: #1E1B13 !important; border-color: #2E2B22 !important; }
+
+html.dark .text-gray-800     { color: #F5F0E8 !important; }
+html.dark .text-gray-700     { color: #D6CFC5 !important; }
+html.dark .text-gray-600     { color: #B8AD9E !important; }
+html.dark .text-gray-500     { color: #7A7067 !important; }
+html.dark .text-gray-400     { color: #5A5449 !important; }
+html.dark .text-gray-300     { color: #3D3A30 !important; }
+
+html.dark .border-blue-100,
+html.dark .border-blue-200,
+html.dark .border-indigo-200,
+html.dark .border-green-200,
+html.dark .border-pink-100,
+html.dark .border-purple-100,
+html.dark .border-orange-100,
+html.dark .border-orange-200,
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-teal-200,
+html.dark .border-violet-200,
+html.dark .border-violet-100,
+html.dark .border-yellow-200,
+html.dark .border-yellow-100,
+html.dark .border-sky-200,
+html.dark .border-amber-200,
+html.dark .border-rose-200,
+html.dark .border-lime-200,
+html.dark .border-fuchsia-200,
+html.dark .border-cyan-200,
+html.dark .border-emerald-200,
+html.dark .border-slate-200  { border-color: #2E2B22 !important; }
+
 html.dark input[type="text"] {
-  background-color: #1e293b !important;
-  color: #f1f5f9 !important;
-  border-color: #334155 !important;
+  background-color: #1E1B13 !important;
+  color: #F5F0E8 !important;
+  border-color: #2E2B22 !important;
 }
-html.dark input::placeholder {
-  color: #475569 !important;
-}
+html.dark input::placeholder  { color: #5A5449 !important; }
 
-/* Shadow lembut di dark mode */
 html.dark .shadow-sm,
 html.dark .shadow-md,
 html.dark .shadow-lg,
-html.dark .shadow-xl {
-  --tw-shadow-color: rgba(0,0,0,0.5);
-}
+html.dark .shadow-xl          { --tw-shadow-color: rgba(0,0,0,.5); }
 
-/* Tombol filter kategori */
-html.dark .bg-white.border {
-  background-color: #1e293b !important;
-}
+html.dark .bg-white.rounded-3xl { background-color: #1E1B13 !important; }
+html.dark .bg-gray-100.rounded-full { background-color: #2E2B22 !important; }
 
-/* Teks pada badge/pill */
-html.dark .bg-indigo-100 { background-color: #1e3a5f !important; }
-html.dark .bg-pink-50    { background-color: #2d1b2e !important; }
-html.dark .bg-green-100  { background-color: #052e16 !important; }
-html.dark .bg-red-50     { background-color: #2d0c0c !important; }
-
-/* Quiz answer buttons */
 html.dark .border-gray-200.bg-white {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-  color: #e2e8f0 !important;
+  background-color: #1E1B13 !important;
+  border-color: #2E2B22 !important;
+  color: #F5F0E8 !important;
 }
 
-/* Progress bars background */
-html.dark .bg-gray-100.rounded-full {
-  background-color: #334155 !important;
-}
-
-/* Modal overlay */
-html.dark .bg-white.rounded-3xl {
-  background-color: #1e293b !important;
-}
-
-/* Scrollbar di dark mode */
-html.dark ::-webkit-scrollbar-track {
-  background: #1e293b;
-}
-html.dark ::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 4px;
-}
+html.dark .bg-indigo-100 { background-color: #0D1F44 !important; }
+html.dark .bg-green-100  { background-color: #063320 !important; }
+html.dark .bg-red-50     { background-color: #2D0C0C !important; }

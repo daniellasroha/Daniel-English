@@ -9,15 +9,15 @@ import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";
 import DarkModeToggle from "@/components/DarkModeToggle";
 
+// Warna aksen per fitur — semantik & konsisten, bukan acak
 const menuItems = [
   {
     href: "/belajar",
     emoji: "🗺️",
     title: "Belajar Terstruktur",
     description: "Alur belajar bertahap seperti Busuu — dari salam pertama hingga percakapan sehari-hari",
-    color: "from-indigo-400 to-purple-600",
-    bgLight: "bg-indigo-50",
-    border: "border-indigo-200",
+    accentColor: "#2D5A3D",
+    iconBg: "#E8F0EB",
     badge: "✨ Baru",
   },
   {
@@ -25,92 +25,95 @@ const menuItems = [
     emoji: "📚",
     title: "Vocabulary",
     description: "Belajar kosakata baru dengan gambar dan contoh kalimat",
-    color: "from-blue-400 to-blue-600",
-    bgLight: "bg-blue-50",
-    border: "border-blue-200",
+    accentColor: "#1D4ED8",
+    iconBg: "#DBEAFE",
   },
   {
     href: "/grammar",
     emoji: "✏️",
     title: "Grammar",
     description: "Pelajari tata bahasa Inggris dengan penjelasan mudah",
-    color: "from-green-400 to-green-600",
-    bgLight: "bg-green-50",
-    border: "border-green-200",
+    accentColor: "#059669",
+    iconBg: "#D1FAE5",
   },
   {
     href: "/quiz",
     emoji: "🧠",
     title: "Quiz",
     description: "Uji kemampuanmu dengan soal-soal interaktif",
-    color: "from-purple-400 to-purple-600",
-    bgLight: "bg-purple-50",
-    border: "border-purple-200",
+    accentColor: "#7C3AED",
+    iconBg: "#EDE9FE",
   },
   {
     href: "/listening",
     emoji: "🎧",
     title: "Listening",
     description: "Latih kemampuan mendengar bahasa Inggris",
-    color: "from-orange-400 to-orange-600",
-    bgLight: "bg-orange-50",
-    border: "border-orange-200",
+    accentColor: "#D97706",
+    iconBg: "#FEF3C7",
   },
   {
     href: "/progress",
     emoji: "📊",
     title: "Progress",
     description: "Lihat perkembangan belajarmu dari waktu ke waktu",
-    color: "from-pink-400 to-pink-600",
-    bgLight: "bg-pink-50",
-    border: "border-pink-200",
+    accentColor: "#BE185D",
+    iconBg: "#FCE7F3",
   },
   {
     href: "/daily",
     emoji: "⚡",
     title: "Daily Challenge",
     description: "1 soal spesial setiap hari — bangun streak kamu!",
-    color: "from-violet-400 to-purple-600",
-    bgLight: "bg-violet-50",
-    border: "border-violet-200",
+    accentColor: "#C9933A",
+    iconBg: "#FDF3E3",
+    badge: "🔥 Harian",
   },
   {
     href: "/phrasebook",
     emoji: "💬",
     title: "Phrasebook",
     description: "Kalimat percakapan sehari-hari siap pakai dengan audio",
-    color: "from-sky-400 to-blue-600",
-    bgLight: "bg-sky-50",
-    border: "border-sky-200",
+    accentColor: "#0369A1",
+    iconBg: "#E0F2FE",
   },
   {
     href: "/leaderboard",
     emoji: "🏆",
     title: "Leaderboard",
     description: "Lihat ranking kamu dibanding semua pelajar lainnya",
-    color: "from-yellow-400 to-orange-500",
-    bgLight: "bg-yellow-50",
-    border: "border-yellow-200",
+    accentColor: "#C9933A",
+    iconBg: "#FDF3E3",
     badge: "🔥 Baru",
   },
 ];
 
+// Mapping level → CSS vars untuk pill di header & hero
+function getLevelPillStyle(level) {
+  const map = {
+    a1: { background: "var(--a1-light)", color: "var(--a1)" },
+    a2: { background: "var(--a2-light)", color: "var(--a2)" },
+    b1: { background: "var(--b1-light)", color: "var(--b1)" },
+  };
+  return map[level] ?? { background: "var(--bg-subtle)", color: "var(--text-muted)" };
+}
+
 export default function Home() {
+  // ─── Semua logika tetap sama persis ────────────────────────────────────────
   const { username, saveUsername, loaded: loadedUser } = useUsername();
   const { level, setLevel, config, loaded: loadedLevel } = useLevel();
   const [gantiLevel, setGantiLevel] = useState(false);
 
-  // Step 1: isi nama dulu
-  const showNameModal = loadedUser && !username;
-  // Step 2: setelah nama terisi, pilih level
+  const showNameModal  = loadedUser && !username;
   const showLevelModal = loadedUser && loadedLevel && username && !level;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
+    <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
+
       {/* Modal nama */}
       {showNameModal && <UsernameModal onSave={saveUsername} />}
 
-      {/* Modal pilih level (pertama kali / ganti level) */}
+      {/* Modal pilih level */}
       {(showLevelModal || gantiLevel) && (
         <LevelModal
           onSave={(lvl) => { setLevel(lvl); setGantiLevel(false); }}
@@ -119,23 +122,45 @@ export default function Home() {
         />
       )}
 
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      {/* ─── Header ────────────────────────────────────────────────────────── */}
+      <header
+        className="sticky top-0 z-10"
+        style={{
+          backgroundColor: "var(--bg-paper)",
+          borderBottom: "1px solid var(--border)",
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-5 py-4 flex items-center justify-between">
+
+          {/* Logo & nama brand */}
           <div className="flex items-center gap-3">
-            <span className="text-3xl">🇬🇧</span>
+            <span className="text-2xl select-none">🇬🇧</span>
             <div>
-              <h1 className="text-xl font-bold text-indigo-700">Daniel English</h1>
-              <p className="text-xs text-gray-400">Belajar bahasa Inggris mudah & menyenangkan</p>
+              <h1
+                className="font-serif text-xl font-semibold leading-tight"
+                style={{ color: "var(--brand)" }}
+              >
+                Daniel English
+              </h1>
+              <p
+                className="font-sans text-xs"
+                style={{ color: "var(--text-muted)" }}
+              >
+                Belajar bahasa Inggris mudah & menyenangkan
+              </p>
             </div>
           </div>
+
+          {/* Tombol level + dark mode toggle */}
           <div className="flex items-center gap-2">
-            {/* Tombol level — klik untuk ganti */}
             <button
               onClick={() => setGantiLevel(true)}
-              className={`flex items-center gap-1 text-sm font-semibold px-3 py-1 rounded-full transition hover:opacity-80 ${
-                config ? `${config.warnaLight} ${config.teks} border ${config.border}` : "bg-gray-100 text-gray-500"
-              }`}
+              className="level-pill"
+              style={
+                level
+                  ? getLevelPillStyle(level)
+                  : { background: "var(--bg-subtle)", color: "var(--text-muted)" }
+              }
               title="Klik untuk ganti level"
             >
               {config ? `${config.emoji} ${config.label}` : "Pilih Level"}
@@ -145,49 +170,106 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero section */}
-      <section className="max-w-4xl mx-auto px-4 py-10 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-3">
-          {username ? `Halo, ${username}! 👋` : "Halo, Selamat Datang! 👋"}
+      {/* ─── Hero ──────────────────────────────────────────────────────────── */}
+      <section className="max-w-4xl mx-auto px-5 pt-12 pb-8 text-center">
+        <h2
+          className="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-3"
+          style={{ color: "var(--text-primary)" }}
+        >
+          {username ? (
+            <>
+              Halo, <em>{username}</em>! 👋
+            </>
+          ) : (
+            "Halo, Selamat Datang! 👋"
+          )}
         </h2>
+
+        {/* Pill level aktif */}
         {config && (
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-4 ${config.warnaLight} ${config.teks} border ${config.border}`}>
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-sans text-sm font-semibold mb-5"
+            style={getLevelPillStyle(level)}
+          >
             {config.emoji} Level {config.label} — {config.deskripsi.split(",")[0]}
           </div>
         )}
-        <p className="text-lg text-gray-500 max-w-xl mx-auto">
-          Pilih kategori di bawah untuk mulai belajar. Konsisten setiap hari
-          adalah kunci sukses berbahasa Inggris!
+
+        <p
+          className="font-sans text-base max-w-md mx-auto leading-relaxed"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          Pilih modul di bawah untuk mulai belajar. Konsisten setiap hari
+          adalah kunci sukses berbahasa Inggris.
         </p>
       </section>
 
-      {/* Kartu menu */}
-      <section className="max-w-4xl mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* ─── Grid kartu menu ───────────────────────────────────────────────── */}
+      <section className="max-w-4xl mx-auto px-5 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {menuItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <div className={`rounded-2xl border ${item.border} ${item.bgLight} p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer h-full relative`}>
-                {item.badge && (
-                  <span className="absolute top-3 right-3 bg-violet-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                    {item.badge}
-                  </span>
-                )}
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-3xl mb-4 shadow-md`}>
-                  {item.emoji}
+            <Link key={item.href} href={item.href} className="group">
+              <div className="card-de relative h-full overflow-hidden">
+
+                {/* Strip aksen kiri — warna semantik per fitur */}
+                <div
+                  className="absolute inset-y-0 left-0 w-[3px]"
+                  style={{ backgroundColor: item.accentColor }}
+                />
+
+                {/* Konten kartu */}
+                <div className="pl-6 pr-5 py-6">
+
+                  {/* Badge "Baru" / "Harian" */}
+                  {item.badge && (
+                    <span className="badge-gold absolute top-4 right-4">
+                      {item.badge}
+                    </span>
+                  )}
+
+                  {/* Ikon — lingkaran hangat bertekstur, bukan gradient box */}
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl mb-4 flex-shrink-0"
+                    style={{
+                      backgroundColor: item.iconBg,
+                      border: "1px solid var(--border)",
+                    }}
+                  >
+                    {item.emoji}
+                  </div>
+
+                  {/* Judul — Playfair Display */}
+                  <h3
+                    className="font-serif text-[1.0625rem] font-semibold mb-1.5 leading-snug"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* Deskripsi */}
+                  <p
+                    className="font-sans text-sm leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="text-center py-6 text-gray-400 text-sm space-y-1">
-        <p>💪 Belajar 15 menit sehari lebih baik dari 2 jam sebulan sekali!</p>
-        <p className="text-gray-300 text-xs">
-          Made with ❤️ by <span className="font-semibold text-indigo-400">Daniel Lasroha</span>
+      {/* ─── Footer ────────────────────────────────────────────────────────── */}
+      <footer className="text-center pb-10 space-y-1.5">
+        <p className="font-sans text-sm" style={{ color: "var(--text-muted)" }}>
+          💪 Belajar 15 menit sehari lebih baik dari 2 jam sebulan sekali!
+        </p>
+        <p className="font-sans text-xs" style={{ color: "var(--border-strong)" }}>
+          Made with ❤️ by{" "}
+          <span className="font-semibold" style={{ color: "var(--brand)" }}>
+            Daniel Lasroha
+          </span>
         </p>
       </footer>
     </main>
