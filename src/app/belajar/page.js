@@ -6,6 +6,8 @@ import Link from "next/link";
 import { learningPath as unitBelajar } from "@/data/learningPath";
 import { useLearning } from "@/hooks/useLearning";
 import { useLevel } from "@/hooks/useLevel";
+import { useSRS } from "@/hooks/useSRS";
+import { speak } from "@/lib/speech";
 
 // ─── SOUND EFFECTS (Web Audio API, no external files) ─────────────────────────
 // Logika audio tidak diubah sama sekali
@@ -46,11 +48,27 @@ function playSalah() {
 
 // ─── KOMPONEN: Kartu Vocab (flashcard) ────────────────────────────────────────
 // meta.border & meta.bg dipertahankan — warna identitas per unit dari data
-function VocabCard({ kartu, meta, index, total }) {
+// registerCard & lessonId dipakai untuk SRS
+function VocabCard({ kartu, meta, index, total, lessonId, registerCard }) {
   const [terbuka, setTerbuka] = useState(false);
+
+  function handleFlip() {
+    if (!terbuka && registerCard && lessonId) {
+      // Daftarkan ke SRS saat kartu pertama kali dibuka
+      registerCard(`belajar-${lessonId}-${index}`, {
+        type       : "belajar",
+        english    : kartu.kata,
+        indonesian : kartu.arti,
+        emoji      : kartu.emoji,
+        contoh     : kartu.contoh,
+      });
+    }
+    setTerbuka(!terbuka);
+  }
+
   return (
     <div
-      onClick={() => setTerbuka(!terbuka)}
+      onClick={handleFlip}
       className={`rounded-2xl border-2 ${meta.border} ${meta.bg} cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 p-5`}
     >
       <div className="flex items-center gap-4 mb-3">
@@ -61,9 +79,17 @@ function VocabCard({ kartu, meta, index, total }) {
           <p className="font-sans text-xs mb-0.5" style={{ color: "var(--text-muted)" }}>
             {index + 1} / {total}
           </p>
-          <h3 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
-            {kartu.kata}
-          </h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
+              {kartu.kata}
+            </h3>
+            {/* Tombol TTS — stopPropagation agar tidak trigger flip */}
+            <button
+              onClick={(e) => { e.stopPropagation(); speak(kartu.kata); }}
+              className="text-lg opacity-50 hover:opacity-100 transition-opacity flex-shrink-0"
+              title="Dengarkan pengucapan"
+            >🔊</button>
+          </div>
           {!terbuka && (
             <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
               Klik untuk lihat arti
@@ -247,6 +273,7 @@ function TampilanPelajaran({
   onNextLesson,
   nextUnit,
   onNextUnit,
+  registerCard,  // dari useSRS — untuk SRS registration
 }) {
   const meta = unit;
   const [fase, setFase] = useState("vocab");
@@ -417,7 +444,14 @@ function TampilanPelajaran({
             </p>
           </div>
 
-          <VocabCard kartu={kartu} meta={meta} index={vocabIdx} total={pelajaran.kartu.length} />
+          <VocabCard
+            kartu={kartu}
+            meta={meta}
+            index={vocabIdx}
+            total={pelajaran.kartu.length}
+            lessonId={pelajaran.id}
+            registerCard={registerCard}
+          />
 
           <div className="flex gap-3 mt-6">
             {vocabIdx > 0 && (
@@ -529,6 +563,7 @@ export default function BelajarPage() {
 
   const { isLessonDone, isLessonUnlocked, getUnitProgress, completeLesson, loaded } = useLearning();
   const { config, level } = useLevel();
+  const { registerCard } = useSRS();
   const userLevel = level || "a1";
 
   const unitsTampil = userLevel === "a1"
@@ -563,6 +598,7 @@ export default function BelajarPage() {
         onNextLesson={handleNextLesson}
         nextUnit={nextUnit}
         onNextUnit={handleNextUnit}
+        registerCard={registerCard}
       />
     );
   }

@@ -7,6 +7,8 @@ import { kosakata } from "@/data/vocabulary";
 import { useProgress } from "@/hooks/useProgress";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useLevel } from "@/hooks/useLevel";
+import { useSRS } from "@/hooks/useSRS";
+import { speak } from "@/lib/speech";
 
 // Metadata visual per kategori
 const kategoriMeta = {
@@ -30,6 +32,7 @@ export default function VocabularyPage() {
   const { recordVocab } = useProgress();
   const { isFavorite, toggleFavorite } = useFavorites();
   const { config } = useLevel();
+  const { registerCard } = useSRS();
 
   // Filter kata berdasarkan level
   const kosakataTersedia = config
@@ -56,9 +59,21 @@ export default function VocabularyPage() {
     ? kosakataTersedia.filter((k) => k.kategori === kategoriDipilih)
     : [];
 
-  function toggleKartu(id) {
+  function toggleKartu(kata) {
+    const id = kata.id;
     setKartuTerbuka((prev) => ({ ...prev, [id]: !prev[id] }));
-    if (!kartuTerbuka[id]) recordVocab(id);
+    if (!kartuTerbuka[id]) {
+      recordVocab(id);
+      // Daftarkan ke SRS + ucapkan kata saat pertama kali dibuka
+      registerCard(`vocab-${id}`, {
+        type       : "vocab",
+        english    : kata.english,
+        indonesian : kata.indonesian,
+        emoji      : kata.emoji,
+        contoh     : kata.contoh,
+      });
+      speak(kata.english);
+    }
   }
 
   const meta = kategoriDipilih ? kategoriMeta[kategoriDipilih] : null;
@@ -119,13 +134,21 @@ export default function VocabularyPage() {
                 </button>
 
                 {/* Kartu — klik untuk flip */}
-                <div onClick={() => toggleKartu(kata.id)} className="cursor-pointer p-4">
+                <div onClick={() => toggleKartu(kata)} className="cursor-pointer p-4">
                   <div className="flex items-center gap-3 mb-3 pr-6">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-2xl shadow flex-shrink-0`}>
                       {kata.emoji}
                     </div>
-                    <div>
-                      <h2 className="text-lg font-bold text-gray-800">{kata.english}</h2>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <h2 className="text-lg font-bold text-gray-800">{kata.english}</h2>
+                        {/* Tombol TTS — stopPropagation agar tidak trigger flip */}
+                        <button
+                          onClick={(e) => { e.stopPropagation(); speak(kata.english); }}
+                          className="text-base opacity-40 hover:opacity-90 transition-opacity flex-shrink-0"
+                          title="Dengarkan pengucapan"
+                        >🔊</button>
+                      </div>
                       {!kartuTerbuka[kata.id] && (
                         <p className="text-gray-400 text-xs">Klik untuk lihat arti →</p>
                       )}

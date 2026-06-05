@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
 import { useLevel, LEVEL_CONFIG } from "@/hooks/useLevel";
+import { useSRS } from "@/hooks/useSRS";
 import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";
 import DarkModeToggle from "@/components/DarkModeToggle";
@@ -86,6 +87,14 @@ const menuItems = [
     iconBg: "#FDF3E3",
     badge: "🔥 Baru",
   },
+  {
+    href: "/review",
+    emoji: "🔄",
+    title: "Review Harian",
+    description: "Ulangi kata-kata yang sudah dipelajari sebelum terlupakan",
+    accentColor: "#2D5A3D",
+    iconBg: "#E8F0EB",
+  },
 ];
 
 // Mapping level → CSS vars untuk pill di header & hero
@@ -102,6 +111,7 @@ export default function Home() {
   // ─── Semua logika tetap sama persis ────────────────────────────────────────
   const { username, saveUsername, loaded: loadedUser } = useUsername();
   const { level, setLevel, config, loaded: loadedLevel } = useLevel();
+  const { dueCount } = useSRS();
   const [gantiLevel, setGantiLevel] = useState(false);
 
   const showNameModal  = loadedUser && !username;
@@ -220,12 +230,17 @@ export default function Home() {
                 {/* Konten kartu */}
                 <div className="pl-6 pr-5 py-6">
 
-                  {/* Badge "Baru" / "Harian" */}
-                  {item.badge && (
+                  {/* Badge: statis untuk kebanyakan kartu, dinamis untuk Review */}
+                  {item.href === "/review" && dueCount > 0 ? (
+                    <span className="absolute top-4 right-4 font-sans text-xs font-bold px-2.5 py-0.5 rounded-full text-white"
+                      style={{ backgroundColor: "#DC2626" }}>
+                      {dueCount} kartu
+                    </span>
+                  ) : item.badge ? (
                     <span className="badge-gold absolute top-4 right-4">
                       {item.badge}
                     </span>
-                  )}
+                  ) : null}
 
                   {/* Ikon — lingkaran hangat bertekstur, bukan gradient box */}
                   <div
