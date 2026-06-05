@@ -620,18 +620,16 @@ export default function BelajarPage() {
                   key={pelajaran.id}
                   onClick={() => unlocked && setPelajaranDipilih(pelajaran.id)}
                   disabled={!unlocked}
-                  className={`w-full text-left rounded-2xl border-2 p-4 transition-all ${
+                  className={`w-full text-left p-4 transition-all ${
                     done
-                      ? `${unit.border} ${unit.bg} shadow-md`
+                      ? `rounded-2xl border-2 ${unit.border} ${unit.bg} shadow-md`
                       : unlocked
-                      ? "hover:shadow-md hover:-translate-y-0.5"
-                      : "opacity-60 cursor-not-allowed"
+                      ? "card-de"
+                      : "rounded-2xl border opacity-60 cursor-not-allowed"
                   }`}
                   style={
-                    !done
-                      ? unlocked
-                        ? { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)" }
-                        : { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)" }
+                    !done && !unlocked
+                      ? { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)" }
                       : {}
                   }
                 >
@@ -851,18 +849,16 @@ export default function BelajarPage() {
                     <button
                       onClick={() => firstLessonUnlocked && setUnitDipilih(unit.id)}
                       disabled={!firstLessonUnlocked}
-                      className={`w-full text-left rounded-2xl border-2 p-4 transition-all ${
+                      className={`w-full text-left p-4 transition-all ${
                         allDone
-                          ? `${unit.border} ${unit.bg} shadow-md`
+                          ? `rounded-2xl border-2 ${unit.border} ${unit.bg} shadow-md`
                           : firstLessonUnlocked
-                          ? "hover:shadow-md hover:-translate-y-0.5"
-                          : "opacity-50 cursor-not-allowed"
+                          ? "card-de"
+                          : "rounded-2xl border opacity-50 cursor-not-allowed"
                       }`}
                       style={
-                        !allDone
-                          ? firstLessonUnlocked
-                            ? { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)" }
-                            : { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)" }
+                        !firstLessonUnlocked && !allDone
+                          ? { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)" }
                           : {}
                       }
                     >
