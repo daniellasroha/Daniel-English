@@ -9,70 +9,70 @@ import { useSound } from "@/hooks/useSound";
 
 // ─── SOAL LATIHAN per topik (5 soal) ──────────────────────────────────────────
 const soalPerTopik = {
-  1: [ // Simple Present
+  1: [
     { p: "She ___ (go) to school every morning.", opts: ["go","goes","went","going"], j: 1 },
     { p: "They ___ (play) football on Sundays.", opts: ["plays","play","played","playing"], j: 1 },
     { p: "Kalimat negatif: He ___ like coffee.", opts: ["not","don't","doesn't","isn't"], j: 2 },
     { p: "Kalimat tanya: ___ she speak French?", opts: ["Do","Does","Is","Has"], j: 1 },
     { p: "He ___ (watch) TV every night.", opts: ["watch","watchs","watches","watching"], j: 2 },
   ],
-  2: [ // Simple Past
+  2: [
     { p: "Past tense dari 'go' adalah...", opts: ["goed","goes","went","gone"], j: 2 },
     { p: "Past tense dari 'eat' adalah...", opts: ["eated","aten","ate","eats"], j: 2 },
     { p: "She ___ (not come) yesterday.", opts: ["doesn't come","didn't come","wasn't come","hadn't come"], j: 1 },
     { p: "___ you finish the homework last night?", opts: ["Do","Does","Did","Have"], j: 2 },
     { p: "Past tense dari 'buy' adalah...", opts: ["buyed","boughten","bought","buys"], j: 2 },
   ],
-  3: [ // To Be
+  3: [
     { p: "Pilih To Be: 'I ___ a student.'", opts: ["is","am","are","be"], j: 1 },
     { p: "Pilih To Be: 'She ___ happy.'", opts: ["am","is","are","be"], j: 1 },
     { p: "Pilih To Be: 'They ___ my friends.'", opts: ["is","am","are","be"], j: 2 },
     { p: "Bentuk lampau: 'I ___ tired yesterday.'", opts: ["am","is","was","were"], j: 2 },
     { p: "Bentuk lampau: 'They ___ at school.'", opts: ["was","were","are","been"], j: 1 },
   ],
-  4: [ // Present Continuous
+  4: [
     { p: "She ___ eating now.", opts: ["is","are","was","be"], j: 0 },
     { p: "They ___ (play) outside right now.", opts: ["is playing","are playing","was playing","plays"], j: 1 },
     { p: "Bentuk -ing dari 'run': He is ___.", opts: ["runing","running","runned","runs"], j: 1 },
     { p: "___ you studying now?", opts: ["Do","Are","Is","Have"], j: 1 },
     { p: "Bentuk -ing dari 'swim': She is ___.", opts: ["swiming","swimming","swammed","swims"], j: 1 },
   ],
-  5: [ // Future
+  5: [
     { p: "I ___ call you later.", opts: ["am","was","will","have"], j: 2 },
     { p: "She ___ going to study tonight.", opts: ["will","is","are","was"], j: 1 },
     { p: "Future negatif: We ___ go.", opts: ["don't will","won't","will not to","aren't will"], j: 1 },
     { p: "Terjemahkan: 'Saya akan pergi ke Jakarta.'", opts: ["I go to Jakarta.","I went to Jakarta.","I will go to Jakarta.","I am going Jakarta."], j: 2 },
     { p: "They ___ going to visit us next week.", opts: ["will","is","are","was"], j: 2 },
   ],
-  6: [ // Modal
+  6: [
     { p: "I ___ speak English well.", opts: ["will","can","must","should"], j: 1 },
     { p: "You ___ wear a seatbelt. (kewajiban)", opts: ["can","might","must","would"], j: 2 },
     { p: "You ___ rest more. (saran)", opts: ["must","can","should","will"], j: 2 },
     { p: "It ___ rain today. (kemungkinan)", opts: ["must","might","should","can"], j: 1 },
     { p: "___ I borrow your pen? (izin sopan)", opts: ["Must","Should","May","Will"], j: 2 },
   ],
-  7: [ // Articles
+  7: [
     { p: "Pilih artikel: '___ apple'", opts: ["a","an","the","—"], j: 1 },
     { p: "Pilih artikel: '___ book'", opts: ["a","an","the","—"], j: 0 },
     { p: "Artikel spesifik: 'Close ___ door.'", opts: ["a","an","the","—"], j: 2 },
     { p: "Pilih artikel: '___ hour'", opts: ["a","an","the","—"], j: 1 },
     { p: "Superlative: 'She is ___ best.'", opts: ["a","an","the","—"], j: 2 },
   ],
-  8: [ // Comparative & Superlative
+  8: [
     { p: "She is ___ than her sister. (tall)", opts: ["more tall","tallest","taller","tall"], j: 2 },
     { p: "He is the ___ student. (smart)", opts: ["smarter","more smart","smartest","smart"], j: 2 },
     { p: "Comparative 'good': This is ___ than that.", opts: ["gooder","more good","better","best"], j: 2 },
     { p: "Superlative 'bad': the ___ day.", opts: ["baddest","most bad","worse","worst"], j: 3 },
     { p: "This room is ___ than mine. (big)", opts: ["more big","bigger","biggest","bigest"], j: 1 },
   ],
-  9: [ // Salam
+  9: [
     { p: "Sapaan di pagi hari adalah...", opts: ["Good night","Good afternoon","Good morning","Good evening"], j: 2 },
     { p: "Cara memperkenalkan nama: '___ is Daniel'", opts: ["I name","My name","Your name","Name I"], j: 1 },
     { p: "Apa arti 'Nice to meet you'?", opts: ["Apa kabar?","Sampai jumpa","Senang bertemu","Terima kasih"], j: 2 },
     { p: "Sapaan perpisahan yang umum:", opts: ["Hello","Sorry","Goodbye","Please"], j: 2 },
     { p: "Jawaban umum untuk 'How are you?'", opts: ["My name is...","I am fine, thank you.","Nice to meet you.","Good morning!"], j: 1 },
   ],
-  10: [ // Kata Ganti
+  10: [
     { p: "Kata ganti untuk 'dia (perempuan)' adalah...", opts: ["He","She","It","They"], j: 1 },
     { p: "Kata ganti jamak untuk orang adalah...", opts: ["It","We","He","She"], j: 1 },
     { p: "Possessive untuk 'he': ___ bag is red.", opts: ["He","Him","His","Himself"], j: 2 },
@@ -82,7 +82,7 @@ const soalPerTopik = {
 };
 
 // ─── Komponen Mini Quiz Grammar ───────────────────────────────────────────────
-function MiniQuizGrammar({ topikId, warna, border, bg }) {
+function MiniQuizGrammar({ topikId, accent }) {
   const soalList = soalPerTopik[topikId] || [];
   const [idx, setIdx] = useState(0);
   const [dipilih, setDipilih] = useState(null);
@@ -91,41 +91,43 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
   const { bunyiBenar, bunyiSalah, bunyiSelesai } = useSound();
 
   if (!soalList.length) return null;
-
   const soal = soalList[idx];
 
   function pilih(i) {
     if (dipilih !== null) return;
     setDipilih(i);
-    if (i === soal.j) { setBenar(b => b + 1); bunyiBenar(); }
+    if (i === soal.j) { setBenar((b) => b + 1); bunyiBenar(); }
     else { bunyiSalah(); }
   }
 
   function lanjut() {
-    if (idx >= soalList.length - 1) {
-      setSelesai(true);
-      bunyiSelesai();
-    } else {
-      setIdx(n => n + 1);
-      setDipilih(null);
-    }
+    if (idx >= soalList.length - 1) { setSelesai(true); bunyiSelesai(); }
+    else { setIdx((n) => n + 1); setDipilih(null); }
   }
 
   function ulangi() {
-    setIdx(0);
-    setDipilih(null);
-    setBenar(0);
-    setSelesai(false);
+    setIdx(0); setDipilih(null); setBenar(0); setSelesai(false);
   }
 
   if (selesai) {
     const persen = Math.round((benar / soalList.length) * 100);
     return (
-      <div className="mt-4 text-center py-6 bg-gray-50 rounded-2xl border border-gray-200">
+      <div
+        className="mt-4 text-center py-6 rounded-2xl"
+        style={{ backgroundColor: "var(--bg-subtle)", border: "1px solid var(--border)" }}
+      >
         <div className="text-5xl mb-2">{persen === 100 ? "🏆" : persen >= 60 ? "⭐" : "💪"}</div>
-        <p className="font-extrabold text-gray-800 text-xl">{persen === 100 ? "Sempurna!" : persen >= 60 ? "Bagus!" : "Terus Berlatih!"}</p>
-        <p className="text-gray-500 text-sm mt-1">{benar}/{soalList.length} benar · {persen}%</p>
-        <button onClick={ulangi} className={`mt-4 px-6 py-2 rounded-xl text-white font-bold bg-gradient-to-r ${warna} hover:scale-105 transition-transform shadow`}>
+        <p className="font-serif font-semibold text-xl" style={{ color: "var(--text-primary)" }}>
+          {persen === 100 ? "Sempurna!" : persen >= 60 ? "Bagus!" : "Terus Berlatih!"}
+        </p>
+        <p className="font-sans text-sm mt-1" style={{ color: "var(--text-muted)" }}>
+          {benar}/{soalList.length} benar · {persen}%
+        </p>
+        <button
+          onClick={ulangi}
+          className="mt-4 px-6 py-2 rounded-xl font-sans font-bold text-white hover:opacity-90 transition"
+          style={{ backgroundColor: accent }}
+        >
           🔄 Ulangi Latihan
         </button>
       </div>
@@ -134,30 +136,57 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
 
   return (
     <div className="mt-4">
-      <div className="flex justify-between text-xs text-gray-400 mb-2">
+      <div className="flex justify-between font-sans text-xs mb-2" style={{ color: "var(--text-muted)" }}>
         <span>Soal {idx + 1}/{soalList.length}</span>
         <span>{benar} benar</span>
       </div>
-      <div className="w-full h-1.5 bg-gray-100 rounded-full mb-4">
-        <div className={`h-full rounded-full bg-gradient-to-r ${warna} transition-all`} style={{ width: `${(idx / soalList.length) * 100}%` }} />
+      <div className="w-full h-1.5 rounded-full mb-4 overflow-hidden" style={{ backgroundColor: "var(--border)" }}>
+        <div
+          className="h-full rounded-full transition-all"
+          style={{ width: `${(idx / soalList.length) * 100}%`, backgroundColor: accent }}
+        />
       </div>
 
-      <div className={`rounded-xl border-2 ${border} ${bg} p-4 mb-4`}>
-        <p className="font-semibold text-gray-800">{soal.p}</p>
+      <div
+        className="rounded-xl p-4 mb-4 font-sans font-semibold"
+        style={{
+          backgroundColor: "var(--bg-subtle)",
+          border: `1px solid var(--border)`,
+          color: "var(--text-primary)",
+        }}
+      >
+        {soal.p}
       </div>
 
       <div className="flex flex-col gap-2 mb-3">
         {soal.opts.map((o, i) => {
-          let style = "border-2 border-gray-200 bg-white text-gray-700 hover:border-indigo-300 hover:bg-indigo-50";
+          let cardStyle = {
+            backgroundColor: "var(--bg-paper)",
+            border: "2px solid var(--border)",
+            color: "var(--text-primary)",
+          };
           let icon = null;
           if (dipilih !== null) {
-            if (i === soal.j) { style = "border-2 border-green-400 bg-green-50 text-green-700"; icon = <span className="ml-1 font-bold">✓</span>; }
-            else if (i === dipilih) { style = "border-2 border-red-400 bg-red-50 text-red-700"; icon = <span className="ml-1 font-bold">✗</span>; }
-            else style = "border-2 border-gray-200 bg-white text-gray-400 opacity-50";
+            if (i === soal.j) {
+              cardStyle = { backgroundColor: "#D1FAE5", border: "2px solid #059669", color: "#065F46" };
+              icon = <span className="ml-1 font-bold">✓</span>;
+            } else if (i === dipilih) {
+              cardStyle = { backgroundColor: "#FEE2E2", border: "2px solid #DC2626", color: "#7F1D1D" };
+              icon = <span className="ml-1 font-bold">✗</span>;
+            } else {
+              cardStyle = { backgroundColor: "var(--bg-subtle)", border: "2px solid var(--border)", color: "var(--text-muted)", opacity: 0.5 };
+            }
           }
           return (
-            <button key={i} onClick={() => pilih(i)} className={`w-full text-left px-4 py-2.5 rounded-xl font-medium transition-all text-sm ${style}`}>
-              <span className="text-xs text-gray-400 mr-2">{["A","B","C","D"][i]}.</span>
+            <button
+              key={i}
+              onClick={() => pilih(i)}
+              className="w-full text-left px-4 py-2.5 rounded-xl font-sans font-medium transition-all text-sm"
+              style={cardStyle}
+            >
+              <span className="text-xs mr-2" style={{ color: dipilih === null ? accent : "inherit" }}>
+                {["A","B","C","D"][i]}.
+              </span>
               {o}{icon}
             </button>
           );
@@ -165,7 +194,11 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
       </div>
 
       {dipilih !== null && (
-        <button onClick={lanjut} className={`w-full py-2.5 rounded-xl text-white font-bold bg-gradient-to-r ${warna} hover:scale-105 transition-transform shadow`}>
+        <button
+          onClick={lanjut}
+          className="btn-primary w-full py-2.5 rounded-xl font-bold justify-center"
+          style={{ backgroundColor: accent }}
+        >
           {idx < soalList.length - 1 ? "Soal Berikutnya →" : "Lihat Hasil"}
         </button>
       )}
@@ -176,8 +209,7 @@ function MiniQuizGrammar({ topikId, warna, border, bg }) {
 // ─── Data materi grammar ──────────────────────────────────────────────────────
 const materiGrammar = [
   {
-    id: 1, judul: "Simple Present Tense", emoji: "⏰",
-    warna: "from-blue-400 to-blue-600", bgLight: "bg-blue-50", border: "border-blue-200",
+    id: 1, judul: "Simple Present Tense", emoji: "⏰", accent: "#1D4ED8", iconBg: "#DBEAFE",
     penjelasan: "Digunakan untuk kebiasaan, fakta umum, atau kejadian yang terjadi secara rutin.",
     rumus: [
       { subjek: "I / You / We / They", kata_kerja: "Verb (bentuk dasar)", contoh: "I eat rice every day." },
@@ -194,8 +226,7 @@ const materiGrammar = [
     tips: "Tambahkan -s atau -es pada kata kerja jika subjeknya He, She, atau It. Contoh: go → goes, watch → watches.",
   },
   {
-    id: 2, judul: "Simple Past Tense", emoji: "📅",
-    warna: "from-green-400 to-green-600", bgLight: "bg-green-50", border: "border-green-200",
+    id: 2, judul: "Simple Past Tense", emoji: "📅", accent: "#059669", iconBg: "#D1FAE5",
     penjelasan: "Digunakan untuk kejadian yang sudah selesai di masa lampau.",
     rumus: [
       { subjek: "Semua subjek (positif)", kata_kerja: "Verb 2 (past form)", contoh: "I ate rice yesterday." },
@@ -211,8 +242,7 @@ const materiGrammar = [
     tips: "Kata kerja tidak beraturan (irregular verbs): go→went, eat→ate, see→saw, buy→bought, take→took.",
   },
   {
-    id: 3, judul: "To Be (is, am, are, was, were)", emoji: "🔗",
-    warna: "from-purple-400 to-purple-600", bgLight: "bg-purple-50", border: "border-purple-200",
+    id: 3, judul: "To Be (is, am, are, was, were)", emoji: "🔗", accent: "#7C3AED", iconBg: "#EDE9FE",
     penjelasan: "To Be menghubungkan subjek dengan keadaan, profesi, atau sifat.",
     rumus: [
       { subjek: "I (sekarang)", kata_kerja: "am", contoh: "I am a student." },
@@ -230,8 +260,7 @@ const materiGrammar = [
     tips: "Ingat: I→am, He/She/It→is, You/We/They→are. Untuk masa lalu: I/He/She/It→was, You/We/They→were.",
   },
   {
-    id: 4, judul: "Present Continuous Tense", emoji: "🔄",
-    warna: "from-orange-400 to-orange-600", bgLight: "bg-orange-50", border: "border-orange-200",
+    id: 4, judul: "Present Continuous Tense", emoji: "🔄", accent: "#D97706", iconBg: "#FEF3C7",
     penjelasan: "Digunakan untuk kejadian yang sedang berlangsung saat ini.",
     rumus: [
       { subjek: "I", kata_kerja: "am + Verb-ing", contoh: "I am eating now." },
@@ -247,8 +276,7 @@ const materiGrammar = [
     tips: "Kata kunci: now, right now, at the moment, currently, look!, listen!",
   },
   {
-    id: 5, judul: "Future Tense (will & going to)", emoji: "🔮",
-    warna: "from-teal-400 to-teal-600", bgLight: "bg-teal-50", border: "border-teal-200",
+    id: 5, judul: "Future Tense (will & going to)", emoji: "🔮", accent: "#0D9488", iconBg: "#CCFBF1",
     penjelasan: "'Will' untuk keputusan spontan, 'going to' untuk rencana yang sudah dipikirkan.",
     rumus: [
       { subjek: "Semua subjek (will)", kata_kerja: "will + Verb 1", contoh: "I will call you later." },
@@ -264,8 +292,7 @@ const materiGrammar = [
     tips: "Gunakan 'will' untuk keputusan mendadak dan 'going to' untuk rencana yang sudah terencana.",
   },
   {
-    id: 6, judul: "Modal Verbs (can, must, should)", emoji: "🎛️",
-    warna: "from-pink-400 to-pink-600", bgLight: "bg-pink-50", border: "border-pink-200",
+    id: 6, judul: "Modal Verbs (can, must, should)", emoji: "🎛️", accent: "#BE185D", iconBg: "#FCE7F3",
     penjelasan: "Modal verbs digunakan untuk menyatakan kemampuan, keharusan, atau saran. Selalu diikuti Verb 1.",
     rumus: [
       { subjek: "can", kata_kerja: "kemampuan / izin", contoh: "I can swim. Can I go?" },
@@ -282,8 +309,7 @@ const materiGrammar = [
     tips: "Modal verbs tidak pernah berubah bentuk. Selalu ikuti dengan Verb 1: She can sing ✓, She can sings ✗.",
   },
   {
-    id: 7, judul: "Articles (a, an, the)", emoji: "📌",
-    warna: "from-yellow-400 to-yellow-600", bgLight: "bg-yellow-50", border: "border-yellow-200",
+    id: 7, judul: "Articles (a, an, the)", emoji: "📌", accent: "#C9933A", iconBg: "#FDF3E3",
     penjelasan: "'A/an' untuk benda tidak spesifik, 'the' untuk benda yang sudah diketahui atau spesifik.",
     rumus: [
       { subjek: "a", kata_kerja: "sebelum konsonan (b,c,d...)", contoh: "a book, a cat, a dog" },
@@ -299,8 +325,7 @@ const materiGrammar = [
     tips: "Pakai 'an' berdasarkan bunyi: 'an hour' (h-nya tak berbunyi), 'a university' (u-nya berbunyi 'yu').",
   },
   {
-    id: 8, judul: "Comparative & Superlative", emoji: "📊",
-    warna: "from-red-400 to-red-600", bgLight: "bg-red-50", border: "border-red-200",
+    id: 8, judul: "Comparative & Superlative", emoji: "📊", accent: "#DC2626", iconBg: "#FEE2E2",
     penjelasan: "Comparative untuk membandingkan dua hal, superlative untuk menyatakan yang paling.",
     rumus: [
       { subjek: "Kata sifat pendek", kata_kerja: "+ er / + est", contoh: "tall → taller → tallest" },
@@ -316,8 +341,7 @@ const materiGrammar = [
     tips: "1-2 suku kata: tambahkan -er/-est. 3+ suku kata: gunakan more/most. Jangan gabungkan: more taller ✗",
   },
   {
-    id: 9, judul: "Salam & Perkenalan", emoji: "👋",
-    warna: "from-yellow-400 to-orange-500", bgLight: "bg-yellow-50", border: "border-yellow-200",
+    id: 9, judul: "Salam & Perkenalan", emoji: "👋", accent: "#D97706", iconBg: "#FEF3C7",
     penjelasan: "Ungkapan salam dan perkenalan diri adalah hal pertama yang dipelajari dalam bahasa Inggris.",
     rumus: [
       { subjek: "Salam harian", kata_kerja: "Good morning / afternoon / evening / night", contoh: "Good morning, how are you?" },
@@ -334,8 +358,7 @@ const materiGrammar = [
     tips: "Gunakan 'Good morning' sampai jam 12, 'Good afternoon' sampai jam 6 sore, 'Good evening' setelahnya.",
   },
   {
-    id: 10, judul: "Kata Ganti Orang", emoji: "👤",
-    warna: "from-lime-400 to-green-500", bgLight: "bg-lime-50", border: "border-lime-200",
+    id: 10, judul: "Kata Ganti Orang", emoji: "👤", accent: "#4D7C0F", iconBg: "#ECFCCB",
     penjelasan: "Kata ganti orang (pronouns) menggantikan nama. Ini adalah pondasi dari semua kalimat bahasa Inggris.",
     rumus: [
       { subjek: "Tunggal", kata_kerja: "I · You · He · She · It", contoh: "I am happy. She is a teacher." },
@@ -370,99 +393,143 @@ export default function GrammarPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 to-teal-100">
-      <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
+    <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
+      <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
+        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center gap-4">
+          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div>
-            <h1 className="text-xl font-bold text-green-700">✏️ Grammar</h1>
-            <p className="text-xs text-gray-400">
+            <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
+              ✏️ Grammar
+            </h1>
+            <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
               {materiTersedia.length} topik
-              {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+              {config && (
+                <span className="ml-1 font-semibold" style={{ color: "var(--brand)" }}>
+                  · {config.emoji} {config.label}
+                </span>
+              )}
             </p>
           </div>
         </div>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 py-6">
-        <div className="bg-white rounded-2xl p-4 mb-5 border border-green-200 shadow-sm text-sm text-gray-600">
-          📌 Pelajari setiap topik, lalu uji pemahamanmu dengan tombol <strong>🎯 Latihan</strong> di setiap topik.
+      <div className="max-w-3xl mx-auto px-5 py-6">
+        {/* Info bar */}
+        <div
+          className="card-de p-4 mb-5 font-sans text-sm"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          📌 Pelajari setiap topik, lalu uji pemahamanmu dengan tombol{" "}
+          <strong style={{ color: "var(--text-primary)" }}>🎯 Latihan</strong> di setiap topik.
         </div>
 
         <div className="flex flex-col gap-3">
           {materiTersedia.map((materi) => (
-            <div key={materi.id} className={`rounded-2xl border ${materi.border} overflow-hidden shadow-sm`}>
+            <div
+              key={materi.id}
+              className="rounded-2xl overflow-hidden"
+              style={{ border: "1px solid var(--border)", boxShadow: "var(--shadow-card)" }}
+            >
+              {/* Header accordion */}
               <button
                 onClick={() => toggleTopik(materi.id)}
-                className={`w-full flex items-center justify-between px-5 py-4 ${materi.bgLight} hover:opacity-90 transition`}
+                className="w-full flex items-center justify-between px-5 py-4 transition"
+                style={{
+                  backgroundColor: topikAktif === materi.id ? "var(--bg-subtle)" : "var(--bg-paper)",
+                }}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${materi.warna} flex items-center justify-center text-xl shadow`}>
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+                    style={{ backgroundColor: materi.iconBg, border: "1px solid var(--border)" }}
+                  >
                     {materi.emoji}
                   </div>
                   <div className="text-left">
-                    <span className="font-bold text-gray-800">{materi.judul}</span>
-                    <p className="text-xs text-gray-400 mt-0.5">{materi.rumus.length} rumus · {materi.contohKalimat.length} contoh · 5 soal latihan</p>
+                    <span className="font-serif font-semibold" style={{ color: "var(--text-primary)" }}>
+                      {materi.judul}
+                    </span>
+                    <p className="font-sans text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
+                      {materi.rumus.length} rumus · {materi.contohKalimat.length} contoh · 5 soal latihan
+                    </p>
                   </div>
                 </div>
-                <span className="text-gray-400 text-lg">{topikAktif === materi.id ? "▲" : "▼"}</span>
+                <span className="font-sans text-lg" style={{ color: "var(--text-muted)" }}>
+                  {topikAktif === materi.id ? "▲" : "▼"}
+                </span>
               </button>
 
               {topikAktif === materi.id && (
-                <div className="bg-white px-5 py-5 border-t border-gray-100">
-                  <p className="text-gray-600 mb-5 leading-relaxed">{materi.penjelasan}</p>
+                <div
+                  className="px-5 py-5"
+                  style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--bg-paper)" }}
+                >
+                  <p className="font-sans mb-5 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {materi.penjelasan}
+                  </p>
 
-                  <h3 className="font-bold text-gray-700 mb-3">📐 Rumus</h3>
-                  <div className="overflow-x-auto mb-5">
+                  {/* Rumus */}
+                  <h3 className="font-serif font-semibold mb-3" style={{ color: "var(--text-primary)" }}>
+                    📐 Rumus
+                  </h3>
+                  <div className="overflow-x-auto mb-5 rounded-xl" style={{ border: "1px solid var(--border)" }}>
                     <table className="w-full text-sm border-collapse">
                       <thead>
-                        <tr className="bg-gray-100">
-                          <th className="text-left px-3 py-2 font-semibold text-gray-600 rounded-tl-lg">Bentuk / Subjek</th>
-                          <th className="text-left px-3 py-2 font-semibold text-gray-600">Pola</th>
-                          <th className="text-left px-3 py-2 font-semibold text-gray-600 rounded-tr-lg">Contoh</th>
+                        <tr style={{ backgroundColor: "var(--bg-subtle)" }}>
+                          <th className="text-left px-3 py-2 font-sans font-semibold rounded-tl-xl" style={{ color: "var(--text-secondary)" }}>Bentuk / Subjek</th>
+                          <th className="text-left px-3 py-2 font-sans font-semibold" style={{ color: "var(--text-secondary)" }}>Pola</th>
+                          <th className="text-left px-3 py-2 font-sans font-semibold rounded-tr-xl" style={{ color: "var(--text-secondary)" }}>Contoh</th>
                         </tr>
                       </thead>
                       <tbody>
                         {materi.rumus.map((r, i) => (
-                          <tr key={i} className="border-t border-gray-100">
-                            <td className="px-3 py-2 font-medium text-indigo-600">{r.subjek}</td>
-                            <td className="px-3 py-2 text-green-700 font-semibold">{r.kata_kerja}</td>
-                            <td className="px-3 py-2 text-gray-500 italic">{r.contoh}</td>
+                          <tr key={i} style={{ borderTop: "1px solid var(--border)" }}>
+                            <td className="px-3 py-2 font-sans font-medium" style={{ color: materi.accent }}>{r.subjek}</td>
+                            <td className="px-3 py-2 font-sans font-semibold" style={{ color: "var(--brand)" }}>{r.kata_kerja}</td>
+                            <td className="px-3 py-2 font-sans italic" style={{ color: "var(--text-muted)" }}>{r.contoh}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
 
-                  <h3 className="font-bold text-gray-700 mb-3">💬 Contoh Kalimat</h3>
+                  {/* Contoh kalimat */}
+                  <h3 className="font-serif font-semibold mb-3" style={{ color: "var(--text-primary)" }}>
+                    💬 Contoh Kalimat
+                  </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
                     {materi.contohKalimat.map((k, i) => (
-                      <div key={i} className="bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
-                        <p className="text-gray-400 text-xs mb-1">{k.indonesia}</p>
-                        <p className="text-gray-800 font-semibold text-sm">{k.inggris}</p>
+                      <div
+                        key={i}
+                        className="rounded-xl px-4 py-3"
+                        style={{ backgroundColor: "var(--bg-subtle)", border: "1px solid var(--border)" }}
+                      >
+                        <p className="font-sans text-xs mb-1" style={{ color: "var(--text-muted)" }}>{k.indonesia}</p>
+                        <p className="font-sans font-semibold text-sm" style={{ color: "var(--text-primary)" }}>{k.inggris}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mb-5">
-                    <p className="text-yellow-700 text-sm">💡 <strong>Tips:</strong> {materi.tips}</p>
+                  {/* Tips */}
+                  <div
+                    className="rounded-xl px-4 py-3 mb-5 font-sans text-sm"
+                    style={{ backgroundColor: "var(--gold-light)", border: "1px solid var(--border)", color: "var(--gold)" }}
+                  >
+                    💡 <strong>Tips:</strong>{" "}
+                    <span style={{ color: "var(--text-secondary)" }}>{materi.tips}</span>
                   </div>
 
                   {/* Tombol Latihan */}
                   <button
                     onClick={() => setLatihanAktif(latihanAktif === materi.id ? null : materi.id)}
-                    className={`w-full py-3 rounded-2xl font-bold text-white bg-gradient-to-r ${materi.warna} hover:scale-105 transition-transform shadow-md flex items-center justify-center gap-2`}
+                    className="btn-primary w-full py-3 rounded-2xl font-bold justify-center"
+                    style={{ backgroundColor: materi.accent }}
                   >
                     🎯 {latihanAktif === materi.id ? "Sembunyikan Latihan" : "Mulai Latihan (5 soal)"}
                   </button>
 
                   {latihanAktif === materi.id && (
-                    <MiniQuizGrammar
-                      topikId={materi.id}
-                      warna={materi.warna}
-                      border={materi.border}
-                      bg={materi.bgLight}
-                    />
+                    <MiniQuizGrammar topikId={materi.id} accent={materi.accent} />
                   )}
                 </div>
               )}

@@ -111,8 +111,7 @@ function GrammarQuizContent() {
       emoji="✏️"
       soalList={soalList}
       maxSoal={12}
-      warnaBg="bg-gradient-to-br from-green-50 to-emerald-100"
-      warnaBtn="bg-green-600"
+      accentColor="#059669"
       kategori="grammar"
       pakaiTimer={pakaiTimer}
     />

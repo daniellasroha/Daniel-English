@@ -59,8 +59,7 @@ function MixedQuizContent() {
       emoji="🎯"
       soalList={soalMixed}
       maxSoal={15}
-      warnaBg="bg-gradient-to-br from-purple-50 to-indigo-100"
-      warnaBtn="bg-purple-600"
+      accentColor="#7C3AED"
       kategori="mixed"
       pakaiTimer={pakaiTimer}
     />

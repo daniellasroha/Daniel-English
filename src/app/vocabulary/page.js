@@ -10,19 +10,17 @@ import { useLevel } from "@/hooks/useLevel";
 import { useSRS } from "@/hooks/useSRS";
 import { speak } from "@/lib/speech";
 
-// Metadata visual per kategori
 const kategoriMeta = {
-  "Buah & Sayur": { emoji: "🍎", warna: "from-green-400 to-emerald-600",   bg: "bg-green-50",   border: "border-green-200",   teks: "text-green-700" },
-  "Hewan":         { emoji: "🐾", warna: "from-orange-400 to-amber-500",    bg: "bg-orange-50",  border: "border-orange-200",  teks: "text-orange-700" },
-  "Tempat":        { emoji: "🏙️", warna: "from-blue-400 to-blue-600",       bg: "bg-blue-50",    border: "border-blue-200",    teks: "text-blue-700" },
-  "Kata Kerja":    { emoji: "🏃", warna: "from-purple-400 to-purple-600",   bg: "bg-purple-50",  border: "border-purple-200",  teks: "text-purple-700" },
-  "Kata Sifat":    { emoji: "✨", warna: "from-pink-400 to-rose-500",        bg: "bg-pink-50",    border: "border-pink-200",    teks: "text-pink-700" },
-  "Perasaan":      { emoji: "❤️", warna: "from-red-400 to-red-600",          bg: "bg-red-50",     border: "border-red-200",     teks: "text-red-700" },
-  "Rumah & Benda": { emoji: "🏠", warna: "from-teal-400 to-cyan-600",       bg: "bg-teal-50",    border: "border-teal-200",    teks: "text-teal-700" },
-  "Alam & Cuaca":  { emoji: "🌿", warna: "from-emerald-400 to-green-600",   bg: "bg-emerald-50", border: "border-emerald-200", teks: "text-emerald-700" },
-  // Kategori baru khusus Pemula
-  "Warna":         { emoji: "🎨", warna: "from-yellow-400 to-orange-500",   bg: "bg-yellow-50",  border: "border-yellow-200",  teks: "text-yellow-700" },
-  "Keluarga":      { emoji: "👪", warna: "from-rose-400 to-pink-600", bg: "bg-rose-50",    border: "border-rose-200",    teks: "text-rose-700" },
+  "Buah & Sayur": { emoji: "🍎", accent: "#059669", iconBg: "#D1FAE5" },
+  "Hewan":        { emoji: "🐾", accent: "#D97706", iconBg: "#FEF3C7" },
+  "Tempat":       { emoji: "🏙️", accent: "#1D4ED8", iconBg: "#DBEAFE" },
+  "Kata Kerja":   { emoji: "🏃", accent: "#7C3AED", iconBg: "#EDE9FE" },
+  "Kata Sifat":   { emoji: "✨", accent: "#BE185D", iconBg: "#FCE7F3" },
+  "Perasaan":     { emoji: "❤️", accent: "#DC2626", iconBg: "#FEE2E2" },
+  "Rumah & Benda":{ emoji: "🏠", accent: "#0D9488", iconBg: "#CCFBF1" },
+  "Alam & Cuaca": { emoji: "🌿", accent: "#047857", iconBg: "#D1FAE5" },
+  "Warna":        { emoji: "🎨", accent: "#C9933A", iconBg: "#FDF3E3" },
+  "Keluarga":     { emoji: "👪", accent: "#BE185D", iconBg: "#FCE7F3" },
 };
 
 export default function VocabularyPage() {
@@ -34,27 +32,21 @@ export default function VocabularyPage() {
   const { config } = useLevel();
   const { registerCard } = useSRS();
 
-  // Filter kata berdasarkan level
   const kosakataTersedia = config
-    ? (config.vocabLevel === "a1"
-        ? kosakata.filter((k) => k.level === "a1")
-        : kosakata)
+    ? (config.vocabLevel === "a1" ? kosakata.filter((k) => k.level === "a1") : kosakata)
     : kosakata;
 
-  // Daftar kategori yang ada (urutan tetap)
   const urutanKategori = [
     "Warna", "Keluarga", "Buah & Sayur", "Hewan",
     "Tempat", "Kata Kerja", "Kata Sifat", "Perasaan",
     "Rumah & Benda", "Alam & Cuaca",
   ];
 
-  // Hitung jumlah kata per kategori (sesuai level)
   const jumlahPerKategori = {};
   urutanKategori.forEach((kat) => {
     jumlahPerKategori[kat] = kosakataTersedia.filter((k) => k.kategori === kat).length;
   });
 
-  // Kata yang ditampilkan sesuai kategori dipilih
   const kataKategoriIni = kategoriDipilih
     ? kosakataTersedia.filter((k) => k.kategori === kategoriDipilih)
     : [];
@@ -64,13 +56,9 @@ export default function VocabularyPage() {
     setKartuTerbuka((prev) => ({ ...prev, [id]: !prev[id] }));
     if (!kartuTerbuka[id]) {
       recordVocab(id);
-      // Daftarkan ke SRS + ucapkan kata saat pertama kali dibuka
       registerCard(`vocab-${id}`, {
-        type       : "vocab",
-        english    : kata.english,
-        indonesian : kata.indonesian,
-        emoji      : kata.emoji,
-        contoh     : kata.contoh,
+        type: "vocab", english: kata.english, indonesian: kata.indonesian,
+        emoji: kata.emoji, contoh: kata.contoh,
       });
       speak(kata.english);
     }
@@ -78,91 +66,123 @@ export default function VocabularyPage() {
 
   const meta = kategoriDipilih ? kategoriMeta[kategoriDipilih] : null;
 
-  // ─── TAMPILAN KATA (setelah pilih kategori) ───────────────────────────────
+  // ─── TAMPILAN KATA ──────────────────────────────────────────────────────────
   if (kategoriDipilih) {
     const sudahTerbuka = kataKategoriIni.filter((k) => kartuTerbuka[k.id]).length;
 
     return (
-      <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        {/* Header */}
-        <header className="bg-white shadow-sm sticky top-0 z-10">
-          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4">
+      <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
+        <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
+          <div className="max-w-5xl mx-auto px-5 py-4 flex items-center gap-4">
             <button
               onClick={() => setKategoriDipilih(null)}
-              className="text-indigo-500 hover:text-indigo-700 text-2xl"
+              className="text-2xl transition-opacity hover:opacity-70"
+              style={{ color: "var(--brand)" }}
             >
               ←
             </button>
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-xl shadow`}>
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+              style={{ backgroundColor: meta.iconBg, border: "1px solid var(--border)" }}
+            >
               {meta.emoji}
             </div>
             <div className="flex-1">
-              <h1 className={`text-xl font-bold ${meta.teks}`}>{kategoriDipilih}</h1>
-              <p className="text-xs text-gray-400">
+              <h1 className="font-serif text-xl font-semibold" style={{ color: meta.accent }}>
+                {kategoriDipilih}
+              </h1>
+              <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
                 {kataKategoriIni.length} kata
-                {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+                {config && (
+                  <span className="ml-1 font-semibold" style={{ color: "var(--brand)" }}>
+                    · {config.emoji} {config.label}
+                  </span>
+                )}
               </p>
             </div>
-            {/* Progress bar kategori ini */}
-            <div className="text-right">
-              <p className="text-xs text-gray-400">{sudahTerbuka}/{kataKategoriIni.length} dibuka</p>
-              <div className="w-20 h-1.5 bg-gray-200 rounded-full mt-1">
+            {/* Progress bar */}
+            <div className="text-right flex-shrink-0">
+              <p className="font-sans text-xs mb-1" style={{ color: "var(--text-muted)" }}>
+                {sudahTerbuka}/{kataKategoriIni.length}
+              </p>
+              <div className="w-20 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "var(--border)" }}>
                 <div
-                  className={`h-full rounded-full bg-gradient-to-r ${meta.warna} transition-all`}
-                  style={{ width: `${kataKategoriIni.length ? (sudahTerbuka / kataKategoriIni.length) * 100 : 0}%` }}
+                  className="h-full rounded-full transition-all"
+                  style={{
+                    width: `${kataKategoriIni.length ? (sudahTerbuka / kataKategoriIni.length) * 100 : 0}%`,
+                    backgroundColor: meta.accent,
+                  }}
                 />
               </div>
             </div>
           </div>
         </header>
 
-        <div className="max-w-5xl mx-auto px-4 py-6">
+        <div className="max-w-5xl mx-auto px-5 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {kataKategoriIni.map((kata) => (
-              <div
-                key={kata.id}
-                className={`rounded-2xl shadow-sm border ${meta.border} ${meta.bg} relative hover:shadow-md hover:-translate-y-1 transition-all duration-200`}
-              >
+              <div key={kata.id} className="card-de relative overflow-hidden">
+                {/* Strip aksen */}
+                <div className="absolute inset-y-0 left-0 w-[3px]" style={{ backgroundColor: meta.accent }} />
+
                 {/* Tombol favorit */}
                 <button
                   onClick={() => toggleFavorite(kata.id)}
                   className={`absolute top-3 right-3 text-lg transition-transform hover:scale-125 ${
-                    isFavorite(kata.id) ? "opacity-100" : "opacity-30 hover:opacity-70"
+                    isFavorite(kata.id) ? "opacity-100" : "opacity-25 hover:opacity-60"
                   }`}
                 >
                   ⭐
                 </button>
 
                 {/* Kartu — klik untuk flip */}
-                <div onClick={() => toggleKartu(kata)} className="cursor-pointer p-4">
+                <div onClick={() => toggleKartu(kata)} className="cursor-pointer pl-6 pr-5 py-4">
                   <div className="flex items-center gap-3 mb-3 pr-6">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-2xl shadow flex-shrink-0`}>
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                      style={{ backgroundColor: meta.iconBg, border: "1px solid var(--border)" }}
+                    >
                       {kata.emoji}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h2 className="text-lg font-bold text-gray-800">{kata.english}</h2>
-                        {/* Tombol TTS — stopPropagation agar tidak trigger flip */}
+                        <h2 className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
+                          {kata.english}
+                        </h2>
                         <button
                           onClick={(e) => { e.stopPropagation(); speak(kata.english); }}
                           className="text-base opacity-40 hover:opacity-90 transition-opacity flex-shrink-0"
                           title="Dengarkan pengucapan"
-                        >🔊</button>
+                        >
+                          🔊
+                        </button>
                       </div>
                       {!kartuTerbuka[kata.id] && (
-                        <p className="text-gray-400 text-xs">Klik untuk lihat arti →</p>
+                        <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
+                          Klik untuk lihat arti →
+                        </p>
                       )}
                     </div>
                   </div>
 
                   {kartuTerbuka[kata.id] ? (
-                    <div className={`rounded-xl p-3 bg-white bg-opacity-70 border ${meta.border}`}>
-                      <p className={`font-bold text-base ${meta.teks}`}>{kata.indonesian}</p>
-                      <p className="text-gray-400 text-xs mt-1 italic">"{kata.contoh}"</p>
+                    <div
+                      className="rounded-xl p-3"
+                      style={{ backgroundColor: "var(--bg-subtle)", border: "1px solid var(--border)" }}
+                    >
+                      <p className="font-sans font-bold text-base" style={{ color: meta.accent }}>
+                        {kata.indonesian}
+                      </p>
+                      <p className="font-sans text-xs mt-1 italic" style={{ color: "var(--text-muted)" }}>
+                        &ldquo;{kata.contoh}&rdquo;
+                      </p>
                     </div>
                   ) : (
-                    <div className="h-12 rounded-xl bg-white bg-opacity-40 border border-dashed border-gray-300 flex items-center justify-center">
-                      <span className="text-gray-300 text-sm">• • •</span>
+                    <div
+                      className="h-12 rounded-xl border-dashed flex items-center justify-center"
+                      style={{ border: "1px dashed var(--border-strong)", backgroundColor: "var(--bg-subtle)" }}
+                    >
+                      <span className="font-sans text-sm" style={{ color: "var(--border-strong)" }}>• • •</span>
                     </div>
                   )}
                 </div>
@@ -174,27 +194,36 @@ export default function VocabularyPage() {
     );
   }
 
-  // ─── TAMPILAN PILIH KATEGORI ──────────────────────────────────────────────
+  // ─── TAMPILAN PILIH KATEGORI ────────────────────────────────────────────────
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link href="/" className="text-indigo-500 hover:text-indigo-700 text-2xl">←</Link>
+    <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
+      <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
+        <div className="max-w-5xl mx-auto px-5 py-4 flex items-center gap-4">
+          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div>
-            <h1 className="text-xl font-bold text-indigo-700">📚 Vocabulary</h1>
-            <p className="text-xs text-gray-400">
-              {kosakataTersedia.length} kata · {urutanKategori.filter(k => jumlahPerKategori[k] > 0).length} kategori
-              {config && <span className={`ml-1 font-semibold ${config.teks}`}>· {config.emoji} {config.label}</span>}
+            <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
+              📚 Vocabulary
+            </h1>
+            <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
+              {kosakataTersedia.length} kata · {urutanKategori.filter((k) => jumlahPerKategori[k] > 0).length} kategori
+              {config && (
+                <span className="ml-1 font-semibold" style={{ color: "var(--brand)" }}>
+                  · {config.emoji} {config.label}
+                </span>
+              )}
             </p>
           </div>
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-5 py-8">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Pilih Kategori</h2>
-          <p className="text-gray-500 text-sm">Klik salah satu kategori untuk mulai belajar kosakata 👇</p>
+          <h2 className="font-serif text-2xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+            Pilih Kategori
+          </h2>
+          <p className="font-sans text-sm" style={{ color: "var(--text-secondary)" }}>
+            Klik salah satu kategori untuk mulai belajar kosakata 👇
+          </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -206,13 +235,20 @@ export default function VocabularyPage() {
               <button
                 key={kat}
                 onClick={() => { setKategoriDipilih(kat); setKartuTerbuka({}); }}
-                className={`rounded-2xl border-2 ${m.border} ${m.bg} p-5 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer`}
+                className="card-de p-5 text-center group"
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${m.warna} flex items-center justify-center text-4xl shadow-md mx-auto mb-3`}>
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-3"
+                  style={{ backgroundColor: m.iconBg, border: `1px solid var(--border)` }}
+                >
                   {m.emoji}
                 </div>
-                <h3 className={`font-bold text-sm ${m.teks} leading-tight`}>{kat}</h3>
-                <p className="text-gray-400 text-xs mt-1">{jumlah} kata</p>
+                <h3 className="font-serif font-semibold text-sm leading-tight mb-1" style={{ color: m.accent }}>
+                  {kat}
+                </h3>
+                <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>
+                  {jumlah} kata
+                </p>
               </button>
             );
           })}

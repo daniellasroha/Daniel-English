@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
-import { useLevel, LEVEL_CONFIG } from "@/hooks/useLevel";
+import { useLevel } from "@/hooks/useLevel";
 import { useSRS } from "@/hooks/useSRS";
 import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";

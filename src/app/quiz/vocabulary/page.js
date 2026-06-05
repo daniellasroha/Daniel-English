@@ -123,8 +123,7 @@ function VocabularyQuizContent() {
       emoji="📚"
       soalList={soalList}
       maxSoal={15}
-      warnaBg="bg-gradient-to-br from-blue-50 to-indigo-100"
-      warnaBtn="bg-blue-600"
+      accentColor="#1D4ED8"
       kategori="vocabulary"
       pakaiTimer={pakaiTimer}
     />

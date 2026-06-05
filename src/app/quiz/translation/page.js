@@ -90,8 +90,7 @@ function TranslationQuizContent() {
       emoji="🌐"
       soalList={soalList}
       maxSoal={10}
-      warnaBg="bg-gradient-to-br from-sky-50 to-blue-100"
-      warnaBtn="bg-sky-600"
+      accentColor="#0369A1"
       kategori="translation"
       pakaiTimer={pakaiTimer}
     />

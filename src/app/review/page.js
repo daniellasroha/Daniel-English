@@ -146,6 +146,9 @@ export default function ReviewPage() {
     );
   }
 
+  // Guard: kartu bisa null sebentar sebelum useEffect mengisi antrian
+  if (!kartu) return null;
+
   // ── Layar review utama ──
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "var(--bg-base)" }}>
