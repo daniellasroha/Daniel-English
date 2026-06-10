@@ -180,6 +180,16 @@ html.dark {
   }
 }
 
+/* ─── ANIMASI MASUK ──────────────────────────────────────────────────────────── */
+/* Kartu muncul dengan fade-up berurutan — pakai style animationDelay untuk stagger */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
 /* ─── CONFETTI ───────────────────────────────────────────────────────────────── */
 /* Animasi perayaan saat pelajaran selesai — CSS murni, tanpa library */
 @keyframes confetti-fall {

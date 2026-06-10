@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
 import { useLevel } from "@/hooks/useLevel";
 import { useSRS } from "@/hooks/useSRS";
+import { useProgress, hitungStreak, hitungRataQuiz } from "@/hooks/useProgress";
+import { useLearning } from "@/hooks/useLearning";
+import { learningPath } from "@/data/learningPath";
 import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";
 import DarkModeToggle from "@/components/DarkModeToggle";
@@ -164,6 +167,58 @@ export default function Home() {
 
   const kat = aktif ? kategori.find((k) => k.id === aktif) : null;
 
+  // ─── Statistik untuk hero dashboard ─────────────────────────────────────────
+  const { data } = useProgress();
+  const { isLessonUnlocked, getUnitProgress, loaded: loadedLearn } = useLearning();
+
+  const streak     = data ? hitungStreak(data.sessions) : 0;
+  const totalVocab = data ? data.vocabSeen.length : 0;
+  const rataQuiz   = data ? hitungRataQuiz(data.quiz) : 0;
+  const totalSesi  = data ? data.sessions.length : 0;
+
+  // Unit sesuai level user (sama dengan filter di halaman Belajar)
+  const userLevel  = level || "a1";
+  const unitsTampil =
+    userLevel === "a1"
+      ? learningPath.filter((u) => u.level === "a1")
+      : userLevel === "a2"
+      ? learningPath.filter((u) => u.level === "a1" || u.level === "a2")
+      : learningPath;
+
+  const { lessonsDone, lessonsAll } = loadedLearn
+    ? unitsTampil.reduce(
+        (acc, u) => {
+          const p = getUnitProgress(u.id);
+          return { lessonsDone: acc.lessonsDone + p.done, lessonsAll: acc.lessonsAll + p.total };
+        },
+        { lessonsDone: 0, lessonsAll: 0 }
+      )
+    : { lessonsDone: 0, lessonsAll: 0 };
+
+  // Unit yang sedang dikerjakan — untuk tombol "Lanjutkan Belajar"
+  const unitLanjut = loadedLearn
+    ? unitsTampil.find((u) => {
+        const p = getUnitProgress(u.id);
+        return isLessonUnlocked(u.id, 0) && p.done < p.total;
+      })
+    : null;
+
+  // Progress mini per kartu kategori
+  const progKategori = {
+    belajar: {
+      persen: lessonsAll > 0 ? Math.round((lessonsDone / lessonsAll) * 100) : 0,
+      label: `${lessonsDone}/${lessonsAll} pelajaran`,
+    },
+    latihan: {
+      persen: rataQuiz,
+      label: rataQuiz ? `rata-rata quiz ${rataQuiz}%` : "belum ada quiz",
+    },
+    progress: {
+      persen: Math.min(Math.round((totalSesi / 30) * 100), 100),
+      label: `${totalSesi} hari belajar`,
+    },
+  };
+
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
 
@@ -217,26 +272,77 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ─── Hero ──────────────────────────────────────────────────────────── */}
+      {/* ─── Hero dashboard ────────────────────────────────────────────────── */}
       {!aktif && (
-        <section className="max-w-4xl mx-auto px-5 pt-12 pb-8 text-center">
-          <h2
-            className="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-3"
-            style={{ color: "var(--text-primary)" }}
-          >
-            {username ? <>Halo, <em>{username}</em>! 👋</> : "Halo, Selamat Datang! 👋"}
-          </h2>
-          {config && (
-            <div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-sans text-sm font-semibold mb-5"
-              style={getLevelPillStyle(level)}
-            >
-              {config.emoji} Level {config.label} — {config.deskripsi.split(",")[0]}
+        <section className="max-w-4xl mx-auto px-5 pt-10 pb-6">
+          {/* Sapaan + streak */}
+          <div className="fade-up flex items-center justify-between gap-3 flex-wrap mb-5">
+            <div>
+              <h2
+                className="font-serif text-3xl sm:text-4xl font-semibold leading-tight"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {username ? <>Halo, <em>{username}</em>! 👋</> : "Halo, Selamat Datang! 👋"}
+              </h2>
+              {config && (
+                <div
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-sans text-xs font-semibold mt-2"
+                  style={getLevelPillStyle(level)}
+                >
+                  {config.emoji} Level {config.label} — {config.deskripsi.split(",")[0]}
+                </div>
+              )}
             </div>
+            {/* Streak pill */}
+            <div
+              className="flex items-center gap-2 px-4 py-2 rounded-full font-sans text-sm font-bold"
+              style={{ backgroundColor: "var(--gold-light)", color: "var(--gold)", border: "1px solid var(--border)" }}
+              title="Hari belajar berturut-turut"
+            >
+              🔥 {streak} hari
+            </div>
+          </div>
+
+          {/* Statistik ringkas */}
+          <div className="fade-up grid grid-cols-3 gap-3 mb-5" style={{ animationDelay: "0.08s" }}>
+            {[
+              { nilai: totalVocab,  label: "kata dipelajari",   emoji: "📚" },
+              { nilai: lessonsDone, label: "pelajaran selesai", emoji: "⭐" },
+              { nilai: rataQuiz ? `${rataQuiz}%` : "—", label: "rata-rata quiz", emoji: "🧠" },
+            ].map((s, i) => (
+              <div
+                key={i}
+                className="rounded-2xl px-3 py-3.5 text-center"
+                style={{ backgroundColor: "var(--bg-paper)", border: "1px solid var(--border)" }}
+              >
+                <p className="font-serif text-2xl font-semibold leading-none" style={{ color: "var(--brand)" }}>
+                  {s.nilai}
+                </p>
+                <p className="font-sans text-xs mt-1.5" style={{ color: "var(--text-muted)" }}>
+                  {s.emoji} {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Tombol lanjutkan belajar */}
+          {unitLanjut && lessonsDone > 0 && (
+            <Link href="/belajar" className="fade-up block" style={{ animationDelay: "0.16s" }}>
+              <div
+                className="rounded-2xl px-5 py-4 flex items-center justify-between text-white transition hover:opacity-90"
+                style={{ backgroundColor: "var(--brand)", boxShadow: "var(--shadow-btn)" }}
+              >
+                <span className="flex items-center gap-3">
+                  <span className="text-2xl">{unitLanjut.emoji}</span>
+                  <span>
+                    <span className="block font-sans text-xs opacity-80">Lanjutkan Belajar</span>
+                    <span className="font-sans font-bold">{unitLanjut.judul}</span>
+                  </span>
+                </span>
+                <span className="text-2xl">→</span>
+              </div>
+            </Link>
           )}
-          <p className="font-sans text-base max-w-md mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-            Pilih kategori di bawah untuk mulai belajar.
-          </p>
         </section>
       )}
 
@@ -244,57 +350,72 @@ export default function Home() {
       {!aktif && (
         <section className="max-w-4xl mx-auto px-5 pb-16">
           <div className="flex flex-col gap-4">
-            {kategori.map((kat) => (
-              <button
-                key={kat.id}
-                onClick={() => setAktif(kat.id)}
-                className="card-de relative overflow-hidden text-left w-full group"
-              >
-                {/* Strip aksen kiri */}
-                <div
-                  className="absolute inset-y-0 left-0 w-[3px]"
-                  style={{ backgroundColor: kat.accentColor }}
-                />
-
-                <div className="pl-6 pr-5 py-6 flex items-center gap-5">
-                  {/* Ikon besar */}
+            {kategori.map((kat, katIdx) => {
+              const prog = progKategori[kat.id] ?? { persen: 0, label: "" };
+              return (
+                <button
+                  key={kat.id}
+                  onClick={() => setAktif(kat.id)}
+                  className="card-de fade-up relative overflow-hidden text-left w-full group"
+                  style={{ animationDelay: `${0.24 + katIdx * 0.08}s` }}
+                >
+                  {/* Strip aksen kiri */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"
-                    style={{ backgroundColor: kat.iconBg, border: "1px solid var(--border)" }}
-                  >
-                    {kat.emoji}
-                  </div>
+                    className="absolute inset-y-0 left-0 w-[3px]"
+                    style={{ backgroundColor: kat.accentColor }}
+                  />
 
-                  {/* Teks */}
-                  <div className="flex-1 min-w-0">
-                    <h2
-                      className="font-serif text-xl font-semibold mb-1"
-                      style={{ color: "var(--text-primary)" }}
+                  <div className="pl-6 pr-5 py-6 flex items-center gap-5">
+                    {/* Ikon besar */}
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"
+                      style={{ backgroundColor: kat.iconBg, border: "1px solid var(--border)" }}
                     >
-                      {kat.title}
-                    </h2>
-                    <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                      {kat.deskripsi}
-                    </p>
-                    {/* Jumlah modul */}
+                      {kat.emoji}
+                    </div>
+
+                    {/* Teks */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <h2 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
+                          {kat.title}
+                        </h2>
+                        <span
+                          className="font-sans text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                          style={{ backgroundColor: kat.iconBg, color: kat.accentColor, border: `1px solid ${kat.accentColor}30` }}
+                        >
+                          {kat.items.length} modul
+                        </span>
+                      </div>
+                      <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                        {kat.deskripsi}
+                      </p>
+
+                      {/* Progress bar mini */}
+                      <div className="mt-3 flex items-center gap-3">
+                        <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "var(--bg-subtle)" }}>
+                          <div
+                            className="h-full rounded-full transition-all duration-700"
+                            style={{ width: `${prog.persen}%`, backgroundColor: kat.accentColor }}
+                          />
+                        </div>
+                        <span className="font-sans text-xs flex-shrink-0" style={{ color: "var(--text-muted)" }}>
+                          {prog.label}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Panah */}
                     <span
-                      className="inline-block font-sans text-xs font-semibold mt-2 px-2.5 py-0.5 rounded-full"
-                      style={{ backgroundColor: kat.iconBg, color: kat.accentColor, border: `1px solid ${kat.accentColor}30` }}
+                      className="text-2xl flex-shrink-0 transition-transform group-hover:translate-x-1"
+                      style={{ color: kat.accentColor }}
                     >
-                      {kat.items.length} modul
+                      →
                     </span>
                   </div>
-
-                  {/* Panah */}
-                  <span
-                    className="text-2xl flex-shrink-0 transition-transform group-hover:translate-x-1"
-                    style={{ color: kat.accentColor }}
-                  >
-                    →
-                  </span>
-                </div>
-              </button>
-            ))}
+                </button>
+              );
+            })}
           </div>
         </section>
       )}
