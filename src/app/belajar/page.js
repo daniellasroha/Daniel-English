@@ -1,7 +1,7 @@
 // Halaman Belajar Terstruktur — Busuu-style learning path
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { learningPath as unitBelajar } from "@/data/learningPath";
 import { useLearning } from "@/hooks/useLearning";
@@ -117,7 +117,281 @@ function VocabCard({ kartu, meta, index, total, lessonId, registerCard }) {
   );
 }
 
-// ─── KOMPONEN: Mini Quiz ──────────────────────────────────────────────────────
+// ─── SESI LATIHAN MULTI-TIPE ──────────────────────────────────────────────────
+// Tipe item: "mc" (pilihan ganda) | "listening" | "matching" | "susun"
+// Semua tipe baru di-generate otomatis dari kartu pelajaran — tidak perlu ubah data
+
+function acakArr(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+// Kartu yang cocok untuk listening/matching: kata pendek, bukan rumus grammar
+function kartuSederhana(kartu) {
+  return (kartu || []).filter(
+    (k) => k.kata.length <= 22 && !k.kata.includes("/") && !k.kata.includes("+") && !k.kata.includes("...")
+  );
+}
+
+// Bangun sesi campuran: soal MC dari data + listening + matching + susun kalimat
+function buatSesiLatihan(soalData, kartu) {
+  const mc = (soalData && soalData.length ? soalData : generateSoalFromKartu(kartu || []))
+    .map((s) => ({ ...s, tipe: "mc" }));
+
+  const sederhana = kartuSederhana(kartu);
+  if (sederhana.length < 4) return mc; // kartu grammar/rumus → MC saja
+
+  const ekstra = [];
+
+  // 2 soal listening: dengarkan kata, pilih yang benar
+  acakArr(sederhana).slice(0, 2).forEach((k) => {
+    const lain = acakArr(sederhana.filter((x) => x.kata !== k.kata)).slice(0, 3).map((x) => x.kata);
+    const pilihan = acakArr([k.kata, ...lain]);
+    ekstra.push({ tipe: "listening", kata: k.kata, pilihan, jawaban: pilihan.indexOf(k.kata) });
+  });
+
+  // 1 ronde mencocokkan: 4 pasang kata ↔ arti (arti pendek saja agar muat)
+  const pasanganCalon = sederhana.filter((k) => k.arti.length <= 35);
+  if (pasanganCalon.length >= 4) {
+    ekstra.push({
+      tipe: "matching",
+      pasangan: acakArr(pasanganCalon).slice(0, 4).map((k) => ({ kata: k.kata, arti: k.arti })),
+    });
+  }
+
+  // 1 soal susun kalimat: dari contoh kalimat 3–8 kata
+  const susunCalon = sederhana.filter((k) => {
+    const n = (k.contoh || "").split(" ").length;
+    return n >= 3 && n <= 8;
+  });
+  if (susunCalon.length > 0) {
+    const k = susunCalon[Math.floor(Math.random() * susunCalon.length)];
+    ekstra.push({ tipe: "susun", kalimat: k.contoh, kataKunci: k.kata, artiKunci: k.arti });
+  }
+
+  // Sisipkan item ekstra di posisi acak (setelah soal pertama)
+  const hasil = [...mc];
+  ekstra.forEach((e) => {
+    const pos = 1 + Math.floor(Math.random() * Math.max(hasil.length, 1));
+    hasil.splice(pos, 0, e);
+  });
+  return hasil;
+}
+
+// ─── KOMPONEN: Latihan Mencocokkan ────────────────────────────────────────────
+// Tap kata di kiri, lalu tap arti di kanan. Benar → hijau permanen, salah → flash merah.
+function MatchingItem({ pasangan, meta, onDone }) {
+  const [kiri]  = useState(() => acakArr(pasangan.map((p) => p.kata)));
+  const [kanan] = useState(() => acakArr(pasangan.map((p) => p.arti)));
+  const [pilihKata, setPilihKata] = useState(null);
+  const [cocok, setCocok] = useState([]);     // daftar kata yang sudah berpasangan
+  const [salahCount, setSalahCount] = useState(0);
+  const [flashSalah, setFlashSalah] = useState(null); // arti yang di-flash merah
+
+  const semuaCocok = cocok.length === pasangan.length;
+
+  function tapArti(arti) {
+    if (!pilihKata || flashSalah) return;
+    const pasanganBenar = pasangan.find((p) => p.kata === pilihKata);
+    if (pasanganBenar.arti === arti) {
+      setCocok((c) => [...c, pilihKata]);
+      setPilihKata(null);
+      playBenar();
+    } else {
+      setSalahCount((s) => s + 1);
+      setFlashSalah(arti);
+      playSalah();
+      setTimeout(() => setFlashSalah(null), 600);
+    }
+  }
+
+  const artiKe = (kata) => pasangan.find((p) => p.kata === kata)?.arti;
+
+  return (
+    <div>
+      <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-5 mb-6 text-center`}>
+        <p className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
+          🔗 Cocokkan kata dengan artinya
+        </p>
+        <p className="font-sans text-xs mt-1" style={{ color: "var(--text-muted)" }}>
+          Tap kata bahasa Inggris, lalu tap artinya
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 mb-6">
+        {/* Kolom kata (Inggris) */}
+        <div className="flex flex-col gap-3">
+          {kiri.map((kata) => {
+            const sudah = cocok.includes(kata);
+            const aktif = pilihKata === kata;
+            return (
+              <button
+                key={kata}
+                onClick={() => !sudah && setPilihKata(aktif ? null : kata)}
+                disabled={sudah}
+                className={`px-3 py-3 rounded-xl font-sans font-semibold text-sm border-2 transition-all ${
+                  sudah
+                    ? "border-green-400 bg-green-50 text-green-700 opacity-60"
+                    : aktif
+                    ? `${meta.border} ${meta.bg} ${meta.teks} scale-105 shadow-md`
+                    : ""
+                }`}
+                style={
+                  !sudah && !aktif
+                    ? { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)", color: "var(--text-primary)" }
+                    : {}
+                }
+              >
+                {sudah ? "✓ " : ""}{kata}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Kolom arti (Indonesia) */}
+        <div className="flex flex-col gap-3">
+          {kanan.map((arti) => {
+            const sudah = cocok.some((kata) => artiKe(kata) === arti);
+            const salah = flashSalah === arti;
+            return (
+              <button
+                key={arti}
+                onClick={() => !sudah && tapArti(arti)}
+                disabled={sudah}
+                className={`px-3 py-3 rounded-xl font-sans font-medium text-sm border-2 transition-all ${
+                  sudah
+                    ? "border-green-400 bg-green-50 text-green-700 opacity-60"
+                    : salah
+                    ? "border-red-400 bg-red-50 text-red-600"
+                    : ""
+                }`}
+                style={
+                  !sudah && !salah
+                    ? { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)", color: "var(--text-secondary)" }
+                    : {}
+                }
+              >
+                {sudah ? "✓ " : ""}{arti}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {semuaCocok && (
+        <button
+          onClick={() => onDone(salahCount <= 1)}
+          className={`w-full py-3 rounded-2xl text-white font-sans font-bold bg-gradient-to-r ${meta.warna} hover:scale-105 transition-transform shadow-md`}
+        >
+          {salahCount <= 1 ? "🎉 Hebat! Lanjut →" : "Lanjut →"}
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── KOMPONEN: Latihan Susun Kalimat ──────────────────────────────────────────
+// Tap kata acak untuk menyusun kalimat. Tap kata tersusun untuk membatalkan.
+function SusunItem({ kalimat, kataKunci, artiKunci, meta, onDone }) {
+  // Setiap kata diberi id unik agar kata kembar tidak tertukar
+  const [pool] = useState(() =>
+    acakArr(kalimat.split(" ").map((w, i) => ({ id: i, w })))
+  );
+  const [jawab, setJawab] = useState([]);   // array id terurut
+  const [hasil, setHasil] = useState(null); // null | "benar" | "salah"
+
+  const sisaPool = pool.filter((p) => !jawab.includes(p.id));
+  const kalimatJawab = jawab.map((id) => pool.find((p) => p.id === id).w).join(" ");
+  const benar = kalimatJawab === kalimat;
+
+  function periksa() {
+    setHasil(benar ? "benar" : "salah");
+    if (benar) playBenar(); else playSalah();
+  }
+
+  return (
+    <div>
+      <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-5 mb-4 text-center`}>
+        <p className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
+          🧩 Susun kalimatnya
+        </p>
+        <p className="font-sans text-xs mt-1" style={{ color: "var(--text-muted)" }}>
+          Petunjuk: <strong>{kataKunci}</strong> = {artiKunci}
+        </p>
+      </div>
+
+      {/* Area jawaban */}
+      <div
+        className="min-h-[3.5rem] rounded-xl border-2 border-dashed p-3 mb-4 flex flex-wrap gap-2 items-center justify-center"
+        style={{ borderColor: "var(--border-strong)", backgroundColor: "var(--bg-paper)" }}
+      >
+        {jawab.length === 0 && (
+          <span className="font-sans text-sm" style={{ color: "var(--text-muted)" }}>
+            Tap kata di bawah untuk menyusun...
+          </span>
+        )}
+        {jawab.map((id) => (
+          <button
+            key={id}
+            onClick={() => hasil === null && setJawab((j) => j.filter((x) => x !== id))}
+            className={`px-3 py-1.5 rounded-lg font-sans font-semibold text-sm border-2 ${meta.border} ${meta.bg} ${meta.teks} transition`}
+          >
+            {pool.find((p) => p.id === id).w}
+          </button>
+        ))}
+      </div>
+
+      {/* Pool kata acak */}
+      <div className="flex flex-wrap gap-2 justify-center mb-6">
+        {sisaPool.map((p) => (
+          <button
+            key={p.id}
+            onClick={() => hasil === null && setJawab((j) => [...j, p.id])}
+            className="px-3 py-1.5 rounded-lg font-sans font-semibold text-sm border-2 transition hover:scale-105"
+            style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-paper)", color: "var(--text-primary)" }}
+          >
+            {p.w}
+          </button>
+        ))}
+      </div>
+
+      {/* Feedback */}
+      {hasil && (
+        <div className={`rounded-xl p-4 mb-4 text-center font-sans text-sm font-semibold ${
+          hasil === "benar" ? "bg-green-50 text-green-700 border-2 border-green-200" : "bg-red-50 text-red-600 border-2 border-red-200"
+        }`}>
+          {hasil === "benar" ? "🎉 Benar! Kalimat tersusun sempurna!" : (
+            <>❌ Belum tepat. Kalimat yang benar:<br />
+              <span className="font-bold">&ldquo;{kalimat}&rdquo;</span>
+            </>
+          )}
+        </div>
+      )}
+
+      {hasil === null ? (
+        <button
+          onClick={periksa}
+          disabled={sisaPool.length > 0}
+          className={`w-full py-3 rounded-2xl text-white font-sans font-bold transition shadow-md ${
+            sisaPool.length === 0
+              ? `bg-gradient-to-r ${meta.warna} hover:scale-105`
+              : "opacity-40 cursor-not-allowed bg-gray-300"
+          }`}
+        >
+          Periksa Jawaban
+        </button>
+      ) : (
+        <button
+          onClick={() => onDone(hasil === "benar")}
+          className={`w-full py-3 rounded-2xl text-white font-sans font-bold bg-gradient-to-r ${meta.warna} hover:scale-105 transition-transform shadow-md`}
+        >
+          Lanjut →
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── KOMPONEN: Mini Quiz (multi-tipe) ─────────────────────────────────────────
 // meta.warna dipertahankan untuk identitas unit. Green/red feedback tetap.
 function MiniQuiz({ soalList, meta, onSelesai }) {
   const [idx, setIdx] = useState(0);
@@ -126,6 +400,15 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
 
   const soal = soalList[idx];
   const selesai = idx >= soalList.length;
+  const tipe = soal?.tipe || "mc";
+
+  // Listening: ucapkan kata otomatis saat soal muncul
+  useEffect(() => {
+    if (!selesai && tipe === "listening") {
+      const t = setTimeout(() => speak(soal.kata), 350);
+      return () => clearTimeout(t);
+    }
+  }, [idx]);
 
   function pilih(i) {
     if (dipilih !== null) return;
@@ -139,6 +422,13 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
   }
 
   function lanjut() {
+    setDipilih(null);
+    setIdx((n) => n + 1);
+  }
+
+  // Dipanggil oleh MatchingItem / SusunItem saat selesai
+  function itemDone(hasilBenar) {
+    if (hasilBenar) setBenar((b) => b + 1);
     setDipilih(null);
     setIdx((n) => n + 1);
   }
@@ -186,14 +476,47 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
         </div>
       </div>
 
-      {/* Kartu soal */}
-      <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-6 mb-6`}>
-        <p className="font-serif text-lg font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>
-          {soal.pertanyaan}
-        </p>
-      </div>
+      {/* ── Tipe: mencocokkan ── */}
+      {tipe === "matching" && (
+        <MatchingItem key={idx} pasangan={soal.pasangan} meta={meta} onDone={itemDone} />
+      )}
 
-      {/* Pilihan jawaban */}
+      {/* ── Tipe: susun kalimat ── */}
+      {tipe === "susun" && (
+        <SusunItem key={idx} kalimat={soal.kalimat} kataKunci={soal.kataKunci} artiKunci={soal.artiKunci} meta={meta} onDone={itemDone} />
+      )}
+
+      {/* ── Tipe: listening — kartu speaker, bukan teks ── */}
+      {tipe === "listening" && (
+        <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-6 mb-6 text-center`}>
+          <p className="font-serif text-lg font-semibold mb-3" style={{ color: "var(--text-primary)" }}>
+            🎧 Dengarkan, lalu pilih kata yang kamu dengar
+          </p>
+          <button
+            onClick={() => speak(soal.kata)}
+            className={`w-16 h-16 rounded-full text-3xl bg-gradient-to-br ${meta.warna} text-white shadow-lg hover:scale-110 transition-transform`}
+            title="Putar lagi"
+          >
+            🔊
+          </button>
+          <p className="font-sans text-xs mt-2" style={{ color: "var(--text-muted)" }}>
+            Tap untuk dengar lagi
+          </p>
+        </div>
+      )}
+
+      {/* ── Tipe: pilihan ganda — kartu pertanyaan ── */}
+      {tipe === "mc" && (
+        <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-6 mb-6`}>
+          <p className="font-serif text-lg font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>
+            {soal.pertanyaan}
+          </p>
+        </div>
+      )}
+
+      {/* Pilihan jawaban — hanya untuk mc & listening */}
+      {(tipe === "mc" || tipe === "listening") && (
+      <>
       <div className="grid grid-cols-1 gap-3 mb-4">
         {soal.pilihan.map((pilihan, i) => {
           // State: belum dijawab
@@ -256,6 +579,8 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
           {idx < soalList.length - 1 ? "Soal Berikutnya →" : "Lihat Hasil"}
         </button>
       )}
+      </>
+      )}
     </div>
   );
 }
@@ -281,6 +606,12 @@ function TampilanPelajaran({
 
   const isVocab = pelajaran.tipe === "vocab";
   const isQuiz  = pelajaran.tipe === "quiz";
+
+  // Sesi latihan campuran dibangun SEKALI per pelajaran (komponen di-key per lesson)
+  // agar urutan soal tidak teracak ulang setiap render
+  const [sesiLatihan] = useState(() =>
+    pelajaran.tipe === "vocab" ? buatSesiLatihan(pelajaran.soal, pelajaran.kartu) : []
+  );
 
   function handleVocabNext() {
     if (isVocab && vocabIdx < pelajaran.kartu.length - 1) {
@@ -535,7 +866,7 @@ function TampilanPelajaran({
       </header>
       <div className="max-w-xl mx-auto px-4 py-6">
         <MiniQuiz
-          soalList={pelajaran.soal || generateSoalFromKartu(pelajaran.kartu)}
+          soalList={sesiLatihan}
           meta={meta}
           onSelesai={handleQuizSelesai}
         />
