@@ -444,7 +444,9 @@ function TampilanPelajaran({
             </p>
           </div>
 
+          {/* key={vocabIdx} → state flip kartu di-reset setiap pindah kartu */}
           <VocabCard
+            key={vocabIdx}
             kartu={kartu}
             meta={meta}
             index={vocabIdx}
@@ -471,34 +473,35 @@ function TampilanPelajaran({
             </button>
           </div>
 
-          {/* Grid semua kartu */}
+          {/* Chip navigasi kata — sengaja kecil agar beda dari tombol utama */}
           <div className="mt-8">
-            <p className="font-sans text-xs mb-3 text-center" style={{ color: "var(--text-muted)" }}>
-              Semua Kata ({pelajaran.kartu.length})
+            <p className="font-sans text-xs mb-3 text-center uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
+              Lompat ke kata
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {pelajaran.kartu.map((k, i) => (
-                <button
-                  key={i}
-                  onClick={() => setVocabIdx(i)}
-                  className={`rounded-xl p-3 text-left border-2 transition-all ${
-                    i === vocabIdx ? `${meta.border} ${meta.bg}` : ""
-                  }`}
-                  style={
-                    i !== vocabIdx
-                      ? { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)" }
-                      : {}
-                  }
-                >
-                  <span className="text-lg mr-2">{k.emoji}</span>
-                  <span
-                    className={`font-sans font-semibold text-sm ${i === vocabIdx ? meta.teks : ""}`}
-                    style={i !== vocabIdx ? { color: "var(--text-primary)" } : {}}
+            <div className="flex flex-wrap justify-center gap-2">
+              {pelajaran.kartu.map((k, i) => {
+                const aktif  = i === vocabIdx;
+                const lewat  = i < vocabIdx; // sudah dilewati
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setVocabIdx(i)}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-sans text-xs font-semibold border transition-all ${
+                      aktif ? `${meta.border} ${meta.bg} ${meta.teks} border-2 scale-105 shadow-sm` : ""
+                    }`}
+                    style={
+                      aktif
+                        ? {}
+                        : lewat
+                        ? { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)", color: "var(--text-secondary)" }
+                        : { borderColor: "var(--border)", backgroundColor: "var(--bg-paper)", color: "var(--text-muted)" }
+                    }
                   >
+                    <span className="text-sm">{lewat ? "✓" : k.emoji}</span>
                     {k.kata}
-                  </span>
-                </button>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
