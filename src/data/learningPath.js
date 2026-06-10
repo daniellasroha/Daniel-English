@@ -14665,5 +14665,293 @@ export const learningPath = [
         ]
       }
     ]
+  },
+  {
+    "id": "unit-46",
+    "judul": "Past Perfect",
+    "deskripsi": "Ungkapkan aksi yang selesai SEBELUM aksi lain di masa lalu dengan had + V3",
+    "emoji": "⏮️",
+    "warna": "from-indigo-500 to-indigo-700",
+    "bg": "bg-indigo-50",
+    "border": "border-indigo-300",
+    "teks": "text-indigo-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u46-l1",
+        "judul": "had + V3",
+        "emoji": "⏮️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "had + V3", "arti": "Rumus Past Perfect — aksi yang selesai sebelum aksi lain di masa lalu", "emoji": "📐", "contoh": "I had finished dinner before she arrived." },
+          { "kata": "I had eaten", "arti": "saya sudah makan (sebelum momen lampau lain)", "emoji": "🍽️", "contoh": "I had already eaten when they invited me." },
+          { "kata": "She had left", "arti": "dia sudah pergi", "emoji": "🚪", "contoh": "She had left before the meeting started." },
+          { "kata": "They had finished", "arti": "mereka sudah selesai", "emoji": "✅", "contoh": "They had finished the project before the deadline." },
+          { "kata": "had never seen", "arti": "belum pernah melihat (sampai saat itu)", "emoji": "👀", "contoh": "I had never seen snow before I went to Japan." },
+          { "kata": "had already gone", "arti": "sudah terlanjur pergi", "emoji": "🏃", "contoh": "The bus had already gone when we got to the stop." }
+        ]
+      },
+      {
+        "id": "u46-l2",
+        "judul": "Past Perfect vs Simple Past",
+        "emoji": "⚖️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "before + Simple Past", "arti": "Past Perfect dipakai untuk aksi yang lebih dulu", "emoji": "1️⃣", "contoh": "I had studied English before I moved to Australia." },
+          { "kata": "after + Past Perfect", "arti": "setelah aksi pertama selesai", "emoji": "2️⃣", "contoh": "After she had finished work, she went home." },
+          { "kata": "hadn't + V3", "arti": "bentuk negatif Past Perfect", "emoji": "🚫", "contoh": "He hadn't studied, so he failed the test." },
+          { "kata": "Had you ever ...?", "arti": "pertanyaan Past Perfect", "emoji": "❓", "contoh": "Had you ever visited Bali before 2020?" },
+          { "kata": "by the time", "arti": "pada saat — sinyal khas Past Perfect", "emoji": "⏰", "contoh": "By the time we arrived, the film had started." }
+        ],
+        "soal": [
+          { "pertanyaan": "Melengkapi: 'The film ___ started by the time we arrived.'", "pilihan": ["has", "had", "have", "was"], "jawaban": 1 },
+          { "pertanyaan": "Kalimat Past Perfect yang benar:", "pilihan": ["She had ate before I came.", "She had eaten before I came.", "She has eaten before I came.", "She had eat before I came."], "jawaban": 1 },
+          { "pertanyaan": "'I ___ never seen snow before that day.'", "pilihan": ["has", "have", "had", "was"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "u46-l3",
+        "judul": "Kuis: Past Perfect",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Rumus Past Perfect adalah...", "pilihan": ["have + V3", "had + V3", "was + V-ing", "had + V-ing"], "jawaban": 1 },
+          { "pertanyaan": "'They ___ finished before the deadline.'", "pilihan": ["has", "have", "had", "having"], "jawaban": 2 },
+          { "pertanyaan": "Aksi mana yang terjadi LEBIH DULU: 'The bus had left when I arrived.'", "pilihan": ["I arrived", "The bus left", "Bersamaan", "Tidak jelas"], "jawaban": 1 },
+          { "pertanyaan": "Bentuk negatif Past Perfect:", "pilihan": ["didn't had", "hadn't + V3", "haven't + V3", "wasn't + V3"], "jawaban": 1 },
+          { "pertanyaan": "'By the time we got there, the food ___ cold.'", "pilihan": ["had become", "has become", "becomes", "becoming"], "jawaban": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-47",
+    "judul": "Used To (Kebiasaan Masa Lalu)",
+    "deskripsi": "Ceritakan kebiasaan atau keadaan di masa lalu yang sekarang sudah tidak terjadi lagi",
+    "emoji": "🕰️",
+    "warna": "from-amber-500 to-amber-700",
+    "bg": "bg-amber-50",
+    "border": "border-amber-300",
+    "teks": "text-amber-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u47-l1",
+        "judul": "used to + Verb",
+        "emoji": "🕰️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "used to + Verb", "arti": "dulu biasa / dulu pernah (sekarang tidak lagi)", "emoji": "📐", "contoh": "I used to play football every Sunday." },
+          { "kata": "I used to live", "arti": "saya dulu tinggal", "emoji": "🏠", "contoh": "I used to live in a small village." },
+          { "kata": "She used to be shy", "arti": "dia dulu pemalu", "emoji": "😳", "contoh": "She used to be shy, but now she is confident." },
+          { "kata": "didn't use to", "arti": "dulu tidak biasa — bentuk negatif", "emoji": "🚫", "contoh": "I didn't use to like coffee, but now I love it." },
+          { "kata": "Did you use to ...?", "arti": "apakah kamu dulu ...?", "emoji": "❓", "contoh": "Did you use to play games as a child?" },
+          { "kata": "There used to be", "arti": "dulu ada", "emoji": "🏚️", "contoh": "There used to be a big tree here." }
+        ]
+      },
+      {
+        "id": "u47-l2",
+        "judul": "Used To dalam Cerita",
+        "emoji": "📖",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "When I was a child...", "arti": "pembuka cerita masa kecil", "emoji": "🧒", "contoh": "When I was a child, I used to climb trees." },
+          { "kata": "but now", "arti": "kontras dengan sekarang", "emoji": "🔄", "contoh": "I used to hate vegetables, but now I eat them every day." },
+          { "kata": "anymore", "arti": "tidak lagi", "emoji": "❌", "contoh": "I don't play video games anymore." },
+          { "kata": "be used to + V-ing", "arti": "TERBIASA dengan (beda makna!)", "emoji": "⚠️", "contoh": "I am used to waking up early. (sudah terbiasa)" }
+        ],
+        "soal": [
+          { "pertanyaan": "'I ___ play football, but now I don't.'", "pilihan": ["use to", "used to", "am used to", "using to"], "jawaban": 1 },
+          { "pertanyaan": "Bentuk negatif yang benar:", "pilihan": ["I didn't used to like tea.", "I didn't use to like tea.", "I don't used to like tea.", "I not used to like tea."], "jawaban": 1 },
+          { "pertanyaan": "'I am used to waking up early.' artinya:", "pilihan": ["Saya dulu bangun pagi.", "Saya sudah terbiasa bangun pagi.", "Saya akan bangun pagi.", "Saya tidak suka bangun pagi."], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "u47-l3",
+        "judul": "Kuis: Used To",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'Used to' dipakai untuk...", "pilihan": ["rencana masa depan", "kebiasaan masa lalu yang sudah berhenti", "aksi yang sedang berlangsung", "perintah"], "jawaban": 1 },
+          { "pertanyaan": "'She ___ be shy, but now she is confident.'", "pilihan": ["used to", "use to", "is used to", "uses to"], "jawaban": 0 },
+          { "pertanyaan": "Pertanyaan yang benar:", "pilihan": ["Did you used to smoke?", "Did you use to smoke?", "Do you used to smoke?", "Were you use to smoke?"], "jawaban": 1 },
+          { "pertanyaan": "'There ___ a cinema here ten years ago.'", "pilihan": ["used to be", "use to be", "is used to", "used to being"], "jawaban": 0 },
+          { "pertanyaan": "Mana yang berarti 'sudah terbiasa'?", "pilihan": ["I used to work at night.", "I am used to working at night.", "I use to work at night.", "I did use to work at night."], "jawaban": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-48",
+    "judul": "Modals of Deduction",
+    "deskripsi": "Tebak dan simpulkan sesuatu dengan must, might, could, dan can't",
+    "emoji": "🕵️",
+    "warna": "from-violet-500 to-violet-700",
+    "bg": "bg-violet-50",
+    "border": "border-violet-300",
+    "teks": "text-violet-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u48-l1",
+        "judul": "must be / can't be",
+        "emoji": "🕵️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "must be", "arti": "pasti (sangat yakin itu benar)", "emoji": "💯", "contoh": "He must be tired — he worked all night." },
+          { "kata": "can't be", "arti": "tidak mungkin (sangat yakin itu salah)", "emoji": "🙅", "contoh": "That can't be true! I saw him yesterday." },
+          { "kata": "might be", "arti": "mungkin (tidak yakin)", "emoji": "🤔", "contoh": "She might be at home, or maybe at work." },
+          { "kata": "could be", "arti": "bisa jadi", "emoji": "💭", "contoh": "It could be the answer, but I'm not sure." },
+          { "kata": "may be", "arti": "mungkin (formal)", "emoji": "📋", "contoh": "He may be busy at the moment." }
+        ]
+      },
+      {
+        "id": "u48-l2",
+        "judul": "Deduksi Masa Lalu: must have + V3",
+        "emoji": "🔍",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "must have + V3", "arti": "pasti sudah (deduksi masa lalu)", "emoji": "✅", "contoh": "The ground is wet. It must have rained." },
+          { "kata": "can't have + V3", "arti": "tidak mungkin sudah", "emoji": "❌", "contoh": "He can't have finished already — it's too fast!" },
+          { "kata": "might have + V3", "arti": "mungkin sudah", "emoji": "🤷", "contoh": "She might have forgotten our meeting." },
+          { "kata": "could have + V3", "arti": "bisa saja sudah / seharusnya bisa", "emoji": "💡", "contoh": "You could have told me earlier!" }
+        ],
+        "soal": [
+          { "pertanyaan": "'The lights are off. They ___ be at home.'", "pilihan": ["must", "can't", "might", "should"], "jawaban": 1 },
+          { "pertanyaan": "'The ground is wet. It ___ rained.'", "pilihan": ["must have", "can't have", "should", "will have"], "jawaban": 0 },
+          { "pertanyaan": "'She ___ have forgotten — she never forgets.' (tidak mungkin)", "pilihan": ["must", "might", "can't", "could"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "u48-l3",
+        "judul": "Kuis: Modals of Deduction",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'He worked 12 hours. He ___ be exhausted.'", "pilihan": ["can't", "must", "might not", "shouldn't"], "jawaban": 1 },
+          { "pertanyaan": "Untuk menyatakan 'tidak mungkin', gunakan...", "pilihan": ["must be", "might be", "can't be", "may be"], "jawaban": 2 },
+          { "pertanyaan": "'I'm not sure where she is. She ___ be at the library.'", "pilihan": ["must", "can't", "might", "would"], "jawaban": 2 },
+          { "pertanyaan": "Deduksi masa lalu 'pasti sudah pergi':", "pilihan": ["He must go.", "He must have gone.", "He must had gone.", "He must going."], "jawaban": 1 },
+          { "pertanyaan": "'You ___ have told me!' (seharusnya bisa, tapi tidak dilakukan)", "pilihan": ["can't", "must", "could", "may"], "jawaban": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-49",
+    "judul": "Question Tags",
+    "deskripsi": "Pertanyaan ekor di akhir kalimat: ..., isn't it? ..., don't you?",
+    "emoji": "🪝",
+    "warna": "from-rose-500 to-rose-700",
+    "bg": "bg-rose-50",
+    "border": "border-rose-300",
+    "teks": "text-rose-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u49-l1",
+        "judul": "Aturan Dasar Question Tags",
+        "emoji": "🪝",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "positif → tag negatif", "arti": "kalimat positif diakhiri tag negatif", "emoji": "➕", "contoh": "You are a student, aren't you?" },
+          { "kata": "negatif → tag positif", "arti": "kalimat negatif diakhiri tag positif", "emoji": "➖", "contoh": "She isn't here, is she?" },
+          { "kata": "..., isn't it?", "arti": "bukan begitu? (untuk 'it is')", "emoji": "🌤️", "contoh": "It's a beautiful day, isn't it?" },
+          { "kata": "..., don't you?", "arti": "kan? (untuk Simple Present)", "emoji": "☕", "contoh": "You like coffee, don't you?" },
+          { "kata": "..., didn't she?", "arti": "kan? (untuk Simple Past)", "emoji": "📞", "contoh": "She called you, didn't she?" },
+          { "kata": "..., can't he?", "arti": "kan? (untuk modal can)", "emoji": "🏊", "contoh": "He can swim, can't he?" }
+        ]
+      },
+      {
+        "id": "u49-l2",
+        "judul": "Question Tags Khusus",
+        "emoji": "⭐",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I am ..., aren't I?", "arti": "khusus 'I am' → tag-nya 'aren't I'", "emoji": "⚠️", "contoh": "I am right, aren't I?" },
+          { "kata": "Let's ..., shall we?", "arti": "ajakan → tag-nya 'shall we'", "emoji": "🤝", "contoh": "Let's go to the beach, shall we?" },
+          { "kata": "..., will you?", "arti": "perintah → tag-nya 'will you'", "emoji": "🚪", "contoh": "Close the door, will you?" },
+          { "kata": "There is ..., isn't there?", "arti": "untuk 'there is/are'", "emoji": "🏪", "contoh": "There's a shop nearby, isn't there?" }
+        ],
+        "soal": [
+          { "pertanyaan": "'You like coffee, ___?'", "pilihan": ["do you", "don't you", "aren't you", "didn't you"], "jawaban": 1 },
+          { "pertanyaan": "'She isn't here, ___?'", "pilihan": ["isn't she", "is she", "does she", "wasn't she"], "jawaban": 1 },
+          { "pertanyaan": "'I am right, ___?'", "pilihan": ["am I not only", "amn't I", "aren't I", "isn't I"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "u49-l3",
+        "judul": "Kuis: Question Tags",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Aturan dasar question tag:", "pilihan": ["positif → tag positif", "positif → tag negatif", "selalu negatif", "selalu positif"], "jawaban": 1 },
+          { "pertanyaan": "'It's hot today, ___?'", "pilihan": ["is it", "isn't it", "does it", "wasn't it"], "jawaban": 1 },
+          { "pertanyaan": "'They went home, ___?'", "pilihan": ["didn't they", "did they", "weren't they", "don't they"], "jawaban": 0 },
+          { "pertanyaan": "'Let's have lunch, ___?'", "pilihan": ["will we", "shall we", "do we", "are we"], "jawaban": 1 },
+          { "pertanyaan": "'He can't drive, ___?'", "pilihan": ["can't he", "can he", "does he", "is he"], "jawaban": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-50",
+    "judul": "Phrasal Verbs",
+    "deskripsi": "Kata kerja + partikel yang maknanya berubah: get up, give up, look after, dan lainnya",
+    "emoji": "🧩",
+    "warna": "from-teal-500 to-teal-700",
+    "bg": "bg-teal-50",
+    "border": "border-teal-300",
+    "teks": "text-teal-700",
+    "level": "b1",
+    "pelajaran": [
+      {
+        "id": "u50-l1",
+        "judul": "Phrasal Verbs Sehari-hari",
+        "emoji": "🌅",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "get up", "arti": "bangun (dari tempat tidur)", "emoji": "🛏️", "contoh": "I get up at six every morning." },
+          { "kata": "wake up", "arti": "terbangun", "emoji": "⏰", "contoh": "I wake up before my alarm rings." },
+          { "kata": "turn on / turn off", "arti": "menyalakan / mematikan", "emoji": "💡", "contoh": "Please turn off the lights before you leave." },
+          { "kata": "put on / take off", "arti": "memakai / melepas (pakaian)", "emoji": "👟", "contoh": "Take off your shoes before entering." },
+          { "kata": "look for", "arti": "mencari", "emoji": "🔍", "contoh": "I am looking for my keys." },
+          { "kata": "look after", "arti": "merawat / menjaga", "emoji": "👶", "contoh": "She looks after her little brother." },
+          { "kata": "pick up", "arti": "menjemput / mengambil", "emoji": "🚗", "contoh": "I will pick you up at the station." }
+        ]
+      },
+      {
+        "id": "u50-l2",
+        "judul": "Phrasal Verbs Penting Lainnya",
+        "emoji": "💪",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "give up", "arti": "menyerah / berhenti melakukan", "emoji": "🏳️", "contoh": "Never give up on your dreams!" },
+          { "kata": "find out", "arti": "mencari tahu / menemukan fakta", "emoji": "🕵️", "contoh": "I need to find out the truth." },
+          { "kata": "carry on", "arti": "melanjutkan", "emoji": "▶️", "contoh": "Carry on with your work, don't stop." },
+          { "kata": "run out of", "arti": "kehabisan", "emoji": "🪫", "contoh": "We ran out of milk this morning." },
+          { "kata": "get along with", "arti": "akur / cocok dengan", "emoji": "🤝", "contoh": "I get along well with my classmates." },
+          { "kata": "come up with", "arti": "menemukan ide", "emoji": "💡", "contoh": "She came up with a brilliant idea." }
+        ],
+        "soal": [
+          { "pertanyaan": "'Never ___ up on your dreams!' (menyerah)", "pilihan": ["get", "give", "look", "turn"], "jawaban": 1 },
+          { "pertanyaan": "'She ___ after her little brother.' (menjaga)", "pilihan": ["looks", "gets", "takes", "puts"], "jawaban": 0 },
+          { "pertanyaan": "'We ___ out of sugar.' (kehabisan)", "pilihan": ["came", "ran", "looked", "gave"], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "u50-l3",
+        "judul": "Kuis: Phrasal Verbs",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'Get up' artinya...", "pilihan": ["tidur", "bangun dari tempat tidur", "berdiri lama", "naik"], "jawaban": 1 },
+          { "pertanyaan": "'Tolong matikan TV.' = 'Please ___ the TV.'", "pilihan": ["turn on", "turn off", "take off", "put off"], "jawaban": 1 },
+          { "pertanyaan": "'I am looking ___ my keys.' (mencari)", "pilihan": ["after", "for", "at", "up"], "jawaban": 1 },
+          { "pertanyaan": "'Come up with' artinya...", "pilihan": ["naik ke atas", "menemukan ide", "datang terlambat", "menyusul"], "jawaban": 1 },
+          { "pertanyaan": "'I get ___ well with my classmates.' (akur)", "pilihan": ["along", "up", "out", "off"], "jawaban": 0 }
+        ]
+      }
+    ]
   }
 ];

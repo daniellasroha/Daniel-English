@@ -11,6 +11,7 @@ function hitungDetailKonten(levelKey, cfg) {
   const unitA2 = learningPath.filter(u => u.level === "a1" || u.level === "a2").length;
 
   const vocabA1 = kosakata.filter(k => k.level === "a1").length;
+  const vocabA2 = kosakata.filter(k => k.level === "a1" || k.level === "a2").length;
   const vocabTotal = kosakata.length;
 
   const grammarCount = cfg.grammarTopics.length;
@@ -26,7 +27,7 @@ function hitungDetailKonten(levelKey, cfg) {
   }
   if (levelKey === "a2") {
     return [
-      `📚 ${vocabTotal} kata (A1 + A2)`,
+      `📚 ${vocabA2} kata (A1 + A2)`,
       `✏️ ${grammarCount} topik grammar`,
       `🧠 ${unitA2} unit belajar`,
       `🎯 ${quizCount} jenis quiz`,

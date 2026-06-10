@@ -11,16 +11,20 @@ import { useSRS } from "@/hooks/useSRS";
 import { speak } from "@/lib/speech";
 
 const kategoriMeta = {
-  "Buah & Sayur": { emoji: "🍎", accent: "#059669", iconBg: "#D1FAE5" },
-  "Hewan":        { emoji: "🐾", accent: "#D97706", iconBg: "#FEF3C7" },
-  "Tempat":       { emoji: "🏙️", accent: "#1D4ED8", iconBg: "#DBEAFE" },
-  "Kata Kerja":   { emoji: "🏃", accent: "#7C3AED", iconBg: "#EDE9FE" },
-  "Kata Sifat":   { emoji: "✨", accent: "#BE185D", iconBg: "#FCE7F3" },
-  "Perasaan":     { emoji: "❤️", accent: "#DC2626", iconBg: "#FEE2E2" },
-  "Rumah & Benda":{ emoji: "🏠", accent: "#0D9488", iconBg: "#CCFBF1" },
-  "Alam & Cuaca": { emoji: "🌿", accent: "#047857", iconBg: "#D1FAE5" },
-  "Warna":        { emoji: "🎨", accent: "#C9933A", iconBg: "#FDF3E3" },
-  "Keluarga":     { emoji: "👪", accent: "#BE185D", iconBg: "#FCE7F3" },
+  "Buah & Sayur":       { emoji: "🍎", accent: "#059669", iconBg: "#D1FAE5" },
+  "Hewan":              { emoji: "🐾", accent: "#D97706", iconBg: "#FEF3C7" },
+  "Tempat":             { emoji: "🏙️", accent: "#1D4ED8", iconBg: "#DBEAFE" },
+  "Kata Kerja":         { emoji: "🏃", accent: "#7C3AED", iconBg: "#EDE9FE" },
+  "Kata Sifat":         { emoji: "✨", accent: "#BE185D", iconBg: "#FCE7F3" },
+  "Perasaan":           { emoji: "❤️", accent: "#DC2626", iconBg: "#FEE2E2" },
+  "Rumah & Benda":      { emoji: "🏠", accent: "#0D9488", iconBg: "#CCFBF1" },
+  "Alam & Cuaca":       { emoji: "🌿", accent: "#047857", iconBg: "#D1FAE5" },
+  "Warna":              { emoji: "🎨", accent: "#C9933A", iconBg: "#FDF3E3" },
+  "Keluarga":           { emoji: "👪", accent: "#BE185D", iconBg: "#FCE7F3" },
+  "Makanan & Minuman":  { emoji: "🍽️", accent: "#D97706", iconBg: "#FEF3C7" },
+  "Tubuh & Kesehatan":  { emoji: "🫀", accent: "#DC2626", iconBg: "#FEE2E2" },
+  "Pekerjaan & Studi":  { emoji: "💼", accent: "#1D4ED8", iconBg: "#DBEAFE" },
+  "Perjalanan & Dunia": { emoji: "🌏", accent: "#0369A1", iconBg: "#E0F2FE" },
 };
 
 export default function VocabularyPage() {
@@ -32,14 +36,20 @@ export default function VocabularyPage() {
   const { config } = useLevel();
   const { registerCard } = useSRS();
 
+  // Filter kata sesuai level CEFR: A1 → hanya a1, A2 → a1+a2, B1 → semua
   const kosakataTersedia = config
-    ? (config.vocabLevel === "a1" ? kosakata.filter((k) => k.level === "a1") : kosakata)
+    ? config.vocabLevel === "a1"
+      ? kosakata.filter((k) => k.level === "a1")
+      : config.vocabLevel === "a2"
+      ? kosakata.filter((k) => k.level === "a1" || k.level === "a2")
+      : kosakata
     : kosakata;
 
   const urutanKategori = [
-    "Warna", "Keluarga", "Buah & Sayur", "Hewan",
-    "Tempat", "Kata Kerja", "Kata Sifat", "Perasaan",
-    "Rumah & Benda", "Alam & Cuaca",
+    "Warna", "Keluarga", "Buah & Sayur", "Makanan & Minuman",
+    "Hewan", "Tubuh & Kesehatan", "Tempat", "Kata Kerja",
+    "Kata Sifat", "Perasaan", "Rumah & Benda", "Alam & Cuaca",
+    "Pekerjaan & Studi", "Perjalanan & Dunia",
   ];
 
   const jumlahPerKategori = {};

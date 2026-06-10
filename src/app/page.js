@@ -53,6 +53,15 @@ const kategori = [
         iconBg: "#FEF3C7",
       },
       {
+        href: "/reading",
+        emoji: "📰",
+        title: "Reading",
+        description: "Baca teks bahasa Inggris dan jawab soal pemahaman",
+        accentColor: "#0369A1",
+        iconBg: "#E0F2FE",
+        badge: "✨ Baru",
+      },
+      {
         href: "/phrasebook",
         emoji: "💬",
         title: "Phrasebook",
