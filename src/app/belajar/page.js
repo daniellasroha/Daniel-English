@@ -171,7 +171,8 @@ function kartuSederhana(kartu) {
 }
 
 // Bangun sesi campuran: soal MC dari data + listening + matching + susun kalimat
-function buatSesiLatihan(soalData, kartu) {
+// reviewPool = kartu dari unit-unit SEBELUMNYA untuk interleaving (sisipan review)
+function buatSesiLatihan(soalData, kartu, reviewPool = []) {
   const mc = (soalData && soalData.length ? soalData : generateSoalFromKartu(kartu || []))
     .map((s) => ({ ...s, tipe: "mc" }));
 
@@ -184,7 +185,13 @@ function buatSesiLatihan(soalData, kartu) {
   acakArr(sederhana).slice(0, 2).forEach((k) => {
     const lain = acakArr(sederhana.filter((x) => x.kata !== k.kata)).slice(0, 3).map((x) => x.kata);
     const pilihan = acakArr([k.kata, ...lain]);
-    ekstra.push({ tipe: "listening", kata: k.kata, pilihan, jawaban: pilihan.indexOf(k.kata) });
+    ekstra.push({
+      tipe: "listening",
+      kata: k.kata,
+      pilihan,
+      jawaban: pilihan.indexOf(k.kata),
+      penjelasan: `Yang diucapkan: "${k.kata}" = ${k.arti}.`,
+    });
   });
 
   // 1 ronde mencocokkan: 4 pasang kata ↔ arti (arti pendek saja agar muat)
@@ -204,6 +211,23 @@ function buatSesiLatihan(soalData, kartu) {
   if (susunCalon.length > 0) {
     const k = susunCalon[Math.floor(Math.random() * susunCalon.length)];
     ekstra.push({ tipe: "susun", kalimat: k.contoh, kataKunci: k.kata, artiKunci: k.arti });
+  }
+
+  // Interleaving: 2 soal review dari unit sebelumnya — memperkuat ingatan jangka panjang
+  const poolReview = kartuSederhana(reviewPool).filter((k) => k.arti.length <= 40);
+  if (poolReview.length >= 4) {
+    acakArr(poolReview).slice(0, 2).forEach((k) => {
+      const lain = acakArr(poolReview.filter((x) => x.kata !== k.kata)).slice(0, 3).map((x) => x.arti);
+      const pilihan = acakArr([k.arti, ...lain]);
+      ekstra.push({
+        tipe: "mc",
+        review: true,
+        pertanyaan: `Apa arti kata "${k.kata}"?`,
+        pilihan,
+        jawaban: pilihan.indexOf(k.arti),
+        penjelasan: `"${k.kata}" = ${k.arti}.${k.contoh ? ` Contoh: "${k.contoh}"` : ""}`,
+      });
+    });
   }
 
   // Sisipkan item ekstra di posisi acak (setelah soal pertama)
@@ -546,6 +570,14 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
       {/* ── Tipe: pilihan ganda — kartu pertanyaan ── */}
       {tipe === "mc" && (
         <div className={`rounded-2xl border-2 ${meta.border} ${meta.bg} p-6 mb-6`}>
+          {soal.review && (
+            <span
+              className="inline-block font-sans text-xs font-bold px-2.5 py-0.5 rounded-full mb-2"
+              style={{ backgroundColor: "var(--brand-light)", color: "var(--brand)" }}
+            >
+              🔄 Review unit sebelumnya
+            </span>
+          )}
           <p className="font-serif text-lg font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>
             {soal.pertanyaan}
           </p>
@@ -609,6 +641,16 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
         })}
       </div>
 
+      {/* Penjelasan saat jawaban SALAH — momen belajar terbaik */}
+      {dipilih !== null && dipilih !== soal.jawaban && soal.penjelasan && (
+        <div
+          className="rounded-xl px-4 py-3 mb-3 font-sans text-sm leading-relaxed"
+          style={{ backgroundColor: "var(--gold-light)", border: "1px solid var(--border)", color: "var(--text-secondary)" }}
+        >
+          💡 <strong style={{ color: "var(--gold)" }}>Penjelasan:</strong> {soal.penjelasan}
+        </div>
+      )}
+
       {dipilih !== null && (
         <button
           onClick={lanjut}
@@ -637,6 +679,7 @@ function TampilanPelajaran({
   nextUnit,
   onNextUnit,
   registerCard,  // dari useSRS — untuk SRS registration
+  reviewPool = [], // kartu dari unit sebelumnya — untuk soal interleaving
 }) {
   const meta = unit;
   const [fase, setFase] = useState("vocab");
@@ -648,7 +691,7 @@ function TampilanPelajaran({
   // Sesi latihan campuran dibangun SEKALI per pelajaran (komponen di-key per lesson)
   // agar urutan soal tidak teracak ulang setiap render
   const [sesiLatihan] = useState(() =>
-    pelajaran.tipe === "vocab" ? buatSesiLatihan(pelajaran.soal, pelajaran.kartu) : []
+    pelajaran.tipe === "vocab" ? buatSesiLatihan(pelajaran.soal, pelajaran.kartu, reviewPool) : []
   );
 
   // Preferensi audio otomatis flashcard — tersimpan di localStorage
@@ -732,7 +775,33 @@ function TampilanPelajaran({
           <p className="font-sans text-sm mb-1" style={{ color: "var(--text-secondary)" }}>
             {pelajaran.judul}
           </p>
-          <p className={`font-sans font-semibold ${meta.teks} text-sm mb-6`}>{unit.judul}</p>
+          <p className={`font-sans font-semibold ${meta.teks} text-sm mb-5`}>{unit.judul}</p>
+
+          {/* Teaser materi berikutnya — bangkitkan rasa penasaran */}
+          {(nextLesson || nextUnit) && (
+            <div
+              className="rounded-xl px-4 py-3 mb-5 text-left"
+              style={{ backgroundColor: "var(--bg-subtle)", border: "1px solid var(--border)" }}
+            >
+              <p className="font-sans text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--text-muted)" }}>
+                ✨ Selanjutnya
+              </p>
+              {nextLesson ? (
+                <p className="font-sans text-sm font-bold" style={{ color: "var(--text-primary)" }}>
+                  {nextLesson.emoji} {nextLesson.judul}
+                </p>
+              ) : (
+                <>
+                  <p className="font-sans text-sm font-bold" style={{ color: "var(--text-primary)" }}>
+                    {nextUnit.emoji} {nextUnit.judul}
+                  </p>
+                  <p className="font-sans text-xs mt-0.5 leading-snug" style={{ color: "var(--text-muted)" }}>
+                    {nextUnit.deskripsi}
+                  </p>
+                </>
+              )}
+            </div>
+          )}
 
           <div className="flex flex-col gap-3">
             {nextLesson && (
@@ -949,6 +1018,7 @@ function generateSoalFromKartu(kartu) {
       pertanyaan: `Apa arti kata "${k.kata}"?`,
       pilihan: allPilihan,
       jawaban: allPilihan.indexOf(k.arti),
+      penjelasan: `"${k.kata}" = ${k.arti}.${k.contoh ? ` Contoh: "${k.contoh}"` : ""}`,
     };
   });
 }
@@ -979,6 +1049,11 @@ export default function BelajarPage() {
     const currentUnitIdx = unitsTampil.findIndex((u) => u.id === unitDipilih);
     const nextUnit    = unitsTampil[currentUnitIdx + 1] || null;
 
+    // Kumpulkan kartu dari semua unit SEBELUM unit ini — bahan soal review
+    const reviewPool = unitsTampil
+      .slice(0, Math.max(currentUnitIdx, 0))
+      .flatMap((u) => u.pelajaran.flatMap((p) => p.kartu || []));
+
     function handleSelesai()    { completeLesson(pelajaran.id); }
     function handleNextLesson() { if (nextLesson) setPelajaranDipilih(nextLesson.id); }
     function handleNextUnit()   { if (nextUnit) { setPelajaranDipilih(null); setUnitDipilih(nextUnit.id); } }
@@ -997,6 +1072,7 @@ export default function BelajarPage() {
         nextUnit={nextUnit}
         onNextUnit={handleNextUnit}
         registerCard={registerCard}
+        reviewPool={reviewPool}
       />
     );
   }
