@@ -6,85 +6,85 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── DESIGN TOKENS: LIGHT MODE ─────────────────────────────────────────────── */
+/* ─── DESIGN TOKENS: LIGHT MODE — TEMA "LAVENDER DREAM" ─────────────────────── */
 :root {
-  /* Backgrounds */
-  --bg-base:    #FAF7F2;   /* warm cream — canvas utama halaman */
-  --bg-paper:   #FFFEF9;   /* warm white — kartu, modal */
-  --bg-subtle:  #F2EEE7;   /* sedikit lebih gelap — section bg */
+  /* Backgrounds — lilac lembut, bukan putih dingin */
+  --bg-base:    #F6F3FC;   /* lilac near-white — canvas utama halaman */
+  --bg-paper:   #FFFFFF;   /* putih bersih — kartu, modal */
+  --bg-subtle:  #EFEAF8;   /* sedikit lebih ungu — section bg */
 
-  /* Brand: Forest Green */
-  --brand:       #2D5A3D;
-  --brand-hover: #3D7A52;
-  --brand-light: #E8F0EB;
+  /* Brand: Soft Violet */
+  --brand:       #6C5CE0;
+  --brand-hover: #5A4BD0;
+  --brand-light: #ECE8FB;
 
-  /* Gold accent */
-  --gold:        #C9933A;
-  --gold-light:  #FDF3E3;
+  /* Peach accent (menggantikan gold — nama var dipertahankan) */
+  --gold:        #E8854F;
+  --gold-light:  #FFEFE3;
 
-  /* Level colors — sesuai CEFR */
-  --a1:          #059669;  /* emerald-600 */
-  --a1-light:    #D1FAE5;
-  --a2:          #1D4ED8;  /* royal blue */
-  --a2-light:    #DBEAFE;
-  --b1:          #D97706;  /* amber */
-  --b1-light:    #FEF3C7;
+  /* Level colors — sesuai CEFR, selaras palet pastel */
+  --a1:          #1FA873;  /* jade */
+  --a1-light:    #E3F7EE;
+  --a2:          #4A7DE8;  /* powder blue */
+  --a2-light:    #E6EEFC;
+  --b1:          #D6588E;  /* rose pink */
+  --b1-light:    #FBE7F1;
 
-  /* Text */
-  --text-primary:   #1C1A17;
-  --text-secondary: #5C5346;
-  --text-muted:     #9C8E7E;
-  --text-inverse:   #FFFEF9;
+  /* Text — plum gelap, bukan hitam pekat */
+  --text-primary:   #2B2640;
+  --text-secondary: #5C5577;
+  --text-muted:     #948CB0;
+  --text-inverse:   #FFFFFF;
 
   /* Borders */
-  --border:         #E8E2D9;
-  --border-strong:  #C4BAB0;
+  --border:         #E5DFF5;
+  --border-strong:  #C3B9E0;
 
-  /* Shadows */
-  --shadow-card:       0 1px 3px rgba(28,26,23,.06), 0 4px 16px rgba(28,26,23,.05);
-  --shadow-card-hover: 0 4px 12px rgba(28,26,23,.10), 0 16px 40px rgba(28,26,23,.08);
-  --shadow-btn:        0 2px 8px rgba(45,90,61,.30);
+  /* Shadows — violet tint halus */
+  --shadow-card:       0 1px 3px rgba(58,47,107,.06), 0 4px 16px rgba(58,47,107,.05);
+  --shadow-card-hover: 0 4px 12px rgba(58,47,107,.10), 0 16px 40px rgba(58,47,107,.08);
+  --shadow-btn:        0 2px 8px rgba(108,92,224,.30);
 }
 
-/* ─── DESIGN TOKENS: DARK MODE ───────────────────────────────────────────────── */
+/* ─── DESIGN TOKENS: DARK MODE — "LAVENDER NIGHT" ────────────────────────────── */
 /* DarkModeToggle menambahkan class 'dark' pada <html> — tidak perlu ubah logika */
 html.dark {
-  /* Backgrounds — warm dark brown, BUKAN cold slate */
-  --bg-base:    #18160F;
-  --bg-paper:   #1E1B13;
-  --bg-subtle:  #252219;
+  /* Backgrounds — deep violet night, BUKAN cold slate */
+  --bg-base:    #161226;
+  --bg-paper:   #1D1832;
+  --bg-subtle:  #251F3D;
 
-  /* Brand */
-  --brand:       #4A9B67;
-  --brand-hover: #5AAF78;
-  --brand-light: #1A2E21;
+  /* Brand — violet terang agar kontras di bg gelap */
+  --brand:       #9D8FF2;
+  --brand-hover: #AFA3F6;
+  --brand-light: #2A2350;
 
-  /* Gold */
-  --gold:        #E2A84B;
-  --gold-light:  #2A2010;
+  /* Peach */
+  --gold:        #F2A06B;
+  --gold-light:  #3A2718;
 
   /* Levels — lebih terang agar terlihat di bg gelap */
-  --a1:          #34D399;
-  --a1-light:    #063320;
-  --a2:          #60A5FA;
-  --a2-light:    #0D1F44;
-  --b1:          #FBBF24;
-  --b1-light:    #2D2005;
+  --a1:          #4ADE9D;
+  --a1-light:    #0B3A28;
+  --a2:          #82AAF8;
+  --a2-light:    #15244A;
+  --b1:          #F083B4;
+  --b1-light:    #3D1830;
 
   /* Text */
-  --text-primary:   #F5F0E8;
-  --text-secondary: #B8AD9E;
-  --text-muted:     #7A7067;
-  --text-inverse:   #1C1A17;
+  --text-primary:   #F0EDF9;
+  --text-secondary: #B5AECE;
+  --text-muted:     #7A7396;
+  --text-inverse:   #1D1832;
 
   /* Borders */
-  --border:         #2E2B22;
-  --border-strong:  #3D3A30;
+  --border:         #322B52;
+  --border-strong:  #443C68;
 
   /* Shadows */
   --shadow-card:       0 1px 3px rgba(0,0,0,.30), 0 4px 16px rgba(0,0,0,.20);
   --shadow-card-hover: 0 4px 12px rgba(0,0,0,.40), 0 16px 40px rgba(0,0,0,.30);
-  --shadow-btn:        0 2px 8px rgba(74,155,103,.40);
+  --shadow-btn:        0 2px 8px rgba(157,143,242,.40);
 }
 
 /* ─── BASE ELEMENTS ──────────────────────────────────────────────────────────── */
@@ -209,9 +209,9 @@ html.dark {
 /* Hanya untuk halaman yang BELUM didesain ulang.
    Akan dihapus satu per satu saat setiap halaman diperbarui. */
 
-html.dark .bg-white          { background-color: #1E1B13 !important; }
+html.dark .bg-white          { background-color: #1D1832 !important; }
 html.dark .bg-gray-50,
-html.dark .bg-gray-100       { background-color: #252219 !important; }
+html.dark .bg-gray-100       { background-color: #251F3D !important; }
 html.dark .bg-indigo-50,
 html.dark .bg-blue-50,
 html.dark .bg-green-50,
@@ -228,13 +228,13 @@ html.dark .bg-lime-50,
 html.dark .bg-fuchsia-50,
 html.dark .bg-cyan-50,
 html.dark .bg-emerald-50,
-html.dark .bg-slate-50       { background-color: #1E1B13 !important; }
+html.dark .bg-slate-50       { background-color: #1D1832 !important; }
 
-html.dark .text-gray-800     { color: #F5F0E8 !important; }
-html.dark .text-gray-700     { color: #D6CFC5 !important; }
-html.dark .text-gray-600     { color: #B8AD9E !important; }
-html.dark .text-gray-500     { color: #7A7067 !important; }
-html.dark .text-gray-400     { color: #5A5449 !important; }
+html.dark .text-gray-800     { color: #F0EDF9 !important; }
+html.dark .text-gray-700     { color: #CFC9E2 !important; }
+html.dark .text-gray-600     { color: #B5AECE !important; }
+html.dark .text-gray-500     { color: #7A7396 !important; }
+html.dark .text-gray-400     { color: #5F587E !important; }
 
 html.dark .border-blue-100,
 html.dark .border-blue-200,
@@ -258,27 +258,27 @@ html.dark .border-lime-200,
 html.dark .border-fuchsia-200,
 html.dark .border-cyan-200,
 html.dark .border-emerald-200,
-html.dark .border-slate-200  { border-color: #2E2B22 !important; }
+html.dark .border-slate-200  { border-color: #322B52 !important; }
 
 html.dark input[type="text"] {
-  background-color: #1E1B13 !important;
-  color: #F5F0E8 !important;
-  border-color: #2E2B22 !important;
+  background-color: #1D1832 !important;
+  color: #F0EDF9 !important;
+  border-color: #322B52 !important;
 }
-html.dark input::placeholder  { color: #5A5449 !important; }
+html.dark input::placeholder  { color: #5F587E !important; }
 
 html.dark .shadow-sm,
 html.dark .shadow-md,
 html.dark .shadow-lg,
 html.dark .shadow-xl          { --tw-shadow-color: rgba(0,0,0,.5); }
 
-html.dark .bg-white.rounded-3xl { background-color: #1E1B13 !important; }
-html.dark .bg-gray-100.rounded-full { background-color: #2E2B22 !important; }
+html.dark .bg-white.rounded-3xl { background-color: #1D1832 !important; }
+html.dark .bg-gray-100.rounded-full { background-color: #322B52 !important; }
 
 html.dark .border-gray-200.bg-white {
-  background-color: #1E1B13 !important;
-  border-color: #2E2B22 !important;
-  color: #F5F0E8 !important;
+  background-color: #1D1832 !important;
+  border-color: #322B52 !important;
+  color: #F0EDF9 !important;
 }
 
 html.dark .bg-red-50     { background-color: #2D0C0C !important; }
