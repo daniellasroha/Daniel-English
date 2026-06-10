@@ -46,11 +46,49 @@ function playSalah() {
   } catch {}
 }
 
+// ─── KOMPONEN: Confetti ───────────────────────────────────────────────────────
+// Perayaan saat pelajaran selesai — 36 kepingan jatuh dengan posisi & delay acak
+function Confetti() {
+  const warna = ["#2D5A3D", "#C9933A", "#1D4ED8", "#DC2626", "#7C3AED", "#059669"];
+  const [pieces] = useState(() =>
+    Array.from({ length: 36 }, (_, i) => ({
+      left: Math.random() * 100,
+      delay: Math.random() * 1.2,
+      color: warna[i % warna.length],
+      size: 8 + Math.random() * 8,
+    }))
+  );
+  return (
+    <div aria-hidden>
+      {pieces.map((p, i) => (
+        <span
+          key={i}
+          className="confetti-piece"
+          style={{
+            left: `${p.left}%`,
+            backgroundColor: p.color,
+            width: `${p.size}px`,
+            height: `${p.size * 1.4}px`,
+            animationDelay: `${p.delay}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 // ─── KOMPONEN: Kartu Vocab (flashcard) ────────────────────────────────────────
 // meta.border & meta.bg dipertahankan — warna identitas per unit dari data
 // registerCard & lessonId dipakai untuk SRS
-function VocabCard({ kartu, meta, index, total, lessonId, registerCard }) {
+function VocabCard({ kartu, meta, index, total, lessonId, registerCard, autoPlay }) {
   const [terbuka, setTerbuka] = useState(false);
+
+  // Audio otomatis: ucapkan kata saat kartu muncul (komponen di-key per kartu)
+  useEffect(() => {
+    if (!autoPlay) return;
+    const t = setTimeout(() => speak(kartu.kata), 400);
+    return () => clearTimeout(t);
+  }, []);
 
   function handleFlip() {
     if (!terbuka && registerCard && lessonId) {
@@ -613,6 +651,17 @@ function TampilanPelajaran({
     pelajaran.tipe === "vocab" ? buatSesiLatihan(pelajaran.soal, pelajaran.kartu) : []
   );
 
+  // Preferensi audio otomatis flashcard — tersimpan di localStorage
+  const [autoPlay, setAutoPlay] = useState(true);
+  useEffect(() => {
+    try { setAutoPlay(localStorage.getItem("daniel_english_autoplay") !== "false"); } catch {}
+  }, []);
+  function toggleAutoPlay() {
+    const next = !autoPlay;
+    setAutoPlay(next);
+    try { localStorage.setItem("daniel_english_autoplay", String(next)); } catch {}
+  }
+
   function handleVocabNext() {
     if (isVocab && vocabIdx < pelajaran.kartu.length - 1) {
       setVocabIdx(vocabIdx + 1);
@@ -674,6 +723,7 @@ function TampilanPelajaran({
         className="min-h-screen flex items-center justify-center px-4"
         style={{ backgroundColor: "var(--bg-base)" }}
       >
+        <Confetti />
         <div className="card-de p-8 max-w-sm w-full text-center">
           <div className="text-6xl mb-4">⭐</div>
           <h2 className="font-serif text-2xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
@@ -769,10 +819,23 @@ function TampilanPelajaran({
         </header>
 
         <div className="max-w-xl mx-auto px-4 py-6">
-          <div className="mb-4 text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
             <p className="font-sans text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
               Kartu Kosakata
             </p>
+            {/* Toggle audio otomatis */}
+            <button
+              onClick={toggleAutoPlay}
+              className="font-sans text-xs font-semibold px-2.5 py-1 rounded-full border transition hover:opacity-80"
+              style={
+                autoPlay
+                  ? { borderColor: "var(--brand)", backgroundColor: "var(--brand-light)", color: "var(--brand)" }
+                  : { borderColor: "var(--border)", backgroundColor: "var(--bg-subtle)", color: "var(--text-muted)" }
+              }
+              title={autoPlay ? "Audio otomatis aktif — klik untuk mematikan" : "Audio otomatis mati — klik untuk menyalakan"}
+            >
+              {autoPlay ? "🔊 Auto" : "🔇 Mati"}
+            </button>
           </div>
 
           {/* key={vocabIdx} → state flip kartu di-reset setiap pindah kartu */}
@@ -784,6 +847,7 @@ function TampilanPelajaran({
             total={pelajaran.kartu.length}
             lessonId={pelajaran.id}
             registerCard={registerCard}
+            autoPlay={autoPlay}
           />
 
           <div className="flex gap-3 mt-6">
@@ -1087,6 +1151,14 @@ export default function BelajarPage() {
     : { totalDone: 0, totalAll: 0 };
   const totalPersen = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0;
 
+  // Unit pertama yang terbuka tapi belum selesai — untuk tombol "Lanjutkan Belajar"
+  const unitLanjut = loaded
+    ? unitsTampil.find((u) => {
+        const p = getUnitProgress(u.id);
+        return isLessonUnlocked(u.id, 0) && p.done < p.total;
+      })
+    : null;
+
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
       <header
@@ -1138,6 +1210,24 @@ export default function BelajarPage() {
             />
           </div>
         </div>
+
+        {/* Tombol lanjutkan belajar — langsung ke unit yang sedang dikerjakan */}
+        {totalDone > 0 && unitLanjut && (
+          <button
+            onClick={() => setUnitDipilih(unitLanjut.id)}
+            className="w-full mb-6 py-4 px-6 rounded-2xl text-white font-sans font-bold flex items-center justify-between transition hover:opacity-90"
+            style={{ backgroundColor: "var(--brand)", boxShadow: "var(--shadow-btn)" }}
+          >
+            <span className="flex items-center gap-3 text-left">
+              <span className="text-2xl">{unitLanjut.emoji}</span>
+              <span>
+                <span className="block font-sans text-xs font-normal opacity-80">Lanjutkan Belajar</span>
+                {unitLanjut.judul}
+              </span>
+            </span>
+            <span className="text-2xl">→</span>
+          </button>
+        )}
 
         {/* Learning path */}
         <div className="relative">

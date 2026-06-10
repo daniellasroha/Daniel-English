@@ -180,6 +180,21 @@ html.dark {
   }
 }
 
+/* ─── CONFETTI ───────────────────────────────────────────────────────────────── */
+/* Animasi perayaan saat pelajaran selesai — CSS murni, tanpa library */
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+.confetti-piece {
+  position: fixed;
+  top: 0;
+  border-radius: 2px;
+  animation: confetti-fall 3s ease-in forwards;
+  z-index: 50;
+  pointer-events: none;
+}
+
 /* ─── LEGACY DARK MODE ───────────────────────────────────────────────────────── */
 /* Hanya untuk halaman yang BELUM didesain ulang.
    Akan dihapus satu per satu saat setiap halaman diperbarui. */
