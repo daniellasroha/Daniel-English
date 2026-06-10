@@ -59,6 +59,14 @@ const kategori = [
         description: "Baca teks bahasa Inggris dan jawab soal pemahaman",
         accentColor: "#0369A1",
         iconBg: "#E0F2FE",
+      },
+      {
+        href: "/speaking",
+        emoji: "🎤",
+        title: "Speaking",
+        description: "Ucapkan kata bahasa Inggris — pengucapanmu dinilai langsung",
+        accentColor: "#DC2626",
+        iconBg: "#FEE2E2",
         badge: "✨ Baru",
       },
       {
