@@ -105,9 +105,9 @@ export default function ReadingPage() {
       >
         <div className="max-w-2xl mx-auto px-5 py-4 flex items-center gap-4">
           {bacaanAktif ? (
-            <button onClick={kembaliKeDaftar} className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</button>
+            <button onClick={kembaliKeDaftar} aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</button>
           ) : (
-            <Link href="/" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+            <Link href="/" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
           )}
           <div>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
@@ -287,7 +287,7 @@ export default function ReadingPage() {
                     ? { backgroundColor: ACCENT, color: "white" }
                     : { backgroundColor: "var(--brand-light)", color: "var(--brand)" }
                 }
-                title="Dengarkan teks"
+                aria-label="Dengarkan teks" title="Dengarkan teks"
               >
                 {sedangDibaca ? "⏹" : "🔊"}
               </button>

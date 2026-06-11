@@ -86,7 +86,7 @@ export default function VocabularyPage() {
           <div className="max-w-5xl mx-auto px-5 py-4 flex items-center gap-4">
             <button
               onClick={() => setKategoriDipilih(null)}
-              className="text-2xl transition-opacity hover:opacity-70"
+              aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70"
               style={{ color: "var(--brand)" }}
             >
               ←
@@ -138,6 +138,8 @@ export default function VocabularyPage() {
                 {/* Tombol favorit */}
                 <button
                   onClick={() => toggleFavorite(kata.id)}
+                  aria-label={isFavorite(kata.id) ? `Hapus ${kata.english} dari favorit` : `Tandai ${kata.english} sebagai favorit`}
+                  aria-pressed={isFavorite(kata.id)}
                   className={`absolute top-3 right-3 text-lg transition-transform hover:scale-125 ${
                     isFavorite(kata.id) ? "opacity-100" : "opacity-25 hover:opacity-60"
                   }`}
@@ -162,7 +164,7 @@ export default function VocabularyPage() {
                         <button
                           onClick={(e) => { e.stopPropagation(); speak(kata.english); }}
                           className="text-base opacity-40 hover:opacity-90 transition-opacity flex-shrink-0"
-                          title="Dengarkan pengucapan"
+                          aria-label="Dengarkan pengucapan" title="Dengarkan pengucapan"
                         >
                           🔊
                         </button>
@@ -209,7 +211,7 @@ export default function VocabularyPage() {
     <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
       <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               📚 Vocabulary

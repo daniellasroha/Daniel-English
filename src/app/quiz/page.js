@@ -92,7 +92,7 @@ export default function QuizPage() {
         <div className="max-w-2xl mx-auto px-5 py-4 flex items-center gap-4">
           <Link
             href="/"
-            className="text-2xl transition-opacity hover:opacity-70"
+            aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70"
             style={{ color: "var(--brand)" }}
           >
             ←
@@ -143,6 +143,8 @@ export default function QuizPage() {
           </div>
           <button
             onClick={() => setTimer((v) => !v)}
+            aria-label="Mode timer 15 detik per soal"
+            aria-pressed={timer}
             className="w-14 h-7 rounded-full transition-all duration-300 relative flex-shrink-0"
             style={{ backgroundColor: timer ? "var(--gold)" : "var(--border-strong)" }}
           >

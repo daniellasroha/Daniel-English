@@ -150,7 +150,7 @@ export default function TypingQuizPage() {
       <main className="min-h-screen flex flex-col" style={{ backgroundColor: "var(--bg-base)" }}>
         <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
           <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-            <Link href="/quiz" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+            <Link href="/quiz" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>✍️ Typing Quiz</h1>
           </div>
         </header>
@@ -202,7 +202,7 @@ export default function TypingQuizPage() {
       <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
         <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
           <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-            <Link href="/quiz" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+            <Link href="/quiz" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>✍️ Typing Quiz</h1>
           </div>
         </header>
@@ -285,7 +285,7 @@ export default function TypingQuizPage() {
         style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/quiz" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/quiz" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <div className="flex justify-between font-sans text-sm mb-1" style={{ color: "var(--text-muted)" }}>
               <span>Soal {index + 1} / {JUMLAH_SOAL}</span>

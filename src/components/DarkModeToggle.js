@@ -32,6 +32,8 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggle}
+      aria-label={dark ? "Ganti ke mode terang" : "Ganti ke mode gelap"}
+      aria-pressed={dark}
       title={dark ? "Ganti ke Mode Terang" : "Ganti ke Mode Gelap"}
       className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 bg-gray-50 hover:bg-gray-100 transition text-xl"
       style={{ flexShrink: 0 }}

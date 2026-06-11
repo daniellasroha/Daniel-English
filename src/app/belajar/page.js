@@ -125,7 +125,7 @@ function VocabCard({ kartu, meta, index, total, lessonId, registerCard, autoPlay
             <button
               onClick={(e) => { e.stopPropagation(); speak(kartu.kata); }}
               className="text-lg opacity-50 hover:opacity-100 transition-opacity flex-shrink-0"
-              title="Dengarkan pengucapan"
+              aria-label="Dengarkan pengucapan" title="Dengarkan pengucapan"
             >🔊</button>
           </div>
           {!terbuka && (
@@ -557,7 +557,7 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
           <button
             onClick={() => speak(soal.kata)}
             className={`w-16 h-16 rounded-full text-3xl bg-gradient-to-br ${meta.warna} text-white shadow-lg hover:scale-110 transition-transform`}
-            title="Putar lagi"
+            aria-label="Putar suara lagi" title="Putar lagi"
           >
             🔊
           </button>
@@ -738,7 +738,7 @@ function TampilanPelajaran({
           <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
             <button
               onClick={onKembali}
-              className="text-2xl transition hover:opacity-70"
+              aria-label="Kembali" className="text-2xl transition hover:opacity-70"
               style={{ color: "var(--brand)" }}
             >←</button>
             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-xl shadow flex-shrink-0`}>
@@ -860,7 +860,7 @@ function TampilanPelajaran({
           <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
             <button
               onClick={onKembali}
-              className="text-2xl transition hover:opacity-70"
+              aria-label="Kembali" className="text-2xl transition hover:opacity-70"
               style={{ color: "var(--brand)" }}
             >←</button>
             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-xl shadow flex-shrink-0`}>
@@ -983,7 +983,7 @@ function TampilanPelajaran({
         <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
           <button
             onClick={() => setFase("vocab")}
-            className="text-2xl transition hover:opacity-70"
+            aria-label="Kembali" className="text-2xl transition hover:opacity-70"
             style={{ color: "var(--brand)" }}
           >←</button>
           <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${meta.warna} flex items-center justify-center text-xl shadow flex-shrink-0`}>
@@ -1093,7 +1093,7 @@ export default function BelajarPage() {
           <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
             <button
               onClick={() => setUnitDipilih(null)}
-              className="text-2xl transition hover:opacity-70"
+              aria-label="Kembali" className="text-2xl transition hover:opacity-70"
               style={{ color: "var(--brand)" }}
             >←</button>
             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${unit.warna} flex items-center justify-center text-xl shadow flex-shrink-0`}>
@@ -1242,7 +1242,7 @@ export default function BelajarPage() {
         style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link href="/" className="text-2xl transition hover:opacity-70" style={{ color: "var(--brand)" }}>
+          <Link href="/" aria-label="Kembali" className="text-2xl transition hover:opacity-70" style={{ color: "var(--brand)" }}>
             ←
           </Link>
           <div>

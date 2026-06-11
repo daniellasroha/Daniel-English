@@ -280,6 +280,7 @@ function ModeLatihan({ kategori, onKembali }) {
             </div>
             <button
               onClick={() => putar(soalSaatIni.english)}
+              aria-label="Dengarkan jawaban yang benar"
               className="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0 transition"
               style={sedangDiputar ? { backgroundColor: "var(--brand)", color: "var(--text-inverse)" } : { backgroundColor: "var(--brand-light)", color: "var(--brand)" }}
             >
@@ -368,7 +369,7 @@ export default function PhrasebookPage() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
       <Header>
-        <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+        <Link href="/" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
         <div>
           <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>💬 Phrasebook</h1>
           <p className="font-sans text-xs" style={{ color: "var(--text-muted)" }}>Kalimat percakapan bahasa Inggris sehari-hari</p>
@@ -462,7 +463,7 @@ export default function PhrasebookPage() {
                           ? { backgroundColor: kategoriAktif.accent, color: "white" }
                           : { backgroundColor: kategoriAktif.iconBg, color: kategoriAktif.accent }
                         }
-                        title="Dengar pengucapan"
+                        aria-label="Dengar pengucapan" title="Dengar pengucapan"
                       >
                         {diputar ? "⏹" : "🔊"}
                       </button>

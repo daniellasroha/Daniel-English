@@ -242,7 +242,7 @@ export default function Home() {
             {aktif && (
               <button
                 onClick={() => setAktif(null)}
-                className="text-2xl transition-opacity hover:opacity-70 mr-1"
+                aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70 mr-1"
                 style={{ color: "var(--brand)" }}
               >
                 ←

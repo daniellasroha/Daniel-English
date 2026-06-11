@@ -76,7 +76,7 @@ export default function ReviewPage() {
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: "var(--bg-base)" }}>
         <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
           <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
-            <Link href="/" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+            <Link href="/" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               🔄 Review Harian
             </h1>
@@ -155,7 +155,7 @@ export default function ReviewPage() {
       {/* Header */}
       <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
         <div className="max-w-xl mx-auto px-4 py-4 flex items-center gap-3">
-          <Link href="/" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/" aria-label="Kembali" className="text-2xl hover:opacity-70 transition" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               🔄 Review Harian

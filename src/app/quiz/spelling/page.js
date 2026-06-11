@@ -84,7 +84,7 @@ export default function SpellingQuizPage() {
         style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/quiz" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/quiz" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           {children}
         </div>
       </header>
@@ -236,7 +236,7 @@ export default function SpellingQuizPage() {
         style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/quiz" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/quiz" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <h1 className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
               ⌨️ Spelling Quiz

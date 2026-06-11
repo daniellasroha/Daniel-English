@@ -80,7 +80,7 @@ export default function LeaderboardPage() {
       {/* Header */}
       <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-3">
-          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               🏆 Leaderboard

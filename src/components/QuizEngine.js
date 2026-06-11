@@ -112,7 +112,7 @@ export default function QuizEngine({ judul, emoji, soalList, accentColor = "var(
           style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
         >
           <div className="max-w-2xl mx-auto px-5 py-4 flex items-center gap-4">
-            <Link href="/quiz" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+            <Link href="/quiz" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               {emoji} {judul}
             </h1>
@@ -230,7 +230,7 @@ export default function QuizEngine({ judul, emoji, soalList, accentColor = "var(
         style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-2xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/quiz" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/quiz" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <h1 className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
               {emoji} {judul}

@@ -126,7 +126,7 @@ export default function SpeakingPage() {
     return (
       <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div>
             <h1 className="font-serif text-xl font-semibold" style={{ color: "var(--text-primary)" }}>
               🎤 Speaking
@@ -260,7 +260,7 @@ export default function SpeakingPage() {
     <main className="min-h-screen" style={{ backgroundColor: "var(--bg-base)" }}>
       <header className="sticky top-0 z-10" style={{ backgroundColor: "var(--bg-paper)", borderBottom: "1px solid var(--border)" }}>
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center gap-4">
-          <Link href="/" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
+          <Link href="/" aria-label="Kembali" className="text-2xl transition-opacity hover:opacity-70" style={{ color: "var(--brand)" }}>←</Link>
           <div className="flex-1">
             <h1 className="font-serif text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
               🎤 Speaking
@@ -315,6 +315,7 @@ export default function SpeakingPage() {
           <button
             onClick={dengarkan}
             disabled={status === "listening"}
+            aria-label={status === "listening" ? "Sedang mendengarkan ucapanmu" : "Mulai merekam — ucapkan katanya"}
             className="w-24 h-24 rounded-full text-4xl text-white shadow-lg transition-transform hover:scale-110"
             style={{
               backgroundColor: status === "listening" ? "#F59E0B" : ACCENT,
