@@ -1031,6 +1031,48 @@ export const learningPath = [
         ]
       },
       {
+        "id": "3-3",
+        "judul": "Kata Ganti dalam Kalimat",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Budi → He", "arti": "Nama laki-laki diganti dengan He", "emoji": "👦", "contoh": "Budi is tall. → He is tall." },
+          { "kata": "Sari → She", "arti": "Nama perempuan diganti dengan She", "emoji": "👧", "contoh": "Sari is smart. → She is smart." },
+          { "kata": "The book → It", "arti": "Benda tunggal diganti dengan It", "emoji": "📖", "contoh": "The book is new. → It is new." },
+          { "kata": "The cat → It", "arti": "Hewan juga diganti dengan It", "emoji": "🐱", "contoh": "The cat is hungry. → It is hungry." },
+          { "kata": "Budi and Sari → They", "arti": "Dua orang atau lebih diganti dengan They", "emoji": "👫", "contoh": "Budi and Sari are friends. → They are friends." },
+          { "kata": "The books → They", "arti": "Benda jamak juga diganti dengan They", "emoji": "📚", "contoh": "The books are heavy. → They are heavy." },
+          { "kata": "My friend and I → We", "arti": "Saya + orang lain diganti dengan We", "emoji": "🤝", "contoh": "My friend and I play football. → We play football." },
+          { "kata": "You and Budi → You", "arti": "Kamu + orang lain tetap You", "emoji": "👉", "contoh": "You and Budi are late. → You are late." }
+        ],
+        "soal": [
+          { "pertanyaan": "'Mr. Andi is a teacher.' Ganti dengan kata ganti yang tepat:", "pilihan": ["She is a teacher.", "He is a teacher.", "It is a teacher.", "They is a teacher."], "jawaban": 1 },
+          { "pertanyaan": "'The dog is small.' → '___ is small.'", "pilihan": ["He", "She", "It", "They"], "jawaban": 2 },
+          { "pertanyaan": "'Rina and Tono are students.' → '___ are students.'", "pilihan": ["We", "It", "He", "They"], "jawaban": 3 },
+          { "pertanyaan": "'My mother and I cook dinner.' → '___ cook dinner.'", "pilihan": ["They", "We", "You", "She"], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "3-4",
+        "judul": "Tunggal vs Jamak & Kesalahan Umum",
+        "emoji": "⚖️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Tunggal: I, You, He, She, It", "arti": "Kata ganti untuk SATU orang/benda", "emoji": "1️⃣", "contoh": "He is my father. It is my bag." },
+          { "kata": "Jamak: We, You, They", "arti": "Kata ganti untuk DUA atau lebih", "emoji": "👥", "contoh": "We are happy. They are students." },
+          { "kata": "It ≠ orang", "arti": "JANGAN pakai It untuk orang — pakai He/She", "emoji": "⚠️", "contoh": "Salah: It is my sister. Benar: She is my sister." },
+          { "kata": "They untuk benda jamak", "arti": "They bukan hanya untuk orang", "emoji": "💡", "contoh": "The pens are blue. → They are blue." },
+          { "kata": "You = kamu & kalian", "arti": "You sama untuk tunggal dan jamak", "emoji": "🔁", "contoh": "You are my friend. / You are my friends." },
+          { "kata": "I selalu huruf besar", "arti": "Kata 'I' SELALU ditulis kapital di mana pun", "emoji": "🔠", "contoh": "My brother and I are twins." }
+        ],
+        "soal": [
+          { "pertanyaan": "Mana yang termasuk kata ganti JAMAK?", "pilihan": ["He", "It", "They", "She"], "jawaban": 2 },
+          { "pertanyaan": "Kalimat yang BENAR untuk menyebut adik perempuanmu:", "pilihan": ["It is my sister.", "She is my sister.", "He is my sister.", "They is my sister."], "jawaban": 1 },
+          { "pertanyaan": "'The pencils are new.' → '___ are new.'", "pilihan": ["It", "He", "We", "They"], "jawaban": 3 },
+          { "pertanyaan": "Penulisan yang benar:", "pilihan": ["my friend and i are happy.", "My friend and i are happy.", "My friend and I are happy.", "my Friend and I are Happy."], "jawaban": 2 }
+        ]
+      },
+      {
         "id": "3-2",
         "judul": "Kuis: Kata Ganti Orang",
         "emoji": "🧠",
@@ -2038,7 +2080,7 @@ export const learningPath = [
         "id": "5b-3",
         "judul": "Kuis: There is / There are",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Melengkapi: 'There ___ a cat on the table.'",
@@ -3291,7 +3333,7 @@ export const learningPath = [
         "id": "8b-3",
         "judul": "Kuis: Kata Ganti Objek",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Kata ganti objek untuk 'I' adalah...",
@@ -3965,7 +4007,7 @@ export const learningPath = [
         "id": "9b-3",
         "judul": "Kuis: Anggota Tubuh",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Apa arti kata 'head'?",
@@ -5769,7 +5811,13 @@ export const learningPath = [
               "are not"
             ],
             "jawaban": 0
-          }
+          },
+          { "pertanyaan": "Lengkapi: 'A fish ___ swim, but it ___ walk.'", "pilihan": ["can / can", "can't / can", "can / can't", "can't / can't"], "jawaban": 2, "penjelasan": "Ikan BISA berenang (can swim) tapi TIDAK BISA berjalan (can't walk)." },
+          { "pertanyaan": "Pertanyaan yang benar untuk menanyakan kemampuan:", "pilihan": ["You can swim?", "Can you swim?", "Do you can swim?", "Are you can swim?"], "jawaban": 1, "penjelasan": "Kalimat tanya dengan can: Can + subjek + kata kerja? Jangan campur dengan do/are." },
+          { "pertanyaan": "Jawaban singkat untuk 'Can he drive?':", "pilihan": ["Yes, he can.", "Yes, he does.", "Yes, he is.", "Yes, he cans."], "jawaban": 0, "penjelasan": "Pertanyaan dengan can dijawab dengan can juga: Yes, he can / No, he can't." },
+          { "pertanyaan": "Terjemahkan: 'Saya tidak bisa memasak.'", "pilihan": ["I don't can cook.", "I can't cook.", "I am not cook.", "I can't cooking."], "jawaban": 1, "penjelasan": "can't + kata kerja bentuk dasar: I can't cook." },
+          { "pertanyaan": "Setelah 'can', kata kerja selalu dalam bentuk...", "pilihan": ["V-ing", "V2 (lampau)", "bentuk dasar (V1)", "V + s"], "jawaban": 2, "penjelasan": "Can selalu diikuti kata kerja bentuk dasar: can sing ✓, can sings ✗, can singing ✗." },
+          { "pertanyaan": "Minta izin dengan sopan:", "pilihan": ["I open the window?", "Can I open the window?", "I can open the window?", "Open I the window?"], "jawaban": 1, "penjelasan": "'Can I...?' dipakai untuk meminta izin: Can I open the window?" }
         ]
       }
     ]
@@ -6156,7 +6204,13 @@ export const learningPath = [
               "near"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "'The cat is ___ the box.' (di dalam)", "pilihan": ["on", "in", "at", "under"], "jawaban": 1, "penjelasan": "in = di dalam. The cat is in the box = kucing di dalam kotak." },
+          { "pertanyaan": "'The book is ___ the table.' (di atas, menempel)", "pilihan": ["in", "at", "on", "behind"], "jawaban": 2, "penjelasan": "on = di atas permukaan (menempel). Buku di atas meja = on the table." },
+          { "pertanyaan": "'The bank is ___ the school and the market.' (di antara)", "pilihan": ["next to", "between", "behind", "in front of"], "jawaban": 1, "penjelasan": "between = di antara DUA tempat/benda." },
+          { "pertanyaan": "'My bag is ___ the chair.' (di belakang)", "pilihan": ["in front of", "next to", "between", "behind"], "jawaban": 3, "penjelasan": "behind = di belakang. Lawannya in front of = di depan." },
+          { "pertanyaan": "Lengkapi: 'She lives ___ Jakarta.'", "pilihan": ["in", "on", "at", "between"], "jawaban": 0, "penjelasan": "Nama kota memakai in: in Jakarta, in Bandung." },
+          { "pertanyaan": "'The pharmacy is ___ the hospital.' (di sebelah)", "pilihan": ["between", "under", "next to", "in"], "jawaban": 2, "penjelasan": "next to = tepat di sebelah. Apotek di sebelah rumah sakit." }
         ]
       }
     ]
@@ -7069,7 +7123,13 @@ export const learningPath = [
               "Tambah 'be'"
             ],
             "jawaban": 1
-          }
+          },
+          { "pertanyaan": "Perintah yang benar untuk 'Tutup pintunya!':", "pilihan": ["You close the door!", "Close the door!", "Closing the door!", "To close the door!"], "jawaban": 1, "penjelasan": "Imperative dimulai langsung dengan kata kerja bentuk dasar, tanpa subjek: Close the door!" },
+          { "pertanyaan": "Larangan yang benar untuk 'Jangan lari!':", "pilihan": ["No run!", "Not run!", "Don't run!", "Don't running!"], "jawaban": 2, "penjelasan": "Larangan = Don't + kata kerja bentuk dasar: Don't run!" },
+          { "pertanyaan": "'___ quiet, please. The baby is sleeping.'", "pilihan": ["Be", "Is", "Are", "Being"], "jawaban": 0, "penjelasan": "Imperative dengan kata sifat memakai Be: Be quiet, Be careful, Be patient." },
+          { "pertanyaan": "Larangan dengan kata sifat: 'Jangan takut!'", "pilihan": ["Don't afraid!", "Don't be afraid!", "No be afraid!", "Not afraid!"], "jawaban": 1, "penjelasan": "Larangan + kata sifat = Don't be...: Don't be afraid, Don't be late." },
+          { "pertanyaan": "Tanda di perpustakaan: '___ silent.'", "pilihan": ["Do", "Being", "Be", "Is"], "jawaban": 2, "penjelasan": "Be silent = harap tenang. Imperative dengan kata sifat selalu pakai Be." },
+          { "pertanyaan": "Mana yang merupakan LARANGAN?", "pilihan": ["Open your book.", "Please sit down.", "Don't touch that!", "Listen carefully."], "jawaban": 2, "penjelasan": "Larangan ditandai dengan Don't di awal kalimat: Don't touch that!" }
         ]
       }
     ]
@@ -7206,7 +7266,7 @@ export const learningPath = [
         "id": "19-3",
         "judul": "Kuis: Telling Time",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Bagaimana cara mengatakan jam 3 tepat?",
@@ -7257,7 +7317,13 @@ export const learningPath = [
               "Which time now?"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "Bagaimana cara mengatakan 8:30?", "pilihan": ["It's half to eight.", "It's half past eight.", "It's eight half.", "It's thirty to eight."], "jawaban": 1, "penjelasan": "half past = lewat 30 menit. 8:30 = half past eight." },
+          { "pertanyaan": "'It's quarter to ten.' = jam berapa?", "pilihan": ["10:15", "10:45", "9:45", "9:15"], "jawaban": 2, "penjelasan": "quarter to = kurang 15 menit. Quarter to ten = 9:45 (jam 10 kurang seperempat)." },
+          { "pertanyaan": "Bagaimana cara mengatakan 2:05?", "pilihan": ["It's five past two.", "It's two past five.", "It's five to two.", "It's two and five."], "jawaban": 0, "penjelasan": "past = lewat. 2:05 = five past two (jam 2 lewat 5 menit)." },
+          { "pertanyaan": "Jam 12 siang disebut...", "pilihan": ["midnight", "noon / midday", "half day", "middle clock"], "jawaban": 1, "penjelasan": "Jam 12 siang = noon/midday. Jam 12 malam = midnight." },
+          { "pertanyaan": "'The class starts ___ 7 o'clock.'", "pilihan": ["in", "on", "at", "past"], "jawaban": 2, "penjelasan": "Jam selalu memakai at: at 7 o'clock, at half past nine." },
+          { "pertanyaan": "7 pagi ditulis...", "pilihan": ["7 p.m.", "7 a.m.", "7 noon", "7 night"], "jawaban": 1, "penjelasan": "a.m. = tengah malam sampai siang (pagi). p.m. = siang sampai malam." }
         ]
       }
     ]
@@ -7458,7 +7524,7 @@ export const learningPath = [
         "id": "20-3",
         "judul": "Kuis: Ordinal Numbers",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Bagaimana cara menulis kata ketiga dalam bahasa Inggris?",
@@ -7635,7 +7701,7 @@ export const learningPath = [
         "id": "21-3",
         "judul": "Kuis: Kebangsaan & Negara",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Kebangsaan orang dari Jepang adalah:",
@@ -7802,7 +7868,7 @@ export const learningPath = [
         "id": "22-3",
         "judul": "Kuis: Cuaca Dasar",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Lengkapi: It's ___ today. Take your umbrella. (hujan)",
@@ -12735,7 +12801,7 @@ export const learningPath = [
         "id": "u37-l3",
         "judul": "Kuis: Making Suggestions",
         "emoji": "🧠",
-        "tipe": "kuis",
+        "tipe": "quiz",
         "soal": [
           {
             "pertanyaan": "Cara mengajak teman dengan ungkapan Let's:",
