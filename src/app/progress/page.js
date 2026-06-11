@@ -7,7 +7,7 @@ import { useUsername } from "@/hooks/useUsername";
 import { useProgress, hitungStreak, hitungRataQuiz } from "@/hooks/useProgress";
 import { useLearning } from "@/hooks/useLearning";
 import { useBadges } from "@/hooks/useBadges";
-import { learningPath as unitBelajar } from "@/data/learningPath";
+import { learningPathIndex as unitBelajar } from "@/data/learningPathIndex";
 
 function formatTanggal(str) {
   const tgl = new Date(str);

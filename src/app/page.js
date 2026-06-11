@@ -8,7 +8,7 @@ import { useLevel } from "@/hooks/useLevel";
 import { useSRS } from "@/hooks/useSRS";
 import { useProgress, hitungStreak, hitungRataQuiz } from "@/hooks/useProgress";
 import { useLearning } from "@/hooks/useLearning";
-import { learningPath } from "@/data/learningPath";
+import { learningPathIndex as learningPath } from "@/data/learningPathIndex";
 import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";
 import DarkModeToggle from "@/components/DarkModeToggle";

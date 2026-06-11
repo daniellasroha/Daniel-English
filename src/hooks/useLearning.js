@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { learningPath as unitBelajar } from "@/data/learningPath";
+// Pakai indeks ringan (bukan data penuh ~500 KB) — hook ini dipakai banyak halaman
+import { learningPathIndex as unitBelajar } from "@/data/learningPathIndex";
 import { syncLeaderboard } from "@/lib/leaderboard";
 import { pushProgress } from "@/lib/syncProgress";
 

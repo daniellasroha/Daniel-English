@@ -1,7 +1,7 @@
 "use client";
 
 import { LEVEL_CONFIG } from "@/hooks/useLevel";
-import { learningPath } from "@/data/learningPath";
+import { learningPathIndex as learningPath } from "@/data/learningPathIndex";
 import { kosakata } from "@/data/vocabulary";
 
 // Warna per level dari CSS vars Academia — otomatis adaptasi dark mode
