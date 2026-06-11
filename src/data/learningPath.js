@@ -2141,7 +2141,13 @@ export const learningPath = [
               "Yes, is there."
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "Melengkapi: 'There ___ a big tree in the garden.'", "pilihan": ["is", "are", "has", "be"], "jawaban": 0, "penjelasan": "There is + benda TUNGGAL (a big tree = satu pohon)." },
+          { "pertanyaan": "Melengkapi: 'There ___ many stars in the sky.'", "pilihan": ["is", "are", "be", "has"], "jawaban": 1, "penjelasan": "There are + benda JAMAK (many stars = banyak bintang)." },
+          { "pertanyaan": "'Tidak ada susu di kulkas.' =", "pilihan": ["There isn't any milk in the fridge.", "There aren't any milk in the fridge.", "There no milk in the fridge.", "Isn't there milk the fridge."], "jawaban": 0, "penjelasan": "Milk tidak bisa dihitung → pakai There isn't any milk." },
+          { "pertanyaan": "Pertanyaan yang benar:", "pilihan": ["There are any students?", "Are there any students?", "Is there any students?", "There any students are?"], "jawaban": 1, "penjelasan": "Tanya jamak: Are there any...? Tanya tunggal: Is there a...?" },
+          { "pertanyaan": "Jawaban 'tidak' untuk 'Are there any books?':", "pilihan": ["No, there isn't.", "No, they aren't.", "No, there aren't.", "No, there no."], "jawaban": 2, "penjelasan": "Are there...? dijawab dengan there are/aren't: No, there aren't." },
+          { "pertanyaan": "'There is' dipakai untuk...", "pilihan": ["benda jamak", "benda tunggal", "orang saja", "pertanyaan saja"], "jawaban": 1, "penjelasan": "There is = ada (satu benda). There are = ada (banyak benda)." }
         ]
       }
     ]
@@ -3394,7 +3400,13 @@ export const learningPath = [
               "Can you help I am?"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "'I love my mother. I love ___.'", "pilihan": ["she", "her", "hers", "he"], "jawaban": 1, "penjelasan": "Setelah kata kerja, pakai kata ganti OBJEK: she → her. I love her." },
+          { "pertanyaan": "'Look at the bird! Look at ___!'", "pilihan": ["he", "its", "him", "it"], "jawaban": 3, "penjelasan": "Benda/hewan = it (subjek dan objek sama): Look at it!" },
+          { "pertanyaan": "'We are late. Please wait for ___!'", "pilihan": ["we", "our", "us", "they"], "jawaban": 2, "penjelasan": "we → us. Setelah preposisi (for, with, to) selalu kata ganti objek." },
+          { "pertanyaan": "'My friends are kind. I like ___.'", "pilihan": ["they", "their", "them", "theirs"], "jawaban": 2, "penjelasan": "they → them. I like them = saya menyukai mereka." },
+          { "pertanyaan": "'This gift is for you and Budi. It's for ___.'", "pilihan": ["yours", "your", "them", "you"], "jawaban": 3, "penjelasan": "'You' tidak berubah: subjek you, objek juga you." },
+          { "pertanyaan": "Kata ganti objek untuk 'I' adalah...", "pilihan": ["my", "mine", "me", "I"], "jawaban": 2, "penjelasan": "I → me: Help me, Call me, Listen to me." }
         ]
       }
     ]
@@ -5843,7 +5855,10 @@ export const learningPath = [
           { "kata": "Yes, he is. / No, he isn't.", "arti": "Ya, dia (laki). / Tidak, dia bukan.", "emoji": "✅", "contoh": "Is he your brother? — Yes, he is." },
           { "kata": "Yes, she is. / No, she isn't.", "arti": "Ya, dia (perempuan). / Tidak, dia bukan.", "emoji": "✅", "contoh": "Is she happy? — No, she isn't." },
           { "kata": "Yes, they are. / No, they aren't.", "arti": "Ya, mereka. / Tidak, mereka bukan.", "emoji": "✅", "contoh": "Are they students? — Yes, they are." },
-          { "kata": "Yes, it is. / No, it isn't.", "arti": "Ya, itu. / Tidak, itu bukan.", "emoji": "✅", "contoh": "Is it a cat? — Yes, it is." }
+          { "kata": "Yes, it is. / No, it isn't.", "arti": "Ya, itu. / Tidak, itu bukan.", "emoji": "✅", "contoh": "Is it a cat? — Yes, it is." },
+          { "kata": "Yes, we are. / No, we aren't.", "arti": "Ya, kami. / Tidak, kami bukan.", "emoji": "✅", "contoh": "Are we late? — No, we aren't." },
+          { "kata": "Aturan: jangan disingkat saat 'Yes'", "arti": "Yes, I am ✓ — Yes, I'm ✗", "emoji": "⚠️", "contoh": "Are you tired? — Yes, I am. (bukan 'Yes, I'm')" },
+          { "kata": "Was/Were juga bisa", "arti": "Untuk pertanyaan masa lampau", "emoji": "🕰️", "contoh": "Were you at school? — Yes, I was." }
         ],
         "soal": [
           { "pertanyaan": "'Are you hungry?' — Jawaban singkat positif yang benar:", "pilihan": ["Yes, I do.", "Yes, I am.", "Yes, I can.", "Yes, I have."], "jawaban": 1 },
@@ -5863,7 +5878,10 @@ export const learningPath = [
           { "kata": "Yes, she does. / No, she doesn't.", "arti": "Ya, dia. / Tidak, dia tidak.", "emoji": "✅", "contoh": "Does she speak English? — Yes, she does." },
           { "kata": "Yes, they do. / No, they don't.", "arti": "Ya, mereka. / Tidak, mereka tidak.", "emoji": "✅", "contoh": "Do they play football? — No, they don't." },
           { "kata": "Yes, I can. / No, I can't.", "arti": "Ya, saya bisa. / Tidak, saya tidak bisa.", "emoji": "✅", "contoh": "Can you swim? — Yes, I can." },
-          { "kata": "Yes, he can. / No, he can't.", "arti": "Ya, dia bisa. / Tidak, dia tidak bisa.", "emoji": "✅", "contoh": "Can he drive? — No, he can't." }
+          { "kata": "Yes, he can. / No, he can't.", "arti": "Ya, dia bisa. / Tidak, dia tidak bisa.", "emoji": "✅", "contoh": "Can he drive? — No, he can't." },
+          { "kata": "Yes, it does. / No, it doesn't.", "arti": "Ya (untuk benda/hewan). / Tidak.", "emoji": "✅", "contoh": "Does the dog bark? — Yes, it does." },
+          { "kata": "Yes, we do. / No, we don't.", "arti": "Ya, kami. / Tidak, kami tidak.", "emoji": "✅", "contoh": "Do we have homework? — Yes, we do." },
+          { "kata": "Kunci: jawab dengan kata yang sama", "arti": "Do → do, Does → does, Can → can, Is → is", "emoji": "🔑", "contoh": "Does she...? → Yes, she DOES. (bukan 'Yes, she is')" }
         ],
         "soal": [
           { "pertanyaan": "'Do you like cats?' — Jawaban singkat positif:", "pilihan": ["Yes, I am.", "Yes, I can.", "Yes, I do.", "Yes, I have."], "jawaban": 2 },
@@ -5884,7 +5902,11 @@ export const learningPath = [
           { "pertanyaan": "'Can he cook?' — Jawaban positif:", "pilihan": ["Yes, he does.", "Yes, he is.", "Yes, he do.", "Yes, he can."], "jawaban": 3 },
           { "pertanyaan": "'Is she your sister?' — Jawaban negatif:", "pilihan": ["No, she doesn't.", "No, she can't.", "No, she isn't.", "No, she won't."], "jawaban": 2 },
           { "pertanyaan": "'Does he speak English?' — Jawaban positif singkat:", "pilihan": ["Yes, he is.", "Yes, he does.", "Yes, he do.", "Yes, he can."], "jawaban": 1 },
-          { "pertanyaan": "Jawaban yang SALAH untuk 'Are they happy?':", "pilihan": ["Yes, they are.", "No, they aren't.", "Yes, they do.", "No, they aren't."], "jawaban": 2 }
+          { "pertanyaan": "Jawaban yang SALAH untuk 'Are they happy?':", "pilihan": ["Yes, they are.", "No, they aren't.", "Yes, they do.", "No, they aren't."], "jawaban": 2 },
+          { "pertanyaan": "'Does she like tea?' → jawaban positif:", "pilihan": ["Yes, she is.", "Yes, she does.", "Yes, she do.", "Yes, she likes."], "jawaban": 1, "penjelasan": "Pertanyaan dengan Does dijawab dengan does: Yes, she does / No, she doesn't." },
+          { "pertanyaan": "'Can they swim?' → jawaban negatif:", "pilihan": ["No, they don't.", "No, they aren't.", "No, they can't.", "No, they not."], "jawaban": 2, "penjelasan": "Pertanyaan dengan Can dijawab dengan can/can't: No, they can't." },
+          { "pertanyaan": "'Is it cold today?' → jawaban positif:", "pilihan": ["Yes, it does.", "Yes, it is.", "Yes, it can.", "Yes, is it."], "jawaban": 1, "penjelasan": "Pertanyaan dengan Is dijawab dengan is: Yes, it is / No, it isn't." },
+          { "pertanyaan": "'Do you speak English?' → jawaban negatif:", "pilihan": ["No, I am not.", "No, I can't.", "No, I don't.", "No, I doesn't."], "jawaban": 2, "penjelasan": "Do dijawab dengan do/don't. Untuk 'I' selalu don't, bukan doesn't." }
         ]
       }
     ]
@@ -6601,7 +6623,13 @@ export const learningPath = [
               "cat"
             ],
             "jawaban": 3
-          }
+          },
+          { "pertanyaan": "'Sapi' dalam bahasa Inggris adalah...", "pilihan": ["goat", "cow", "sheep", "buffalo"], "jawaban": 1 },
+          { "pertanyaan": "Hewan yang hidup di air:", "pilihan": ["bird", "fish", "cat", "chicken"], "jawaban": 1 },
+          { "pertanyaan": "Apa arti 'mountain'?", "pilihan": ["pantai", "sungai", "gunung", "hutan"], "jawaban": 2 },
+          { "pertanyaan": "Mana hewan LIAR?", "pilihan": ["dog", "cat", "lion", "cow"], "jawaban": 2, "penjelasan": "Lion (singa) hidup liar di alam. Dog, cat, dan cow adalah hewan peliharaan/ternak." },
+          { "pertanyaan": "Apa arti 'forest'?", "pilihan": ["sawah", "hutan", "padang pasir", "danau"], "jawaban": 1 },
+          { "pertanyaan": "'Burung bisa terbang.' = 'A bird can ___.'", "pilihan": ["swim", "fly", "run", "walk"], "jawaban": 1 }
         ]
       }
     ]
@@ -6874,7 +6902,13 @@ export const learningPath = [
               "April"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "Hari setelah Monday adalah...", "pilihan": ["Sunday", "Tuesday", "Wednesday", "Thursday"], "jawaban": 1 },
+          { "pertanyaan": "Hari sebelum Sunday adalah...", "pilihan": ["Monday", "Friday", "Saturday", "Tuesday"], "jawaban": 2 },
+          { "pertanyaan": "Bulan terakhir dalam setahun adalah...", "pilihan": ["November", "October", "January", "December"], "jawaban": 3 },
+          { "pertanyaan": "'There are ___ days in a week.'", "pilihan": ["five", "six", "seven", "eight"], "jawaban": 2 },
+          { "pertanyaan": "Sapaan yang tepat jam 8 malam:", "pilihan": ["Good morning!", "Good afternoon!", "Good evening!", "Good night!"], "jawaban": 2, "penjelasan": "Good evening = sapaan saat malam. Good night dipakai saat BERPAMITAN/mau tidur, bukan menyapa." },
+          { "pertanyaan": "Hari kerja pertama dalam seminggu umumnya...", "pilihan": ["Sunday", "Monday", "Saturday", "Friday"], "jawaban": 1 }
         ]
       }
     ]
@@ -7575,7 +7609,13 @@ export const learningPath = [
               "three-tenth"
             ],
             "jawaban": 1
-          }
+          },
+          { "pertanyaan": "Ordinal untuk angka 2 adalah...", "pilihan": ["two-th", "second", "twoth", "double"], "jawaban": 1 },
+          { "pertanyaan": "Ordinal untuk angka 3 adalah...", "pilihan": ["threeth", "thirty", "third", "three-st"], "jawaban": 2 },
+          { "pertanyaan": "'Kamar saya di lantai 5.' = 'My room is on the ___ floor.'", "pilihan": ["five", "fiveth", "fivest", "fifth"], "jawaban": 3, "penjelasan": "five → fifth (ejaan berubah, bukan 'fiveth'). Sama seperti twelve → twelfth." },
+          { "pertanyaan": "Ordinal untuk angka 9 adalah...", "pilihan": ["nineth", "ninth", "nine-th", "ninest"], "jawaban": 1, "penjelasan": "nine → ninth: huruf 'e' dihilangkan. Ini pengecualian ejaan yang sering salah." },
+          { "pertanyaan": "Ordinal untuk angka 12 adalah...", "pilihan": ["twelveth", "twelfth", "twelvest", "twelth"], "jawaban": 1, "penjelasan": "twelve → twelfth: 've' berubah jadi 'f'. Sama seperti five → fifth." },
+          { "pertanyaan": "Juara 1 = '___ place'", "pilihan": ["one", "first", "win", "top"], "jawaban": 1 }
         ]
       }
     ]
@@ -7752,7 +7792,13 @@ export const learningPath = [
               "Indonesia I am from."
             ],
             "jawaban": 0
-          }
+          },
+          { "pertanyaan": "Orang dari Japan disebut...", "pilihan": ["Japanish", "Japanese", "Japaner", "Japan people"], "jawaban": 1 },
+          { "pertanyaan": "Orang dari Indonesia disebut...", "pilihan": ["Indonesish", "Indonesese", "Indonesian", "Indonesier"], "jawaban": 2 },
+          { "pertanyaan": "Orang dari China disebut...", "pilihan": ["Chinan", "Chinese", "Chinish", "Chiner"], "jawaban": 1, "penjelasan": "Beberapa kebangsaan berakhiran -ese: Chinese, Japanese, Vietnamese." },
+          { "pertanyaan": "Kebangsaan dari 'America' adalah...", "pilihan": ["Americese", "Americian", "American", "Americano"], "jawaban": 2 },
+          { "pertanyaan": "Tanya asal: 'Where are you ___?'", "pilihan": ["come", "in", "at", "from"], "jawaban": 3, "penjelasan": "Menanyakan asal selalu pakai from: Where are you from? — I'm from Bandung." },
+          { "pertanyaan": "Bahasa yang digunakan di England adalah...", "pilihan": ["England", "English", "Englandese", "Englandian"], "jawaban": 1 }
         ]
       }
     ]
@@ -7919,7 +7965,13 @@ export const learningPath = [
               "Is sunny today."
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "'Hari ini hujan.' = 'It's ___ today.'", "pilihan": ["rain", "rainy", "rains", "to rain"], "jawaban": 1, "penjelasan": "Setelah It's pakai kata sifat: rainy, sunny, cloudy. 'Rain' adalah kata benda/kerja." },
+          { "pertanyaan": "Apa arti 'cloudy'?", "pilihan": ["cerah", "berawan", "hujan", "berangin"], "jawaban": 1 },
+          { "pertanyaan": "Cuaca sangat panas:", "pilihan": ["cold", "hot", "cool", "windy"], "jawaban": 1 },
+          { "pertanyaan": "'Berangin' dalam bahasa Inggris adalah...", "pilihan": ["winding", "windy", "winded", "wind"], "jawaban": 1 },
+          { "pertanyaan": "Tanya cuaca: '___ the weather like today?'", "pilihan": ["How's", "What's", "Where's", "Who's"], "jawaban": 1, "penjelasan": "Pola tetap: What's the weather like? ATAU How's the weather? — jangan dicampur." },
+          { "pertanyaan": "Apa arti 'snowy'?", "pilihan": ["berkabut", "bersalju", "mendung", "dingin"], "jawaban": 1 }
         ]
       }
     ]
