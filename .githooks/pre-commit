@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-commit hook — validasi data pelajaran sebelum setiap commit
+# Mencegah bug seperti tipe "kuis" yang pernah merusak 8 kuis diam-diam.
+#
+# Hook ini aktif via: git config core.hooksPath .githooks
+# (otomatis di-set oleh script "prepare" di package.json saat npm install)
+
+echo "🔍 Validasi data pelajaran (learningPath.js)..."
+node scripts/generate-learning-index.mjs
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Commit DIBATALKAN — perbaiki masalah data di atas dulu."
+  exit 1
+fi
+
+# Indeks ter-regenerate — ikutkan ke commit agar selalu sinkron
+git add src/data/learningPathIndex.js
+
+echo "✅ Data valid — lanjut commit."

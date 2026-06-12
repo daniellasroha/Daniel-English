@@ -5,11 +5,14 @@ import { useState, useEffect, useCallback } from "react";
 import { learningPathIndex as unitBelajar } from "@/data/learningPathIndex";
 import { syncLeaderboard } from "@/lib/leaderboard";
 import { pushProgress } from "@/lib/syncProgress";
+import { catatAktivitas } from "@/lib/dailyGoal";
 
 const KEY = "daniel_english_belajar";
+const KEY_BINTANG = "daniel_english_bintang";
 
 export function useLearning() {
   const [completedLessons, setCompletedLessons] = useState([]);
+  const [bintangMap, setBintangMap] = useState({});
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,13 +21,30 @@ export function useLearning() {
       if (saved) {
         setCompletedLessons(JSON.parse(saved));
       }
+      const savedBintang = localStorage.getItem(KEY_BINTANG);
+      if (savedBintang) {
+        setBintangMap(JSON.parse(savedBintang));
+      }
     } catch {
       setCompletedLessons([]);
     }
     setLoaded(true);
   }, []);
 
-  const completeLesson = useCallback((lessonId) => {
+  // bintang (1-3, opsional) = hasil kuis pelajaran ini; simpan yang TERBAIK
+  const completeLesson = useCallback((lessonId, bintang = 0) => {
+    // Simpan bintang terbaik — bisa naik saat pelajaran diulang
+    if (bintang > 0) {
+      setBintangMap((prev) => {
+        if ((prev[lessonId] || 0) >= bintang) return prev;
+        const next = { ...prev, [lessonId]: bintang };
+        try { localStorage.setItem(KEY_BINTANG, JSON.stringify(next)); } catch {}
+        return next;
+      });
+    }
+
+    catatAktivitas(); // hitung ke target harian (termasuk saat mengulang)
+
     setCompletedLessons((prev) => {
       if (prev.includes(lessonId)) return prev;
       const next = [...prev, lessonId];
@@ -45,6 +65,11 @@ export function useLearning() {
       return next;
     });
   }, []);
+
+  const getBintang = useCallback(
+    (lessonId) => bintangMap[lessonId] || 0,
+    [bintangMap]
+  );
 
   const isLessonDone = useCallback(
     (lessonId) => completedLessons.includes(lessonId),
@@ -101,6 +126,7 @@ export function useLearning() {
     isLessonUnlocked,
     getUnitProgress,
     getTotalProgress,
+    getBintang,
     loaded,
   };
 }

@@ -1,13 +1,14 @@
 // Halaman utama — navigasi kategori → sub-item
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useUsername } from "@/hooks/useUsername";
 import { useLevel } from "@/hooks/useLevel";
 import { useSRS } from "@/hooks/useSRS";
 import { useProgress, hitungStreak, hitungRataQuiz } from "@/hooks/useProgress";
 import { useLearning } from "@/hooks/useLearning";
+import { getAktivitasHariIni, TARGET_HARIAN } from "@/lib/dailyGoal";
 import { learningPathIndex as learningPath } from "@/data/learningPathIndex";
 import UsernameModal from "@/components/UsernameModal";
 import LevelModal from "@/components/LevelModal";
@@ -169,6 +170,13 @@ export default function Home() {
 
   // ─── Statistik untuk hero dashboard ─────────────────────────────────────────
   const { data } = useProgress();
+
+  // Target harian — dibaca di client (localStorage)
+  const [aktivitasHariIni, setAktivitasHariIni] = useState(0);
+  useEffect(() => {
+    setAktivitasHariIni(getAktivitasHariIni());
+  }, []);
+  const targetTercapai = aktivitasHariIni >= TARGET_HARIAN;
   const { isLessonUnlocked, getUnitProgress, loaded: loadedLearn } = useLearning();
 
   const streak     = data ? hitungStreak(data.sessions) : 0;
@@ -323,6 +331,43 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Target harian — pemicu kebiasaan belajar */}
+          <div
+            className="fade-up rounded-2xl px-5 py-4 mb-5 flex items-center gap-4"
+            style={{
+              animationDelay: "0.12s",
+              backgroundColor: targetTercapai ? "var(--gold-light)" : "var(--bg-paper)",
+              border: targetTercapai ? "1.5px solid var(--gold)" : "1px solid var(--border)",
+            }}
+          >
+            <span className="text-3xl flex-shrink-0">{targetTercapai ? "🏅" : "🎯"}</span>
+            <div className="flex-1">
+              <p className="font-sans text-sm font-bold" style={{ color: targetTercapai ? "var(--gold)" : "var(--text-primary)" }}>
+                {targetTercapai
+                  ? "Target harian tercapai — hebat!"
+                  : `Target Harian: ${aktivitasHariIni}/${TARGET_HARIAN} aktivitas`}
+              </p>
+              <p className="font-sans text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
+                {targetTercapai
+                  ? "Kembali besok untuk menjaga streak 🔥"
+                  : "Selesaikan pelajaran atau kuis apa saja untuk mengisi target"}
+              </p>
+            </div>
+            {/* Segmen progress 3 kotak */}
+            <div className="flex gap-1.5 flex-shrink-0" aria-label={`${aktivitasHariIni} dari ${TARGET_HARIAN} aktivitas hari ini`}>
+              {Array.from({ length: TARGET_HARIAN }, (_, i) => (
+                <div
+                  key={i}
+                  className="w-3.5 h-7 rounded-full transition-all"
+                  style={{
+                    backgroundColor: i < aktivitasHariIni ? "var(--gold)" : "var(--bg-subtle)",
+                    border: "1px solid var(--border)",
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Tombol lanjutkan belajar */}

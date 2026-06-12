@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
     "gen:index": "node scripts/generate-learning-index.mjs",
     "predev": "npm run gen:index",
     "prebuild": "npm run gen:index",

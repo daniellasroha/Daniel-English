@@ -512,7 +512,7 @@ function MiniQuiz({ soalList, meta, onSelesai }) {
           {persen}%
         </p>
         <button
-          onClick={() => onSelesai(lulus)}
+          onClick={() => onSelesai(lulus, persen)}
           className={`px-8 py-3 rounded-2xl text-white font-sans font-bold text-lg shadow-lg bg-gradient-to-r ${meta.warna} hover:scale-105 transition-transform`}
         >
           {lulus ? "Selesai & Lanjut ✓" : "Coba Lagi"}
@@ -684,6 +684,7 @@ function TampilanPelajaran({
   const meta = unit;
   const [fase, setFase] = useState("vocab");
   const [vocabIdx, setVocabIdx] = useState(0);
+  const [bintangDiraih, setBintangDiraih] = useState(0); // bintang dari kuis barusan
 
   const isVocab = pelajaran.tipe === "vocab";
   const isQuiz  = pelajaran.tipe === "quiz";
@@ -717,10 +718,19 @@ function TampilanPelajaran({
     if (vocabIdx > 0) setVocabIdx(vocabIdx - 1);
   }
 
-  function handleQuizSelesai(lulus) {
+  // Konversi skor kuis → bintang: 100% = 3⭐, ≥80% = 2⭐, lulus (≥60%) = 1⭐
+  function hitungBintang(persen) {
+    if (persen >= 100) return 3;
+    if (persen >= 80) return 2;
+    return 1;
+  }
+
+  function handleQuizSelesai(lulus, persen = 0) {
     if (lulus) {
+      const b = hitungBintang(persen);
+      setBintangDiraih(b);
       setFase("done");
-      onSelesai();
+      onSelesai(b);
     } else {
       setFase("vocab");
       setVocabIdx(0);
@@ -768,8 +778,20 @@ function TampilanPelajaran({
       >
         <Confetti />
         <div className="card-de p-8 max-w-sm w-full text-center">
-          <div className="text-6xl mb-4">⭐</div>
-          <h2 className="font-serif text-2xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+          {/* Bintang hasil kuis: 100% = 3⭐, ≥80% = 2⭐, lulus = 1⭐ */}
+          <div className="text-5xl mb-1 flex justify-center gap-1">
+            {[1, 2, 3].map((n) => (
+              <span key={n} style={{ opacity: n <= bintangDiraih ? 1 : 0.2, transform: n === 2 ? "translateY(-6px)" : "none" }}>
+                ⭐
+              </span>
+            ))}
+          </div>
+          {bintangDiraih > 0 && bintangDiraih < 3 && (
+            <p className="font-sans text-xs mb-2" style={{ color: "var(--text-muted)" }}>
+              Ulangi pelajaran dan raih 100% untuk 3 bintang!
+            </p>
+          )}
+          <h2 className="font-serif text-2xl font-semibold mb-2 mt-2" style={{ color: "var(--text-primary)" }}>
             Pelajaran Selesai!
           </h2>
           <p className="font-sans text-sm mb-1" style={{ color: "var(--text-secondary)" }}>
@@ -1029,7 +1051,7 @@ export default function BelajarPage() {
   const [unitDipilih, setUnitDipilih]         = useState(null);
   const [pelajaranDipilih, setPelajaranDipilih] = useState(null);
 
-  const { isLessonDone, isLessonUnlocked, getUnitProgress, completeLesson, loaded } = useLearning();
+  const { isLessonDone, isLessonUnlocked, getUnitProgress, completeLesson, getBintang, loaded } = useLearning();
   const { config, level } = useLevel();
   const { registerCard } = useSRS();
   const userLevel = level || "a1";
@@ -1054,7 +1076,7 @@ export default function BelajarPage() {
       .slice(0, Math.max(currentUnitIdx, 0))
       .flatMap((u) => u.pelajaran.flatMap((p) => p.kartu || []));
 
-    function handleSelesai()    { completeLesson(pelajaran.id); }
+    function handleSelesai(bintang) { completeLesson(pelajaran.id, bintang); }
     function handleNextLesson() { if (nextLesson) setPelajaranDipilih(nextLesson.id); }
     function handleNextUnit()   { if (nextUnit) { setPelajaranDipilih(null); setUnitDipilih(nextUnit.id); } }
 
@@ -1164,8 +1186,11 @@ export default function BelajarPage() {
                           <span
                             className="font-sans text-xs rounded-full px-2 py-0.5 border border-green-200 text-green-600 font-semibold"
                             style={{ backgroundColor: "var(--bg-paper)" }}
+                            title={getBintang(pelajaran.id) > 0 ? `${getBintang(pelajaran.id)} dari 3 bintang — ulangi untuk meningkatkan` : "Selesai"}
                           >
-                            Selesai ✓
+                            {getBintang(pelajaran.id) > 0
+                              ? "⭐".repeat(getBintang(pelajaran.id)) + "☆".repeat(3 - getBintang(pelajaran.id))
+                              : "Selesai ✓"}
                           </span>
                         )}
                       </div>

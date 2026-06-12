@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { syncLeaderboard } from "@/lib/leaderboard";
 import { pushProgress } from "@/lib/syncProgress";
+import { catatAktivitas } from "@/lib/dailyGoal";
 
 const KEY = "daniel_english_progress";
 
@@ -89,6 +90,7 @@ export function useProgress() {
     if (!d.sessions.includes(t)) d.sessions = [...d.sessions, t];
     saveData(d);
     setData({ ...d });
+    catatAktivitas(); // hitung ke target harian
 
     // Sync ke leaderboard + backup progress (fire-and-forget)
     try {
