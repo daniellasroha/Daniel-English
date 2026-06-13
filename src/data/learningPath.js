@@ -5442,6 +5442,129 @@ export const learningPath = [
     ]
   },
   {
+    "id": "a1-freq",
+    "judul": "Adverb of Frequency (Seberapa Sering)",
+    "deskripsi": "Ungkapkan seberapa sering kamu melakukan sesuatu: always, usually, often, sometimes, never",
+    "emoji": "🔁",
+    "warna": "from-cyan-400 to-blue-500",
+    "bg": "bg-cyan-50",
+    "border": "border-cyan-300",
+    "teks": "text-cyan-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1freq-1",
+        "judul": "Kata Keterangan Frekuensi",
+        "emoji": "🔁",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "always", "arti": "selalu (100%)", "emoji": "💯", "contoh": "I always brush my teeth in the morning." },
+          { "kata": "usually", "arti": "biasanya (90%)", "emoji": "🔆", "contoh": "She usually walks to school." },
+          { "kata": "often", "arti": "sering (70%)", "emoji": "🔅", "contoh": "We often play football on Sunday." },
+          { "kata": "sometimes", "arti": "kadang-kadang (50%)", "emoji": "🤔", "contoh": "He sometimes eats breakfast at home." },
+          { "kata": "rarely / seldom", "arti": "jarang (10%)", "emoji": "🌙", "contoh": "I rarely watch TV at night." },
+          { "kata": "never", "arti": "tidak pernah (0%)", "emoji": "🚫", "contoh": "They never drink coffee." },
+          { "kata": "every day", "arti": "setiap hari", "emoji": "📅", "contoh": "I study English every day." },
+          { "kata": "once a week", "arti": "sekali seminggu", "emoji": "🗓️", "contoh": "She goes to the market once a week." }
+        ]
+      },
+      {
+        "id": "a1freq-2",
+        "judul": "Posisi dalam Kalimat",
+        "emoji": "📍",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Sebelum kata kerja biasa", "arti": "adverb DILETAKKAN sebelum kata kerja utama", "emoji": "➡️", "contoh": "I always eat rice. (always + eat)" },
+          { "kata": "Setelah To Be", "arti": "tapi SETELAH am/is/are", "emoji": "🔗", "contoh": "She is always happy. (is + always)" },
+          { "kata": "He usually gets up early", "arti": "dia biasanya bangun pagi", "emoji": "⏰", "contoh": "He usually gets up at five." },
+          { "kata": "I never tell a lie", "arti": "saya tidak pernah berbohong", "emoji": "🤐", "contoh": "I never tell a lie to my mother." },
+          { "kata": "They are sometimes late", "arti": "mereka kadang terlambat", "emoji": "🐢", "contoh": "They are sometimes late for class." },
+          { "kata": "How often...?", "arti": "Seberapa sering...?", "emoji": "❓", "contoh": "How often do you exercise? — Twice a week." }
+        ],
+        "soal": [
+          { "pertanyaan": "Letak adverb yang BENAR dengan kata kerja biasa:", "pilihan": ["I eat always rice.", "I always eat rice.", "Always I eat rice.", "I eat rice always."], "jawaban": 1, "penjelasan": "Adverb of frequency diletakkan SEBELUM kata kerja biasa: I always eat (always + eat)." },
+          { "pertanyaan": "Letak adverb yang BENAR dengan To Be:", "pilihan": ["She always is happy.", "Always she is happy.", "She is always happy.", "She is happy always."], "jawaban": 2, "penjelasan": "Dengan am/is/are, adverb diletakkan SETELAH To Be: She is always happy (is + always)." },
+          { "pertanyaan": "'always' artinya...", "pilihan": ["tidak pernah", "kadang-kadang", "selalu", "jarang"], "jawaban": 2 }
+        ]
+      },
+      {
+        "id": "a1freq-3",
+        "judul": "Kuis: Adverb of Frequency",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'never' artinya...", "pilihan": ["selalu", "sering", "tidak pernah", "biasanya"], "jawaban": 2 },
+          { "pertanyaan": "Urutan dari paling sering ke paling jarang:", "pilihan": ["never → always", "always → usually → sometimes → never", "sometimes → always", "often → always"], "jawaban": 1, "penjelasan": "always (100%) → usually (90%) → often (70%) → sometimes (50%) → never (0%)." },
+          { "pertanyaan": "'Saya biasanya minum teh.' = 'I ___ drink tea.'", "pilihan": ["am usually", "usually", "usually am", "drink usually"], "jawaban": 1, "penjelasan": "Kata kerja biasa (drink) → adverb di depannya: I usually drink." },
+          { "pertanyaan": "'Mereka tidak pernah terlambat.' = 'They ___ late.'", "pilihan": ["never are", "are never", "never", "are late never"], "jawaban": 1, "penjelasan": "Dengan To Be (are): They are never late (are + never)." },
+          { "pertanyaan": "Menanyakan seberapa sering: '___ do you read books?'", "pilihan": ["How many", "How much", "How often", "How long"], "jawaban": 2, "penjelasan": "How often = seberapa sering. Jawabannya pakai adverb/frekuensi: every day, twice a week, dll." },
+          { "pertanyaan": "'He ___ eats vegetables. He hates them.' (0%)", "pilihan": ["always", "usually", "never", "often"], "jawaban": 2, "penjelasan": "Hates them = membenci → never (tidak pernah) eats vegetables." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-prescont",
+    "judul": "Present Continuous (Sedang Berlangsung)",
+    "deskripsi": "Ceritakan apa yang sedang terjadi SEKARANG dengan am/is/are + kata kerja-ing",
+    "emoji": "🏃",
+    "warna": "from-orange-400 to-pink-500",
+    "bg": "bg-orange-50",
+    "border": "border-orange-300",
+    "teks": "text-orange-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "a1pc-1",
+        "judul": "am / is / are + V-ing",
+        "emoji": "🏃",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "am/is/are + V-ing", "arti": "Rumus: kegiatan yang SEDANG berlangsung sekarang", "emoji": "📐", "contoh": "I am reading a book now." },
+          { "kata": "I am eating", "arti": "saya sedang makan", "emoji": "🍽️", "contoh": "I am eating breakfast now." },
+          { "kata": "She is sleeping", "arti": "dia sedang tidur", "emoji": "😴", "contoh": "Be quiet! She is sleeping." },
+          { "kata": "They are playing", "arti": "mereka sedang bermain", "emoji": "⚽", "contoh": "The children are playing outside." },
+          { "kata": "We are studying", "arti": "kami sedang belajar", "emoji": "📚", "contoh": "We are studying English right now." },
+          { "kata": "It is raining", "arti": "sedang hujan", "emoji": "🌧️", "contoh": "Look! It is raining." },
+          { "kata": "Kata kunci: now, right now, look!", "arti": "penanda waktu Present Continuous", "emoji": "👀", "contoh": "Look! The dog is running." }
+        ]
+      },
+      {
+        "id": "a1pc-2",
+        "judul": "Aturan -ing & Negatif/Tanya",
+        "emoji": "✍️",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "play → playing", "arti": "kata kerja biasa: tambah -ing", "emoji": "➕", "contoh": "He is playing a game." },
+          { "kata": "make → making", "arti": "akhiran -e dihilangkan: make → making", "emoji": "✂️", "contoh": "She is making a cake." },
+          { "kata": "run → running", "arti": "huruf akhir digandakan: run → running", "emoji": "🔁", "contoh": "The boy is running fast." },
+          { "kata": "I am not working", "arti": "negatif: am/is/are + not + V-ing", "emoji": "🚫", "contoh": "I am not working today." },
+          { "kata": "Are you listening?", "arti": "tanya: Am/Is/Are + subjek + V-ing?", "emoji": "❓", "contoh": "Are you listening to me?" },
+          { "kata": "What are you doing?", "arti": "apa yang sedang kamu lakukan?", "emoji": "🤔", "contoh": "What are you doing now? — I'm cooking." }
+        ],
+        "soal": [
+          { "pertanyaan": "Rumus Present Continuous adalah...", "pilihan": ["V1 + s", "am/is/are + V-ing", "do/does + V1", "will + V1"], "jawaban": 1, "penjelasan": "Present Continuous = am/is/are + kata kerja-ing, untuk kegiatan yang sedang berlangsung." },
+          { "pertanyaan": "'She ___ a book now.' (read)", "pilihan": ["read", "reads", "is reading", "reading"], "jawaban": 2, "penjelasan": "Sekarang (now) + dia (she) → She is reading." },
+          { "pertanyaan": "Bentuk -ing dari 'run' adalah...", "pilihan": ["runing", "running", "runing", "runned"], "jawaban": 1, "penjelasan": "run → running: huruf akhir 'n' digandakan sebelum -ing." }
+        ]
+      },
+      {
+        "id": "a1pc-3",
+        "judul": "Kuis: Present Continuous",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'I ___ TV right now.' (watch)", "pilihan": ["watch", "watches", "am watching", "watching"], "jawaban": 2, "penjelasan": "right now → sedang berlangsung → I am watching TV." },
+          { "pertanyaan": "Bentuk -ing dari 'make' adalah...", "pilihan": ["makeing", "making", "makking", "maked"], "jawaban": 1, "penjelasan": "make → making: huruf 'e' di akhir dihilangkan." },
+          { "pertanyaan": "Kalimat tanya yang benar:", "pilihan": ["You are working?", "Are you working?", "Do you working?", "Working you are?"], "jawaban": 1, "penjelasan": "Tanya Present Continuous: Are + you + V-ing? → Are you working?" },
+          { "pertanyaan": "'Mereka tidak sedang tidur.' =", "pilihan": ["They not sleeping.", "They don't sleeping.", "They are not sleeping.", "They aren't sleep."], "jawaban": 2, "penjelasan": "Negatif: are + not + V-ing → They are not sleeping." },
+          { "pertanyaan": "Mana yang menunjukkan kegiatan SEKARANG?", "pilihan": ["I eat rice every day.", "I am eating rice now.", "I ate rice yesterday.", "I will eat rice."], "jawaban": 1, "penjelasan": "Present Continuous (am eating + now) = sedang berlangsung. 'I eat every day' adalah kebiasaan (Simple Present)." },
+          { "pertanyaan": "Beda Simple Present vs Continuous: 'She ___ to music now.'", "pilihan": ["listens", "is listening", "listen", "listening"], "jawaban": 1, "penjelasan": "Ada 'now' → pakai Present Continuous (is listening), bukan Simple Present (listens)." }
+        ]
+      }
+    ]
+  },
+  {
     "id": "unit-a1-34",
     "judul": "Like / Don't Like (Suka & Tidak Suka)",
     "deskripsi": "Belajar menyatakan kesukaan dan ketidaksukaan menggunakan like, love, don't like, dan hate",

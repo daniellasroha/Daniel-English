@@ -377,6 +377,40 @@ export const learningPathIndex = [
   ]
  },
  {
+  "id": "a1-freq",
+  "judul": "Adverb of Frequency (Seberapa Sering)",
+  "emoji": "🔁",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "a1freq-1"
+   },
+   {
+    "id": "a1freq-2"
+   },
+   {
+    "id": "a1freq-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-prescont",
+  "judul": "Present Continuous (Sedang Berlangsung)",
+  "emoji": "🏃",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "a1pc-1"
+   },
+   {
+    "id": "a1pc-2"
+   },
+   {
+    "id": "a1pc-3"
+   }
+  ]
+ },
+ {
   "id": "unit-a1-34",
   "judul": "Like / Don't Like (Suka & Tidak Suka)",
   "emoji": "❤️",
