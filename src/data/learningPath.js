@@ -1928,7 +1928,10 @@ export const learningPath = [
           { "pertanyaan": "Kata yang dipakai untuk SATU benda yang JAUH adalah...", "pilihan": ["This", "That", "These", "Those"], "jawaban": 1 },
           { "pertanyaan": "'Is ___ a cat?' — benda tunggal yang jauh", "pilihan": ["this", "these", "that", "those"], "jawaban": 2 },
           { "pertanyaan": "'___ book is interesting.' (buku yang sedang kamu pegang)", "pilihan": ["That", "Those", "These", "This"], "jawaban": 3 },
-          { "pertanyaan": "Kalimat yang SALAH adalah...", "pilihan": ["This is a dog.", "Those are cats.", "These is a book.", "That is a car."], "jawaban": 2 }
+          { "pertanyaan": "Kalimat yang SALAH adalah...", "pilihan": ["This is a dog.", "Those are cats.", "These is a book.", "That is a car."], "jawaban": 2 },
+          { "pertanyaan": "Bentuk JAMAK dari 'This is my book' adalah...", "pilihan": ["This are my books.", "These are my books.", "Those is my books.", "These is my book."], "jawaban": 1, "penjelasan": "this → these (jamak dekat). is → are. This is my book → These are my books." },
+          { "pertanyaan": "Menawarkan kue di tanganmu ke teman: '___ for you.'", "pilihan": ["Those", "That", "These", "This"], "jawaban": 3, "penjelasan": "Benda tunggal yang DEKAT (di tanganmu) = This. 'This is for you.'" },
+          { "pertanyaan": "Di toko, menunjuk sepatu jauh di rak: 'How much are ___?'", "pilihan": ["this", "that", "these", "those"], "jawaban": 3, "penjelasan": "Sepatu = jamak + jauh = those. 'How much are those (shoes)?'" }
         ]
       }
     ]
@@ -2848,7 +2851,10 @@ export const learningPath = [
           { "pertanyaan": "'___ you have a ruler?' (pertanyaan)", "pilihan": ["Does", "Is", "Have", "Do"], "jawaban": 3 },
           { "pertanyaan": "'She ___ a brother.' (tidak punya)", "pilihan": ["don't have", "isn't have", "doesn't have", "hasn't"], "jawaban": 2 },
           { "pertanyaan": "Kalimat yang BENAR adalah...", "pilihan": ["He have a dog.", "She have two cats.", "I has a pen.", "We have a garden."], "jawaban": 3 },
-          { "pertanyaan": "Apa arti 'Do you have a dictionary?'", "pilihan": ["Apakah kamu suka kamus?", "Di mana kamusmu?", "Apakah kamu punya kamus?", "Kamus itu milikmu?"], "jawaban": 2 }
+          { "pertanyaan": "Apa arti 'Do you have a dictionary?'", "pilihan": ["Apakah kamu suka kamus?", "Di mana kamusmu?", "Apakah kamu punya kamus?", "Kamus itu milikmu?"], "jawaban": 2 },
+          { "pertanyaan": "'He ___ a new phone.' (punya)", "pilihan": ["have", "has", "is", "do"], "jawaban": 1, "penjelasan": "He/She/It → HAS. I/You/We/They → HAVE. He has a new phone." },
+          { "pertanyaan": "Pertanyaan untuk 'she': '___ she have a car?'", "pilihan": ["Do", "Have", "Does", "Is"], "jawaban": 2, "penjelasan": "Untuk he/she/it pakai DOES: Does she have a car? Untuk I/you/we/they pakai DO." },
+          { "pertanyaan": "Menjawab 'Do you have a pen?' (tidak punya):", "pilihan": ["No, I don't.", "No, I'm not.", "No, I doesn't.", "No, I haven't have."], "jawaban": 0, "penjelasan": "Pertanyaan dengan Do you have...? dijawab: Yes, I do / No, I don't." }
         ]
       }
     ]
@@ -3193,7 +3199,10 @@ export const learningPath = [
               "Where is this?"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "Beda 'your' dan 'yours': 'Is this ___ bag?' (sebelum kata benda)", "pilihan": ["yours", "your", "you", "you're"], "jawaban": 1, "penjelasan": "Sebelum kata benda (bag) pakai possessive adjective: YOUR bag. 'Yours' dipakai sendiri tanpa kata benda: It is yours." },
+          { "pertanyaan": "'That book is ___.' (milik saya, tanpa kata benda setelahnya)", "pilihan": ["my", "mine", "me", "I"], "jawaban": 1, "penjelasan": "Tanpa kata benda setelahnya pakai possessive PRONOUN: mine. 'That book is mine.' (bukan 'is my')." },
+          { "pertanyaan": "'Tas adik perempuanku' = '___ bag'", "pilihan": ["my sister bag", "my sister's bag", "my sisters bag", "bag my sister"], "jawaban": 1, "penjelasan": "Kepemilikan orang pakai 's: my sister's bag (tas milik adik perempuanku)." }
         ]
       }
     ]
@@ -4080,7 +4089,12 @@ export const learningPath = [
               "telinga"
             ],
             "jawaban": 2
-          }
+          },
+          { "pertanyaan": "Kita mendengar dengan...", "pilihan": ["eyes", "ears", "nose", "mouth"], "jawaban": 1, "penjelasan": "ears = telinga, untuk mendengar. eyes = mata (melihat), nose = hidung (mencium)." },
+          { "pertanyaan": "Kita melihat dengan...", "pilihan": ["ears", "hands", "eyes", "feet"], "jawaban": 2 },
+          { "pertanyaan": "'Saya sakit kepala' = 'I have a ___.'", "pilihan": ["headache", "stomachache", "toothache", "backache"], "jawaban": 0, "penjelasan": "head (kepala) + ache (nyeri) = headache (sakit kepala)." },
+          { "pertanyaan": "Bentuk jamak dari 'foot' (kaki) adalah...", "pilihan": ["foots", "feets", "feet", "footes"], "jawaban": 2, "penjelasan": "foot → feet (jamak tidak beraturan). one foot, two feet." },
+          { "pertanyaan": "Bagian tubuh untuk memegang benda:", "pilihan": ["hands", "ears", "eyes", "hair"], "jawaban": 0, "penjelasan": "hands = tangan, untuk memegang. Setiap tangan punya fingers (jari)." }
         ]
       }
     ]
@@ -5628,7 +5642,10 @@ export const learningPath = [
           { "pertanyaan": "'___ she like swimming?' (tanya)", "pilihan": ["Do", "Is", "Are", "Does"], "jawaban": 3 },
           { "pertanyaan": "Kata yang menunjukkan SANGAT TIDAK SUKA adalah...", "pilihan": ["like", "love", "hate", "want"], "jawaban": 2 },
           { "pertanyaan": "'What ___ you like?' (pertanyaan umum)", "pilihan": ["does", "is", "do", "are"], "jawaban": 2 },
-          { "pertanyaan": "Kalimat yang SALAH secara grammar:", "pilihan": ["I like music.", "She likes cats.", "He like football.", "They don't like noise."], "jawaban": 2 }
+          { "pertanyaan": "Kalimat yang SALAH secara grammar:", "pilihan": ["I like music.", "She likes cats.", "He like football.", "They don't like noise."], "jawaban": 2 },
+          { "pertanyaan": "'I like ___.' (berenang — kegiatan)", "pilihan": ["swim", "swimming", "to swimming", "swims"], "jawaban": 1, "penjelasan": "like + kegiatan pakai bentuk -ing: I like swimming/reading/cooking." },
+          { "pertanyaan": "Menanyakan kesukaan teman: 'What kind of music ___ you like?'", "pilihan": ["does", "do", "are", "is"], "jawaban": 1, "penjelasan": "Untuk 'you' pakai DO: What ... do you like? Untuk he/she pakai DOES." },
+          { "pertanyaan": "'She loves cooking.' artinya:", "pilihan": ["Dia tidak suka memasak.", "Dia sangat suka memasak.", "Dia sedang memasak.", "Dia bisa memasak."], "jawaban": 1, "penjelasan": "love = sangat suka (lebih kuat dari like). loves cooking = sangat suka memasak." }
         ]
       }
     ]
