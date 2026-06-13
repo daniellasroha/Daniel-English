@@ -8099,6 +8099,370 @@ export const learningPath = [
       }
     ]
   },
+
+  {
+    "id": "a1-konv",
+    "judul": "Penerapan: Berkenalan & Mengobrol",
+    "deskripsi": "Praktik percakapan nyata — menyapa, memperkenalkan diri, dan bertanya informasi pribadi",
+    "emoji": "🗣️",
+    "warna": "from-green-400 to-teal-500",
+    "bg": "bg-green-50",
+    "border": "border-green-300",
+    "teks": "text-green-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "konv-1",
+        "judul": "Memulai Percakapan",
+        "emoji": "👋",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Hi! How are you?", "arti": "Hai! Apa kabar?", "emoji": "👋", "contoh": "Hi, Sara! How are you?" },
+          { "kata": "I'm fine, thanks. And you?", "arti": "Saya baik, terima kasih. Kamu?", "emoji": "😊", "contoh": "I'm fine, thanks. And you?" },
+          { "kata": "Nice to meet you.", "arti": "Senang bertemu denganmu.", "emoji": "🤝", "contoh": "I'm Budi. Nice to meet you!" },
+          { "kata": "Nice to meet you too.", "arti": "Senang bertemu denganmu juga.", "emoji": "🤗", "contoh": "Nice to meet you too." },
+          { "kata": "What's your name?", "arti": "Siapa namamu?", "emoji": "❓", "contoh": "What's your name? — My name is Sari." },
+          { "kata": "My name is...", "arti": "Nama saya...", "emoji": "🪪", "contoh": "My name is Daniel." },
+          { "kata": "See you later!", "arti": "Sampai jumpa nanti!", "emoji": "👋", "contoh": "I have to go. See you later!" }
+        ]
+      },
+      {
+        "id": "konv-2",
+        "judul": "Bertanya Informasi Pribadi",
+        "emoji": "💬",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Where are you from?", "arti": "Dari mana asalmu?", "emoji": "🌏", "contoh": "Where are you from? — I'm from Indonesia." },
+          { "kata": "I'm from Indonesia.", "arti": "Saya dari Indonesia.", "emoji": "🇮🇩", "contoh": "I'm from Indonesia. I'm Indonesian." },
+          { "kata": "Where do you live?", "arti": "Di mana kamu tinggal?", "emoji": "🏠", "contoh": "Where do you live? — I live in Bandung." },
+          { "kata": "How old are you?", "arti": "Berapa umurmu?", "emoji": "🎂", "contoh": "How old are you? — I'm twenty years old." },
+          { "kata": "What do you do?", "arti": "Apa pekerjaanmu?", "emoji": "💼", "contoh": "What do you do? — I'm a student." },
+          { "kata": "Do you speak English?", "arti": "Apakah kamu bisa bahasa Inggris?", "emoji": "🗨️", "contoh": "Do you speak English? — Yes, a little." }
+        ],
+        "soal": [
+          { "pertanyaan": "Teman bertanya 'How are you?'. Jawaban yang tepat:", "pilihan": ["My name is Budi.", "I'm fine, thanks.", "I'm from Bali.", "Nice city."], "jawaban": 1, "penjelasan": "'How are you?' menanyakan kabar → jawab 'I'm fine, thanks.'" },
+          { "pertanyaan": "Untuk menanyakan asal seseorang:", "pilihan": ["Where do you live?", "How old are you?", "Where are you from?", "What do you do?"], "jawaban": 2, "penjelasan": "'Where are you from?' = dari mana asalmu. 'Where do you live?' = di mana tinggal (beda)." },
+          { "pertanyaan": "'What do you do?' menanyakan tentang...", "pilihan": ["nama", "umur", "pekerjaan", "alamat"], "jawaban": 2, "penjelasan": "'What do you do?' = apa pekerjaanmu. Jawab: I'm a teacher / student / doctor." }
+        ]
+      },
+      {
+        "id": "konv-3",
+        "judul": "Kuis: Berkenalan",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Saat pertama bertemu orang baru, kamu berkata:", "pilihan": ["Goodbye!", "Nice to meet you!", "See you later!", "I'm sorry."], "jawaban": 1, "penjelasan": "'Nice to meet you!' diucapkan saat PERTAMA bertemu. 'See you later' saat berpisah." },
+          { "pertanyaan": "'Where do you live?' — jawaban yang tepat:", "pilihan": ["I'm a student.", "I live in Jakarta.", "I'm twenty.", "I'm from Japan."], "jawaban": 1, "penjelasan": "'Where do you live?' menanyakan tempat tinggal → I live in [kota]." },
+          { "pertanyaan": "Menanyakan umur:", "pilihan": ["How are you?", "How old are you?", "What do you do?", "Where are you?"], "jawaban": 1 },
+          { "pertanyaan": "'I'm fine, thanks. ___?' (menanyakan balik)", "pilihan": ["And you", "And me", "For you", "With you"], "jawaban": 0, "penjelasan": "'And you?' = dan kamu? — cara sopan menanyakan balik kabar lawan bicara." },
+          { "pertanyaan": "Urutan percakapan perkenalan yang wajar:", "pilihan": ["Goodbye → Hi → Name", "Hi → What's your name? → Nice to meet you", "Name → Goodbye → Hi", "Nice to meet you → Hi → Goodbye"], "jawaban": 1, "penjelasan": "Sapaan dulu (Hi), lalu tanya nama, lalu 'Nice to meet you'." },
+          { "pertanyaan": "Jawaban untuk 'Do you speak English?'", "pilihan": ["Yes, I am.", "Yes, a little.", "Yes, I do speak.", "I speak yes."], "jawaban": 1, "penjelasan": "Jawaban alami & sopan: 'Yes, a little' (ya, sedikit) atau 'Yes, I do.'" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-resto",
+    "judul": "Penerapan: Di Restoran & Kafe",
+    "deskripsi": "Memesan makanan dan minuman, bertanya harga, dan membayar dengan sopan",
+    "emoji": "🍽️",
+    "warna": "from-orange-400 to-red-500",
+    "bg": "bg-orange-50",
+    "border": "border-orange-300",
+    "teks": "text-orange-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "resto-1",
+        "judul": "Memesan Makanan & Minuman",
+        "emoji": "🍔",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "A table for two, please.", "arti": "Meja untuk dua orang, tolong.", "emoji": "🪑", "contoh": "Good evening. A table for two, please." },
+          { "kata": "Can I see the menu?", "arti": "Boleh saya lihat menunya?", "emoji": "📋", "contoh": "Can I see the menu, please?" },
+          { "kata": "I'd like a coffee, please.", "arti": "Saya mau kopi, tolong.", "emoji": "☕", "contoh": "I'd like a coffee and a sandwich, please." },
+          { "kata": "Can I have...?", "arti": "Boleh saya minta...?", "emoji": "🙋", "contoh": "Can I have a glass of water?" },
+          { "kata": "What would you like?", "arti": "Anda mau pesan apa?", "emoji": "🤵", "contoh": "What would you like to drink?" },
+          { "kata": "For me, please.", "arti": "Untuk saya, tolong.", "emoji": "👉", "contoh": "The chicken rice for me, please." },
+          { "kata": "Anything else?", "arti": "Ada lagi?", "emoji": "➕", "contoh": "— Anything else? — No, that's all." }
+        ]
+      },
+      {
+        "id": "resto-2",
+        "judul": "Membayar & Frasa Sopan",
+        "emoji": "💳",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "How much is it?", "arti": "Berapa harganya?", "emoji": "💰", "contoh": "How much is it? — It's fifty thousand rupiah." },
+          { "kata": "Can I have the bill, please?", "arti": "Boleh minta tagihannya?", "emoji": "🧾", "contoh": "Can I have the bill, please?" },
+          { "kata": "Here you are.", "arti": "Ini dia. (saat memberi sesuatu)", "emoji": "🤲", "contoh": "— Your coffee. — Thank you. — Here you are." },
+          { "kata": "It's delicious!", "arti": "Ini enak sekali!", "emoji": "😋", "contoh": "The soup is delicious!" },
+          { "kata": "Enjoy your meal!", "arti": "Selamat menikmati!", "emoji": "🍴", "contoh": "Here's your food. Enjoy your meal!" },
+          { "kata": "That's all, thank you.", "arti": "Itu saja, terima kasih.", "emoji": "✅", "contoh": "No more, that's all. Thank you." }
+        ],
+        "soal": [
+          { "pertanyaan": "Cara sopan memesan kopi:", "pilihan": ["Give me coffee.", "I want coffee now.", "I'd like a coffee, please.", "Coffee!"], "jawaban": 2, "penjelasan": "'I'd like... please' adalah cara paling sopan memesan. 'Give me' terdengar kasar." },
+          { "pertanyaan": "Untuk meminta tagihan:", "pilihan": ["Can I have the menu?", "Can I have the bill, please?", "How are you?", "What's this?"], "jawaban": 1, "penjelasan": "the bill = tagihan/nota. the menu = daftar makanan (beda)." },
+          { "pertanyaan": "Pelayan bertanya 'Anything else?'. Artinya:", "pilihan": ["Berapa harganya?", "Ada pesanan lagi?", "Enak tidak?", "Mau bayar?"], "jawaban": 1, "penjelasan": "'Anything else?' = ada lagi (yang mau dipesan)? Jawab: 'No, that's all.'" }
+        ]
+      },
+      {
+        "id": "resto-3",
+        "judul": "Kuis: Di Restoran",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'How much is it?' menanyakan...", "pilihan": ["rasa makanan", "harga", "jumlah orang", "nama menu"], "jawaban": 1 },
+          { "pertanyaan": "Pelayan: 'What would you like?' Jawaban tepat:", "pilihan": ["Yes, please.", "I'd like fried rice, please.", "How much is it?", "Nice to meet you."], "jawaban": 1, "penjelasan": "'What would you like?' = mau pesan apa? → sebutkan pesananmu: 'I'd like...'" },
+          { "pertanyaan": "Memuji makanan yang enak:", "pilihan": ["It's expensive!", "It's delicious!", "It's cold!", "It's far!"], "jawaban": 1 },
+          { "pertanyaan": "Minta meja untuk 2 orang:", "pilihan": ["Two people here.", "A table for two, please.", "I want a table.", "Two chairs now."], "jawaban": 1, "penjelasan": "Frasa baku: 'A table for two, please.'" },
+          { "pertanyaan": "Pelayan memberi makananmu dan berkata 'Enjoy your meal!'. Artinya:", "pilihan": ["Bayar sekarang.", "Selamat menikmati!", "Menunya habis.", "Tunggu sebentar."], "jawaban": 1 },
+          { "pertanyaan": "'Anything else?' — '___'", "pilihan": ["No, that's all, thank you.", "Yes, I am.", "I'm fine.", "See you."], "jawaban": 0, "penjelasan": "Jika tidak pesan lagi: 'No, that's all, thank you.'" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-arah",
+    "judul": "Penerapan: Bertanya & Memberi Arah",
+    "deskripsi": "Menanyakan dan memberi petunjuk arah ke suatu tempat",
+    "emoji": "🧭",
+    "warna": "from-blue-400 to-indigo-500",
+    "bg": "bg-blue-50",
+    "border": "border-blue-300",
+    "teks": "text-blue-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "arah-1",
+        "judul": "Menanyakan Arah",
+        "emoji": "🙋",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Excuse me.", "arti": "Permisi.", "emoji": "🙏", "contoh": "Excuse me, where is the station?" },
+          { "kata": "Where is the...?", "arti": "Di mana...?", "emoji": "📍", "contoh": "Where is the bank?" },
+          { "kata": "How do I get to...?", "arti": "Bagaimana cara ke...?", "emoji": "❓", "contoh": "How do I get to the airport?" },
+          { "kata": "Is it far?", "arti": "Apakah jauh?", "emoji": "📏", "contoh": "Is it far from here?" },
+          { "kata": "Is there a ... near here?", "arti": "Apakah ada ... di dekat sini?", "emoji": "🔍", "contoh": "Is there a hospital near here?" },
+          { "kata": "Thank you for your help.", "arti": "Terima kasih atas bantuanmu.", "emoji": "🙏", "contoh": "Thank you for your help!" }
+        ]
+      },
+      {
+        "id": "arah-2",
+        "judul": "Memberi Petunjuk Arah",
+        "emoji": "👉",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Go straight.", "arti": "Jalan lurus.", "emoji": "⬆️", "contoh": "Go straight for 100 meters." },
+          { "kata": "Turn left.", "arti": "Belok kiri.", "emoji": "⬅️", "contoh": "Turn left at the corner." },
+          { "kata": "Turn right.", "arti": "Belok kanan.", "emoji": "➡️", "contoh": "Turn right after the bank." },
+          { "kata": "It's on your left.", "arti": "Ada di sebelah kirimu.", "emoji": "👈", "contoh": "The shop is on your left." },
+          { "kata": "It's next to the bank.", "arti": "Ada di sebelah bank.", "emoji": "🏦", "contoh": "It's next to the bank." },
+          { "kata": "It's near here.", "arti": "Ada di dekat sini.", "emoji": "📌", "contoh": "Don't worry, it's near here." },
+          { "kata": "It's over there.", "arti": "Ada di sana.", "emoji": "👆", "contoh": "Look, it's over there!" }
+        ],
+        "soal": [
+          { "pertanyaan": "Cara sopan menyapa orang asing untuk bertanya:", "pilihan": ["Hey you!", "Excuse me.", "Hello friend!", "Listen!"], "jawaban": 1, "penjelasan": "'Excuse me' = permisi — cara sopan memulai pertanyaan kepada orang asing." },
+          { "pertanyaan": "'Turn left' artinya...", "pilihan": ["jalan lurus", "belok kanan", "belok kiri", "berhenti"], "jawaban": 2 },
+          { "pertanyaan": "Menanyakan apakah suatu tempat jauh:", "pilihan": ["Is it far?", "Is it big?", "Is it good?", "Is it open?"], "jawaban": 0 }
+        ]
+      },
+      {
+        "id": "arah-3",
+        "judul": "Kuis: Bertanya Arah",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'Go straight' artinya...", "pilihan": ["belok kiri", "jalan lurus", "berhenti", "kembali"], "jawaban": 1 },
+          { "pertanyaan": "Menanyakan lokasi stasiun:", "pilihan": ["What is the station?", "Where is the station?", "How is the station?", "Who is the station?"], "jawaban": 1, "penjelasan": "'Where is...?' = di mana...? untuk menanyakan lokasi." },
+          { "pertanyaan": "'It's next to the bank.' artinya:", "pilihan": ["Di dalam bank.", "Di sebelah bank.", "Di atas bank.", "Jauh dari bank."], "jawaban": 1, "penjelasan": "next to = di sebelah/bersebelahan." },
+          { "pertanyaan": "'How do I get to the airport?' menanyakan...", "pilihan": ["harga ke bandara", "cara/arah ke bandara", "jam buka bandara", "nama bandara"], "jawaban": 1, "penjelasan": "'How do I get to...?' = bagaimana cara saya sampai ke...? (menanyakan rute)." },
+          { "pertanyaan": "Lawan dari 'Turn left' adalah...", "pilihan": ["Go straight", "Turn right", "Stop here", "Come back"], "jawaban": 1 },
+          { "pertanyaan": "'Is there a pharmacy near here?' menanyakan...", "pilihan": ["harga apotek", "apakah ada apotek di dekat sini", "jam buka apotek", "nama apotek"], "jawaban": 1, "penjelasan": "'Is there a ... near here?' = apakah ada ... di dekat sini?" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-shop",
+    "judul": "Penerapan: Berbelanja & Harga",
+    "deskripsi": "Berbelanja di toko: menanyakan barang, harga, ukuran, dan membayar",
+    "emoji": "🛍️",
+    "warna": "from-pink-400 to-rose-500",
+    "bg": "bg-pink-50",
+    "border": "border-pink-300",
+    "teks": "text-pink-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "shop-1",
+        "judul": "Menanyakan Barang & Harga",
+        "emoji": "🏪",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Can I help you?", "arti": "Ada yang bisa saya bantu?", "emoji": "🛎️", "contoh": "— Can I help you? — Yes, I'm looking for a shirt." },
+          { "kata": "I'm just looking, thanks.", "arti": "Saya lihat-lihat saja, terima kasih.", "emoji": "👀", "contoh": "I'm just looking, thanks." },
+          { "kata": "How much is this?", "arti": "Ini harganya berapa?", "emoji": "🏷️", "contoh": "How much is this bag?" },
+          { "kata": "Do you have...?", "arti": "Apakah ada...?", "emoji": "❓", "contoh": "Do you have this in blue?" },
+          { "kata": "It's too expensive.", "arti": "Terlalu mahal.", "emoji": "💸", "contoh": "It's too expensive for me." },
+          { "kata": "I'll take it.", "arti": "Saya ambil yang ini.", "emoji": "🛒", "contoh": "It's nice. I'll take it." }
+        ]
+      },
+      {
+        "id": "shop-2",
+        "judul": "Ukuran, Warna & Membayar",
+        "emoji": "💳",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "What size?", "arti": "Ukuran berapa?", "emoji": "📐", "contoh": "— What size? — Medium, please." },
+          { "kata": "Can I try it on?", "arti": "Boleh saya coba pakai?", "emoji": "👕", "contoh": "Can I try it on?" },
+          { "kata": "Do you have a bigger one?", "arti": "Ada yang lebih besar?", "emoji": "🔼", "contoh": "It's too small. Do you have a bigger one?" },
+          { "kata": "How would you like to pay?", "arti": "Mau bayar dengan apa?", "emoji": "💰", "contoh": "How would you like to pay? — Cash, please." },
+          { "kata": "Cash or card?", "arti": "Tunai atau kartu?", "emoji": "💵", "contoh": "— Cash or card? — Card, please." },
+          { "kata": "Here's your change.", "arti": "Ini kembaliannya.", "emoji": "🪙", "contoh": "Here's your change. Thank you!" }
+        ],
+        "soal": [
+          { "pertanyaan": "Penjaga toko: 'Can I help you?'. Kamu hanya melihat-lihat:", "pilihan": ["Yes, how much?", "I'm just looking, thanks.", "Goodbye.", "I'll take it."], "jawaban": 1, "penjelasan": "'I'm just looking, thanks' = saya lihat-lihat saja — jawaban sopan jika belum mau beli." },
+          { "pertanyaan": "Menanyakan harga sebuah barang:", "pilihan": ["What is this?", "How much is this?", "Where is this?", "Who is this?"], "jawaban": 1 },
+          { "pertanyaan": "'It's too expensive' artinya:", "pilihan": ["Terlalu murah.", "Terlalu mahal.", "Terlalu besar.", "Terlalu kecil."], "jawaban": 1 }
+        ]
+      },
+      {
+        "id": "shop-3",
+        "judul": "Kuis: Berbelanja",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "Memutuskan membeli sesuatu:", "pilihan": ["I'm just looking.", "I'll take it.", "It's too expensive.", "Goodbye."], "jawaban": 1, "penjelasan": "'I'll take it' = saya ambil/beli yang ini." },
+          { "pertanyaan": "Baju terlalu kecil. Kamu bertanya:", "pilihan": ["Do you have a bigger one?", "How much is it?", "Can I pay now?", "Where is it?"], "jawaban": 0, "penjelasan": "a bigger one = yang lebih besar. Untuk minta ukuran lebih besar." },
+          { "pertanyaan": "'Cash or card?' menanyakan...", "pilihan": ["ukuran", "warna", "cara bayar", "jumlah"], "jawaban": 2, "penjelasan": "cash = tunai, card = kartu. Penjual menanyakan metode pembayaran." },
+          { "pertanyaan": "Ingin mencoba baju sebelum beli:", "pilihan": ["Can I try it on?", "How much is this?", "I'll take it.", "Cash, please."], "jawaban": 0, "penjelasan": "'Can I try it on?' = boleh saya coba pakai? (untuk pakaian)." },
+          { "pertanyaan": "'Here's your change.' artinya:", "pilihan": ["Ini barangmu.", "Ini kembalianmu.", "Ini menunya.", "Ini struknya."], "jawaban": 1, "penjelasan": "change (dalam konteks ini) = uang kembalian." },
+          { "pertanyaan": "Penjaga toko menyapa pembeli dengan:", "pilihan": ["What's your name?", "Can I help you?", "Where are you from?", "How old are you?"], "jawaban": 1, "penjelasan": "'Can I help you?' = ada yang bisa saya bantu? — sapaan baku penjaga toko." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-dok",
+    "judul": "Penerapan: Di Dokter & Saya Sakit",
+    "deskripsi": "Menyebutkan keluhan sakit dan memahami saran sederhana dari dokter",
+    "emoji": "🩺",
+    "warna": "from-red-400 to-rose-500",
+    "bg": "bg-red-50",
+    "border": "border-red-300",
+    "teks": "text-red-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "dok-1",
+        "judul": "Menyebutkan Keluhan",
+        "emoji": "🤒",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "I don't feel well.", "arti": "Saya merasa tidak enak badan.", "emoji": "🤢", "contoh": "I don't feel well today." },
+          { "kata": "I have a headache.", "arti": "Saya sakit kepala.", "emoji": "🤕", "contoh": "I have a headache and a fever." },
+          { "kata": "I have a fever.", "arti": "Saya demam.", "emoji": "🌡️", "contoh": "I have a fever. My body is hot." },
+          { "kata": "I have a cold.", "arti": "Saya pilek/masuk angin.", "emoji": "🤧", "contoh": "I have a cold. I'm sneezing a lot." },
+          { "kata": "My stomach hurts.", "arti": "Perut saya sakit.", "emoji": "😣", "contoh": "My stomach hurts after lunch." },
+          { "kata": "It hurts here.", "arti": "Sakit di sini.", "emoji": "👇", "contoh": "It hurts here, on my back." }
+        ]
+      },
+      {
+        "id": "dok-2",
+        "judul": "Saran Dokter & Apotek",
+        "emoji": "💊",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "You should rest.", "arti": "Kamu sebaiknya istirahat.", "emoji": "🛌", "contoh": "You should rest and drink water." },
+          { "kata": "Take this medicine.", "arti": "Minum obat ini.", "emoji": "💊", "contoh": "Take this medicine three times a day." },
+          { "kata": "Drink a lot of water.", "arti": "Minum banyak air.", "emoji": "💧", "contoh": "Drink a lot of water when you have a fever." },
+          { "kata": "Where is the pharmacy?", "arti": "Di mana apoteknya?", "emoji": "🏥", "contoh": "Where is the pharmacy? I need medicine." },
+          { "kata": "Get well soon!", "arti": "Semoga lekas sembuh!", "emoji": "🌸", "contoh": "Take care. Get well soon!" },
+          { "kata": "How are you feeling?", "arti": "Bagaimana perasaanmu? (kesehatan)", "emoji": "🩺", "contoh": "How are you feeling today? — Better, thanks." }
+        ],
+        "soal": [
+          { "pertanyaan": "'I have a headache' artinya:", "pilihan": ["Saya lapar.", "Saya sakit kepala.", "Saya lelah.", "Saya demam."], "jawaban": 1 },
+          { "pertanyaan": "Dokter menyarankan istirahat:", "pilihan": ["You should rest.", "You are rest.", "You rest should.", "Rest you should."], "jawaban": 0, "penjelasan": "should + kata kerja dasar: 'You should rest' = sebaiknya kamu istirahat." },
+          { "pertanyaan": "Mengucapkan harapan sembuh:", "pilihan": ["Good morning!", "Get well soon!", "Nice to meet you!", "See you!"], "jawaban": 1, "penjelasan": "'Get well soon!' = semoga lekas sembuh." }
+        ]
+      },
+      {
+        "id": "dok-3",
+        "judul": "Kuis: Di Dokter",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'I have a fever' artinya:", "pilihan": ["Saya pilek.", "Saya demam.", "Saya pusing.", "Saya batuk."], "jawaban": 1 },
+          { "pertanyaan": "Memberitahu dokter kamu tidak enak badan:", "pilihan": ["I don't feel well.", "I'm very happy.", "I'm hungry.", "I'm fine."], "jawaban": 0, "penjelasan": "'I don't feel well' = saya merasa tidak enak badan." },
+          { "pertanyaan": "'My stomach hurts' artinya:", "pilihan": ["Kepala saya sakit.", "Perut saya sakit.", "Kaki saya sakit.", "Gigi saya sakit."], "jawaban": 1, "penjelasan": "stomach = perut, hurts = sakit." },
+          { "pertanyaan": "Tempat membeli obat:", "pilihan": ["the bank", "the pharmacy", "the school", "the market"], "jawaban": 1, "penjelasan": "pharmacy = apotek, tempat membeli obat." },
+          { "pertanyaan": "Saran dokter: 'Drink a lot of water.' artinya:", "pilihan": ["Makan banyak.", "Minum banyak air.", "Tidur lama.", "Olahraga."], "jawaban": 1 },
+          { "pertanyaan": "Setelah 'should', kata kerja berbentuk...", "pilihan": ["+ing", "+s", "bentuk dasar", "past"], "jawaban": 2, "penjelasan": "should + kata kerja dasar: should rest, should eat, should drink (bukan rests/resting)." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1-plan",
+    "judul": "Penerapan: Membuat Rencana & Mengajak",
+    "deskripsi": "Mengajak teman, merespons ajakan, dan menentukan waktu serta tempat bertemu",
+    "emoji": "📅",
+    "warna": "from-violet-400 to-purple-500",
+    "bg": "bg-violet-50",
+    "border": "border-violet-300",
+    "teks": "text-violet-700",
+    "level": "a1",
+    "pelajaran": [
+      {
+        "id": "plan-1",
+        "judul": "Mengajak & Merespons",
+        "emoji": "🙌",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "Let's go to the park.", "arti": "Ayo pergi ke taman.", "emoji": "🌳", "contoh": "Let's go to the park this afternoon." },
+          { "kata": "Do you want to...?", "arti": "Apakah kamu mau...?", "emoji": "❓", "contoh": "Do you want to watch a movie?" },
+          { "kata": "Would you like to come?", "arti": "Maukah kamu ikut?", "emoji": "🎉", "contoh": "We're having dinner. Would you like to come?" },
+          { "kata": "Sure, I'd love to!", "arti": "Tentu, saya mau sekali!", "emoji": "😄", "contoh": "Sure, I'd love to! What time?" },
+          { "kata": "Sorry, I can't.", "arti": "Maaf, saya tidak bisa.", "emoji": "😔", "contoh": "Sorry, I can't. I'm busy today." },
+          { "kata": "Maybe next time.", "arti": "Mungkin lain kali.", "emoji": "🔜", "contoh": "Not today, maybe next time." }
+        ]
+      },
+      {
+        "id": "plan-2",
+        "judul": "Waktu & Tempat Bertemu",
+        "emoji": "⏰",
+        "tipe": "vocab",
+        "kartu": [
+          { "kata": "What time?", "arti": "Jam berapa?", "emoji": "🕐", "contoh": "— Let's meet. — What time?" },
+          { "kata": "Let's meet at 5 o'clock.", "arti": "Ayo bertemu jam 5.", "emoji": "🕔", "contoh": "Let's meet at 5 o'clock." },
+          { "kata": "Where shall we meet?", "arti": "Di mana kita bertemu?", "emoji": "📍", "contoh": "Where shall we meet? — At the cafe." },
+          { "kata": "See you tomorrow.", "arti": "Sampai jumpa besok.", "emoji": "👋", "contoh": "Great! See you tomorrow." },
+          { "kata": "I'm free on Sunday.", "arti": "Saya senggang hari Minggu.", "emoji": "🆓", "contoh": "I'm free on Sunday. Let's meet then." },
+          { "kata": "I'm busy today.", "arti": "Saya sibuk hari ini.", "emoji": "📌", "contoh": "I'm busy today, but I'm free tomorrow." }
+        ],
+        "soal": [
+          { "pertanyaan": "Mengajak teman pergi ke taman:", "pilihan": ["Let's go to the park.", "Where is the park?", "The park is big.", "I like parks."], "jawaban": 0, "penjelasan": "'Let's + kata kerja' = ayo... — untuk mengajak. Let's go = ayo pergi." },
+          { "pertanyaan": "Menerima ajakan dengan senang:", "pilihan": ["Sorry, I can't.", "Sure, I'd love to!", "Maybe next time.", "I'm busy."], "jawaban": 1, "penjelasan": "'Sure, I'd love to!' = tentu, mau sekali — cara antusias menerima ajakan." },
+          { "pertanyaan": "Menolak ajakan dengan sopan:", "pilihan": ["Sure!", "Yes, please.", "Sorry, I can't.", "Let's go!"], "jawaban": 2, "penjelasan": "'Sorry, I can't' = maaf, saya tidak bisa — penolakan sopan, sering ditambah alasan." }
+        ]
+      },
+      {
+        "id": "plan-3",
+        "judul": "Kuis: Membuat Rencana",
+        "emoji": "🧠",
+        "tipe": "quiz",
+        "soal": [
+          { "pertanyaan": "'Do you want to watch a movie?' adalah cara untuk...", "pilihan": ["menolak", "mengajak", "meminta maaf", "berpamitan"], "jawaban": 1, "penjelasan": "'Do you want to...?' = apakah kamu mau...? — untuk mengajak/menawarkan." },
+          { "pertanyaan": "'I'm free on Sunday' artinya:", "pilihan": ["Saya sibuk Minggu.", "Saya senggang hari Minggu.", "Saya bekerja Minggu.", "Saya pergi Minggu."], "jawaban": 1, "penjelasan": "free (dalam konteks ini) = senggang/luang. busy = sibuk." },
+          { "pertanyaan": "Menanyakan waktu bertemu:", "pilihan": ["Where shall we meet?", "What time?", "Who is there?", "How much?"], "jawaban": 1 },
+          { "pertanyaan": "Teman mengajak tapi kamu sibuk. Respons sopan:", "pilihan": ["Sure, I'd love to!", "Sorry, I can't. Maybe next time.", "What time?", "Let's go!"], "jawaban": 1, "penjelasan": "Tolak sopan + tawaran lain kali: 'Sorry, I can't. Maybe next time.'" },
+          { "pertanyaan": "'Let's meet at 5 o'clock' artinya:", "pilihan": ["Ayo bertemu jam 5.", "Saya pergi jam 5.", "Jam 5 sudah lewat.", "Bertemu di lantai 5."], "jawaban": 0 },
+          { "pertanyaan": "'Where shall we meet?' menanyakan...", "pilihan": ["waktu bertemu", "tempat bertemu", "siapa yang datang", "alasan bertemu"], "jawaban": 1, "penjelasan": "Where = di mana → menanyakan TEMPAT bertemu. What time = waktu." }
+        ]
+      }
+    ]
+  },
   {
     "id": "unit-18",
     "judul": "There is / There are",

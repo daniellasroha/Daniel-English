@@ -698,6 +698,108 @@ export const learningPathIndex = [
   ]
  },
  {
+  "id": "a1-konv",
+  "judul": "Penerapan: Berkenalan & Mengobrol",
+  "emoji": "🗣️",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "konv-1"
+   },
+   {
+    "id": "konv-2"
+   },
+   {
+    "id": "konv-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-resto",
+  "judul": "Penerapan: Di Restoran & Kafe",
+  "emoji": "🍽️",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "resto-1"
+   },
+   {
+    "id": "resto-2"
+   },
+   {
+    "id": "resto-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-arah",
+  "judul": "Penerapan: Bertanya & Memberi Arah",
+  "emoji": "🧭",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "arah-1"
+   },
+   {
+    "id": "arah-2"
+   },
+   {
+    "id": "arah-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-shop",
+  "judul": "Penerapan: Berbelanja & Harga",
+  "emoji": "🛍️",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "shop-1"
+   },
+   {
+    "id": "shop-2"
+   },
+   {
+    "id": "shop-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-dok",
+  "judul": "Penerapan: Di Dokter & Saya Sakit",
+  "emoji": "🩺",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "dok-1"
+   },
+   {
+    "id": "dok-2"
+   },
+   {
+    "id": "dok-3"
+   }
+  ]
+ },
+ {
+  "id": "a1-plan",
+  "judul": "Penerapan: Membuat Rencana & Mengajak",
+  "emoji": "📅",
+  "level": "a1",
+  "pelajaran": [
+   {
+    "id": "plan-1"
+   },
+   {
+    "id": "plan-2"
+   },
+   {
+    "id": "plan-3"
+   }
+  ]
+ },
+ {
   "id": "unit-18",
   "judul": "There is / There are",
   "emoji": "🏙️",
